@@ -1,0 +1,116 @@
+---
+const { title, description } = Astro.props;
+// Active link determination
+const pathname = Astro.url.pathname;
+
+// Import the logo with fallback handling
+let logomarkSrc;
+try {
+  // Try to import the SVG directly from public
+  logomarkSrc = '/static/logo/nextla-logomark.svg';
+} catch (error) {
+  // Fallback to text only if image isn't found
+  console.warn('Logo image not found, using fallback');
+  logomarkSrc = '';
+}
+
+// Flag to check if image loads successfully
+const hasLogo = logomarkSrc !== '';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} | Nextla</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="/static/favicons/favicon.svg" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=JetBrains+Mono&display=swap" />
+  </head>
+  <body class="bg-neutral-100 text-neutral-900 font-body">
+    <header class="bg-primary-500 text-white py-4">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center">
+            <div class="text-2xl font-heading font-bold mr-8">
+              <a href="/" class="flex items-center">
+                {hasLogo ? (
+                  <img 
+                    src={logomarkSrc} 
+                    alt="Nextla Logo" 
+                    width="32" 
+                    height="32" 
+                    class="mr-2"
+                    onerror="this.style.display='none'"
+                  />
+                ) : (
+                  <span class="w-8 h-8 bg-accent-500 rounded-full flex items-center justify-center mr-2">N</span>
+                )}
+                Nextla
+              </a>
+            </div>
+            <nav>
+              <ul class="flex space-x-6">
+                <li><a href="/" class={`hover:text-accent-300 ${pathname === '/' ? 'font-medium' : ''}`}>Home</a></li>
+                <li><a href="/about" class={`hover:text-accent-300 ${pathname === '/about' ? 'font-medium' : ''}`}>About</a></li>
+                <li><a href="/docs" class={`hover:text-accent-300 ${pathname === '/docs' ? 'font-medium' : ''}`}>Docs</a></li>
+                <li><a href="/story" class={`hover:text-accent-300 ${pathname === '/story' ? 'font-medium' : ''}`}>Story</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="flex items-center space-x-4">
+            <a href="#" class="text-white hover:text-accent-300">Download app</a>
+            <a href="#" class="text-white hover:text-accent-300">Log in</a>
+            <a href="#" class="bg-accent-500 text-white px-4 py-2 rounded hover:bg-accent-600 transition">Try it free</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <div class="flex">
+      <!-- Sidebar Navigation -->
+      <aside class="w-64 bg-neutral-800 text-white h-screen">
+        <nav class="p-4">
+          <ul class="space-y-4">
+            <li><a href="/" class={`block p-2 ${pathname === '/' ? 'bg-primary-700 rounded' : 'hover:bg-neutral-700'}`}>Introduction</a></li>
+            <li><a href="/about" class={`block p-2 ${pathname === '/about' ? 'bg-primary-700 rounded' : 'hover:bg-neutral-700'}`}>About Nextla</a></li>
+            <li><a href="/docs" class={`block p-2 ${pathname === '/docs' ? 'bg-primary-700 rounded' : 'hover:bg-neutral-700'}`}>Documentation</a></li>
+            <li><a href="/story" class={`block p-2 ${pathname === '/story' ? 'bg-primary-700 rounded' : 'hover:bg-neutral-700'}`}>Story</a></li>
+          </ul>
+        </nav>
+      </aside>
+      
+      <!-- Main Content -->
+      <main class="flex-1">
+        <slot />
+      </main>
+    </div>
+    
+    <footer class="bg-neutral-900 text-neutral-100 py-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="text-xl font-heading mb-4">Nextla</h3>
+            <p>A modern approach to attention management in enterprise software.</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-heading mb-4">Navigation</h3>
+            <ul class="space-y-2">
+              <li><a href="/" class="hover:text-accent-300">Home</a></li>
+              <li><a href="/about" class="hover:text-accent-300">About</a></li>
+              <li><a href="/docs" class="hover:text-accent-300">Documentation</a></li>
+              <li><a href="/story" class="hover:text-accent-300">Story</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-heading mb-4">Contact</h3>
+            <p>info@nextla.net</p>
+          </div>
+        </div>
+        <div class="border-t border-neutral-700 mt-8 pt-8 text-center">
+          <p>&copy; {new Date().getFullYear()} Nextla. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html> 

@@ -1,0 +1,40 @@
+---
+// src/components/ResponsiveImage.astro
+interface Props {
+  src: string;
+  alt: string;
+  widths?: number[];
+  sizes?: string;
+  formats?: ('webp' | 'avif' | 'jpeg' | 'png' | 'svg')[];
+  loading?: 'lazy' | 'eager';
+  decoding?: 'async' | 'sync' | 'auto';
+  className?: string;
+}
+
+const { 
+  src, 
+  alt, 
+  widths = [400, 800, 1200], 
+  sizes = '(max-width: 800px) 100vw, 800px', 
+  formats = ['webp', 'avif'], 
+  loading = 'lazy', 
+  decoding = 'async',
+  className = ''
+} = Astro.props;
+---
+
+<img
+  src={src}
+  alt={alt}
+  loading={loading}
+  decoding={decoding}
+  class={className}
+  style="max-width: 100%; height: auto;"
+/>
+
+<style>
+  img {
+    display: block;
+    border-radius: 0.25rem;
+  }
+</style> 

@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ColorSystem from '../components/ColorSystem.astro';
+---
+
+<BaseLayout 
+  title="A blog about Nextla" 
+  description="Nextla - A modern approach to attention management in enterprise software."
+>
+  <!-- Blog Title Section -->
+  <div class="p-6 border-b border-neutral-200">
+    <h1 class="text-2xl font-heading font-medium text-neutral-600">A blog about Nextla...</h1>
+  </div>
+
+  <!-- Introduction Section -->
+  <section class="p-6">
+    <div class="max-w-4xl">
+      <h2 class="text-3xl font-heading font-bold mb-6 text-primary-600">Introduction</h2>
+      <p class="text-lg mb-6">
+        Welcome to the Nextla blog. Here you'll find insights about our approach to attention management
+        and how Mesoamerican design principles can inform modern software experiences.
+      </p>
+      <p class="text-lg mb-6">
+        Explore the sections to learn more about our philosophy, technical implementation, and journey.
+      </p>
+    </div>
+  </section>
+
+  <!-- Featured Content -->
+  <section class="p-6 bg-neutral-50">
+    <div class="max-w-4xl">
+      <h2 class="text-3xl font-heading font-bold mb-6 text-primary-600">Featured Posts</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="text-xl font-heading mb-3 text-primary-600">About Our Design System</h3>
+          <p class="mb-4">
+            Learn about the color palette, typography, and design tokens that make up the Nextla experience.
+          </p>
+          <a href="/about" class="text-accent-500 hover:text-accent-600">Read more →</a>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="text-xl font-heading mb-3 text-primary-600">Getting Started with Nextla</h3>
+          <p class="mb-4">
+            A practical guide to implementing Nextla principles in your own projects.
+          </p>
+          <a href="/docs" class="text-accent-500 hover:text-accent-600">Read more →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout> 

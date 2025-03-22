@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AztecPattern from '../components/decorative/AztecPattern.astro';
+---
+
+<BaseLayout
+  title="Documentation"
+  description="Technical documentation for implementing Nextla in your projects."
+>
+  <!-- Documentation Title Section with Grid Pattern -->
+  <div class="relative bg-cover bg-center py-16 bg-neutral-800">
+    <AztecPattern pattern="grid" opacity={0.1} color="#FFFFFF" className="docs-header-pattern" />
+    
+    <div class="container mx-auto px-8 relative z-10">
+      <h1 class="text-4xl font-heading font-bold text-white mb-6">Documentation</h1>
+      <p class="text-xl text-white max-w-2xl">
+        Explore our technical documentation to understand how Nextla can be implemented in
+        your projects.
+      </p>
+    </div>
+  </div>
+
+  <!-- Documentation Content -->
+  <div class="container mx-auto px-8 py-16">
+    <div class="max-w-4xl">
+      <p class="text-lg mb-6">
+        This section contains comprehensive documentation for implementing Nextla in your projects.
+        Whether you're looking to adopt the entire design system or incorporate specific elements,
+        you'll find guidance here.
+      </p>
+      
+      <!-- Code Example with Pattern Background -->
+      <div class="relative mt-12 mb-16 rounded-lg overflow-hidden">
+        <div class="bg-primary-900 p-6 rounded-t-lg">
+          <AztecPattern pattern="flow" opacity={0.08} color="#FFFFFF" className="code-pattern" />
+          <h3 class="text-xl font-heading mb-2 text-white relative z-10">Pattern Implementation Example</h3>
+        </div>
+        <div class="bg-neutral-800 p-6 rounded-b-lg text-white font-mono text-sm overflow-x-auto">
+          <pre><code>{`<div class="relative">
+  <AztecPattern 
+    pattern="grid" 
+    opacity={0.1} 
+    color="var(--color-primary-300)" 
+  />
+  <div class="relative z-10">
+    {/* Your content here */}
+  </div>
+</div>`}</code></pre>
+        </div>
+      </div>
+      
+      <h2 class="text-2xl font-heading font-bold mb-4 mt-8 text-primary-600">Getting Started</h2>
+      <p class="mb-4">
+        Getting started with Nextla is simple. You can integrate our design principles into your 
+        existing projects or start fresh with our templates.
+      </p>
+      
+      <h2 class="text-2xl font-heading font-bold mb-4 mt-8 text-primary-600">Component Library</h2>
+      <p class="mb-4">
+        Explore our component library to see how Nextla principles can be applied to common UI elements.
+      </p>
+      
+      <div class="relative bg-neutral-100 p-6 rounded-lg mt-8">
+        <AztecPattern pattern="tribute" opacity={0.05} color="#1A237E" className="coming-soon-pattern" />
+        <div class="relative z-10">
+          <h3 class="text-xl font-heading mb-3 text-primary-600">Coming Soon</h3>
+          <p>
+            We're currently working on expanding our documentation. Check back soon for more 
+            detailed implementation guides and code examples.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout> 

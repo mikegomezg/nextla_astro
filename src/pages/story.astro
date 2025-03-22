@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AztecPattern from '../components/decorative/AztecPattern.astro';
+import AttentionFlow from '../components/visualization/AttentionFlow.astro';
+---
+
+<BaseLayout
+  title="Story"
+  description="The narrative and philosophy behind Nextla and its Mesoamerican connections."
+>
+  <!-- Story Title Section with Flow Pattern -->
+  <div class="relative bg-cover bg-center py-16 bg-accent-500">
+    <AztecPattern pattern="flow" opacity={0.15} color="#FFFFFF" className="story-pattern" />
+    
+    <div class="container mx-auto px-8 relative z-10">
+      <h1 class="text-4xl font-heading font-bold text-white mb-6">Story</h1>
+      <p class="text-xl text-white max-w-2xl">
+        The narrative and philosophy behind Nextla and its Mesoamerican connections.
+      </p>
+    </div>
+  </div>
+
+  <!-- Story Content -->
+  <div class="container mx-auto px-8 py-16">
+    <div class="max-w-4xl">
+      <h2 class="text-3xl font-heading font-bold mb-6 text-accent-600">The Nextla Story</h2>
+      
+      <p class="text-lg mb-6">
+        Nextla draws inspiration from the rich cultural heritage of Mesoamerican civilizations,
+        particularly their approach to design, symbolism, and the organization of information.
+      </p>
+      
+      <p class="text-lg mb-6">
+        The Mesoamerican cultures—including the Maya, Aztec, and others—developed sophisticated
+        systems for representing knowledge, time, and cosmology. Their approach to visual
+        organization and symbolism offers valuable insights for modern interface design.
+      </p>
+      
+      <!-- Attention Flow Visualization -->
+      <div class="my-12 p-8 bg-primary-900 rounded-lg relative overflow-hidden">
+        <AztecPattern pattern="tribute" opacity={0.05} color="#FFFFFF" className="flow-bg-pattern" />
+        <h3 class="text-2xl font-heading font-bold mb-6 text-white">Attention Flow Visualization</h3>
+        <AttentionFlow className="attention-flow-demo" />
+        <p class="text-white mt-4 text-sm">
+          This visualization demonstrates how Nextla manages the flow of attention between different capabilities.
+        </p>
+      </div>
+      
+      <h3 class="text-2xl font-heading font-bold mb-4 mt-8 text-accent-600">Principles</h3>
+      <p class="mb-6">
+        Nextla adapts several key principles from Mesoamerican design:
+      </p>
+      
+      <ul class="list-disc pl-6 mb-6">
+        <li class="mb-2">
+          <strong>Hierarchy and Order:</strong> Clear organization of elements to guide attention
+        </li>
+        <li class="mb-2">
+          <strong>Symbolic Representation:</strong> Using meaningful iconography
+        </li>
+        <li class="mb-2">
+          <strong>Rhythm and Pattern:</strong> Creating visual harmony through repetition
+        </li>
+      </ul>
+      
+      <div class="bg-neutral-100 p-6 rounded-lg mt-8">
+        <h3 class="text-xl font-heading mb-3 text-accent-600">Coming Soon</h3>
+        <p>
+          We're currently expanding our storytelling around the Nextla philosophy. Check back
+          soon for more insights, historical connections, and design principles.
+        </p>
+      </div>
+    </div>
+  </div>
+</BaseLayout> 
