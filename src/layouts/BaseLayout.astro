@@ -27,8 +27,8 @@ const hasLogo = logomarkSrc !== '';
     <link rel="icon" href="/static/favicons/favicon.svg" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=JetBrains+Mono&display=swap" />
   </head>
-  <body class="bg-neutral-100 text-neutral-900 font-body">
-    <header class="bg-primary-500 text-white py-4">
+  <body class="bg-primary-900 text-neutral-100 font-body">
+    <header class="bg-primary-800 text-white py-4">
       <div class="container mx-auto px-4">
         <div class="flex justify-between items-center">
           <div class="flex items-center">
@@ -51,17 +51,17 @@ const hasLogo = logomarkSrc !== '';
             </div>
             <nav>
               <ul class="flex space-x-6">
-                <li><a href="/" class={`hover:text-accent-300 ${pathname === '/' ? 'font-medium' : ''}`}>Home</a></li>
-                <li><a href="/about" class={`hover:text-accent-300 ${pathname === '/about' ? 'font-medium' : ''}`}>About</a></li>
-                <li><a href="/docs" class={`hover:text-accent-300 ${pathname === '/docs' ? 'font-medium' : ''}`}>Docs</a></li>
-                <li><a href="/story" class={`hover:text-accent-300 ${pathname === '/story' ? 'font-medium' : ''}`}>Story</a></li>
+                <li><a href="/" class={`hover:text-accent-400 transition-colors ${pathname === '/' ? 'text-accent-500 font-medium' : ''}`}>Home</a></li>
+                <li><a href="/about" class={`hover:text-accent-400 transition-colors ${pathname === '/about' ? 'text-accent-500 font-medium' : ''}`}>About</a></li>
+                <li><a href="/docs" class={`hover:text-accent-400 transition-colors ${pathname === '/docs' ? 'text-accent-500 font-medium' : ''}`}>Docs</a></li>
+                <li><a href="/story" class={`hover:text-accent-400 transition-colors ${pathname === '/story' ? 'text-accent-500 font-medium' : ''}`}>Story</a></li>
               </ul>
             </nav>
           </div>
           <div class="flex items-center space-x-4">
-            <a href="#" class="text-white hover:text-accent-300">Download app</a>
-            <a href="#" class="text-white hover:text-accent-300">Log in</a>
-            <a href="#" class="bg-accent-500 text-white px-4 py-2 rounded hover:bg-accent-600 transition">Try it free</a>
+            <a href="#" class="text-white hover:text-accent-400 transition-colors">Download app</a>
+            <a href="#" class="text-white hover:text-accent-400 transition-colors">Log in</a>
+            <a href="#" class="bg-accent-500 text-white px-4 py-3 rounded hover:bg-accent-600 transition-colors transform hover:translate-y-[-2px] shadow-md">Try it free</a>
           </div>
         </div>
       </div>
@@ -69,13 +69,13 @@ const hasLogo = logomarkSrc !== '';
     
     <div class="flex">
       <!-- Sidebar Navigation -->
-      <aside class="w-64 bg-neutral-800 text-white h-screen">
+      <aside class="w-64 bg-primary-800 text-white h-screen">
         <nav class="p-4">
           <ul class="space-y-4">
-            <li><a href="/" class={`block p-2 ${pathname === '/' ? 'bg-primary-700 rounded' : 'hover:bg-neutral-700'}`}>Introduction</a></li>
-            <li><a href="/about" class={`block p-2 ${pathname === '/about' ? 'bg-primary-700 rounded' : 'hover:bg-neutral-700'}`}>About Nextla</a></li>
-            <li><a href="/docs" class={`block p-2 ${pathname === '/docs' ? 'bg-primary-700 rounded' : 'hover:bg-neutral-700'}`}>Documentation</a></li>
-            <li><a href="/story" class={`block p-2 ${pathname === '/story' ? 'bg-primary-700 rounded' : 'hover:bg-neutral-700'}`}>Story</a></li>
+            <li><a href="/" class={`block p-2 ${pathname === '/' ? 'bg-primary-700 text-accent-400 rounded' : 'hover:bg-primary-700 hover:text-accent-400 transition-colors'}`}>Introduction</a></li>
+            <li><a href="/about" class={`block p-2 ${pathname === '/about' ? 'bg-primary-700 text-accent-400 rounded' : 'hover:bg-primary-700 hover:text-accent-400 transition-colors'}`}>About Nextla</a></li>
+            <li><a href="/docs" class={`block p-2 ${pathname === '/docs' ? 'bg-primary-700 text-accent-400 rounded' : 'hover:bg-primary-700 hover:text-accent-400 transition-colors'}`}>Documentation</a></li>
+            <li><a href="/story" class={`block p-2 ${pathname === '/story' ? 'bg-primary-700 text-accent-400 rounded' : 'hover:bg-primary-700 hover:text-accent-400 transition-colors'}`}>Story</a></li>
           </ul>
         </nav>
       </aside>
@@ -86,28 +86,28 @@ const hasLogo = logomarkSrc !== '';
       </main>
     </div>
     
-    <footer class="bg-neutral-900 text-neutral-100 py-8">
+    <footer class="bg-primary-900 text-neutral-100 py-8 border-t border-primary-700">
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 class="text-xl font-heading mb-4">Nextla</h3>
+            <h3 class="text-xl font-heading mb-4 text-secondary-400">Nextla</h3>
             <p>A modern approach to attention management in enterprise software.</p>
           </div>
           <div>
-            <h3 class="text-xl font-heading mb-4">Navigation</h3>
+            <h3 class="text-xl font-heading mb-4 text-secondary-400">Navigation</h3>
             <ul class="space-y-2">
-              <li><a href="/" class="hover:text-accent-300">Home</a></li>
-              <li><a href="/about" class="hover:text-accent-300">About</a></li>
-              <li><a href="/docs" class="hover:text-accent-300">Documentation</a></li>
-              <li><a href="/story" class="hover:text-accent-300">Story</a></li>
+              <li><a href="/" class="hover:text-accent-400 transition-colors">Home</a></li>
+              <li><a href="/about" class="hover:text-accent-400 transition-colors">About</a></li>
+              <li><a href="/docs" class="hover:text-accent-400 transition-colors">Documentation</a></li>
+              <li><a href="/story" class="hover:text-accent-400 transition-colors">Story</a></li>
             </ul>
           </div>
           <div>
-            <h3 class="text-xl font-heading mb-4">Contact</h3>
+            <h3 class="text-xl font-heading mb-4 text-secondary-400">Contact</h3>
             <p>info@nextla.net</p>
           </div>
         </div>
-        <div class="border-t border-neutral-700 mt-8 pt-8 text-center">
+        <div class="border-t border-primary-700 mt-8 pt-8 text-center">
           <p>&copy; {new Date().getFullYear()} Nextla. All rights reserved.</p>
         </div>
       </div>

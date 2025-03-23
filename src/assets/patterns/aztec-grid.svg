@@ -1,9 +1,28 @@
-<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <pattern id="aztec-grid" patternUnits="userSpaceOnUse" width="20" height="20">
-      <rect width="20" height="20" fill="none" stroke="currentColor" stroke-width="0.5" stroke-opacity="0.2"/>
-      <path d="M5,5 L15,5 L15,15 L5,15 Z" fill="none" stroke="currentColor" stroke-width="0.5" stroke-opacity="0.3"/>
-      <rect x="8" y="8" width="4" height="4" fill="currentColor" fill-opacity="0.2"/>
+    <pattern id="aztec-grid" patternUnits="userSpaceOnUse" width="50" height="50">
+      <!-- Base grid -->
+      <rect width="50" height="50" fill="none" stroke="currentColor" stroke-width="1" stroke-opacity="0.15"/>
+      
+      <!-- Inner square with stepped edges -->
+      <path d="M10,10 H20 V15 H25 V20 H30 V15 H35 V10 H40 V20 H30 V25 H25 V30 H20 V25 H15 V20 H10 Z" 
+        fill="none" stroke="currentColor" stroke-width="1" stroke-opacity="0.3"/>
+      
+      <!-- Central motif -->
+      <rect x="22" y="22" width="6" height="6" fill="currentColor" fill-opacity="0.25"/>
+      
+      <!-- Corner decorations -->
+      <circle cx="10" cy="10" r="2" fill="currentColor" fill-opacity="0.2"/>
+      <circle cx="40" cy="10" r="2" fill="currentColor" fill-opacity="0.2"/>
+      <circle cx="10" cy="40" r="2" fill="currentColor" fill-opacity="0.2"/>
+      <circle cx="40" cy="40" r="2" fill="currentColor" fill-opacity="0.2"/>
+      
+      <!-- Diagonal accents -->
+      <line x1="5" y1="5" x2="15" y2="15" stroke="currentColor" stroke-width="1" stroke-opacity="0.2"/>
+      <line x1="45" y1="5" x2="35" y2="15" stroke="currentColor" stroke-width="1" stroke-opacity="0.2"/>
+      <line x1="5" y1="45" x2="15" y2="35" stroke="currentColor" stroke-width="1" stroke-opacity="0.2"/>
+      <line x1="45" y1="45" x2="35" y2="35" stroke="currentColor" stroke-width="1" stroke-opacity="0.2"/>
     </pattern>
   </defs>
   <rect width="100%" height="100%" fill="url(#aztec-grid)"/>

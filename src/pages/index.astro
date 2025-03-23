@@ -1,53 +1,86 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ColorSystem from '../components/ColorSystem.astro';
+import AztecPattern from '../components/decorative/AztecPattern.astro';
+import GeometricBorder from '../components/decorative/GeometricBorder.astro';
 ---
 
 <BaseLayout 
-  title="A blog about Nextla" 
-  description="Nextla - A modern approach to attention management in enterprise software."
+  title="Nextla" 
+  description="A modern approach to attention management inspired by Mesoamerican design principles."
 >
-  <!-- Blog Title Section -->
-  <div class="p-6 border-b border-neutral-200">
-    <h1 class="text-2xl font-heading font-medium text-neutral-600">A blog about Nextla...</h1>
+  <!-- Hero Section with Pattern -->
+  <div class="relative bg-primary-900 py-24">
+    <AztecPattern pattern="codex" opacity={0.15} color="#A63D2F" className="hero-pattern" />
+    
+    <div class="container mx-auto px-8 relative z-10">
+      <h1 class="text-5xl font-heading font-bold text-white mb-6 tracking-wider">Nextla</h1>
+      <p class="text-2xl text-neutral-200 max-w-2xl mb-8">
+        Transform your relationship with software through mindful design inspired by 
+        ancient wisdom and modern principles.
+      </p>
+      <div class="flex space-x-4">
+        <a href="/about" class="bg-accent-500 text-white px-6 py-3 rounded hover:bg-accent-600 transition-colors transform hover:translate-y-[-2px] shadow-md">
+          Discover Nextla
+        </a>
+        <a href="/docs" class="bg-transparent border border-secondary-500 text-secondary-400 px-6 py-3 rounded hover:bg-secondary-900 hover:text-secondary-300 transition-colors">
+          Documentation
+        </a>
+      </div>
+    </div>
   </div>
 
-  <!-- Introduction Section -->
-  <section class="p-6">
-    <div class="max-w-4xl">
-      <h2 class="text-3xl font-heading font-bold mb-6 text-primary-600">Introduction</h2>
-      <p class="text-lg mb-6">
-        Welcome to the Nextla blog. Here you'll find insights about our approach to attention management
-        and how Mesoamerican design principles can inform modern software experiences.
-      </p>
-      <p class="text-lg mb-6">
-        Explore the sections to learn more about our philosophy, technical implementation, and journey.
-      </p>
+  <!-- Featured Content Section -->
+  <section class="bg-primary-800 py-16">
+    <div class="container mx-auto px-8">
+      <div class="flex items-center mb-12">
+        <GeometricBorder type="horizontal" color="accent" className="mr-4 flex-grow-0 w-16" />
+        <h2 class="text-3xl font-heading font-bold text-accent-400 tracking-wide">Featured Content</h2>
+        <GeometricBorder type="horizontal" color="accent" className="ml-4 flex-grow" />
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="bg-primary-700 p-6 rounded-lg border border-primary-600 shadow-lg">
+          <GeometricBorder type="corner" color="secondary" className="mb-4" />
+          <h3 class="text-xl font-heading mb-3 text-secondary-400">About Our Design</h3>
+          <p class="text-neutral-200 mb-4">
+            Learn about the color palette, typography, and design tokens that make up the Nextla experience.
+          </p>
+          <a href="/about" class="text-accent-400 hover:text-accent-300 transition-colors border-b border-transparent hover:border-accent-400">Read more →</a>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="bg-primary-700 p-6 rounded-lg border border-primary-600 shadow-lg">
+          <GeometricBorder type="corner" color="secondary" className="mb-4" />
+          <h3 class="text-xl font-heading mb-3 text-secondary-400">Getting Started</h3>
+          <p class="text-neutral-200 mb-4">
+            A practical guide to implementing Nextla principles in your own projects.
+          </p>
+          <a href="/docs" class="text-accent-400 hover:text-accent-300 transition-colors border-b border-transparent hover:border-accent-400">Read more →</a>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="bg-primary-700 p-6 rounded-lg border border-primary-600 shadow-lg">
+          <GeometricBorder type="corner" color="secondary" className="mb-4" />
+          <h3 class="text-xl font-heading mb-3 text-secondary-400">Our Story</h3>
+          <p class="text-neutral-200 mb-4">
+            Discover the inspiration behind Nextla and our vision for the future.
+          </p>
+          <a href="/story" class="text-accent-400 hover:text-accent-300 transition-colors border-b border-transparent hover:border-accent-400">Read more →</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Featured Content -->
-  <section class="p-6 bg-neutral-50">
-    <div class="max-w-4xl">
-      <h2 class="text-3xl font-heading font-bold mb-6 text-primary-600">Featured Posts</h2>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-        <div class="bg-white p-6 rounded-lg shadow-sm">
-          <h3 class="text-xl font-heading mb-3 text-primary-600">About Our Design System</h3>
-          <p class="mb-4">
-            Learn about the color palette, typography, and design tokens that make up the Nextla experience.
-          </p>
-          <a href="/about" class="text-accent-500 hover:text-accent-600">Read more →</a>
-        </div>
-        
-        <div class="bg-white p-6 rounded-lg shadow-sm">
-          <h3 class="text-xl font-heading mb-3 text-primary-600">Getting Started with Nextla</h3>
-          <p class="mb-4">
-            A practical guide to implementing Nextla principles in your own projects.
-          </p>
-          <a href="/docs" class="text-accent-500 hover:text-accent-600">Read more →</a>
-        </div>
-      </div>
+  <!-- Additional Content Section -->
+  <section class="bg-primary-900 py-16 relative">
+    <AztecPattern pattern="tribute" opacity={0.1} color="#2E6E4E" className="section-pattern" />
+    <div class="container mx-auto px-8 relative z-10">
+      <h2 class="text-3xl font-heading font-bold mb-6 text-secondary-400 tracking-wide">Principles</h2>
+      <p class="text-lg text-neutral-200 max-w-3xl mb-8">
+        Nextla integrates Mesoamerican design principles with modern software practices,
+        creating experiences that respect both tradition and innovation.
+      </p>
     </div>
   </section>
 </BaseLayout> 

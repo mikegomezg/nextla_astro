@@ -1,14 +1,14 @@
 ---
 // src/components/decorative/AztecPattern.astro
 interface Props {
-  pattern: 'grid' | 'flow' | 'tribute';
+  pattern: 'grid' | 'flow' | 'tribute' | 'codex';
   opacity?: number;
   color?: string;
   className?: string;
 }
 
 const { 
-  pattern, 
+  pattern = 'grid', 
   opacity = 0.1, 
   color = 'currentColor', 
   className = '' 
@@ -18,22 +18,39 @@ const {
 import gridPattern from '../../assets/patterns/aztec-grid.svg';
 import flowPattern from '../../assets/patterns/flow-lines.svg';
 import tributePattern from '../../assets/patterns/tribute-pattern.svg';
+// We'll assume this file will be created - if it doesn't exist yet, this will fallback gracefully
+let codexPattern;
+try {
+  codexPattern = await import('../../assets/patterns/codex-pattern.svg');
+} catch (e) {
+  console.warn('Codex pattern not found, falling back to tribute pattern');
+  codexPattern = tributePattern;
+}
 
 const patterns = {
   grid: gridPattern,
   flow: flowPattern,
-  tribute: tributePattern
+  tribute: tributePattern,
+  codex: codexPattern
 };
 
 const patternSrc = patterns[pattern];
+
+// Calculate the background size based on pattern type
+const backgroundSize = pattern === 'codex' ? 'cover' : '600px 600px';
 ---
 
-<div class={`decorative-pattern ${className}`} aria-hidden="true">
-  <img 
-    src={patternSrc.src} 
-    alt="" 
-    style={`opacity: ${opacity}; color: ${color};`} 
-  />
+<div 
+  class={`decorative-pattern ${className}`} 
+  aria-hidden="true"
+  style={{
+    backgroundImage: `url(${patternSrc.src})`,
+    opacity: opacity,
+    backgroundColor: 'transparent',
+    backgroundSize: backgroundSize,
+    backgroundRepeat: 'repeat',
+  }}
+>
 </div>
 
 <style>
@@ -43,11 +60,5 @@ const patternSrc = patterns[pattern];
     inset: 0;
     pointer-events: none;
     overflow: hidden;
-  }
-  
-  .decorative-pattern img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
 </style> 
