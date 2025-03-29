@@ -1,50 +1,60 @@
-# Nextla Blog
+# Nextla Project
 
-A personal blog and documentation site exploring the intersection of Mesoamerican design principles and modern software development, with a focus on attention management in digital spaces.
-
-## Project Purpose
-
-This blog serves as both a creative exploration and technical showcase, blending ancient wisdom with contemporary interface design. The site demonstrates how historical design principles can inform more mindful and focused digital experiences.
+This blog serves as both a technical demonstration and creative narrative exploration, bridging ServiceNow's software asset management capabilities with the fictional world of Mirador. The site demonstrates how abstract technical concepts can be made more accessible and engaging through creative storytelling.
 
 Key themes explored in this project:
 
-- Application of Mesoamerican visual language to modern UI design
-- Attention management techniques in digital interfaces
-- Narrative integration with technical documentation
-- Cultural references as metaphors for modern challenges
+- Integration of technical documentation with narrative storytelling
+- Visualization of software asset management concepts through metaphor
+- Application of Mesoamerican design principles to modern interfaces
+- Exploration of attention economics through both technical and creative lenses
+- Dual pathways for technical and narrative exploration
 
 ## Technical Foundation
 
-The site is built with:
+The platform is built with:
 
-- Astro framework for performance and flexibility
-- Tailwind CSS for styling with a custom color system
-- Component-based architecture for maintainability
-- Markdown content management for documentation and blog posts
+- Astro framework for performance and component-based architecture
+- Tailwind CSS with a custom color system inspired by Mesoamerican pigments
+- ServiceNow data models and visualizations
+- Parallel content structures that connect technical concepts to narrative elements
+
+## Conceptual Framework
+
+Nextla bridges the technical world of software asset management with the narrative world of Mirador through these core concepts:
+
+- **Capabilities**: Specialized technologies that power city infrastructure, mapped to software assets
+- **City-States**: Competing urban enclaves that license capabilities, mapped to organizational entities
+- **Entitlements**: Formal licensing arrangements between cities, mapped to software licenses
+- **Reconciliation**: The process of balancing capability usage with entitlements, mapped to compliance
+- **Manifestations**: Visual indicators of imbalance (feathers, glitches), mapped to compliance issues
 
 ## Design Philosophy
 
-Nextla's design language draws from Mesoamerican aesthetic principles:
+The design language draws from Mesoamerican aesthetic principles while serving the dual technical/narrative purpose:
 
-- Geometric patterns with precise mathematical relationships
-- Layered complexity that reveals meaning progressively
-- Meaningful symbolism rather than decorative abstraction
-- High-contrast color palette inspired by natural pigments
+- Geometric patterns with precise mathematical relationships that highlight system structures
+- Layered complexity that reveals meaning progressively as users explore concepts
+- Meaningful symbolism that connects visual elements to conceptual frameworks
+- Circuit-feather imagery that bridges technological and organic elements
 
-The site deliberately uses a darker color scheme dominated by deep navy (#1A237E), accented with earthy red (#A63D2F) and jade green (#2E6E4E) against cream (#F5F5F5) text to create an immersive, focused reading experience.
+The platform uses a purposeful color system:
+
+- Deep navy (#1A237E): Primary interface elements and technical documentation
+- Jade green (#2E6E4E): Growth, balance, compliance, and harmony indicators
+- Earthy red (#A63D2F): Attention, alerts, imbalances, and narrative elements
+- Neutral tones: Supporting structure and textual elements
 
 ## Content Structure
 
-The site includes several interconnected sections:
+The site includes parallel pathways through interconnected content:
 
-- **Blog**: Personal reflections on development progress and design decisions
-- **Documentation**: Technical implementation details and component examples
-- **About**: Project philosophy and background context
-- **Story**: Narrative elements that connect technical concepts to broader themes
+- **Hero Landing Page**: Explains the project vision, the world of Mirador, its competing city-states, and Silas Hale's journey as a Nextla Collector
+- **Technical Documentation**: Software asset management concepts, ServiceNow implementation details, and compliance frameworks
+- **Visualizations**: Interactive components that bridge technical concepts and narrative elements
+- **Implementation Guides**: Practical application of the conceptual framework to ServiceNow
 
-## Getting Started
-
-### Development
+## Development
 
 ```bash
 # Install dependencies
@@ -60,25 +70,19 @@ npm run build
 npm run preview
 ```
 
-### Content Management
+## Content Management
 
-Blog posts and documentation pages are managed through Markdown files in the `/src/content/` directory. The site uses Astro's content collections to organize and query content.
+Content is managed through Astro's content collections in the `/src/content/` directory, with separate collections for technical documentation and narrative elements that reference each other through a shared conceptual framework.
 
 ## Project Goals
 
 This project serves as:
 
-1. A creative outlet for exploring the intersection of ancient design principles and modern technology
-2. A technical showcase demonstrating component-based architecture and design system implementation
-3. A documentation hub for the broader Nextla concept and philosophy
-4. A platform for personal reflections on the development process
+1. A demonstration of how abstract technical concepts can be made accessible through narrative parallels
+2. A creative exploration of software asset management principles through metaphor and storytelling
+3. A technical showcase of ServiceNow capabilities in a conceptual framework
+4. A platform for examining attention economics through both practical and philosophical lenses
 
 ## License
 
 This project is private and not licensed for redistribution. All content and code are copyright protected.
-
-## Author Notes
-
-This blog represents an ongoing exploration rather than a finished product. The design and content will evolve as the concepts mature and new connections between historical design principles and modern interfaces are discovered.
-
-The site intentionally challenges conventional design patterns to encourage more mindful digital interactions and demonstrate alternatives to attention-depleting interfaces.
