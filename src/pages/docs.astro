@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AztecPattern from '../components/decorative/AztecPattern.astro';
+import GeometricBorder from '../components/decorative/GeometricBorder.astro';
 ---
 
 <BaseLayout
@@ -8,66 +9,89 @@ import AztecPattern from '../components/decorative/AztecPattern.astro';
   description="Technical documentation for implementing Nextla in your projects."
 >
   <!-- Documentation Title Section with Grid Pattern -->
-  <div class="relative bg-cover bg-center py-16 bg-neutral-800">
-    <AztecPattern pattern="grid" opacity={0.1} color="#FFFFFF" className="docs-header-pattern" />
+  <div class="relative py-24 bg-primary-800">
+    <AztecPattern pattern="grid" opacity={0.15} color="#2E6E4E" className="docs-header-pattern" />
     
     <div class="container mx-auto px-8 relative z-10">
-      <h1 class="text-4xl font-heading font-bold text-white mb-6">Documentation</h1>
-      <p class="text-xl text-white max-w-2xl">
+      <h1 class="text-4xl font-heading font-bold text-white mb-6 tracking-wider">Documentation</h1>
+      <p class="text-xl text-neutral-200 max-w-2xl">
         Explore our technical documentation to understand how Nextla can be implemented in
         your projects.
       </p>
+      <GeometricBorder type="horizontal" color="secondary" className="mt-8 w-32" />
     </div>
   </div>
 
   <!-- Documentation Content -->
-  <div class="container mx-auto px-8 py-16">
-    <div class="max-w-4xl">
-      <p class="text-lg mb-6">
-        This section contains comprehensive documentation for implementing Nextla in your projects.
-        Whether you're looking to adopt the entire design system or incorporate specific elements,
-        you'll find guidance here.
-      </p>
-      
-      <!-- Code Example with Pattern Background -->
-      <div class="relative mt-12 mb-16 rounded-lg overflow-hidden">
-        <div class="bg-primary-900 p-6 rounded-t-lg">
-          <AztecPattern pattern="flow" opacity={0.08} color="#FFFFFF" className="code-pattern" />
-          <h3 class="text-xl font-heading mb-2 text-white relative z-10">Pattern Implementation Example</h3>
-        </div>
-        <div class="bg-neutral-800 p-6 rounded-b-lg text-white font-mono text-sm overflow-x-auto">
-          <pre><code>{`<div class="relative">
+  <div class="bg-primary-900 py-16">
+    <div class="container mx-auto px-8">
+      <div class="max-w-4xl">
+        <p class="text-lg mb-6 text-neutral-200">
+          This section contains comprehensive documentation for implementing Nextla in your projects.
+          Whether you're looking to adopt the entire design system or incorporate specific elements,
+          you'll find guidance here.
+        </p>
+        
+        <!-- Code Example with Pattern Background -->
+        <div class="relative mt-12 mb-16 rounded-lg overflow-hidden border border-primary-700 shadow-lg">
+          <div class="bg-primary-700 p-6 rounded-t-lg">
+            <AztecPattern pattern="flow" opacity={0.1} color="#A63D2F" className="code-pattern" />
+            <div class="flex items-center">
+              <GeometricBorder type="corner" color="secondary" className="mr-4" />
+              <h3 class="text-xl font-heading mb-2 text-secondary-400 relative z-10">Pattern Implementation Example</h3>
+            </div>
+          </div>
+          <div class="bg-primary-800 p-6 rounded-b-lg text-neutral-200 font-mono text-sm overflow-x-auto">
+            <pre><code>{`<div class="relative">
   <AztecPattern 
     pattern="grid" 
-    opacity={0.1} 
-    color="var(--color-primary-300)" 
+    opacity={0.15} 
+    color="#2E6E4E" 
   />
   <div class="relative z-10">
     {/* Your content here */}
   </div>
 </div>`}</code></pre>
+          </div>
         </div>
-      </div>
-      
-      <h2 class="text-2xl font-heading font-bold mb-4 mt-8 text-primary-600">Getting Started</h2>
-      <p class="mb-4">
-        Getting started with Nextla is simple. You can integrate our design principles into your 
-        existing projects or start fresh with our templates.
-      </p>
-      
-      <h2 class="text-2xl font-heading font-bold mb-4 mt-8 text-primary-600">Component Library</h2>
-      <p class="mb-4">
-        Explore our component library to see how Nextla principles can be applied to common UI elements.
-      </p>
-      
-      <div class="relative bg-neutral-100 p-6 rounded-lg mt-8">
-        <AztecPattern pattern="tribute" opacity={0.05} color="#1A237E" className="coming-soon-pattern" />
-        <div class="relative z-10">
-          <h3 class="text-xl font-heading mb-3 text-primary-600">Coming Soon</h3>
-          <p>
-            We're currently working on expanding our documentation. Check back soon for more 
-            detailed implementation guides and code examples.
-          </p>
+        
+        <h2 class="text-2xl font-heading font-bold mb-4 mt-8 text-secondary-400">Getting Started</h2>
+        <GeometricBorder type="horizontal" color="secondary" className="mb-6 w-24" />
+        <p class="mb-4 text-neutral-200">
+          Getting started with Nextla is simple. You can integrate our design principles into your 
+          existing projects or start fresh with our templates.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+          <div class="bg-primary-800 p-6 rounded-lg border border-primary-700">
+            <h4 class="font-heading font-bold text-lg mb-2 text-accent-400">Installation</h4>
+            <p class="text-neutral-300">Learn how to install and configure the Nextla design system in your project</p>
+            <a href="#" class="text-secondary-400 hover:text-secondary-300 transition-colors mt-2 inline-block">View guide →</a>
+          </div>
+          
+          <div class="bg-primary-800 p-6 rounded-lg border border-primary-700">
+            <h4 class="font-heading font-bold text-lg mb-2 text-accent-400">Basic Usage</h4>
+            <p class="text-neutral-300">Understand the core concepts and how to use Nextla's components</p>
+            <a href="#" class="text-secondary-400 hover:text-secondary-300 transition-colors mt-2 inline-block">View guide →</a>
+          </div>
+        </div>
+        
+        <h2 class="text-2xl font-heading font-bold mb-4 mt-12 text-secondary-400">Component Library</h2>
+        <GeometricBorder type="horizontal" color="secondary" className="mb-6 w-24" />
+        <p class="mb-4 text-neutral-200">
+          Explore our component library to see how Nextla principles can be applied to common UI elements.
+        </p>
+        
+        <div class="bg-primary-700 p-6 rounded-lg mt-8 relative overflow-hidden border border-primary-600 shadow-lg">
+          <AztecPattern pattern="tribute" opacity={0.1} color="#2E6E4E" className="coming-soon-pattern" />
+          <div class="relative z-10">
+            <GeometricBorder type="corner" color="accent" className="mb-4" />
+            <h3 class="text-xl font-heading mb-3 text-accent-400">Coming Soon</h3>
+            <p class="text-neutral-200">
+              We're currently working on expanding our documentation. Check back soon for more 
+              detailed implementation guides and code examples.
+            </p>
+          </div>
         </div>
       </div>
     </div>
