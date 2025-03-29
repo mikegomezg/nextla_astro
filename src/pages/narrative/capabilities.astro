@@ -1,0 +1,239 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AztecPattern from '../../components/decorative/AztecPattern.astro';
+import GeometricBorder from '../../components/decorative/GeometricBorder.astro';
+import CircuitFeather from '../../components/CircuitFeather.astro';
+---
+
+<BaseLayout
+  title="Capabilities in Mirador"
+  description="Explore the core capabilities that power Mirador's attention economy and shape its society."
+>
+  <!-- Hero Section with Pattern -->
+  <div class="relative py-24 bg-primary-800">
+    <AztecPattern pattern="codex" opacity={0.15} color="#2E6E4E" className="hero-pattern" />
+    
+    <div class="container mx-auto px-8 relative z-10">
+      <div class="flex items-center space-x-4 mb-6">
+        <CircuitFeather severity="severe" size="lg" animated={true} />
+        <h1 class="text-4xl font-heading font-bold text-white tracking-wider">Capabilities in Mirador</h1>
+      </div>
+      <p class="text-xl text-neutral-200 max-w-2xl">
+        The fundamental technologies that enable the attention economy and form the backbone
+        of power dynamics between city-states.
+      </p>
+      <GeometricBorder type="horizontal" color="secondary" className="mt-8 w-32" />
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="bg-primary-900 py-16">
+    <div class="container mx-auto px-8">
+      <div class="max-w-4xl">
+        <h2 class="text-3xl font-heading font-bold mb-6 text-secondary-400">Understanding Capabilities</h2>
+        <GeometricBorder type="horizontal" color="secondary" className="mb-6 w-24" />
+        
+        <p class="text-lg mb-6 text-neutral-200">
+          In Mirador, capabilities are advanced technologies that interact with and shape human attention.
+          Developed originally by the Toltec Corporation, these powerful systems are now licensed to
+          city-states and organizations throughout the network, each with specific usage limits.
+        </p>
+        
+        <p class="text-lg mb-6 text-neutral-200">
+          When capability usage exceeds licensed limits or becomes imbalanced, manifestations occur—
+          strange phenomena that range from minor visual anomalies to major physical and social disruptions.
+          The most visible sign of these manifestations are the feather-like patterns that emerge in affected areas.
+        </p>
+        
+        <div class="bg-primary-800 p-8 rounded-lg border border-primary-700 my-12 relative overflow-hidden">
+          <AztecPattern pattern="codex" opacity={0.1} color="#2E6E4E" className="quote-pattern" />
+          <div class="relative z-10">
+            <div class="flex items-center mb-6">
+              <CircuitFeather severity="severe" size="md" className="mr-4" />
+              <h3 class="text-2xl font-heading font-medium text-secondary-400">From Toltec Specifications</h3>
+            </div>
+            <blockquote class="text-lg italic text-neutral-200 pl-6 border-l-4 border-secondary-500">
+              "Capabilities are not mere applications or systems. They represent fundamental technologies for processing human attention and shaping experience. Their use must be carefully balanced and monitored to prevent manifestations that can threaten civil stability."
+            </blockquote>
+            <p class="text-right text-sm text-neutral-400 mt-4">— Toltec Capability Compliance Manual, Section 1.2</p>
+          </div>
+        </div>
+        
+        <h2 class="text-3xl font-heading font-bold mb-6 mt-12 text-secondary-400">The Four Core Capabilities</h2>
+        <GeometricBorder type="horizontal" color="secondary" className="mb-6 w-24" />
+        
+        <div class="space-y-12">
+          <div>
+            <div class="flex items-center mb-4">
+              <CircuitFeather severity="minor" size="md" className="mr-4" />
+              <h3 class="text-2xl font-heading text-secondary-400">Vision</h3>
+            </div>
+            <div class="bg-primary-800 p-6 rounded-lg border border-primary-700">
+              <p class="text-neutral-200 mb-4">
+                The Vision capability enables surveillance, pattern recognition, and data analytics. It processes visual data and attention patterns, extracting insights and predicting behavioral trends.
+              </p>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                <div class="bg-primary-700 p-3 rounded">
+                  <span class="text-secondary-400 font-bold">Primary Use:</span> 
+                  <span class="text-neutral-200 block mt-1">Surveillance systems, consumer behavior analysis, traffic management</span>
+                </div>
+                <div class="bg-primary-700 p-3 rounded">
+                  <span class="text-secondary-400 font-bold">Manifestations:</span> 
+                  <span class="text-neutral-200 block mt-1">Visual distortions, displaced imagery, surveillance feed anomalies</span>
+                </div>
+                <div class="bg-primary-700 p-3 rounded">
+                  <span class="text-secondary-400 font-bold">Primary Publisher:</span> 
+                  <span class="text-neutral-200 block mt-1">Toltec Corporation (Mirador)</span>
+                </div>
+                <div class="bg-primary-700 p-3 rounded">
+                  <span class="text-secondary-400 font-bold">Licensing Structure:</span> 
+                  <span class="text-neutral-200 block mt-1">Tiered by processing power and data volume</span>
+                </div>
+              </div>
+              
+              <p class="text-neutral-300 mt-6">
+                <span class="text-secondary-400 font-bold">Field Notes:</span> "In New Valencia, I witnessed a Level 2 Vision manifestation after they exceeded their daily processing quota by 32%. All traffic signals displayed the exact same footage on loop for three hours. Thousands of vehicles were affected." — Silas Hale
+              </p>
+            </div>
+          </div>
+          
+          <div>
+            <div class="flex items-center mb-4">
+              <CircuitFeather severity="moderate" size="md" className="mr-4" />
+              <h3 class="text-2xl font-heading text-secondary-400">Learning</h3>
+            </div>
+            <div class="bg-primary-800 p-6 rounded-lg border border-primary-700">
+              <p class="text-neutral-200 mb-4">
+                The Learning capability shapes cognitive development, knowledge acquisition, and skill development. It underpins all educational systems and many workplace training applications.
+              </p>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                <div class="bg-primary-700 p-3 rounded">
+                  <span class="text-secondary-400 font-bold">Primary Use:</span> 
+                  <span class="text-neutral-200 block mt-1">Educational systems, skill training, cognitive enhancement</span>
+                </div>
+                <div class="bg-primary-700 p-3 rounded">
+                  <span class="text-secondary-400 font-bold">Manifestations:</span> 
+                  <span class="text-neutral-200 block mt-1">Language shifts, inappropriate knowledge transfers, memory inconsistencies</span>
+                </div>
+                <div class="bg-primary-700 p-3 rounded">
+                  <span class="text-secondary-400 font-bold">Primary Publisher:</span> 
+                  <span class="text-neutral-200 block mt-1">Nexus Learning Collective</span>
+                </div>
+                <div class="bg-primary-700 p-3 rounded">
+                  <span class="text-secondary-400 font-bold">Licensing Structure:</span> 
+                  <span class="text-neutral-200 block mt-1">Per-student with complexity multipliers</span>
+                </div>
+              </div>
+              
+              <p class="text-neutral-300 mt-6">
+                <span class="text-secondary-400 font-bold">Field Notes:</span> "Arcadia's arts academy triggered a Learning manifestation when they attempted an unlicensed creative cognitive enhancement program. For a week, students could only communicate in rhyming verse. Poetic, but ultimately disruptive." — Silas Hale
+              </p>
+            </div>
+          </div>
+          
+          <div>
+            <div class="flex items-center mb-4">
+              <CircuitFeather severity="severe" size="md" className="mr-4" />
+              <h3 class="text-2xl font-heading text-secondary-400">Spectacle</h3>
+            </div>
+            <div class="bg-primary-800 p-6 rounded-lg border border-primary-700">
+              <p class="text-neutral-200 mb-4">
+                The Spectacle capability creates immersive entertainment experiences, capturing and directing attention through multi-sensory engagement. It forms the foundation of media, advertising, and public events.
+              </p>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                <div class="bg-primary-700 p-3 rounded">
+                  <span class="text-secondary-400 font-bold">Primary Use:</span> 
+                  <span class="text-neutral-200 block mt-1">Entertainment media, public performances, advertising</span>
+                </div>
+                <div class="bg-primary-700 p-3 rounded">
+                  <span class="text-secondary-400 font-bold">Manifestations:</span> 
+                  <span class="text-neutral-200 block mt-1">Content blending, emotional amplification, sensory crossover</span>
+                </div>
+                <div class="bg-primary-700 p-3 rounded">
+                  <span class="text-secondary-400 font-bold">Primary Publisher:</span> 
+                  <span class="text-neutral-200 block mt-1">Nova Valencia Entertainment</span>
+                </div>
+                <div class="bg-primary-700 p-3 rounded">
+                  <span class="text-secondary-400 font-bold">Licensing Structure:</span> 
+                  <span class="text-neutral-200 block mt-1">Audience size with engagement multipliers</span>
+                </div>
+              </div>
+              
+              <p class="text-neutral-300 mt-6">
+                <span class="text-secondary-400 font-bold">Field Notes:</span> "The worst Spectacle manifestation I've seen happened during Nova Valencia's annual festival. They deployed 300% over their allocation, and suddenly every public display showed citizens' private messages and memories. The privacy violations lasted hours." — Silas Hale
+              </p>
+            </div>
+          </div>
+          
+          <div>
+            <div class="flex items-center mb-4">
+              <CircuitFeather severity="critical" size="md" className="mr-4" />
+              <h3 class="text-2xl font-heading text-secondary-400">Creation</h3>
+            </div>
+            <div class="bg-primary-800 p-6 rounded-lg border border-primary-700">
+              <p class="text-neutral-200 mb-4">
+                The Creation capability enables the development of new content, experiences, and systems. It powers design tools, construction systems, and generative technologies, forming the backbone of cultural and infrastructure production.
+              </p>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                <div class="bg-primary-700 p-3 rounded">
+                  <span class="text-secondary-400 font-bold">Primary Use:</span> 
+                  <span class="text-neutral-200 block mt-1">Architecture, content generation, infrastructure development</span>
+                </div>
+                <div class="bg-primary-700 p-3 rounded">
+                  <span class="text-secondary-400 font-bold">Manifestations:</span> 
+                  <span class="text-neutral-200 block mt-1">Physical structure alterations, spontaneous content generation, emergent systems</span>
+                </div>
+                <div class="bg-primary-700 p-3 rounded">
+                  <span class="text-secondary-400 font-bold">Primary Publisher:</span> 
+                  <span class="text-neutral-200 block mt-1">Arcadia Design Collective</span>
+                </div>
+                <div class="bg-primary-700 p-3 rounded">
+                  <span class="text-secondary-400 font-bold">Licensing Structure:</span> 
+                  <span class="text-neutral-200 block mt-1">Complexity-based with scale multipliers</span>
+                </div>
+              </div>
+              
+              <p class="text-neutral-300 mt-6">
+                <span class="text-secondary-400 font-bold">Field Notes:</span> "Creation manifestations are the most unpredictable. During the Arcadia district incident, buildings physically reconfigured while people were inside. These weren't holograms or AR overlays—the actual physical structures transformed. Seventeen casualties." — Silas Hale
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <h2 class="text-3xl font-heading font-bold mb-6 mt-12 text-secondary-400">Resistance Perspective</h2>
+        <GeometricBorder type="horizontal" color="secondary" className="mb-6 w-24" />
+        
+        <div class="bg-primary-800 p-8 rounded-lg border border-primary-700 my-8 relative overflow-hidden">
+          <AztecPattern pattern="tribute" opacity={0.1} color="#FFC107" className="quote-pattern" />
+          <div class="relative z-10">
+            <div class="flex items-center mb-6">
+              <CircuitFeather severity="critical" size="md" className="mr-4" />
+              <h3 class="text-2xl font-heading font-medium text-accent-400">Outland View</h3>
+            </div>
+            <blockquote class="text-lg italic text-neutral-200 pl-6 border-l-4 border-accent-500">
+              "Capabilities aren't just technologies—they're methods of control. Toltec has convinced everyone that these manifestations are natural consequences of exceeding usage limits, but we've found evidence they're deliberately engineered. The system could function without them. These glitches, these feathers—they're manufactured threats to ensure compliance with an artificial scarcity model."
+            </blockquote>
+            <p class="text-right text-sm text-neutral-400 mt-4">— Enrique, Outland Resistance Leader</p>
+          </div>
+        </div>
+        
+        <div class="bg-primary-700 p-8 rounded-lg mt-12 border border-primary-600 shadow-lg relative overflow-hidden">
+          <AztecPattern pattern="flow" opacity={0.08} color="#A63D2F" className="cta-pattern" />
+          <div class="relative z-10">
+            <h3 class="text-2xl font-heading font-bold mb-4 text-white">Explore Technical Documentation</h3>
+            <p class="text-neutral-200 mb-6">
+              Dive deeper into the technical aspects of capabilities, including implementation details, data models, and system architecture.
+            </p>
+            <a href="/technical/capabilities?mode=technical" class="inline-block bg-secondary-500 text-white px-6 py-3 rounded hover:bg-secondary-600 transition-colors shadow-md">
+              View Technical Documentation
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout> 

@@ -2,85 +2,460 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AztecPattern from '../components/decorative/AztecPattern.astro';
 import GeometricBorder from '../components/decorative/GeometricBorder.astro';
+import CircuitFeather from '../components/CircuitFeather.astro';
 ---
 
 <BaseLayout 
   title="Nextla" 
-  description="A modern approach to attention management inspired by Mesoamerican design principles."
+  description="Software asset management reimagined through the lens of an attention-based economy"
 >
-  <!-- Hero Section with Pattern -->
-  <div class="relative bg-primary-900 py-24">
-    <AztecPattern pattern="codex" opacity={0.15} color="#A63D2F" className="hero-pattern" />
+  <!-- Hero Section: Full-screen immersive introduction -->
+  <div class="relative min-h-screen flex items-center py-24 bg-primary-900 overflow-hidden">
+    <!-- Background patterns -->
+    <AztecPattern pattern="flow" opacity={0.05} color="#A63D2F" className="absolute inset-0 z-0" />
+    <div class="absolute inset-0 bg-gradient-to-b from-primary-900 via-primary-900/95 to-primary-800 z-0"></div>
     
-    <div class="container mx-auto px-8 relative z-10">
-      <h1 class="text-5xl font-heading font-bold text-white mb-6 tracking-wider">Nextla</h1>
-      <p class="text-2xl text-neutral-200 max-w-2xl mb-8">
-        Transform your relationship with software through mindful design inspired by 
-        ancient wisdom and modern principles.
-      </p>
-      <div class="flex space-x-4">
-        <a href="/about" class="bg-accent-500 text-white px-6 py-3 rounded hover:bg-accent-600 transition-colors transform hover:translate-y-[-2px] shadow-md">
-          Discover Nextla
-        </a>
-        <a href="/docs" class="bg-transparent border border-secondary-500 text-secondary-400 px-6 py-3 rounded hover:bg-secondary-900 hover:text-secondary-300 transition-colors">
-          Documentation
-        </a>
+    <!-- Floating feathers for visual interest -->
+    <div class="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 z-10 opacity-60">
+      <CircuitFeather severity="minor" size="lg" animated={true} />
+    </div>
+    <div class="absolute bottom-1/4 right-1/3 translate-x-1/2 translate-y-1/2 z-10 opacity-40">
+      <CircuitFeather severity="moderate" size="md" animated={true} />
+    </div>
+    <div class="absolute top-2/3 right-1/4 translate-y-1/3 z-10 opacity-50">
+      <CircuitFeather severity="severe" size="sm" animated={true} />
+    </div>
+    
+    <!-- Main content -->
+    <div class="container mx-auto px-8 relative z-20">
+      <div class="flex flex-col items-center text-center mb-16">
+        <div class="flex items-center mb-8">
+          <CircuitFeather severity="critical" size="lg" animated={true} className="mr-4" />
+          <h1 class="text-6xl font-heading font-bold text-white tracking-wider">Nextla</h1>
+        </div>
+        
+        <h2 class="text-3xl md:text-4xl font-heading mb-6 text-accent-400 max-w-3xl">
+          When Software Asset Management Meets Narrative Worldbuilding
+        </h2>
+        
+        <p class="text-xl md:text-2xl text-neutral-200 max-w-3xl mb-12">
+          A dual-experience platform that transforms ServiceNow concepts into an immersive 
+          future world where attention is currency and capabilities shape reality.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-6">
+          <a href="#discover" class="bg-accent-500 text-white px-8 py-4 rounded-md hover:bg-accent-600 transition-colors transform hover:-translate-y-1 duration-200 shadow-lg text-lg font-medium">
+            Discover Mirador
+          </a>
+          <a href="#product" class="bg-transparent border-2 border-secondary-500 text-secondary-400 px-8 py-4 rounded-md hover:bg-secondary-900 hover:text-secondary-300 transition-colors transform hover:-translate-y-1 duration-200 text-lg font-medium">
+            See The Product
+          </a>
+        </div>
       </div>
+    </div>
+    
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center z-20 animate-pulse">
+      <span class="text-neutral-400 text-sm mb-2">Scroll to explore</span>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-neutral-400">
+        <path d="M12 4L12 20M12 20L18 14M12 20L6 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </div>
   </div>
 
-  <!-- Featured Content Section -->
-  <section class="bg-primary-800 py-16">
+  <!-- Problem Statement Section -->
+  <section id="product" class="py-24 bg-primary-800 relative">
     <div class="container mx-auto px-8">
-      <div class="flex items-center mb-12">
-        <GeometricBorder type="horizontal" color="accent" className="mr-4 flex-grow-0 w-16" />
-        <h2 class="text-3xl font-heading font-bold text-accent-400 tracking-wide">Featured Content</h2>
-        <GeometricBorder type="horizontal" color="accent" className="ml-4 flex-grow" />
-      </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Card 1 -->
-        <div class="bg-primary-700 p-6 rounded-lg border border-primary-600 shadow-lg">
-          <GeometricBorder type="corner" color="secondary" className="mb-4" />
-          <h3 class="text-xl font-heading mb-3 text-secondary-400">About Our Design</h3>
-          <p class="text-neutral-200 mb-4">
-            Learn about the color palette, typography, and design tokens that make up the Nextla experience.
-          </p>
-          <a href="/about" class="text-accent-400 hover:text-accent-300 transition-colors border-b border-transparent hover:border-accent-400">Read more →</a>
+      <div class="max-w-5xl mx-auto">
+        <div class="flex items-center mb-16">
+          <GeometricBorder type="horizontal" color="secondary" className="mr-4 flex-grow-0 w-16" />
+          <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary-400 tracking-wide">The Problem We Solve</h2>
+          <GeometricBorder type="horizontal" color="secondary" className="ml-4 flex-grow" />
         </div>
         
-        <!-- Card 2 -->
-        <div class="bg-primary-700 p-6 rounded-lg border border-primary-600 shadow-lg">
-          <GeometricBorder type="corner" color="secondary" className="mb-4" />
-          <h3 class="text-xl font-heading mb-3 text-secondary-400">Getting Started</h3>
-          <p class="text-neutral-200 mb-4">
-            A practical guide to implementing Nextla principles in your own projects.
-          </p>
-          <a href="/docs" class="text-accent-400 hover:text-accent-300 transition-colors border-b border-transparent hover:border-accent-400">Read more →</a>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+          <div class="bg-primary-700 p-8 rounded-lg border border-primary-600 shadow-xl">
+            <h3 class="text-2xl font-heading mb-4 text-accent-400">Software Asset Management</h3>
+            <p class="text-neutral-200 mb-6">
+              Complex software license models are difficult to understand and reconcile.
+              Organizations struggle to maintain compliance while maximizing their investments.
+            </p>
+            <div class="flex items-center text-neutral-300">
+              <CircuitFeather severity="minor" size="sm" className="mr-3" />
+              <p>Technical concepts often feel abstract and disconnected from human experience</p>
+            </div>
+          </div>
+          
+          <div class="bg-primary-700 p-8 rounded-lg border border-primary-600 shadow-xl">
+            <h3 class="text-2xl font-heading mb-4 text-accent-400">Technical Knowledge Silos</h3>
+            <p class="text-neutral-200 mb-6">
+              Documentation often fails to engage users. Technical concepts remain siloed 
+              from the stakeholders who need to understand their implications.
+            </p>
+            <div class="flex items-center text-neutral-300">
+              <CircuitFeather severity="moderate" size="sm" className="mr-3" />
+              <p>Abstract concepts like entitlements and reconciliation lack visceral understanding</p>
+            </div>
+          </div>
         </div>
         
-        <!-- Card 3 -->
-        <div class="bg-primary-700 p-6 rounded-lg border border-primary-600 shadow-lg">
-          <GeometricBorder type="corner" color="secondary" className="mb-4" />
-          <h3 class="text-xl font-heading mb-3 text-secondary-400">Our Story</h3>
-          <p class="text-neutral-200 mb-4">
-            Discover the inspiration behind Nextla and our vision for the future.
-          </p>
-          <a href="/story" class="text-accent-400 hover:text-accent-300 transition-colors border-b border-transparent hover:border-accent-400">Read more →</a>
+        <div class="text-center mb-16">
+          <div class="inline-block bg-primary-700 px-8 py-4 rounded-lg border border-primary-600 shadow-lg">
+            <h3 class="text-2xl font-heading mb-2 text-white">Our Solution</h3>
+            <p class="text-neutral-200 text-lg">
+              A dual-pathway platform that connects technical concepts to narrative experiences
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Additional Content Section -->
-  <section class="bg-primary-900 py-16 relative">
-    <AztecPattern pattern="tribute" opacity={0.1} color="#2E6E4E" className="section-pattern" />
+  <!-- Product Showcase Section -->
+  <section class="py-24 bg-primary-900 relative">
+    <AztecPattern pattern="codex" opacity={0.05} color="#2E6E4E" className="absolute inset-0 z-0" />
+    
     <div class="container mx-auto px-8 relative z-10">
-      <h2 class="text-3xl font-heading font-bold mb-6 text-secondary-400 tracking-wide">Principles</h2>
-      <p class="text-lg text-neutral-200 max-w-3xl mb-8">
-        Nextla integrates Mesoamerican design principles with modern software practices,
-        creating experiences that respect both tradition and innovation.
-      </p>
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold text-white mb-6">Two Paths, One Unified Experience</h2>
+          <p class="text-xl text-neutral-200 max-w-3xl mx-auto">
+            Every concept exists in both a technical and narrative context, connected through
+            a consistent visual language and cross-referenced content.
+          </p>
+        </div>
+        
+        <!-- Dual-path showcase -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-24">
+          <!-- Technical Path Card -->
+          <div class="bg-primary-800 rounded-xl overflow-hidden border border-primary-700 shadow-2xl transform hover:-translate-y-2 transition-transform duration-300">
+            <div class="p-1 bg-gradient-to-r from-secondary-700 to-secondary-400">
+              <div class="bg-primary-800 p-8">
+                <div class="flex items-center mb-6">
+                  <CircuitFeather severity="minor" size="md" className="mr-4" />
+                  <h3 class="text-2xl font-heading font-bold text-secondary-400">Technical Path</h3>
+                </div>
+                
+                <p class="text-neutral-200 mb-6">
+                  Comprehensive documentation of ServiceNow SAM concepts with
+                  interactive visualizations and narrative context.
+                </p>
+                
+                <div class="space-y-3 mb-8">
+                  <div class="flex items-start">
+                    <span class="text-secondary-400 mr-2">•</span>
+                    <p class="text-neutral-300">Capabilities framework with implementation details</p>
+                  </div>
+                  <div class="flex items-start">
+                    <span class="text-secondary-400 mr-2">•</span>
+                    <p class="text-neutral-300">Publisher entity relationships and configuration</p>
+                  </div>
+                  <div class="flex items-start">
+                    <span class="text-secondary-400 mr-2">•</span>
+                    <p class="text-neutral-300">Entitlement structures and reconciliation processes</p>
+                  </div>
+                </div>
+                
+                <a href="/technical/capabilities?mode=technical" class="inline-block bg-secondary-500 text-white px-6 py-3 rounded hover:bg-secondary-600 transition-colors">
+                  Explore Technical Documentation
+                </a>
+              </div>
+            </div>
+            
+            <!-- Preview Items -->
+            <div class="p-6 grid grid-cols-2 gap-4">
+              <div class="p-4 bg-primary-700 rounded-lg border border-primary-600">
+                <h4 class="font-mono text-secondary-400 text-sm mb-1">cmdb_software_product_model</h4>
+                <p class="text-neutral-300 text-xs">Standard software capabilities</p>
+              </div>
+              <div class="p-4 bg-primary-700 rounded-lg border border-primary-600">
+                <h4 class="font-mono text-secondary-400 text-sm mb-1">samp_sw_publisher</h4>
+                <p class="text-neutral-300 text-xs">Publisher capabilities and offerings</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Narrative Path Card -->
+          <div class="bg-primary-800 rounded-xl overflow-hidden border border-primary-700 shadow-2xl transform hover:-translate-y-2 transition-transform duration-300">
+            <div class="p-1 bg-gradient-to-r from-accent-700 to-accent-400">
+              <div class="bg-primary-800 p-8">
+                <div class="flex items-center mb-6">
+                  <CircuitFeather severity="moderate" size="md" className="mr-4" />
+                  <h3 class="text-2xl font-heading font-bold text-accent-400">Narrative Path</h3>
+                </div>
+                
+                <p class="text-neutral-200 mb-6">
+                  An immersive story world where attention is currency and city-states
+                  compete through capability licensing agreements.
+                </p>
+                
+                <div class="space-y-3 mb-8">
+                  <div class="flex items-start">
+                    <span class="text-accent-400 mr-2">•</span>
+                    <p class="text-neutral-300">The world of Mirador and the attention economy</p>
+                  </div>
+                  <div class="flex items-start">
+                    <span class="text-accent-400 mr-2">•</span>
+                    <p class="text-neutral-300">Competing city-states with distinct approaches</p>
+                  </div>
+                  <div class="flex items-start">
+                    <span class="text-accent-400 mr-2">•</span>
+                    <p class="text-neutral-300">Silas Hale's journey as a reconciliation agent</p>
+                  </div>
+                </div>
+                
+                <a href="/narrative/mirador?mode=narrative" class="inline-block bg-accent-500 text-white px-6 py-3 rounded hover:bg-accent-600 transition-colors">
+                  Enter the World of Mirador
+                </a>
+              </div>
+            </div>
+            
+            <!-- Preview Cards -->
+            <div class="p-6 grid grid-cols-2 gap-4">
+              <div class="p-4 bg-primary-700 rounded-lg border border-primary-600 flex items-center">
+                <CircuitFeather severity="severe" size="sm" className="mr-2 flex-shrink-0" />
+                <div>
+                  <h4 class="text-accent-400 text-sm mb-1">Manifestations</h4>
+                  <p class="text-neutral-300 text-xs">When capabilities exceed entitlements</p>
+                </div>
+              </div>
+              <div class="p-4 bg-primary-700 rounded-lg border border-primary-600 flex items-center">
+                <CircuitFeather severity="critical" size="sm" className="mr-2 flex-shrink-0" />
+                <div>
+                  <h4 class="text-accent-400 text-sm mb-1">Outland</h4>
+                  <p class="text-neutral-300 text-xs">The resistance to the attention economy</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Call to action -->
+        <div class="text-center">
+          <a href="#discover" class="inline-block bg-gradient-to-r from-secondary-500 to-accent-500 text-white px-10 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 text-xl font-medium">
+            Experience Both Paths
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Core Concepts Section -->
+  <section id="discover" class="py-24 bg-primary-800 relative">
+    <div class="container mx-auto px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex items-center mb-16">
+          <GeometricBorder type="horizontal" color="accent" className="mr-4 flex-grow-0 w-16" />
+          <h2 class="text-3xl md:text-4xl font-heading font-bold text-accent-400 tracking-wide">Core Concepts</h2>
+          <GeometricBorder type="horizontal" color="accent" className="ml-4 flex-grow" />
+        </div>
+        
+        <!-- Core concept cards in a visually striking layout -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Capabilities Card -->
+          <div class="bg-primary-900 rounded-xl overflow-hidden shadow-xl border border-primary-700 transform transition-transform hover:-translate-y-2 duration-300">
+            <div class="h-40 relative overflow-hidden bg-gradient-to-br from-accent-600 to-primary-700">
+              <AztecPattern pattern="flow" opacity={0.2} color="#FFFFFF" className="absolute inset-0" />
+              <div class="absolute inset-0 flex items-center justify-center">
+                <CircuitFeather severity="minor" size="lg" className="" />
+              </div>
+            </div>
+            
+            <div class="p-6">
+              <h3 class="text-xl font-heading font-bold text-accent-400 mb-3">Capabilities</h3>
+              <p class="text-neutral-200 mb-4">
+                Technologies that process human attention, mapped to software assets in ServiceNow.
+              </p>
+              
+              <div class="flex justify-between mt-4">
+                <a href="/technical/capabilities?mode=technical" class="text-secondary-400 hover:text-secondary-300 transition-colors text-sm inline-flex items-center">
+                  <span>Technical</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+                <a href="/narrative/capabilities?mode=narrative" class="text-accent-400 hover:text-accent-300 transition-colors text-sm inline-flex items-center">
+                  <span>Narrative</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Publishers Card -->
+          <div class="bg-primary-900 rounded-xl overflow-hidden shadow-xl border border-primary-700 transform transition-transform hover:-translate-y-2 duration-300">
+            <div class="h-40 relative overflow-hidden bg-gradient-to-br from-secondary-600 to-primary-700">
+              <AztecPattern pattern="grid" opacity={0.2} color="#FFFFFF" className="absolute inset-0" />
+              <div class="absolute inset-0 flex items-center justify-center">
+                <CircuitFeather severity="moderate" size="lg" className="" />
+              </div>
+            </div>
+            
+            <div class="p-6">
+              <h3 class="text-xl font-heading font-bold text-secondary-400 mb-3">City-States</h3>
+              <p class="text-neutral-200 mb-4">
+                Competing organizations licensing capabilities, mapped to publishers in ServiceNow.
+              </p>
+              
+              <div class="flex justify-between mt-4">
+                <a href="/technical/publishers?mode=technical" class="text-secondary-400 hover:text-secondary-300 transition-colors text-sm inline-flex items-center">
+                  <span>Technical</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+                <a href="/narrative/city-states?mode=narrative" class="text-accent-400 hover:text-accent-300 transition-colors text-sm inline-flex items-center">
+                  <span>Narrative</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Reconciliation Card -->
+          <div class="bg-primary-900 rounded-xl overflow-hidden shadow-xl border border-primary-700 transform transition-transform hover:-translate-y-2 duration-300">
+            <div class="h-40 relative overflow-hidden bg-gradient-to-br from-accent-500 via-secondary-600 to-primary-700">
+              <AztecPattern pattern="tribute" opacity={0.2} color="#FFFFFF" className="absolute inset-0" />
+              <div class="absolute inset-0 flex items-center justify-center">
+                <CircuitFeather severity="severe" size="lg" className="" />
+              </div>
+            </div>
+            
+            <div class="p-6">
+              <h3 class="text-xl font-heading font-bold text-accent-400 mb-3">Reconciliation</h3>
+              <p class="text-neutral-200 mb-4">
+                Balancing capability usage with entitlements, manifesting as feathers when unbalanced.
+              </p>
+              
+              <div class="flex justify-between mt-4">
+                <a href="/technical/reconciliation?mode=technical" class="text-secondary-400 hover:text-secondary-300 transition-colors text-sm inline-flex items-center">
+                  <span>Technical</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+                <a href="/narrative/silas?mode=narrative" class="text-accent-400 hover:text-accent-300 transition-colors text-sm inline-flex items-center">
+                  <span>Narrative</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Character Showcase Section -->
+  <section class="py-24 bg-primary-900 relative">
+    <AztecPattern pattern="tribute" opacity={0.05} color="#A63D2F" className="absolute inset-0 z-0" />
+    
+    <div class="container mx-auto px-8 relative z-10">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-heading font-bold text-white mb-6">Meet the Characters</h2>
+          <p class="text-xl text-neutral-200 max-w-3xl mx-auto">
+            The story of Mirador unfolds through its diverse characters, each providing a unique
+            perspective on the attention economy and capability licensing.
+          </p>
+        </div>
+        
+        <!-- Character cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Silas Hale -->
+          <div class="bg-primary-800 rounded-lg overflow-hidden border border-primary-700 shadow-lg">
+            <div class="h-4 bg-accent-500"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-heading font-bold text-accent-400 mb-1">Silas Hale</h3>
+              <p class="text-sm text-neutral-400 mb-4">Nextla Agent</p>
+              <p class="text-neutral-300 mb-4">
+                A reconciliation agent who traverses city-states, ensuring compliance with capability licensing agreements.
+              </p>
+              <a href="/narrative/silas?mode=narrative" class="text-accent-400 hover:text-accent-300 transition-colors text-sm">
+                Follow his journey →
+              </a>
+            </div>
+          </div>
+          
+          <!-- Nova -->
+          <div class="bg-primary-800 rounded-lg overflow-hidden border border-primary-700 shadow-lg">
+            <div class="h-4 bg-secondary-500"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-heading font-bold text-secondary-400 mb-1">Nova</h3>
+              <p class="text-sm text-neutral-400 mb-4">Personal AI Assistant</p>
+              <p class="text-neutral-300 mb-4">
+                Silas's AI companion, providing technical insights and data analysis as he navigates capability compliance.
+              </p>
+              <a href="/narrative/mirador?mode=narrative" class="text-secondary-400 hover:text-secondary-300 transition-colors text-sm">
+                Learn more →
+              </a>
+            </div>
+          </div>
+          
+          <!-- Enrique -->
+          <div class="bg-primary-800 rounded-lg overflow-hidden border border-primary-700 shadow-lg">
+            <div class="h-4 bg-amber-500"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-heading font-bold text-amber-400 mb-1">Enrique</h3>
+              <p class="text-sm text-neutral-400 mb-4">Resistance Leader</p>
+              <p class="text-neutral-300 mb-4">
+                Former Toltec engineer who leads Outland, fighting against the attention economy's control systems.
+              </p>
+              <a href="/narrative/city-states?mode=narrative" class="text-amber-400 hover:text-amber-300 transition-colors text-sm">
+                Discover Outland →
+              </a>
+            </div>
+          </div>
+          
+          <!-- Victoria Ford -->
+          <div class="bg-primary-800 rounded-lg overflow-hidden border border-primary-700 shadow-lg">
+            <div class="h-4 bg-primary-500"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-heading font-bold text-primary-400 mb-1">Victoria Ford</h3>
+              <p class="text-sm text-neutral-400 mb-4">Comedian & Social Critic</p>
+              <p class="text-neutral-300 mb-4">
+                A satirist who exposes the contradictions of the city-states and their competing visions.
+              </p>
+              <a href="/narrative/mirador?mode=narrative" class="text-primary-400 hover:text-primary-300 transition-colors text-sm">
+                Read her commentary →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Final CTA Section -->
+  <section class="py-24 bg-gradient-to-b from-primary-800 to-primary-900 relative">
+    <div class="container mx-auto px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <CircuitFeather severity="critical" size="lg" animated={true} className="mx-auto mb-8" />
+        
+        <h2 class="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
+          Ready to Experience Nextla?
+        </h2>
+        
+        <p class="text-xl text-neutral-200 mb-12 max-w-2xl mx-auto">
+          Choose your entry point and begin exploring the intersection of 
+          software asset management and narrative storytelling.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row justify-center gap-6">
+          <a href="/technical/capabilities?mode=technical" class="bg-secondary-500 text-white px-8 py-4 rounded-md hover:bg-secondary-600 transition-colors transform hover:-translate-y-1 duration-200 shadow-lg text-lg font-medium">
+            Technical Path
+          </a>
+          <a href="/narrative/mirador?mode=narrative" class="bg-accent-500 text-white px-8 py-4 rounded-md hover:bg-accent-600 transition-colors transform hover:-translate-y-1 duration-200 shadow-lg text-lg font-medium">
+            Narrative Path
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 </BaseLayout> 

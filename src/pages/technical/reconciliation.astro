@@ -1,0 +1,468 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AztecPattern from '../../components/decorative/AztecPattern.astro';
+import GeometricBorder from '../../components/decorative/GeometricBorder.astro';
+import NarrativeSidebar from '../../components/NarrativeSidebar.astro';
+import CircuitFeather from '../../components/CircuitFeather.astro';
+---
+
+<BaseLayout
+  title="Reconciliation Framework"
+  description="Technical documentation of the reconciliation framework in ServiceNow, representing the balance of capabilities and entitlements in Mirador."
+>
+  <!-- Title Section with Pattern -->
+  <div class="relative py-20 bg-primary-800">
+    <AztecPattern pattern="tribute" opacity={0.15} color="#FFC107" className="docs-header-pattern" />
+    
+    <div class="container mx-auto px-8 relative z-10">
+      <div class="flex items-center">
+        <CircuitFeather severity="severe" size="md" className="mr-4" />
+        <h1 class="text-4xl font-heading font-bold text-white mb-6 tracking-wider">Reconciliation Framework</h1>
+      </div>
+      <p class="text-xl text-neutral-200 max-w-2xl">
+        Technical documentation of reconciliation in ServiceNow SAM, mapped to
+        the balance of capabilities and manifestations in the Mirador narrative.
+      </p>
+      <GeometricBorder type="horizontal" color="alert" className="mt-8 w-32" />
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="bg-primary-900 py-16">
+    <div class="container mx-auto px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <!-- Table Navigation Sidebar -->
+        <div class="lg:col-span-2 bg-primary-800 rounded-lg p-4 h-fit sticky top-24">
+          <h3 class="text-lg font-heading font-bold text-secondary-400 mb-4">Related Tables</h3>
+          <div class="space-y-6">
+            <div>
+              <h4 class="text-sm font-bold text-accent-400 mb-2">Publishers</h4>
+              <ul class="space-y-2">
+                <li><a href="#core_company" class="text-neutral-300 hover:text-accent-300 transition-colors text-sm font-mono">core_company</a></li>
+                <li><a href="#samp_sw_publisher" class="text-neutral-300 hover:text-accent-300 transition-colors text-sm font-mono">samp_sw_publisher</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-accent-400 mb-2">Licenses & Entitlements</h4>
+              <ul class="space-y-2">
+                <li><a href="#alm_license" class="text-neutral-300 hover:text-accent-300 transition-colors text-sm font-mono">alm_license</a></li>
+                <li><a href="#samp_sw_subscription" class="text-neutral-300 hover:text-accent-300 transition-colors text-sm font-mono">samp_sw_subscription</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-accent-400 mb-2">Reconciliation</h4>
+              <ul class="space-y-2">
+                <li><a href="#samp_sw_reconciliation" class="text-neutral-300 hover:text-accent-300 transition-colors text-sm font-mono">samp_sw_reconciliation</a></li>
+                <li><a href="#samp_sw_recon_calculation" class="text-neutral-300 hover:text-accent-300 transition-colors text-sm font-mono">samp_sw_recon_calculation</a></li>
+                <li><a href="#samp_sw_license_position" class="text-neutral-300 hover:text-accent-300 transition-colors text-sm font-mono">samp_sw_license_position</a></li>
+                <li><a href="#samp_recon_exemption" class="text-neutral-300 hover:text-accent-300 transition-colors text-sm font-mono">samp_recon_exemption</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-accent-400 mb-2">Installs & Usage</h4>
+              <ul class="space-y-2">
+                <li><a href="#cmdb_sam_sw_install" class="text-neutral-300 hover:text-accent-300 transition-colors text-sm font-mono">cmdb_sam_sw_install</a></li>
+                <li><a href="#samp_sw_usage" class="text-neutral-300 hover:text-accent-300 transition-colors text-sm font-mono">samp_sw_usage</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Main Documentation -->
+        <div class="lg:col-span-7">
+          <h2 class="text-2xl font-heading font-bold mb-4 text-accent-400">Reconciliation Overview</h2>
+          <GeometricBorder type="horizontal" color="accent" className="mb-6 w-24" />
+          
+          <p class="text-lg mb-6 text-neutral-200">
+            In the ServiceNow Software Asset Management framework, reconciliation is the critical
+            process of comparing software deployments (actual usage) against purchased entitlements
+            (rights to use). This process identifies compliance gaps and optimization opportunities.
+          </p>
+          
+          <div class="bg-primary-800 p-6 rounded-lg border border-primary-700 mb-12">
+            <div class="flex items-center mb-4">
+              <CircuitFeather severity="minor" size="sm" className="mr-3" />
+              <h3 class="text-xl font-heading text-secondary-400">The Reconciliation Process</h3>
+            </div>
+            
+            <p class="text-neutral-300 mb-6">
+              The reconciliation workflow follows these key stages:
+            </p>
+            
+            <div class="relative pl-8 space-y-8 before:absolute before:left-3 before:top-2 before:h-full before:w-0.5 before:-ml-px before:bg-accent-700">
+              <div class="relative">
+                <div class="absolute left-0 -translate-x-full -mt-2.5 w-5 h-5 rounded-full bg-accent-700 flex items-center justify-center">
+                  <span class="text-white text-xs">1</span>
+                </div>
+                <h4 class="text-accent-400 font-bold mb-2">Discovery & Normalization</h4>
+                <p class="text-neutral-300">Collection of software usage data from across the environment, then normalized to standard formats for reconciliation.</p>
+              </div>
+              
+              <div class="relative">
+                <div class="absolute left-0 -translate-x-full -mt-2.5 w-5 h-5 rounded-full bg-accent-700 flex items-center justify-center">
+                  <span class="text-white text-xs">2</span>
+                </div>
+                <h4 class="text-accent-400 font-bold mb-2">Entitlement Aggregation</h4>
+                <p class="text-neutral-300">Compilation of all license entitlements, including purchased licenses, subscriptions, and contractual rights.</p>
+              </div>
+              
+              <div class="relative">
+                <div class="absolute left-0 -translate-x-full -mt-2.5 w-5 h-5 rounded-full bg-accent-700 flex items-center justify-center">
+                  <span class="text-white text-xs">3</span>
+                </div>
+                <h4 class="text-accent-400 font-bold mb-2">License Position Calculation</h4>
+                <p class="text-neutral-300">Comparison of usage against entitlements to determine compliance status and optimization opportunities.</p>
+              </div>
+              
+              <div class="relative">
+                <div class="absolute left-0 -translate-x-full -mt-2.5 w-5 h-5 rounded-full bg-accent-700 flex items-center justify-center">
+                  <span class="text-white text-xs">4</span>
+                </div>
+                <h4 class="text-accent-400 font-bold mb-2">Remediation Planning</h4>
+                <p class="text-neutral-300">Development of action plans to address compliance gaps or optimize license utilization.</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Discovery Section -->
+          <h2 id="discovery" class="text-2xl font-heading font-bold mb-4 mt-12 text-accent-400">Discovery Tables</h2>
+          <GeometricBorder type="horizontal" color="accent" className="mb-6 w-24" />
+          
+          <div id="discovery_device_history" class="bg-primary-800 p-6 rounded-lg border border-primary-700 mb-8 scroll-mt-28">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-heading text-secondary-400">discovery_device_history</h3>
+              <span class="text-xs text-neutral-400 bg-primary-700 px-2 py-1 rounded">Discovery Data</span>
+            </div>
+            
+            <p class="text-neutral-300 mb-4">
+              This table maintains a historical record of device discovery events. It tracks
+              when and how devices were discovered, providing an audit trail for the discovery process.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+              <div class="bg-primary-700 p-3 rounded">
+                <span class="text-secondary-400 font-mono text-sm">device:</span> 
+                <span class="text-neutral-200 block mt-1">The device that was discovered</span>
+              </div>
+              <div class="bg-primary-700 p-3 rounded">
+                <span class="text-secondary-400 font-mono text-sm">discovery_source:</span> 
+                <span class="text-neutral-200 block mt-1">The method used to discover the device</span>
+              </div>
+              <div class="bg-primary-700 p-3 rounded">
+                <span class="text-secondary-400 font-mono text-sm">last_discovered:</span> 
+                <span class="text-neutral-200 block mt-1">Timestamp of the most recent discovery</span>
+              </div>
+              <div class="bg-primary-700 p-3 rounded">
+                <span class="text-secondary-400 font-mono text-sm">status:</span> 
+                <span class="text-neutral-200 block mt-1">Current status of the discovery record</span>
+              </div>
+            </div>
+            
+            <div class="mt-6 text-sm">
+              <h4 class="text-secondary-400 mb-2">Related Tables:</h4>
+              <div class="flex flex-wrap gap-2">
+                <a href="#cmdb_sam_sw_install" class="bg-primary-700 px-2 py-1 rounded text-neutral-300 hover:text-accent-300 transition-colors font-mono">cmdb_sam_sw_install</a>
+                <a href="#discovery_status" class="bg-primary-700 px-2 py-1 rounded text-neutral-300 hover:text-accent-300 transition-colors font-mono">discovery_status</a>
+              </div>
+            </div>
+          </div>
+          
+          <div id="discovery_status" class="bg-primary-800 p-6 rounded-lg border border-primary-700 mb-8 scroll-mt-28">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-heading text-secondary-400">discovery_status</h3>
+              <span class="text-xs text-neutral-400 bg-primary-700 px-2 py-1 rounded">Status Tracking</span>
+            </div>
+            
+            <p class="text-neutral-300 mb-4">
+              This table tracks the current status of discovery processes across the environment.
+              It provides real-time information about ongoing and completed discovery activities.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+              <div class="bg-primary-700 p-3 rounded">
+                <span class="text-secondary-400 font-mono text-sm">discovery_type:</span> 
+                <span class="text-neutral-200 block mt-1">The type of discovery process being tracked</span>
+              </div>
+              <div class="bg-primary-700 p-3 rounded">
+                <span class="text-secondary-400 font-mono text-sm">state:</span> 
+                <span class="text-neutral-200 block mt-1">Current state of the discovery process</span>
+              </div>
+              <div class="bg-primary-700 p-3 rounded">
+                <span class="text-secondary-400 font-mono text-sm">started:</span> 
+                <span class="text-neutral-200 block mt-1">When the discovery process began</span>
+              </div>
+              <div class="bg-primary-700 p-3 rounded">
+                <span class="text-secondary-400 font-mono text-sm">completion_status:</span> 
+                <span class="text-neutral-200 block mt-1">Success or failure indicators for completed processes</span>
+              </div>
+            </div>
+            
+            <div class="mt-6 text-sm">
+              <h4 class="text-secondary-400 mb-2">Related Tables:</h4>
+              <div class="flex flex-wrap gap-2">
+                <a href="#discovery_device_history" class="bg-primary-700 px-2 py-1 rounded text-neutral-300 hover:text-accent-300 transition-colors font-mono">discovery_device_history</a>
+                <a href="#samp_normalized_sw_data" class="bg-primary-700 px-2 py-1 rounded text-neutral-300 hover:text-accent-300 transition-colors font-mono">samp_normalized_sw_data</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Metadata Section -->
+          <h2 id="metadata" class="text-2xl font-heading font-bold mb-4 mt-12 text-accent-400">Metadata Tables</h2>
+          <GeometricBorder type="horizontal" color="accent" className="mb-6 w-24" />
+          
+          <div id="samp_normalized_sw_data" class="bg-primary-800 p-6 rounded-lg border border-primary-700 mb-8 scroll-mt-28">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-heading text-secondary-400">samp_normalized_sw_data</h3>
+              <span class="text-xs text-neutral-400 bg-primary-700 px-2 py-1 rounded">Normalized Data</span>
+            </div>
+            
+            <p class="text-neutral-300 mb-4">
+              This table contains normalized software data from various discovery sources. It standardizes
+              software information to enable accurate reconciliation against entitlements.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+              <div class="bg-primary-700 p-3 rounded">
+                <span class="text-secondary-400 font-mono text-sm">raw_data:</span> 
+                <span class="text-neutral-200 block mt-1">The original discovered data</span>
+              </div>
+              <div class="bg-primary-700 p-3 rounded">
+                <span class="text-secondary-400 font-mono text-sm">normalized_name:</span> 
+                <span class="text-neutral-200 block mt-1">Standardized software name</span>
+              </div>
+              <div class="bg-primary-700 p-3 rounded">
+                <span class="text-secondary-400 font-mono text-sm">software_model:</span> 
+                <span class="text-neutral-200 block mt-1">Link to the corresponding capability model</span>
+              </div>
+              <div class="bg-primary-700 p-3 rounded">
+                <span class="text-secondary-400 font-mono text-sm">normalization_confidence:</span> 
+                <span class="text-neutral-200 block mt-1">Confidence score for the normalization process</span>
+              </div>
+            </div>
+            
+            <div class="mt-6 text-sm">
+              <h4 class="text-secondary-400 mb-2">Related Tables:</h4>
+              <div class="flex flex-wrap gap-2">
+                <a href="#cmdb_software_product_model" class="bg-primary-700 px-2 py-1 rounded text-neutral-300 hover:text-accent-300 transition-colors font-mono">cmdb_software_product_model</a>
+                <a href="#cmdb_sam_sw_install" class="bg-primary-700 px-2 py-1 rounded text-neutral-300 hover:text-accent-300 transition-colors font-mono">cmdb_sam_sw_install</a>
+                <a href="#samp_sw_license_position" class="bg-primary-700 px-2 py-1 rounded text-neutral-300 hover:text-accent-300 transition-colors font-mono">samp_sw_license_position</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Reporting Section -->
+          <h2 id="reporting" class="text-2xl font-heading font-bold mb-4 mt-12 text-accent-400">Reporting Tables</h2>
+          <GeometricBorder type="horizontal" color="accent" className="mb-6 w-24" />
+          
+          <div id="samp_sw_license_position" class="bg-primary-800 p-6 rounded-lg border border-primary-700 mb-8 scroll-mt-28">
+            <div class="flex items-center mb-4">
+              <CircuitFeather severity="moderate" size="sm" className="mr-3" />
+              <h3 class="text-xl font-heading text-secondary-400">samp_sw_license_position</h3>
+              <span class="text-xs text-neutral-400 bg-primary-700 px-2 py-1 rounded ml-3">Compliance Status</span>
+            </div>
+            
+            <p class="text-neutral-300 mb-4">
+              This is the core reconciliation table that compares entitlements to usage,
+              calculating the compliance position for each capability. It identifies
+              where more licenses are needed or where optimization is possible.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+              <div class="bg-primary-700 p-3 rounded">
+                <span class="text-secondary-400 font-mono text-sm">software_model:</span> 
+                <span class="text-neutral-200 block mt-1">The capability being reconciled</span>
+              </div>
+              <div class="bg-primary-700 p-3 rounded">
+                <span class="text-secondary-400 font-mono text-sm">total_entitlements:</span> 
+                <span class="text-neutral-200 block mt-1">Sum of all license rights for this capability</span>
+              </div>
+              <div class="bg-primary-700 p-3 rounded">
+                <span class="text-secondary-400 font-mono text-sm">total_usage:</span> 
+                <span class="text-neutral-200 block mt-1">Sum of all discovered installations of this capability</span>
+              </div>
+              <div class="bg-primary-700 p-3 rounded">
+                <span class="text-secondary-400 font-mono text-sm">compliance_status:</span> 
+                <span class="text-neutral-200 block mt-1">Overall compliance position (compliant, over-deployed, etc.)</span>
+              </div>
+            </div>
+            
+            <div class="mt-6 text-sm">
+              <h4 class="text-secondary-400 mb-2">Related Tables:</h4>
+              <div class="flex flex-wrap gap-2">
+                <a href="#samp_sw_license_position_detail" class="bg-primary-700 px-2 py-1 rounded text-neutral-300 hover:text-accent-300 transition-colors font-mono">samp_sw_license_position_detail</a>
+                <a href="#alm_license" class="bg-primary-700 px-2 py-1 rounded text-neutral-300 hover:text-accent-300 transition-colors font-mono">alm_license</a>
+                <a href="#cmdb_sam_sw_install" class="bg-primary-700 px-2 py-1 rounded text-neutral-300 hover:text-accent-300 transition-colors font-mono">cmdb_sam_sw_install</a>
+              </div>
+            </div>
+          </div>
+          
+          <div id="samp_sw_license_position_detail" class="bg-primary-800 p-6 rounded-lg border border-primary-700 mb-8 scroll-mt-28">
+            <div class="flex items-center mb-4">
+              <CircuitFeather severity="severe" size="sm" className="mr-3" />
+              <h3 class="text-xl font-heading text-secondary-400">samp_sw_license_position_detail</h3>
+              <span class="text-xs text-neutral-400 bg-primary-700 px-2 py-1 rounded ml-3">Detailed Compliance</span>
+            </div>
+            
+            <p class="text-neutral-300 mb-4">
+              This table provides granular details about reconciliation results, breaking down
+              the compliance position into specific components. It's the source for detailed
+              compliance reporting and remediation planning.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+              <div class="bg-primary-700 p-3 rounded">
+                <span class="text-secondary-400 font-mono text-sm">license_position:</span> 
+                <span class="text-neutral-200 block mt-1">Reference to the parent license position record</span>
+              </div>
+              <div class="bg-primary-700 p-3 rounded">
+                <span class="text-secondary-400 font-mono text-sm">entitlement_source:</span> 
+                <span class="text-neutral-200 block mt-1">Specific license contributing to the entitlement total</span>
+              </div>
+              <div class="bg-primary-700 p-3 rounded">
+                <span class="text-secondary-400 font-mono text-sm">usage_source:</span> 
+                <span class="text-neutral-200 block mt-1">Specific installation contributing to the usage total</span>
+              </div>
+              <div class="bg-primary-700 p-3 rounded">
+                <span class="text-secondary-400 font-mono text-sm">variance:</span> 
+                <span class="text-neutral-200 block mt-1">Numerical difference between entitlements and usage</span>
+              </div>
+            </div>
+            
+            <div class="mt-6 text-sm">
+              <h4 class="text-secondary-400 mb-2">Related Tables:</h4>
+              <div class="flex flex-wrap gap-2">
+                <a href="#samp_sw_license_position" class="bg-primary-700 px-2 py-1 rounded text-neutral-300 hover:text-accent-300 transition-colors font-mono">samp_sw_license_position</a>
+                <a href="#alm_license" class="bg-primary-700 px-2 py-1 rounded text-neutral-300 hover:text-accent-300 transition-colors font-mono">alm_license</a>
+                <a href="#cmdb_sam_sw_install" class="bg-primary-700 px-2 py-1 rounded text-neutral-300 hover:text-accent-300 transition-colors font-mono">cmdb_sam_sw_install</a>
+              </div>
+            </div>
+          </div>
+          
+          <h2 class="text-2xl font-heading font-bold mb-4 mt-12 text-accent-400">Reconciliation Automation</h2>
+          <GeometricBorder type="horizontal" color="accent" className="mb-6 w-24" />
+          
+          <div class="bg-primary-800 p-6 rounded-lg border border-primary-700 mb-8">
+            <div class="flex items-center mb-6">
+              <CircuitFeather severity="critical" size="sm" className="mr-3" />
+              <h3 class="text-xl font-heading text-secondary-400">Automation Framework</h3>
+            </div>
+            
+            <p class="text-neutral-300 mb-6">
+              ServiceNow SAM provides several automation mechanisms to streamline the reconciliation process:
+            </p>
+            
+            <div class="space-y-6">
+              <div class="border-l-4 border-accent-500 pl-4">
+                <h4 class="font-bold text-lg text-accent-400 mb-2">Scheduled Discovery</h4>
+                <p class="text-neutral-300">
+                  Automated discovery processes that run on scheduled intervals to maintain
+                  up-to-date usage data without manual intervention.
+                </p>
+              </div>
+              
+              <div class="border-l-4 border-accent-500 pl-4">
+                <h4 class="font-bold text-lg text-accent-400 mb-2">Auto-Normalization</h4>
+                <p class="text-neutral-300">
+                  Pattern matching and machine learning algorithms that automatically
+                  normalize discovered software to standard catalog entries.
+                </p>
+              </div>
+              
+              <div class="border-l-4 border-accent-500 pl-4">
+                <h4 class="font-bold text-lg text-accent-400 mb-2">License Position Calculations</h4>
+                <p class="text-neutral-300">
+                  Scheduled jobs that automatically recalculate license positions
+                  when new discovery data or entitlement changes are detected.
+                </p>
+              </div>
+              
+              <div class="border-l-4 border-accent-500 pl-4">
+                <h4 class="font-bold text-lg text-accent-400 mb-2">Compliance Alerts</h4>
+                <p class="text-neutral-300">
+                  Automated notifications that trigger when compliance thresholds
+                  are breached, enabling proactive remediation.
+                </p>
+              </div>
+            </div>
+            
+            <div class="mt-8 p-4 bg-primary-700 rounded-lg border border-primary-600">
+              <div class="flex items-center mb-3">
+                <CircuitFeather severity="critical" size="sm" className="mr-2" />
+                <h4 class="font-bold text-accent-400">Manifestation Severity Levels</h4>
+              </div>
+              <p class="text-neutral-300 mb-4">
+                In the ServiceNow framework, compliance status is categorized into levels that 
+                correspond to "manifestation severity" in the Mirador narrative:
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="flex items-center">
+                  <CircuitFeather severity="minor" size="sm" className="mr-2 flex-shrink-0" />
+                  <div>
+                    <span class="text-secondary-400 font-bold">Minor</span>
+                    <span class="text-neutral-300 block text-sm">1-10% over-deployment</span>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <CircuitFeather severity="moderate" size="sm" className="mr-2 flex-shrink-0" />
+                  <div>
+                    <span class="text-secondary-400 font-bold">Moderate</span>
+                    <span class="text-neutral-300 block text-sm">11-25% over-deployment</span>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <CircuitFeather severity="severe" size="sm" className="mr-2 flex-shrink-0" />
+                  <div>
+                    <span class="text-accent-400 font-bold">Severe</span>
+                    <span class="text-neutral-300 block text-sm">26-50% over-deployment</span>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <CircuitFeather severity="critical" size="sm" className="mr-2 flex-shrink-0" />
+                  <div>
+                    <span class="text-accent-400 font-bold">Critical</span>
+                    <span class="text-neutral-300 block text-sm">51%+ over-deployment</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Story Sidebar -->
+        <div class="lg:col-span-3 space-y-6 h-fit sticky top-24">
+          <NarrativeSidebar 
+            character="silas" 
+            title="Reconciliation Operations"
+            className="mb-6"
+          >
+            The Balance Monitors in Mirador scan the city constantly, measuring the flow and use of capabilities against approved entitlements. Imbalances create ripples in reality that require immediate attention.
+          </NarrativeSidebar>
+          
+          <NarrativeSidebar 
+            character="nova" 
+            title="System Manifestations"
+            className="mb-6"
+          >
+            When reconciliation detects an imbalance, the system manifests corrections in increasingly visible ways. Minor imbalances cause subtle glitches, while major violations can result in capability shutdown or environmental alterations.
+          </NarrativeSidebar>
+          
+          <NarrativeSidebar 
+            character="enrique" 
+            title="Exploiting Reconciliation"
+            className="mb-6"
+          >
+            The resistance has learned to create deliberate imbalances to force system manifestations that we can exploit. By triggering specific reconciliation events, we can temporarily create blind spots in the monitoring network.
+          </NarrativeSidebar>
+          
+          <NarrativeSidebar 
+            character="victoria" 
+            title="Social Commentary"
+            className="mb-6"
+          >
+            Have you noticed how reconciliation affects different districts unequally? When an imbalance occurs in Toltec territory, it's fixed in minutes. In worker districts, glitches can persist for days. The system claims to be impartial, but its priorities are clearly programmed.
+          </NarrativeSidebar>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout> 
