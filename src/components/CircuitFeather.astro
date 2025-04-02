@@ -2,13 +2,15 @@
 interface Props {
   severity?: 'minor' | 'moderate' | 'severe' | 'critical';
   size?: 'sm' | 'md' | 'lg';
+  variant?: 'technical' | 'organic' | 'abstract';
   animated?: boolean;
   className?: string;
 }
 
 const { 
   severity = 'minor', 
-  size = 'md', 
+  size = 'md',
+  variant = 'technical',
   animated = false,
   className = ''
 } = Astro.props;
@@ -16,12 +18,12 @@ const {
 // Map severity to colors
 const colorMap = {
   minor: {
-    primary: '#A63D2F', // Accent color
+    primary: '#A63D2F', // Earthy red accent
     secondary: '#C24B3A',
     highlight: '#D6A6A0'
   },
   moderate: {
-    primary: '#2E6E4E', // Secondary color
+    primary: '#2E6E4E', // Jade green 
     secondary: '#37865F',
     highlight: '#9BC3B5'
   },
@@ -31,7 +33,7 @@ const colorMap = {
     highlight: '#FFECB3'
   },
   critical: {
-    primary: '#1A237E', // Primary with red accents
+    primary: '#0A0C35', // Deep navy
     secondary: '#2A34A4',
     highlight: '#A63D2F'
   }
@@ -55,70 +57,172 @@ const sizeMap = {
 
 const colors = colorMap[severity];
 const dimensions = sizeMap[size];
+
+// Animation class based on variant
+const animationClass = animated ? {
+  technical: 'animate-pulse-slow',
+  organic: 'animate-float',
+  abstract: 'animate-glow'
+}[variant] : '';
 ---
 
-<svg 
-  xmlns="http://www.w3.org/2000/svg" 
-  viewBox="0 0 100 150" 
-  width={dimensions.width} 
-  height={dimensions.height}
-  class={`inline-block ${animated ? 'animate-float' : ''} ${className}`}
->
-  <!-- Feather outline -->
-  <path 
-    d="M50,10 C60,20 80,40 90,70 C90,100 70,130 50,140 C30,130 10,100 10,70 C20,40 40,20 50,10" 
-    stroke={colors.primary} 
-    stroke-width="2" 
-    fill="none"
-  />
-  
-  <!-- Central shaft / circuit trace -->
-  <path 
-    d="M50,10 L50,140" 
-    stroke={colors.secondary} 
-    stroke-width="3"
-  />
-  
-  <!-- Circuit barbs -->
-  <g>
-    <!-- Left side -->
-    <path d="M50,30 L30,40" stroke={colors.secondary} stroke-width="1.5" />
-    <path d="M50,50 L25,65" stroke={colors.secondary} stroke-width="1.5" />
-    <path d="M50,70 L20,90" stroke={colors.secondary} stroke-width="1.5" />
-    <path d="M50,90 L25,105" stroke={colors.secondary} stroke-width="1.5" />
-    <path d="M50,110 L35,120" stroke={colors.secondary} stroke-width="1.5" />
+{variant === 'technical' && (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    viewBox="0 0 100 300" 
+    width={dimensions.width} 
+    height={dimensions.height}
+    class={`inline-block ${animationClass} ${className}`}
+  >
+    <!-- Simplified curved feather path inspired by the provided design -->
+    <path 
+      d="M50,10 C80,100 100,200 100,290 C50,240 0,190 50,10" 
+      stroke={colors.primary} 
+      stroke-width="2" 
+      fill="none"
+    />
     
-    <!-- Right side -->
-    <path d="M50,30 L70,40" stroke={colors.secondary} stroke-width="1.5" />
-    <path d="M50,50 L75,65" stroke={colors.secondary} stroke-width="1.5" />
-    <path d="M50,70 L80,90" stroke={colors.secondary} stroke-width="1.5" />
-    <path d="M50,90 L75,105" stroke={colors.secondary} stroke-width="1.5" />
-    <path d="M50,110 L65,120" stroke={colors.secondary} stroke-width="1.5" />
-  </g>
-  
-  <!-- Circuit nodes -->
-  <circle cx="30" cy="40" r="2" fill={colors.highlight} />
-  <circle cx="25" cy="65" r="2" fill={colors.highlight} />
-  <circle cx="20" cy="90" r="2" fill={colors.highlight} />
-  <circle cx="25" cy="105" r="2" fill={colors.highlight} />
-  <circle cx="35" cy="120" r="2" fill={colors.highlight} />
-  
-  <circle cx="70" cy="40" r="2" fill={colors.highlight} />
-  <circle cx="75" cy="65" r="2" fill={colors.highlight} />
-  <circle cx="80" cy="90" r="2" fill={colors.highlight} />
-  <circle cx="75" cy="105" r="2" fill={colors.highlight} />
-  <circle cx="65" cy="120" r="2" fill={colors.highlight} />
-  
-  <!-- Connection point -->
-  <circle cx="50" cy="10" r="3" fill={colors.primary} />
-  
-  <!-- Base transistor -->
-  <rect x="45" y="135" width="10" height="5" fill={colors.primary} rx="1" />
-</svg>
+    <!-- Central shaft with simpler design -->
+    <path 
+      d="M50,10 C65,100 70,200 75,290" 
+      stroke={colors.secondary} 
+      stroke-width="1.5"
+      fill="none"
+    />
+    
+    <!-- Circuit nodes along the path -->
+    <circle cx="50" cy="30" r="2" fill={colors.highlight} />
+    <circle cx="60" cy="100" r="2" fill={colors.highlight} />
+    <circle cx="70" cy="170" r="2" fill={colors.highlight} />
+    <circle cx="75" cy="240" r="2" fill={colors.highlight} />
+    
+    <!-- Circuit paths -->
+    <path d="M50,30 L75,40" stroke={colors.secondary} stroke-width="1" />
+    <path d="M60,100 L85,110" stroke={colors.secondary} stroke-width="1" />
+    <path d="M70,170 L95,180" stroke={colors.secondary} stroke-width="1" />
+    <path d="M75,240 L95,250" stroke={colors.secondary} stroke-width="1" />
+    
+    <!-- Circuit connections -->
+    <circle cx="75" cy="40" r="1.5" fill={colors.highlight} />
+    <circle cx="85" cy="110" r="1.5" fill={colors.highlight} />
+    <circle cx="95" cy="180" r="1.5" fill={colors.highlight} />
+    <circle cx="95" cy="250" r="1.5" fill={colors.highlight} />
+    
+    <!-- Base connection point -->
+    <circle cx="50" cy="10" r="3" fill={colors.primary} />
+  </svg>
+)}
+
+{variant === 'organic' && (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    viewBox="0 0 100 150" 
+    width={dimensions.width} 
+    height={dimensions.height}
+    class={`inline-block ${animationClass} ${className}`}
+  >
+    <!-- Side profile feather outline - more curved and organic -->
+    <path 
+      d="M40,10 C50,8 60,8 70,15 C85,25 90,40 90,60 C90,90 80,120 65,135 C55,145 45,145 35,135 C20,120 10,90 10,60 C10,40 15,25 30,15 C33,13 37,11 40,10 Z" 
+      stroke={colors.primary} 
+      stroke-width="2" 
+      fill="none"
+    />
+    
+    <!-- Central vein / circuit trace -->
+    <path 
+      d="M50,15 C50,15 45,40 50,70 C55,100 50,130 50,135" 
+      stroke={colors.secondary} 
+      stroke-width="3"
+      fill="none"
+    />
+    
+    <!-- Side veins / circuit traces -->
+    <path d="M50,30 C60,35 75,32 85,45" stroke={colors.secondary} stroke-width="1.5" fill="none" />
+    <path d="M50,50 C65,55 75,65 80,80" stroke={colors.secondary} stroke-width="1.5" fill="none" />
+    <path d="M50,70 C60,80 67,95 70,110" stroke={colors.secondary} stroke-width="1.5" fill="none" />
+    <path d="M50,90 C55,100 58,115 60,125" stroke={colors.secondary} stroke-width="1.5" fill="none" />
+    
+    <!-- Circuit nodes -->
+    <circle cx="50" cy="30" r="2" fill={colors.highlight} />
+    <circle cx="85" cy="45" r="2" fill={colors.highlight} />
+    <circle cx="50" cy="50" r="2" fill={colors.highlight} />
+    <circle cx="80" cy="80" r="2" fill={colors.highlight} />
+    <circle cx="50" cy="70" r="2" fill={colors.highlight} />
+    <circle cx="70" cy="110" r="2" fill={colors.highlight} />
+    <circle cx="50" cy="90" r="2" fill={colors.highlight} />
+    <circle cx="60" cy="125" r="2" fill={colors.highlight} />
+    
+    <!-- Base connection -->
+    <ellipse cx="50" cy="135" rx="8" ry="3" fill={colors.primary} />
+  </svg>
+)}
+
+{variant === 'abstract' && (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    viewBox="0 0 100 150" 
+    width={dimensions.width} 
+    height={dimensions.height}
+    class={`inline-block ${animationClass} ${className}`}
+  >
+    <!-- Abstract geometric feather profile -->
+    <polygon 
+      points="50,10 70,20 85,40 90,70 85,100 70,130 50,140 30,130 15,100 10,70 15,40 30,20" 
+      stroke={colors.primary} 
+      stroke-width="2" 
+      fill="none"
+    />
+    
+    <!-- Central shaft with Mesoamerican pattern -->
+    <path 
+      d="M50,10 L50,140" 
+      stroke={colors.secondary} 
+      stroke-width="3"
+    />
+    
+    <!-- Mesoamerican pattern elements -->
+    <rect x="45" y="30" width="10" height="10" stroke={colors.secondary} fill="none" stroke-width="1.5" />
+    <rect x="45" y="60" width="10" height="10" stroke={colors.secondary} fill="none" stroke-width="1.5" />
+    <rect x="45" y="90" width="10" height="10" stroke={colors.secondary} fill="none" stroke-width="1.5" />
+    
+    <!-- Side patterns -->
+    <path d="M50,35 L75,35" stroke={colors.secondary} stroke-width="1.5" />
+    <path d="M75,35 L75,45 L85,45" stroke={colors.secondary} stroke-width="1.5" />
+    <path d="M50,65 L70,65" stroke={colors.secondary} stroke-width="1.5" />
+    <path d="M70,65 L70,75 L80,75" stroke={colors.secondary} stroke-width="1.5" />
+    <path d="M50,95 L65,95" stroke={colors.secondary} stroke-width="1.5" />
+    <path d="M65,95 L65,105 L75,105" stroke={colors.secondary} stroke-width="1.5" />
+    
+    <!-- Nodes -->
+    <circle cx="75" cy="35" r="2" fill={colors.highlight} />
+    <circle cx="85" cy="45" r="2" fill={colors.highlight} />
+    <circle cx="70" cy="65" r="2" fill={colors.highlight} />
+    <circle cx="80" cy="75" r="2" fill={colors.highlight} />
+    <circle cx="65" cy="95" r="2" fill={colors.highlight} />
+    <circle cx="75" cy="105" r="2" fill={colors.highlight} />
+    
+    <!-- Connection points -->
+    <polygon points="45,10 55,10 50,18" fill={colors.primary} />
+    <polygon points="45,140 55,140 50,132" fill={colors.primary} />
+  </svg>
+)}
 
 <style>
   .animate-float {
     animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulseSlow 4s ease-in-out infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 5s ease-in-out infinite;
+  }
+  
+  .pulse-circle {
+    animation: pulseCircle 3s ease-in-out infinite;
   }
   
   @keyframes float {
@@ -127,6 +231,35 @@ const dimensions = sizeMap[size];
     }
     50% {
       transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes pulseSlow {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+  
+  @keyframes glow {
+    0%, 100% {
+      filter: drop-shadow(0 0 2px rgba(46, 110, 78, 0));
+    }
+    50% {
+      filter: drop-shadow(0 0 6px rgba(46, 110, 78, 0.6));
+    }
+  }
+  
+  @keyframes pulseCircle {
+    0%, 100% {
+      r: 5;
+      opacity: 1;
+    }
+    50% {
+      r: 8;
+      opacity: 0.5;
     }
   }
 </style> 

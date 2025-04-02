@@ -1,0 +1,94 @@
+---
+const { title, description, variation = "1" } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="/static/favicons/favicon.svg" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=JetBrains+Mono&display=swap" />
+  </head>
+  <body class="bg-[#05061A] text-white font-body">
+    <!-- Mobile Navigation -->
+    <header id="mobile-nav" class="fixed top-0 left-0 w-full z-50 px-4 py-3 bg-[#0A0C35]/80 backdrop-blur-md">
+      <div class="flex justify-between items-center">
+        <div class="text-2xl font-heading font-bold">
+          <a href="/" class="flex items-center">
+            Mirador
+          </a>
+        </div>
+        <button id="menu-toggle" class="p-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-[#05061A] z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex items-center justify-center">
+      <button id="close-menu" class="absolute top-4 right-4 p-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <nav class="text-center">
+        <ul class="space-y-6 text-2xl">
+          <li><a href="#" class="hover:text-[#2E6E4E] transition-colors">Home</a></li>
+          <li><a href="#" class="hover:text-[#2E6E4E] transition-colors">About</a></li>
+          <li><a href="#" class="hover:text-[#2E6E4E] transition-colors">Technical Path</a></li>
+          <li><a href="#" class="hover:text-[#2E6E4E] transition-colors">Narrative Path</a></li>
+        </ul>
+      </nav>
+    </div>
+    
+    <main>
+      <slot />
+    </main>
+    
+    <footer class="bg-[#0A0C35] text-neutral-400 py-8 border-t border-[#2E6E4E]/20">
+      <div class="container mx-auto px-4 text-center">
+        <p>&copy; {new Date().getFullYear()} Mirador. All rights reserved.</p>
+      </div>
+    </footer>
+    
+    <script>
+      // Mobile menu functionality
+      const menuToggle = document.getElementById('menu-toggle');
+      const closeMenu = document.getElementById('close-menu');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.remove('translate-x-full');
+      });
+      
+      closeMenu.addEventListener('click', () => {
+        mobileMenu.classList.add('translate-x-full');
+      });
+
+      // URL parameter handling for variations
+      function getVariation() {
+        const url = new URL(window.location);
+        return url.searchParams.get('v') || '1';
+      }
+      
+      // Handle scrolling behavior for header
+      window.addEventListener('scroll', () => {
+        const header = document.getElementById('mobile-nav');
+        if (window.scrollY > 100) {
+          header.classList.add('bg-[#0A0C35]');
+          header.classList.remove('bg-[#0A0C35]/80');
+        } else {
+          header.classList.add('bg-[#0A0C35]/80');
+          header.classList.remove('bg-[#0A0C35]');
+        }
+      });
+    </script>
+  </body>
+</html> 

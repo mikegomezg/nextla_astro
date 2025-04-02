@@ -1,0 +1,211 @@
+---
+import LandingLayout from '../layouts/LandingLayout.astro';
+import CircuitFeather from '../components/CircuitFeather.astro';
+import MobileNav from '../components/MobileNav.astro';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Testing Panel - Mirador Landing Page</title>
+    <link rel="icon" href="/static/favicons/favicon.svg" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=JetBrains+Mono&display=swap" />
+  </head>
+  <body class="bg-[#05061A] text-white font-body">
+    <div class="container mx-auto px-4 py-8">
+      <h1 class="text-3xl font-bold mb-8">Mirador Landing Page Testing Panel</h1>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Variation Testing -->
+        <div class="bg-[#0A0C35] p-6 rounded-lg shadow-lg">
+          <h2 class="text-xl font-bold mb-4 border-b border-[#2E6E4E]/30 pb-2">Landing Page Variations</h2>
+          
+          <div class="space-y-4 mt-6">
+            <div>
+              <h3 class="font-bold mb-2 text-[#2E6E4E]">Variation 1: Attention Economy Focus</h3>
+              <p class="text-sm text-white/70 mb-3">Focuses on the concept of attention as currency</p>
+              <a href="/?v=1" class="px-4 py-2 bg-[#2E6E4E]/80 text-white rounded hover:bg-[#2E6E4E] transition-colors inline-block">
+                View Variation 1
+              </a>
+            </div>
+            
+            <div>
+              <h3 class="font-bold mb-2 text-[#2E6E4E]">Variation 2: City-States Conflict</h3>
+              <p class="text-sm text-white/70 mb-3">Focuses on the competing city-states and their approaches</p>
+              <a href="/?v=2" class="px-4 py-2 bg-[#2E6E4E]/80 text-white rounded hover:bg-[#2E6E4E] transition-colors inline-block">
+                View Variation 2
+              </a>
+            </div>
+            
+            <div>
+              <h3 class="font-bold mb-2 text-[#2E6E4E]">Variation 3: Manifestations Mystery</h3>
+              <p class="text-sm text-white/70 mb-3">Focuses on the circuit-feather manifestations and balance</p>
+              <a href="/?v=3" class="px-4 py-2 bg-[#2E6E4E]/80 text-white rounded hover:bg-[#2E6E4E] transition-colors inline-block">
+                View Variation 3
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Navigation Testing -->
+        <div class="bg-[#0A0C35] p-6 rounded-lg shadow-lg">
+          <h2 class="text-xl font-bold mb-4 border-b border-[#2E6E4E]/30 pb-2">Navigation Variants</h2>
+          
+          <div class="mt-6 space-y-8">
+            <div>
+              <h3 class="font-bold mb-3 text-[#A63D2F]">Minimal Fixed Header</h3>
+              <div class="bg-[#05061A] p-4 rounded">
+                <MobileNav variant="minimal" />
+              </div>
+            </div>
+            
+            <div>
+              <h3 class="font-bold mb-3 text-[#A63D2F]">Bottom Navigation Bar</h3>
+              <div class="bg-[#05061A] p-4 rounded h-40 relative">
+                <MobileNav variant="bottom" />
+              </div>
+            </div>
+            
+            <div>
+              <h3 class="font-bold mb-3 text-[#A63D2F]">Floating Action Button</h3>
+              <div class="bg-[#05061A] p-4 rounded h-40 relative">
+                <MobileNav variant="floating" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- CircuitFeather Testing -->
+      <div class="mt-12 bg-[#0A0C35] p-6 rounded-lg shadow-lg">
+        <h2 class="text-xl font-bold mb-4 border-b border-[#2E6E4E]/30 pb-2">Circuit-Feather Variants</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
+          <div>
+            <h3 class="font-bold mb-4 text-center text-[#2E6E4E]">Technical Variant</h3>
+            <div class="flex flex-wrap justify-center gap-4">
+              <div class="text-center">
+                <CircuitFeather severity="minor" size="md" variant="technical" />
+                <p class="mt-2 text-sm">Minor</p>
+              </div>
+              <div class="text-center">
+                <CircuitFeather severity="moderate" size="md" variant="technical" />
+                <p class="mt-2 text-sm">Moderate</p>
+              </div>
+              <div class="text-center">
+                <CircuitFeather severity="severe" size="md" variant="technical" />
+                <p class="mt-2 text-sm">Severe</p>
+              </div>
+              <div class="text-center">
+                <CircuitFeather severity="critical" size="md" variant="technical" />
+                <p class="mt-2 text-sm">Critical</p>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class="font-bold mb-4 text-center text-[#2E6E4E]">Organic Variant</h3>
+            <div class="flex flex-wrap justify-center gap-4">
+              <div class="text-center">
+                <CircuitFeather severity="minor" size="md" variant="organic" />
+                <p class="mt-2 text-sm">Minor</p>
+              </div>
+              <div class="text-center">
+                <CircuitFeather severity="moderate" size="md" variant="organic" />
+                <p class="mt-2 text-sm">Moderate</p>
+              </div>
+              <div class="text-center">
+                <CircuitFeather severity="severe" size="md" variant="organic" />
+                <p class="mt-2 text-sm">Severe</p>
+              </div>
+              <div class="text-center">
+                <CircuitFeather severity="critical" size="md" variant="organic" />
+                <p class="mt-2 text-sm">Critical</p>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class="font-bold mb-4 text-center text-[#2E6E4E]">Abstract Variant</h3>
+            <div class="flex flex-wrap justify-center gap-4">
+              <div class="text-center">
+                <CircuitFeather severity="minor" size="md" variant="abstract" />
+                <p class="mt-2 text-sm">Minor</p>
+              </div>
+              <div class="text-center">
+                <CircuitFeather severity="moderate" size="md" variant="abstract" />
+                <p class="mt-2 text-sm">Moderate</p>
+              </div>
+              <div class="text-center">
+                <CircuitFeather severity="severe" size="md" variant="abstract" />
+                <p class="mt-2 text-sm">Severe</p>
+              </div>
+              <div class="text-center">
+                <CircuitFeather severity="critical" size="md" variant="abstract" />
+                <p class="mt-2 text-sm">Critical</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Analytics Section -->
+      <div class="mt-12 bg-[#0A0C35] p-6 rounded-lg shadow-lg">
+        <h2 class="text-xl font-bold mb-4 border-b border-[#2E6E4E]/30 pb-2">Testing Analytics</h2>
+        
+        <div id="analytics" class="mt-6">
+          <p class="text-white/70">No interaction data available yet. Interact with the landing page to record analytics.</p>
+          
+          <div class="mt-4">
+            <h3 class="font-bold mb-2">Last Tested Variation</h3>
+            <div id="last-variation" class="text-[#2E6E4E]">None</div>
+            
+            <h3 class="font-bold mb-2 mt-4">Element Interactions</h3>
+            <div id="element-clicks" class="text-[#2E6E4E]">None</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-8 text-center">
+        <a href="/" class="px-6 py-3 bg-[#2E6E4E] text-white rounded hover:bg-[#2E6E4E]/80 transition-colors inline-block">
+          Return to Landing Page
+        </a>
+      </div>
+    </div>
+    
+    <script>
+      // Get stored analytics data
+      const lastVariation = localStorage.getItem('last-variation') || 'None';
+      const elementClicks = JSON.parse(localStorage.getItem('element-clicks') || '{}');
+      
+      // Display analytics
+      document.getElementById('last-variation').textContent = lastVariation;
+      
+      const clicksElement = document.getElementById('element-clicks');
+      if (Object.keys(elementClicks).length === 0) {
+        clicksElement.textContent = 'None';
+      } else {
+        clicksElement.innerHTML = '';
+        const list = document.createElement('ul');
+        list.className = 'space-y-1 text-sm';
+        
+        Object.entries(elementClicks).forEach(([element, count]) => {
+          const item = document.createElement('li');
+          item.textContent = `${element}: ${count} clicks`;
+          list.appendChild(item);
+        });
+        
+        clicksElement.appendChild(list);
+      }
+      
+      // Set up event listener for variation testing
+      document.querySelectorAll('a[href^="/?v="]').forEach(link => {
+        link.addEventListener('click', (e) => {
+          const variation = e.currentTarget.href.split('=')[1];
+          localStorage.setItem('last-variation', `Variation ${variation}`);
+        });
+      });
+    </script>
+  </body>
+</html> 
