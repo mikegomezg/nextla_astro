@@ -24,649 +24,215 @@ const colors = {
 };
 ---
 
-<LandingLayout title={`Mirador - ${variationName}`} description="In Mirador, attention is the new currency. Every glance has value." variation={variation}>
-  <!-- Navigation Component - Different for each variation -->
-  {variation === '1' && <MobileNav variant="minimal" />}
-  {variation === '2' && <MobileNav variant="bottom" />}
-  {variation === '3' && <MobileNav variant="floating" />}
+<LandingLayout title="Mirador - Digital Attention Economy" description="In Mirador, attention is the new currency. Every glance has value.">
+  <MobileNav activePage="home" />
   
-  <!-- Variation 1: Attention Economy Focus -->
-  {variation === '1' && (
-    <div id="attention-economy" class="landing-variation">
-      <!-- Hero Section -->
-      <section class="min-h-screen relative flex flex-col justify-center items-center px-6 py-24 overflow-hidden">
-        <!-- Background gradient and pattern -->
-        <div class="absolute inset-0 bg-gradient-to-b from-[#0A0C35] to-[#05061A] z-0"></div>
-        <div class="absolute inset-0 bg-[url('/static/patterns/grid-pattern.svg')] bg-repeat opacity-10 z-0"></div>
-        
-        <!-- Animated circuit feathers -->
-        <div class="absolute top-1/4 left-1/3 z-10 opacity-60 transform -rotate-12">
-          <CircuitFeather severity="moderate" size="lg" variant="technical" animated={true} />
-        </div>
-        <div class="absolute bottom-1/3 right-1/4 z-10 opacity-40 transform rotate-45">
-          <CircuitFeather severity="minor" size="md" variant="technical" animated={true} />
-        </div>
-        
-        <!-- Main content -->
-        <div class="container mx-auto relative z-20 text-center">
-          <h1 class="text-5xl sm:text-6xl font-bold mb-6 leading-tight tracking-wider text-white">
-            ATTENTION <span class="text-[#2E6E4E]">IS</span> ULTIMATE COMMODITY
-          </h1>
-          <h2 class="text-2xl sm:text-3xl mb-8 text-[#2E6E4E]/90 max-w-2xl mx-auto">
-            In Mirador, every glance has value
-          </h2>
-          
-          <div class="relative my-12 mx-auto w-32 h-32">
-            <CircuitFeather severity="critical" size="lg" variant="technical" animated={true} />
-          </div>
-          
-          <div class="mt-12">
-            <a href="#concept" class="px-8 py-4 bg-[#2E6E4E] text-white rounded-md inline-block hover:bg-[#2E6E4E]/80 transition-colors shadow-lg">
-              Explore Mirador
-            </a>
-          </div>
-          
-          <!-- Scroll indicator -->
-          <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 5v14M19 12l-7 7-7-7"/>
-            </svg>
-          </div>
-        </div>
-      </section>
-      
-      <!-- Concept Introduction -->
-      <section id="concept" class="py-20 bg-[#0A0C35] relative">
-        <div class="container mx-auto px-6">
-          <div class="max-w-3xl mx-auto">
-            <h2 class="text-3xl font-bold mb-8 text-white text-center">The Attention Economy</h2>
-            <div class="bg-[#05061A]/50 p-8 rounded-lg border border-[#2E6E4E]/20 shadow-xl">
-              <p class="text-lg mb-6 text-white/90">
-                In the world of Mirador, human attention has been quantified, measured, and transformed into the primary unit of value.
-              </p>
-              <p class="text-lg mb-6 text-white/90">
-                The more attention a person, company, or city-state commands, the more power they wield. But when attention flows unregulated, 
-                strange manifestations appear - circuit-like feathers that signal imbalance in the system.
-              </p>
-              
-              <div class="flex items-center my-8 justify-center">
-                <CircuitFeather severity="minor" size="sm" variant="technical" />
-                <span class="mx-2">→</span>
-                <CircuitFeather severity="moderate" size="sm" variant="technical" />
-                <span class="mx-2">→</span>
-                <CircuitFeather severity="severe" size="sm" variant="technical" />
-                <span class="mx-2">→</span>
-                <CircuitFeather severity="critical" size="sm" variant="technical" />
-              </div>
-              
-              <p class="text-center text-[#2E6E4E] font-medium">
-                These manifestations intensify as the imbalance grows
-              </p>
-            </div>
-            
-            <!-- Visual element showing attention flow -->
-            <div class="my-12 relative h-64 bg-[#05061A]/50 rounded-lg overflow-hidden border border-[#2E6E4E]/20">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <div class="relative">
-                  <div class="w-20 h-20 rounded-full bg-[#2E6E4E]/20 absolute left-0 top-1/2 -translate-y-1/2 flex items-center justify-center">
-                    Source
-                  </div>
-                  <svg width="200" height="4" class="my-8 mx-auto">
-                    <line x1="0" y1="2" x2="200" y2="2" stroke="#2E6E4E" stroke-width="4" stroke-dasharray="6 4" class="animate-flow" />
-                  </svg>
-                  <div class="w-20 h-20 rounded-full bg-[#A63D2F]/20 absolute right-0 top-1/2 -translate-y-1/2 flex items-center justify-center">
-                    Receiver
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <!-- City-States Preview -->
-      <section class="py-20 bg-[#05061A] relative">
-        <div class="container mx-auto px-6">
-          <h2 class="text-3xl font-bold mb-12 text-white text-center">Competing City-States</h2>
-          
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div class="bg-[#0A0C35]/70 p-6 rounded-lg border border-[#2E6E4E]/20 shadow-lg">
-              <h3 class="text-xl font-bold mb-4 text-[#2E6E4E]">Nexus</h3>
-              <p class="text-white/80 mb-4">
-                The technological hub that pioneered attention quantification, believing in the free flow of attention as a resource.
-              </p>
-              <div class="flex justify-end">
-                <CircuitFeather severity="minor" size="sm" variant="technical" />
-              </div>
-            </div>
-            
-            <div class="bg-[#0A0C35]/70 p-6 rounded-lg border border-[#A63D2F]/20 shadow-lg">
-              <h3 class="text-xl font-bold mb-4 text-[#A63D2F]">Meridian</h3>
-              <p class="text-white/80 mb-4">
-                A regulatory power that believes attention must be carefully controlled and allocated to prevent system collapse.
-              </p>
-              <div class="flex justify-end">
-                <CircuitFeather severity="moderate" size="sm" variant="technical" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <!-- Character Glimpse -->
-      <section class="py-20 bg-[#0A0C35] relative">
-        <div class="container mx-auto px-6">
-          <div class="max-w-3xl mx-auto">
-            <div class="bg-[#05061A]/50 p-8 rounded-lg border border-[#2E6E4E]/20 shadow-xl">
-              <div class="flex flex-col sm:flex-row items-center">
-                <div class="mb-6 sm:mb-0 sm:mr-8">
-                  <div class="w-32 h-32 rounded-full bg-[#2E6E4E]/20 flex items-center justify-center">
-                    <CircuitFeather severity="severe" size="md" variant="technical" animated={true} />
-                  </div>
-                </div>
-                <div>
-                  <h3 class="text-2xl font-bold mb-3 text-white">Silas Hale</h3>
-                  <p class="text-lg text-white/80 italic mb-4">
-                    "The manifestations don't lie. Something in the system is broken."
-                  </p>
-                  <p class="text-white/70">
-                    A reconciliation agent tasked with tracking down attention imbalances and restoring equilibrium before manifestations become critical.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <!-- Dual Paths -->
-      <section class="py-20 bg-[#05061A] relative">
-        <div class="container mx-auto px-6">
-          <h2 class="text-3xl font-bold mb-12 text-white text-center">Explore Mirador</h2>
-          
-          <div class="max-w-2xl mx-auto">
-            <div class="bg-[#0A0C35]/70 p-8 rounded-lg border border-[#2E6E4E] shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 group">
-              <h3 class="text-xl font-bold mb-4 text-[#2E6E4E] group-hover:text-white transition-colors text-center">Begin Your Journey</h3>
-              <p class="text-white/80 mb-6 text-center">
-                Explore the world of Mirador, where attention flows are quantified, measured, and traded as the primary unit of value.
-              </p>
-              <div class="flex justify-center mt-8">
-                <a href="#" class="px-8 py-4 bg-[#2E6E4E] text-white rounded-md inline-block hover:bg-[#2E6E4E]/80 transition-colors shadow-lg">
-                  Explore Mirador
-                </a>
-              </div>
-              <div class="flex justify-center mt-6">
-                <CircuitFeather severity="moderate" size="md" variant="technical" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex flex-col justify-center items-center px-4 py-20">
+    <!-- Background elements -->
+    <div class="absolute inset-0 bg-gradient-to-b from-primary-800 to-primary-900 z-0"></div>
+    <div class="absolute inset-0 bg-[url('/static/patterns/grid-pattern.svg')] bg-repeat opacity-10 z-0"></div>
+    
+    <!-- Decorative circuit feathers -->
+    <div class="absolute top-1/4 -left-10 sm:left-10 z-10 opacity-60 transform -rotate-12">
+      <CircuitFeather severity="moderate" size="lg" variant="technical" animated={true} />
     </div>
-  )}
+    <div class="absolute bottom-1/3 -right-10 sm:right-10 z-10 opacity-40 transform rotate-45">
+      <CircuitFeather severity="minor" size="md" variant="technical" animated={true} />
+    </div>
+    
+    <!-- Main content -->
+    <div class="container mx-auto relative z-20 text-center">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight tracking-wider text-white">
+        ATTENTION <span class="text-secondary-500">IS</span> CURRENCY
+      </h1>
+      
+      <h2 class="text-xl sm:text-2xl mb-8 text-secondary-500/90 max-w-2xl mx-auto font-light">
+        In Mirador, every glance has value
+      </h2>
+      
+      <div class="relative my-8 mx-auto w-24 h-24 sm:w-32 sm:h-32">
+        <CircuitFeather severity="critical" size="lg" variant="technical" animated={true} />
+      </div>
+      
+      <div class="mt-8 sm:mt-12">
+        <a href="#concept" class="px-6 py-3 sm:px-8 sm:py-4 bg-secondary-500 text-white rounded-md inline-block hover:bg-secondary-600 transition-colors shadow-lg text-lg">
+          Explore Mirador
+        </a>
+      </div>
+      
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white/70">
+          <path d="M12 5v14M19 12l-7 7-7-7"/>
+        </svg>
+      </div>
+    </div>
+  </section>
   
-  <!-- Variation 2: City-States Conflict -->
-  {variation === '2' && (
-    <div id="city-states" class="landing-variation">
-      <!-- Hero Section -->
-      <section class="min-h-screen relative flex flex-col justify-center items-center px-6 py-24 overflow-hidden">
-        <!-- Background gradient and pattern -->
-        <div class="absolute inset-0 bg-gradient-to-b from-[#05061A] to-[#050615] z-0"></div>
-        <div class="absolute inset-0 bg-[url('/static/patterns/grid-pattern.svg')] bg-repeat opacity-5 z-0"></div>
+  <!-- Concept Section -->
+  <section id="concept" class="py-16 sm:py-20 bg-primary-800 relative">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-8 text-white text-center">The Attention Economy</h2>
         
-        <!-- Competing visual elements -->
-        <div class="absolute left-0 top-0 h-full w-1/3 bg-gradient-to-r from-[#2E6E4E]/10 to-transparent z-0"></div>
-        <div class="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-[#A63D2F]/10 to-transparent z-0"></div>
-        
-        <!-- Main content -->
-        <div class="container mx-auto relative z-20 text-center">
-          <h1 class="text-5xl sm:text-6xl font-bold mb-6 leading-tight tracking-wider text-white">
-            ATTENTION <span class="text-[#A63D2F]">IS</span> ULTIMATE COMMODITY
-          </h1>
-          <h2 class="text-2xl sm:text-3xl mb-8 text-neutral-400 max-w-2xl mx-auto">
-            When attention becomes power
-          </h2>
+        <div class="bg-primary-900/70 p-6 sm:p-8 rounded-lg border border-secondary-500/20 shadow-xl">
+          <p class="text-base sm:text-lg mb-6 text-white/90">
+            In the world of Mirador, human attention has been quantified, measured, and transformed into the primary unit of value.
+          </p>
           
-          <div class="relative my-12 flex justify-center items-center">
-            <div class="relative mr-8 -rotate-12 animate-pulse">
-              <CircuitFeather severity="moderate" size="md" variant="technical" />
-            </div>
-            <div class="w-px h-24 bg-white/20 mx-4"></div>
-            <div class="relative ml-8 rotate-12 animate-pulse" style="animation-delay: 0.5s;">
-              <CircuitFeather severity="severe" size="md" variant="technical" />
-            </div>
+          <p class="text-base sm:text-lg mb-6 text-white/90">
+            The more attention a person, company, or city-state commands, the more power they wield. But when attention flows unregulated, 
+            strange manifestations appear - circuit-like feathers that signal imbalance in the system.
+          </p>
+          
+          <div class="flex items-center my-8 justify-center space-x-2 sm:space-x-4">
+            <CircuitFeather severity="minor" size="sm" variant="technical" />
+            <span class="text-secondary-500">→</span>
+            <CircuitFeather severity="moderate" size="sm" variant="technical" />
+            <span class="text-secondary-500">→</span>
+            <CircuitFeather severity="severe" size="sm" variant="technical" />
+            <span class="text-secondary-500">→</span>
+            <CircuitFeather severity="critical" size="sm" variant="technical" />
           </div>
           
-          <div class="mt-12">
-            <a href="#city-intro" class="px-8 py-4 bg-[#2E6E4E] text-white rounded-md inline-block hover:bg-[#2E6E4E]/80 transition-colors shadow-lg">
-              Choose Your City
-            </a>
-          </div>
-          
-          <!-- Scroll indicator -->
-          <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 5v14M19 12l-7 7-7-7"/>
-            </svg>
-          </div>
+          <p class="text-center text-secondary-500 font-medium">
+            These manifestations intensify as the imbalance grows
+          </p>
         </div>
-      </section>
-      
-      <!-- City Introductions -->
-      <section id="city-intro" class="py-20 bg-[#0A0C35] relative">
-        <div class="container mx-auto px-6">
-          <h2 class="text-3xl font-bold mb-12 text-white text-center">The Major Powers</h2>
-          
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div class="bg-[#05061A]/80 p-6 rounded-lg border border-[#2E6E4E]/20 shadow-lg">
-              <div class="flex justify-center mb-6">
-                <CircuitFeather severity="minor" size="md" variant="technical" />
-              </div>
-              <h3 class="text-xl font-bold mb-4 text-[#2E6E4E] text-center">Nexus</h3>
-              <p class="text-white/80 mb-4">
-                Founded on principles of technological innovation and free exchange of ideas. Nexus believes attention should flow naturally, without regulations.
-              </p>
-              <p class="text-white/80 font-bold mt-4 text-center">
-                "Attention flows to worth"
-              </p>
-            </div>
-            
-            <div class="bg-[#05061A]/80 p-6 rounded-lg border border-[#A63D2F]/20 shadow-lg transform scale-105">
-              <div class="flex justify-center mb-6">
-                <CircuitFeather severity="severe" size="md" variant="technical" />
-              </div>
-              <h3 class="text-xl font-bold mb-4 text-[#A63D2F] text-center">Meridian</h3>
-              <p class="text-white/80 mb-4">
-                The regulatory power that established the Attention Bureau. Meridian believes all attention exchanges must be licensed, tracked, and balanced.
-              </p>
-              <p class="text-white/80 font-bold mt-4 text-center">
-                "Balance creates stability"
-              </p>
-            </div>
-            
-            <div class="bg-[#05061A]/80 p-6 rounded-lg border border-white/10 shadow-lg">
-              <div class="flex justify-center mb-6">
-                <CircuitFeather severity="critical" size="md" variant="abstract" />
-              </div>
-              <h3 class="text-xl font-bold mb-4 text-white text-center">Outland</h3>
-              <p class="text-white/80 mb-4">
-                A coalition of free territories that reject attention quantification entirely. They operate outside the system, but experience the most severe manifestations.
-              </p>
-              <p class="text-white/80 font-bold mt-4 text-center">
-                "Freedom from the algorithm"
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <!-- Capabilities Teaser -->
-      <section class="py-20 bg-[#05061A] relative">
-        <div class="container mx-auto px-6">
-          <div class="max-w-3xl mx-auto">
-            <h2 class="text-3xl font-bold mb-8 text-white text-center">Capabilities & Technologies</h2>
-            
-            <div class="bg-[#0A0C35]/50 p-8 rounded-lg border border-[#2E6E4E]/20 shadow-xl">
-              <p class="text-lg mb-6 text-white/90">
-                Each city-state has developed specialized technologies to harness and direct attention. These capabilities often manifest physically when overused or improperly balanced.
-              </p>
-              
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 my-8">
-                <div class="border border-[#2E6E4E]/30 rounded-lg p-4">
-                  <h4 class="text-[#2E6E4E] font-bold mb-2">Attention Amplifiers</h4>
-                  <p class="text-white/70 text-sm">Nexus technology that increases the impact of attention received.</p>
-                  <div class="flex justify-end mt-4">
-                    <CircuitFeather severity="moderate" size="sm" variant="technical" />
-                  </div>
-                </div>
-                
-                <div class="border border-[#A63D2F]/30 rounded-lg p-4">
-                  <h4 class="text-[#A63D2F] font-bold mb-2">Flow Regulators</h4>
-                  <p class="text-white/70 text-sm">Meridian devices that restrict and direct attention pathways.</p>
-                  <div class="flex justify-end mt-4">
-                    <CircuitFeather severity="severe" size="sm" variant="technical" />
-                  </div>
-                </div>
-              </div>
-              
-              <div class="flex items-center justify-center my-8">
-                <div class="h-px w-full bg-white/10"></div>
-                <span class="mx-4 text-white/30">vs</span>
-                <div class="h-px w-full bg-white/10"></div>
-              </div>
-              
-              <div class="border border-white/20 rounded-lg p-4 max-w-sm mx-auto">
-                <h4 class="text-white font-bold mb-2 text-center">Disruptors</h4>
-                <p class="text-white/70 text-sm text-center">Outland technology designed to break attention pathways entirely.</p>
-                <div class="flex justify-center mt-4">
-                  <CircuitFeather severity="critical" size="sm" variant="abstract" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <!-- Character Introduction -->
-      <section class="py-20 bg-[#0A0C35] relative">
-        <div class="container mx-auto px-6">
-          <h2 class="text-3xl font-bold mb-12 text-white text-center">Key Characters</h2>
-          
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div class="bg-[#05061A]/80 p-6 rounded-lg border border-[#2E6E4E]/20 shadow-lg">
-              <div class="flex items-center mb-6">
-                <div class="mr-4 w-16 h-16 rounded-full bg-[#2E6E4E]/20 flex items-center justify-center">
-                  <CircuitFeather severity="moderate" size="sm" variant="technical" />
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold text-[#2E6E4E]">Silas Hale</h3>
-                  <p class="text-white/70 text-sm">Reconciliation Agent</p>
-                </div>
-              </div>
-              <p class="text-white/80 mb-4">
-                Former Nexus engineer turned independent agent who tracks down imbalances in the attention economy.
-              </p>
-              <p class="text-white/80 italic">
-                "I've seen what happens when the system breaks. The manifestations are just the beginning."
-              </p>
-            </div>
-            
-            <div class="bg-[#05061A]/80 p-6 rounded-lg border border-[#A63D2F]/20 shadow-lg">
-              <div class="flex items-center mb-6">
-                <div class="mr-4 w-16 h-16 rounded-full bg-[#A63D2F]/20 flex items-center justify-center">
-                  <CircuitFeather severity="severe" size="sm" variant="technical" />
-                </div>
-                <div>
-                  <h3 class="text-xl font-bold text-[#A63D2F]">Aria Voss</h3>
-                  <p class="text-white/70 text-sm">Meridian Regulator</p>
-                </div>
-              </div>
-              <p class="text-white/80 mb-4">
-                High-ranking official in Meridian's Attention Bureau who believes strict regulation is necessary.
-              </p>
-              <p class="text-white/80 italic">
-                "Unchecked attention flow is a recipe for societal collapse. We need order."
-              </p>
-            </div>
-          </div>
-          
-          <div class="flex justify-center mt-12">
-            <a href="#" class="px-8 py-3 border border-white/30 text-white rounded-md inline-block hover:bg-white/10 transition-colors">
-              Follow Their Journey
-            </a>
-          </div>
-        </div>
-      </section>
-      
-      <!-- Exploration Paths -->
-      <section class="py-20 bg-[#05061A] relative">
-        <div class="container mx-auto px-6">
-          <div class="max-w-4xl mx-auto">
-            <div class="flex items-center mb-12">
-              <div class="h-px bg-[#2E6E4E]/30 flex-grow"></div>
-              <h2 class="text-3xl font-bold text-white px-6">Explore Mirador</h2>
-              <div class="h-px bg-[#A63D2F]/30 flex-grow"></div>
-            </div>
-            
-            <div class="relative group mx-auto max-w-2xl">
-              <div class="absolute inset-0 bg-gradient-to-b from-[#2E6E4E]/20 to-[#05061A] rounded-lg transform transition-transform group-hover:scale-105"></div>
-              <div class="relative p-8">
-                <div class="flex justify-center mb-6">
-                  <CircuitFeather severity="moderate" size="md" variant="technical" />
-                </div>
-                <h3 class="text-2xl font-bold mb-4 text-[#2E6E4E] text-center group-hover:text-white transition-colors">
-                  Begin Your Journey
-                </h3>
-                <p class="text-white/80 text-center mb-8">
-                  Explore the complex world of city-states where attention is the ultimate currency and power.
-                </p>
-                <div class="flex justify-center">
-                  <a href="#" class="px-8 py-4 bg-[#2E6E4E] text-white rounded-md inline-block hover:bg-[#2E6E4E]/80 transition-colors shadow-lg">
-                    Explore Mirador
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      </div>
     </div>
-  )}
+  </section>
   
-  <!-- Variation 3: Manifestations Mystery -->
-  {variation === '3' && (
-    <div id="manifestations" class="landing-variation">
-      <!-- Hero Section -->
-      <section class="min-h-screen relative flex flex-col justify-center items-center px-6 py-24 overflow-hidden">
-        <!-- Background elements -->
-        <div class="absolute inset-0 bg-[#05061A] z-0"></div>
-        <div class="absolute inset-0 bg-[url('/static/patterns/grid-pattern.svg')] bg-repeat opacity-5 z-0"></div>
-        
-        <!-- Glowing background elements -->
-        <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-          <div class="absolute top-1/4 left-1/2 w-96 h-96 bg-[#2E6E4E]/10 rounded-full filter blur-3xl"></div>
-          <div class="absolute bottom-1/4 right-1/3 w-64 h-64 bg-[#A63D2F]/10 rounded-full filter blur-3xl"></div>
-        </div>
-        
-        <!-- Main content -->
-        <div class="container mx-auto relative z-20 text-center">
-          <h1 class="text-5xl sm:text-6xl font-bold mb-6 leading-tight tracking-wider text-white">
-            ATTENTION <span class="text-[#A63D2F]">IS</span> ULTIMATE COMMODITY
-          </h1>
-          <h2 class="text-2xl sm:text-3xl mb-8 text-neutral-400 max-w-2xl mx-auto">
-            The feathers appear when attention overflows
-          </h2>
-          
-          <div class="relative my-12 flex justify-center">
-            <CircuitFeather severity="critical" size="lg" variant="abstract" animated={true} />
+  <!-- City-States Section -->
+  <section class="py-16 sm:py-20 bg-primary-900 relative">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-white text-center">Competing City-States</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
+        <div class="bg-primary-800/70 p-6 rounded-lg border border-secondary-500/20 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+          <div class="flex justify-between items-start mb-4">
+            <h3 class="text-xl font-bold text-secondary-500">Nexus</h3>
+            <CircuitFeather severity="minor" size="sm" variant="technical" />
           </div>
           
-          <div class="mt-12">
-            <a href="#mystery" class="px-8 py-4 bg-transparent border-2 border-[#A63D2F] text-white rounded-md inline-block hover:bg-[#A63D2F]/20 transition-colors shadow-lg">
-              Investigate
+          <p class="text-white/80 mb-4">
+            The technological hub that pioneered attention quantification, believing in the free flow of attention as a resource.
+          </p>
+          
+          <div class="mt-4 pt-4 border-t border-primary-700">
+            <span class="text-xs text-neutral-400">Founded: 2092</span>
+          </div>
+        </div>
+        
+        <div class="bg-primary-800/70 p-6 rounded-lg border border-accent-500/20 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+          <div class="flex justify-between items-start mb-4">
+            <h3 class="text-xl font-bold text-accent-500">Meridian</h3>
+            <CircuitFeather severity="moderate" size="sm" variant="technical" />
+          </div>
+          
+          <p class="text-white/80 mb-4">
+            A regulatory power that believes attention must be carefully controlled and allocated to prevent system collapse.
+          </p>
+          
+          <div class="mt-4 pt-4 border-t border-primary-700">
+            <span class="text-xs text-neutral-400">Founded: 2103</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Character Glimpse -->
+  <section class="py-16 sm:py-20 bg-primary-800 relative">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="bg-primary-900/70 p-6 sm:p-8 rounded-lg border border-secondary-500/20 shadow-xl">
+          <div class="flex flex-col sm:flex-row items-center">
+            <div class="mb-6 sm:mb-0 sm:mr-8 relative">
+              <div class="w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-primary-700 flex items-center justify-center overflow-hidden">
+                <CircuitFeather severity="severe" size="md" variant="technical" animated={true} />
+              </div>
+              <div class="absolute top-0 right-0 w-6 h-6 bg-accent-500 rounded-full border-2 border-primary-900"></div>
+            </div>
+            
+            <div>
+              <h3 class="text-xl sm:text-2xl font-bold mb-3 text-white">Silas Hale</h3>
+              <p class="text-lg text-white/80 italic mb-4">
+                "The manifestations don't lie. Something in the system is broken."
+              </p>
+              <p class="text-base text-white/70">
+                A reconciliation agent tasked with tracking down attention imbalances and restoring equilibrium before manifestations become critical.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Call To Action -->
+  <section class="py-16 sm:py-20 bg-primary-900 relative">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-8 text-white">Begin Your Journey</h2>
+        
+        <div class="bg-gradient-to-br from-primary-800 to-primary-700 p-8 rounded-lg border border-secondary-500 shadow-lg">
+          <p class="text-lg mb-8 text-white/90">
+            Choose your path through Mirador, where attention flows determine the fate of cities and people alike.
+          </p>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            <a href="/technical" class="group bg-primary-800/80 hover:bg-secondary-900 p-4 rounded-md transition-colors border border-secondary-500/30 hover:border-secondary-500">
+              <h3 class="text-xl font-medium mb-2 text-secondary-500 group-hover:text-secondary-400">Technical Path</h3>
+              <p class="text-sm text-white/70">Explore the systems and technology behind attention quantification</p>
+            </a>
+            
+            <a href="/narrative" class="group bg-primary-800/80 hover:bg-accent-900 p-4 rounded-md transition-colors border border-accent-500/30 hover:border-accent-500">
+              <h3 class="text-xl font-medium mb-2 text-accent-500 group-hover:text-accent-400">Narrative Path</h3>
+              <p class="text-sm text-white/70">Follow the story of Silas Hale as he investigates the manifestations</p>
             </a>
           </div>
           
-          <!-- Scroll indicator -->
-          <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-pulse">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 5v14M19 12l-7 7-7-7"/>
-            </svg>
+          <div class="flex justify-center space-x-6">
+            <CircuitFeather severity="moderate" size="sm" variant="technical" />
+            <CircuitFeather severity="severe" size="sm" variant="technical" />
           </div>
         </div>
-      </section>
-      
-      <!-- Mystery Introduction -->
-      <section id="mystery" class="py-20 bg-[#0A0C35] relative">
-        <div class="container mx-auto px-6">
-          <div class="max-w-3xl mx-auto">
-            <h2 class="text-3xl font-bold mb-8 text-white text-center">The Manifestations</h2>
-            
-            <div class="bg-[#05061A]/80 p-8 rounded-lg border border-[#A63D2F]/20 shadow-xl">
-              <p class="text-lg mb-6 text-white/90">
-                They first appeared in Nexus labs, when attention amplification experiments exceeded safe parameters. Now they manifest wherever attention flows exceed entitlements.
-              </p>
-              
-              <div class="flex flex-col items-center my-8">
-                <p class="mb-4 text-white/70 italic text-center">
-                  "Circuit-feathers. That's what we call them. They appear in the air, like digital ghosts, when the system starts to break down."
-                </p>
-                <div class="w-16 h-1 bg-[#A63D2F]/50 my-2"></div>
-                <p class="text-[#A63D2F] font-bold">Silas Hale, Reconciliation Agent</p>
-              </div>
-              
-              <p class="text-white/90 mt-6">
-                The greater the imbalance, the more solid and numerous the manifestations become. Critical manifestations have been known to interfere with technology and, in rare cases, alter physical space.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <!-- Balance Theme -->
-      <section class="py-20 bg-[#05061A] relative">
-        <div class="container mx-auto px-6">
-          <h2 class="text-3xl font-bold mb-8 text-white text-center">Entitlements vs. Usage</h2>
-          
-          <div class="max-w-4xl mx-auto">
-            <div class="bg-[#0A0C35]/30 p-8 rounded-lg shadow-xl relative overflow-hidden border border-[#2E6E4E]/20">
-              <!-- Background elements -->
-              <div class="absolute inset-0 bg-gradient-to-r from-transparent via-[#2E6E4E]/5 to-transparent"></div>
-              
-              <p class="text-lg mb-8 text-white/90 relative z-10">
-                Every entity within the attention economy is granted specific entitlements - legally permitted amounts of attention they can receive and direct. When usage exceeds entitlements, the system begins to break down.
-              </p>
-              
-              <!-- Visual balance representation -->
-              <div class="relative h-64 mb-8">
-                <div class="absolute left-0 top-0 bottom-0 w-1/2 border-r border-white/20 px-4 flex flex-col items-center justify-center">
-                  <h3 class="text-xl font-bold mb-4 text-[#2E6E4E]">Entitlements</h3>
-                  <div class="w-full h-32 bg-[#2E6E4E]/20 rounded-md relative">
-                    <div class="absolute bottom-0 left-0 right-0 h-3/4 bg-[#2E6E4E]/40 rounded-md"></div>
-                  </div>
-                  <p class="mt-4 text-white/70">Legally permitted attention flow</p>
-                </div>
-                
-                <div class="absolute right-0 top-0 bottom-0 w-1/2 px-4 flex flex-col items-center justify-center">
-                  <h3 class="text-xl font-bold mb-4 text-[#A63D2F]">Usage</h3>
-                  <div class="w-full h-32 bg-[#A63D2F]/20 rounded-md relative">
-                    <div class="absolute bottom-0 left-0 right-0 h-full bg-[#A63D2F]/40 rounded-md"></div>
-                  </div>
-                  <p class="mt-4 text-white/70">Actual attention consumption</p>
-                </div>
-                
-                <!-- Manifestation indicators -->
-                <div class="absolute top-1/2 right-1/4 -translate-y-1/2 z-20">
-                  <CircuitFeather severity="moderate" size="sm" variant="technical" />
-                </div>
-                <div class="absolute top-1/4 right-1/3 -translate-y-1/2 z-20">
-                  <CircuitFeather severity="severe" size="sm" variant="technical" />
-                </div>
-                <div class="absolute bottom-1/4 right-1/5 translate-y-1/2 z-20">
-                  <CircuitFeather severity="critical" size="sm" variant="technical" />
-                </div>
-              </div>
-              
-              <div class="text-center">
-                <p class="text-white/90 italic">
-                  "When the imbalance grows severe enough, reality itself begins to glitch."
-                </p>
-              </div>
-            </div>
-            
-            <!-- Manifestation severity levels -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-              <div class="bg-[#0A0C35]/50 p-4 rounded-lg text-center">
-                <div class="flex justify-center mb-3">
-                  <CircuitFeather severity="minor" size="sm" variant="technical" />
-                </div>
-                <h4 class="text-white font-bold mb-1">Minor</h4>
-                <p class="text-white/60 text-sm">Barely visible, fleeting</p>
-              </div>
-              
-              <div class="bg-[#0A0C35]/50 p-4 rounded-lg text-center">
-                <div class="flex justify-center mb-3">
-                  <CircuitFeather severity="moderate" size="sm" variant="technical" />
-                </div>
-                <h4 class="text-white font-bold mb-1">Moderate</h4>
-                <p class="text-white/60 text-sm">Clearly visible, stable</p>
-              </div>
-              
-              <div class="bg-[#0A0C35]/50 p-4 rounded-lg text-center">
-                <div class="flex justify-center mb-3">
-                  <CircuitFeather severity="severe" size="sm" variant="technical" />
-                </div>
-                <h4 class="text-white font-bold mb-1">Severe</h4>
-                <p class="text-white/60 text-sm">Solid, interferes with tech</p>
-              </div>
-              
-              <div class="bg-[#0A0C35]/50 p-4 rounded-lg text-center">
-                <div class="flex justify-center mb-3">
-                  <CircuitFeather severity="critical" size="sm" variant="technical" />
-                </div>
-                <h4 class="text-white font-bold mb-1">Critical</h4>
-                <p class="text-white/60 text-sm">Physical, alters reality</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <!-- Nextla Agent -->
-      <section class="py-20 bg-[#0A0C35] relative">
-        <div class="container mx-auto px-6">
-          <div class="max-w-3xl mx-auto">
-            <div class="bg-[#05061A]/80 p-8 rounded-lg border border-[#2E6E4E]/20 shadow-xl">
-              <h2 class="text-3xl font-bold mb-6 text-white text-center">The Reconciliation Agent</h2>
-              
-              <div class="flex flex-col md:flex-row items-center mb-8">
-                <div class="mb-6 md:mb-0 md:mr-8 w-32 h-32 rounded-full bg-[#2E6E4E]/10 flex items-center justify-center">
-                  <CircuitFeather severity="critical" size="md" variant="abstract" animated={true} />
-                </div>
-                
-                <div>
-                  <h3 class="text-2xl font-bold mb-3 text-[#2E6E4E]">Silas Hale</h3>
-                  <p class="text-white/80 mb-4">
-                    Once a leading engineer at Nexus, Silas now works independently to track and resolve attention imbalances 
-                    before critical manifestations cause permanent damage.
-                  </p>
-                  <p class="text-white/80 italic">
-                    "I've followed the circuit-feathers across every city-state. They're trying to tell us something."
-                  </p>
-                </div>
-              </div>
-              
-              <div class="mt-8 text-center">
-                <a href="#" class="px-8 py-3 bg-[#2E6E4E] text-white rounded-md inline-block hover:bg-[#2E6E4E]/80 transition-colors shadow-lg">
-                  Join Silas
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <!-- Exploration Options -->
-      <section class="py-20 bg-[#05061A] relative">
-        <div class="container mx-auto px-6">
-          <h2 class="text-3xl font-bold mb-12 text-white text-center">Explore Mirador</h2>
-          
-          <div class="max-w-2xl mx-auto">
-            <div class="group relative">
-              <div class="absolute inset-0 bg-gradient-to-br from-[#05061A] to-[#0A0C35] rounded-lg group-hover:from-[#2E6E4E]/10 group-hover:to-[#0A0C35] transition-colors duration-300"></div>
-              <div class="relative p-8 border border-[#2E6E4E]/30 rounded-lg">
-                <div class="flex justify-center mb-8">
-                  <CircuitFeather severity="severe" size="md" variant="technical" />
-                </div>
-                <h3 class="text-2xl font-bold mb-4 text-[#2E6E4E] text-center">Begin Your Journey</h3>
-                <p class="text-white/80 text-center mb-8">
-                  Join Silas Hale as he investigates the mysterious manifestations and uncovers the truth behind the attention economy.
-                </p>
-                <div class="text-center">
-                  <a href="#" class="px-8 py-4 bg-[#2E6E4E] text-white rounded-md inline-block hover:bg-[#2E6E4E]/80 transition-colors shadow-lg">
-                    Explore Mirador
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      </div>
     </div>
-  )}
+  </section>
 </LandingLayout>
 
 <style>
   @keyframes flow {
     0% {
-      stroke-dashoffset: 0;
+      stroke-dashoffset: 24;
     }
     100% {
-      stroke-dashoffset: -20;
+      stroke-dashoffset: 0;
     }
   }
   
   .animate-flow {
-    animation: flow 2s linear infinite;
+    animation: flow 1.5s linear infinite;
+  }
+  
+  /* Custom scrollbar for webkit browsers */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(46, 110, 78, 0.5);
+    border-radius: 20px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(46, 110, 78, 0.8);
   }
 </style> 

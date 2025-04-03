@@ -2,7 +2,7 @@
 interface Props {
   severity?: 'minor' | 'moderate' | 'severe' | 'critical';
   size?: 'sm' | 'md' | 'lg';
-  variant?: 'technical' | 'organic' | 'abstract';
+  variant?: 'technical' | 'organic';
   animated?: boolean;
   className?: string;
 }
@@ -15,17 +15,17 @@ const {
   className = ''
 } = Astro.props;
 
-// Map severity to colors
+// Map severity to colors using TailwindCSS color system
 const colorMap = {
   minor: {
-    primary: '#A63D2F', // Earthy red accent
-    secondary: '#C24B3A',
-    highlight: '#D6A6A0'
+    primary: 'var(--color-accent-500)', // Earthy red accent
+    secondary: 'var(--color-accent-400)',
+    highlight: 'var(--color-accent-300)'
   },
   moderate: {
-    primary: '#2E6E4E', // Jade green 
-    secondary: '#37865F',
-    highlight: '#9BC3B5'
+    primary: 'var(--color-secondary-500)', // Jade green 
+    secondary: 'var(--color-secondary-400)',
+    highlight: 'var(--color-secondary-300)'
   },
   severe: {
     primary: '#FFC107', // Alert color
@@ -33,25 +33,43 @@ const colorMap = {
     highlight: '#FFECB3'
   },
   critical: {
-    primary: '#0A0C35', // Deep navy
-    secondary: '#2A34A4',
-    highlight: '#A63D2F'
+    primary: 'var(--color-primary-800)', // Deep navy
+    secondary: 'var(--color-primary-400)',
+    highlight: 'var(--color-accent-500)'
   }
 };
 
-// Map size to dimensions
+// Map size to dimensions - smaller for mobile
 const sizeMap = {
   sm: {
-    width: 40,
-    height: 60
+    width: {
+      default: 32,
+      sm: 40
+    },
+    height: {
+      default: 48,
+      sm: 60
+    }
   },
   md: {
-    width: 60,
-    height: 90
+    width: {
+      default: 48,
+      sm: 60
+    },
+    height: {
+      default: 72,
+      sm: 90
+    }
   },
   lg: {
-    width: 80,
-    height: 120
+    width: {
+      default: 64,
+      sm: 80
+    },
+    height: {
+      default: 96,
+      sm: 120
+    }
   }
 };
 
@@ -59,20 +77,36 @@ const colors = colorMap[severity];
 const dimensions = sizeMap[size];
 
 // Animation class based on variant
-const animationClass = animated ? {
-  technical: 'animate-pulse-slow',
-  organic: 'animate-float',
-  abstract: 'animate-glow'
-}[variant] : '';
+const animationClass = animated 
+  ? variant === 'technical' 
+    ? 'animate-pulse-slow' 
+    : 'animate-float'
+  : '';
+
+// Add CSS variables for colors to enable theme changes
+const cssVars = `
+  --color-primary-400: #2A34A4;
+  --color-primary-800: #0A0C35;
+  --color-secondary-300: #9BC3B5;
+  --color-secondary-400: #37865F;
+  --color-secondary-500: #2E6E4E;
+  --color-accent-300: #D6A6A0;
+  --color-accent-400: #C24B3A;
+  --color-accent-500: #A63D2F;
+`;
 ---
+
+<style set:html={cssVars}></style>
 
 {variant === 'technical' && (
   <svg 
     xmlns="http://www.w3.org/2000/svg" 
     viewBox="0 0 100 300" 
-    width={dimensions.width} 
-    height={dimensions.height}
-    class={`inline-block ${animationClass} ${className}`}
+    width={dimensions.width.default}
+    height={dimensions.height.default}
+    class={`inline-block ${animationClass} ${className} sm:w-[${dimensions.width.sm}px] sm:h-[${dimensions.height.sm}px]`}
+    role="img"
+    aria-label={`${severity} circuit feather`}
   >
     <!-- Simplified curved feather path inspired by the provided design -->
     <path 
@@ -90,13 +124,13 @@ const animationClass = animated ? {
       fill="none"
     />
     
-    <!-- Circuit nodes along the path -->
+    <!-- Circuit nodes along the path - reduced for better mobile performance -->
     <circle cx="50" cy="30" r="2" fill={colors.highlight} />
     <circle cx="60" cy="100" r="2" fill={colors.highlight} />
     <circle cx="70" cy="170" r="2" fill={colors.highlight} />
     <circle cx="75" cy="240" r="2" fill={colors.highlight} />
     
-    <!-- Circuit paths -->
+    <!-- Circuit paths - reduced for better mobile performance -->
     <path d="M50,30 L75,40" stroke={colors.secondary} stroke-width="1" />
     <path d="M60,100 L85,110" stroke={colors.secondary} stroke-width="1" />
     <path d="M70,170 L95,180" stroke={colors.secondary} stroke-width="1" />
@@ -117,9 +151,11 @@ const animationClass = animated ? {
   <svg 
     xmlns="http://www.w3.org/2000/svg" 
     viewBox="0 0 100 150" 
-    width={dimensions.width} 
-    height={dimensions.height}
-    class={`inline-block ${animationClass} ${className}`}
+    width={dimensions.width.default}
+    height={dimensions.height.default}
+    class={`inline-block ${animationClass} ${className} sm:w-[${dimensions.width.sm}px] sm:h-[${dimensions.height.sm}px]`}
+    role="img"
+    aria-label={`${severity} organic feather`}
   >
     <!-- Side profile feather outline - more curved and organic -->
     <path 
@@ -137,17 +173,14 @@ const animationClass = animated ? {
       fill="none"
     />
     
-    <!-- Side veins / circuit traces -->
+    <!-- Side veins / circuit traces - reduced for better mobile performance -->
     <path d="M50,30 C60,35 75,32 85,45" stroke={colors.secondary} stroke-width="1.5" fill="none" />
-    <path d="M50,50 C65,55 75,65 80,80" stroke={colors.secondary} stroke-width="1.5" fill="none" />
     <path d="M50,70 C60,80 67,95 70,110" stroke={colors.secondary} stroke-width="1.5" fill="none" />
     <path d="M50,90 C55,100 58,115 60,125" stroke={colors.secondary} stroke-width="1.5" fill="none" />
     
-    <!-- Circuit nodes -->
+    <!-- Circuit nodes - reduced for better mobile performance -->
     <circle cx="50" cy="30" r="2" fill={colors.highlight} />
     <circle cx="85" cy="45" r="2" fill={colors.highlight} />
-    <circle cx="50" cy="50" r="2" fill={colors.highlight} />
-    <circle cx="80" cy="80" r="2" fill={colors.highlight} />
     <circle cx="50" cy="70" r="2" fill={colors.highlight} />
     <circle cx="70" cy="110" r="2" fill={colors.highlight} />
     <circle cx="50" cy="90" r="2" fill={colors.highlight} />
@@ -158,83 +191,8 @@ const animationClass = animated ? {
   </svg>
 )}
 
-{variant === 'abstract' && (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    viewBox="0 0 100 150" 
-    width={dimensions.width} 
-    height={dimensions.height}
-    class={`inline-block ${animationClass} ${className}`}
-  >
-    <!-- Abstract geometric feather profile -->
-    <polygon 
-      points="50,10 70,20 85,40 90,70 85,100 70,130 50,140 30,130 15,100 10,70 15,40 30,20" 
-      stroke={colors.primary} 
-      stroke-width="2" 
-      fill="none"
-    />
-    
-    <!-- Central shaft with Mesoamerican pattern -->
-    <path 
-      d="M50,10 L50,140" 
-      stroke={colors.secondary} 
-      stroke-width="3"
-    />
-    
-    <!-- Mesoamerican pattern elements -->
-    <rect x="45" y="30" width="10" height="10" stroke={colors.secondary} fill="none" stroke-width="1.5" />
-    <rect x="45" y="60" width="10" height="10" stroke={colors.secondary} fill="none" stroke-width="1.5" />
-    <rect x="45" y="90" width="10" height="10" stroke={colors.secondary} fill="none" stroke-width="1.5" />
-    
-    <!-- Side patterns -->
-    <path d="M50,35 L75,35" stroke={colors.secondary} stroke-width="1.5" />
-    <path d="M75,35 L75,45 L85,45" stroke={colors.secondary} stroke-width="1.5" />
-    <path d="M50,65 L70,65" stroke={colors.secondary} stroke-width="1.5" />
-    <path d="M70,65 L70,75 L80,75" stroke={colors.secondary} stroke-width="1.5" />
-    <path d="M50,95 L65,95" stroke={colors.secondary} stroke-width="1.5" />
-    <path d="M65,95 L65,105 L75,105" stroke={colors.secondary} stroke-width="1.5" />
-    
-    <!-- Nodes -->
-    <circle cx="75" cy="35" r="2" fill={colors.highlight} />
-    <circle cx="85" cy="45" r="2" fill={colors.highlight} />
-    <circle cx="70" cy="65" r="2" fill={colors.highlight} />
-    <circle cx="80" cy="75" r="2" fill={colors.highlight} />
-    <circle cx="65" cy="95" r="2" fill={colors.highlight} />
-    <circle cx="75" cy="105" r="2" fill={colors.highlight} />
-    
-    <!-- Connection points -->
-    <polygon points="45,10 55,10 50,18" fill={colors.primary} />
-    <polygon points="45,140 55,140 50,132" fill={colors.primary} />
-  </svg>
-)}
-
 <style>
-  .animate-float {
-    animation: float 3s ease-in-out infinite;
-  }
-  
-  .animate-pulse-slow {
-    animation: pulseSlow 4s ease-in-out infinite;
-  }
-  
-  .animate-glow {
-    animation: glow 5s ease-in-out infinite;
-  }
-  
-  .pulse-circle {
-    animation: pulseCircle 3s ease-in-out infinite;
-  }
-  
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-  
-  @keyframes pulseSlow {
+  @keyframes pulse-slow {
     0%, 100% {
       opacity: 1;
     }
@@ -243,23 +201,20 @@ const animationClass = animated ? {
     }
   }
   
-  @keyframes glow {
+  @keyframes float {
     0%, 100% {
-      filter: drop-shadow(0 0 2px rgba(46, 110, 78, 0));
+      transform: translateY(0);
     }
     50% {
-      filter: drop-shadow(0 0 6px rgba(46, 110, 78, 0.6));
+      transform: translateY(-5px);
     }
   }
   
-  @keyframes pulseCircle {
-    0%, 100% {
-      r: 5;
-      opacity: 1;
-    }
-    50% {
-      r: 8;
-      opacity: 0.5;
-    }
+  .animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
+  }
+  
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
   }
 </style> 

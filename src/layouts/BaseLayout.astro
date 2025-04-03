@@ -1,5 +1,13 @@
 ---
-const { title, description } = Astro.props;
+import MobileNav from '../components/MobileNav.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  activePage?: string;
+}
+
+const { title, description, activePage = 'home' } = Astro.props;
 // Active link determination
 const pathname = Astro.url.pathname;
 
@@ -22,198 +30,110 @@ try {
 const hasLogo = logomarkSrc !== '';
 ---
 
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title} | Nextla</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <link rel="icon" href="/static/favicons/favicon.svg" />
+    <meta name="theme-color" content="#05061A" />
+    <meta name="color-scheme" content="dark" />
+    <title>{title}</title>
+    <link rel="icon" href="/static/favicons/favicon.svg" type="image/svg+xml" />
+    
+    <!-- Preload fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=JetBrains+Mono&display=swap" />
+    
+    <!-- OpenGraph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/static/og-image.jpg" />
   </head>
-  <body class="bg-primary-900 text-neutral-100 font-body">
-    <header class="bg-primary-800 text-white py-4">
+  
+  <body class="bg-primary-900 text-white font-body antialiased">
+    <MobileNav activePage={activePage} />
+    
+    <main class="pt-16">
+      <slot />
+    </main>
+    
+    <footer class="py-8 sm:py-12 bg-primary-800 border-t border-primary-700/50 mt-16">
       <div class="container mx-auto px-4">
-        <div class="flex justify-between items-center">
-          <div class="flex items-center">
-            <div class="text-2xl font-heading font-bold mr-8">
-              <a href="/" class="flex items-center">
-                {hasLogo ? (
-                  <img 
-                    src={logomarkSrc} 
-                    alt="Nextla Logo" 
-                    width="32" 
-                    height="32" 
-                    class="mr-2"
-                    onerror="this.style.display='none'"
-                  />
-                ) : (
-                  <span class="w-8 h-8 bg-accent-500 rounded-full flex items-center justify-center mr-2">N</span>
-                )}
-                Nextla
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <div>
+            <h3 class="text-xl font-bold mb-4 text-white">Mirador</h3>
+            <p class="text-neutral-400 mb-4">
+              A world where attention has become the primary currency and power.
+            </p>
+          </div>
+          
+          <div>
+            <h4 class="font-bold mb-4 text-white">Navigation</h4>
+            <ul class="space-y-2">
+              <li><a href="/" class="text-neutral-400 hover:text-secondary-400 transition-colors">Home</a></li>
+              <li><a href="/about" class="text-neutral-400 hover:text-secondary-400 transition-colors">About</a></li>
+              <li><a href="/technical" class="text-neutral-400 hover:text-secondary-400 transition-colors">Technical Path</a></li>
+              <li><a href="/narrative" class="text-neutral-400 hover:text-secondary-400 transition-colors">Narrative Path</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="font-bold mb-4 text-white">Connect</h4>
+            <div class="flex space-x-4">
+              <a href="#" class="text-neutral-400 hover:text-secondary-400 transition-colors">
+                <span class="sr-only">Twitter</span>
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                </svg>
+              </a>
+              <a href="#" class="text-neutral-400 hover:text-secondary-400 transition-colors">
+                <span class="sr-only">GitHub</span>
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                </svg>
               </a>
             </div>
-            <nav>
-              <ul class="flex space-x-6">
-                <li><a href="/" class={`hover:text-accent-400 transition-colors ${pathname === '/' ? 'text-accent-500 font-medium' : ''}`}>Home</a></li>
-                <li><a href="/about" class={`hover:text-accent-400 transition-colors ${pathname === '/about' ? 'text-accent-500 font-medium' : ''}`}>About</a></li>
-              </ul>
-            </nav>
-          </div>
-          
-          <!-- Mode Switcher -->
-          <div class="flex items-center ml-8">
-            <button 
-              class={`px-4 py-2 rounded-l-md ${mode === 'technical' ? 'bg-primary-700 text-white' : 'bg-primary-600 text-neutral-300'}`}
-              id="technical-mode-btn"
-            >
-              Technical
-            </button>
-            <button 
-              class={`px-4 py-2 rounded-r-md ${mode === 'narrative' ? 'bg-primary-700 text-white' : 'bg-primary-600 text-neutral-300'}`}
-              id="narrative-mode-btn"
-            >
-              Narrative
-            </button>
-          </div>
-          
-          <div class="flex items-center space-x-4">
-            <a href="#" class="text-white hover:text-accent-400 transition-colors">Download app</a>
-            <a href="#" class="text-white hover:text-accent-400 transition-colors">Log in</a>
-            <a href="#" class="bg-accent-500 text-white px-4 py-3 rounded hover:bg-accent-600 transition-colors transform hover:translate-y-[-2px] shadow-md">Try it free</a>
           </div>
         </div>
-      </div>
-    </header>
-    
-    <div class="flex">
-      <!-- Sidebar Navigation with Toggle -->
-      <aside id="sidebar" class="w-64 bg-primary-800 text-white h-screen transition-all duration-300 ease-in-out">
-        <div class="flex justify-between items-center p-4 border-b border-primary-700">
-          <h4 class="text-xs uppercase tracking-wider text-neutral-400">Navigation</h4>
-          <button id="sidebar-toggle" class="p-1 rounded bg-primary-700 hover:bg-primary-600 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sidebar-icon">
-              <path d="M19 12H5M12 19l-7-7 7-7"></path>
-            </svg>
-          </button>
-        </div>
-        <nav class="p-4">
-          <!-- Common navigation -->
-          <div class="mb-6">
-            <h4 class="text-xs uppercase tracking-wider text-neutral-400 mb-2">Overview</h4>
-            <ul class="space-y-2">
-              <li><a href="/" class={`block p-2 ${pathname === '/' ? 'bg-primary-700 text-accent-400 rounded' : 'hover:bg-primary-700 hover:text-accent-400 transition-colors'}`}>Home</a></li>
-              <li><a href="/about" class={`block p-2 ${pathname === '/about' ? 'bg-primary-700 text-accent-400 rounded' : 'hover:bg-primary-700 hover:text-accent-400 transition-colors'}`}>About</a></li>
-            </ul>
-          </div>
-          
-          <!-- Technical navigation (conditionally visible) -->
-          <div id="technical-nav" class={mode === 'technical' ? 'block' : 'hidden'}>
-            <h4 class="text-xs uppercase tracking-wider text-neutral-400 mb-2">Technical</h4>
-            <ul class="space-y-2">
-              <li><a href="/technical/capabilities?mode=technical" class={`block p-2 ${pathname === '/technical/capabilities' ? 'bg-primary-700 text-accent-400 rounded' : 'hover:bg-primary-700 hover:text-accent-400 transition-colors'}`}>Capabilities</a></li>
-              <li><a href="/technical/publishers?mode=technical" class={`block p-2 ${pathname === '/technical/publishers' ? 'bg-primary-700 text-accent-400 rounded' : 'hover:bg-primary-700 hover:text-accent-400 transition-colors'}`}>Publishers</a></li>
-              <li><a href="/technical/entitlements?mode=technical" class={`block p-2 ${pathname === '/technical/entitlements' ? 'bg-primary-700 text-accent-400 rounded' : 'hover:bg-primary-700 hover:text-accent-400 transition-colors'}`}>Entitlements</a></li>
-              <li><a href="/technical/reconciliation?mode=technical" class={`block p-2 ${pathname === '/technical/reconciliation' ? 'bg-primary-700 text-accent-400 rounded' : 'hover:bg-primary-700 hover:text-accent-400 transition-colors'}`}>Reconciliation</a></li>
-            </ul>
-          </div>
-          
-          <!-- Narrative navigation (conditionally visible) -->
-          <div id="narrative-nav" class={mode === 'narrative' ? 'block' : 'hidden'}>
-            <h4 class="text-xs uppercase tracking-wider text-neutral-400 mb-2">Narrative</h4>
-            <ul class="space-y-2">
-              <li><a href="/narrative/mirador?mode=narrative" class={`block p-2 ${pathname === '/narrative/mirador' ? 'bg-primary-700 text-accent-400 rounded' : 'hover:bg-primary-700 hover:text-accent-400 transition-colors'}`}>Mirador World</a></li>
-              <li><a href="/narrative/city-states?mode=narrative" class={`block p-2 ${pathname === '/narrative/city-states' ? 'bg-primary-700 text-accent-400 rounded' : 'hover:bg-primary-700 hover:text-accent-400 transition-colors'}`}>City-States</a></li>
-              <li><a href="/narrative/silas?mode=narrative" class={`block p-2 ${pathname === '/narrative/silas' ? 'bg-primary-700 text-accent-400 rounded' : 'hover:bg-primary-700 hover:text-accent-400 transition-colors'}`}>Silas's Journey</a></li>
-              <li><a href="/narrative/capabilities?mode=narrative" class={`block p-2 ${pathname === '/narrative/capabilities' ? 'bg-primary-700 text-accent-400 rounded' : 'hover:bg-primary-700 hover:text-accent-400 transition-colors'}`}>Capabilities</a></li>
-            </ul>
-          </div>
-        </nav>
-      </aside>
-      
-      <!-- Collapsed sidebar toggle button -->
-      <div id="sidebar-collapsed" class="hidden bg-primary-800 text-white h-screen py-4 px-2 transition-all duration-300 ease-in-out">
-        <button id="sidebar-expand" class="p-2 rounded bg-primary-700 hover:bg-primary-600 transition-colors mb-8">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </button>
-      </div>
-      
-      <!-- Main Content -->
-      <main class="flex-1">
-        <slot />
-      </main>
-    </div>
-    
-    <footer class="bg-primary-900 text-neutral-100 py-8 border-t border-primary-700">
-      <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <h3 class="text-xl font-heading mb-4 text-secondary-400">Nextla</h3>
-            <p>A modern approach to attention management in enterprise software.</p>
-          </div>
-          <div>
-            <h3 class="text-xl font-heading mb-4 text-secondary-400">Navigation</h3>
-            <ul class="space-y-2">
-              <li><a href="/" class="hover:text-accent-400 transition-colors">Home</a></li>
-              <li><a href="/about" class="hover:text-accent-400 transition-colors">About</a></li>
-              <li><a href="/technical/capabilities?mode=technical" class="hover:text-accent-400 transition-colors">Documentation</a></li>
-              <li><a href="/narrative/mirador?mode=narrative" class="hover:text-accent-400 transition-colors">Story</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="text-xl font-heading mb-4 text-secondary-400">Contact</h3>
-            <p>info@nextla.net</p>
-          </div>
-        </div>
-        <div class="border-t border-primary-700 mt-8 pt-8 text-center">
-          <p>&copy; {new Date().getFullYear()} Nextla. All rights reserved.</p>
+        
+        <div class="text-center pt-8 border-t border-primary-700/30">
+          <p class="text-neutral-500">&copy; {new Date().getFullYear()} Mirador. All rights reserved.</p>
         </div>
       </div>
     </footer>
-    
-    <!-- Add client-side script for mode switching and sidebar toggling -->
-    <script>
-      // Mode switching functions
-      document.getElementById('technical-mode-btn').addEventListener('click', () => {
-        switchMode('technical');
-      });
-      
-      document.getElementById('narrative-mode-btn').addEventListener('click', () => {
-        switchMode('narrative');
-      });
-      
-      function switchMode(mode) {
-        // Update URL
-        const url = new URL(window.location);
-        url.searchParams.set('mode', mode);
-        window.history.pushState({}, '', url);
-        
-        // Update UI
-        document.getElementById('technical-nav').style.display = mode === 'technical' ? 'block' : 'none';
-        document.getElementById('narrative-nav').style.display = mode === 'narrative' ? 'block' : 'none';
-        
-        // Update button styles
-        document.getElementById('technical-mode-btn').className = `px-4 py-2 rounded-l-md ${mode === 'technical' ? 'bg-primary-700 text-white' : 'bg-primary-600 text-neutral-300'}`;
-        document.getElementById('narrative-mode-btn').className = `px-4 py-2 rounded-r-md ${mode === 'narrative' ? 'bg-primary-700 text-white' : 'bg-primary-600 text-neutral-300'}`;
-      }
-      
-      // Sidebar toggle functionality
-      const sidebar = document.getElementById('sidebar');
-      const sidebarCollapsed = document.getElementById('sidebar-collapsed');
-      const sidebarToggle = document.getElementById('sidebar-toggle');
-      const sidebarExpand = document.getElementById('sidebar-expand');
-      
-      sidebarToggle.addEventListener('click', () => {
-        sidebar.classList.add('hidden');
-        sidebarCollapsed.classList.remove('hidden');
-      });
-      
-      sidebarExpand.addEventListener('click', () => {
-        sidebar.classList.remove('hidden');
-        sidebarCollapsed.classList.add('hidden');
-      });
-    </script>
   </body>
-</html> 
+</html>
+
+<style is:global>
+  /* Ensure smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom scrollbar for webkit browsers */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(46, 110, 78, 0.5);
+    border-radius: 20px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(46, 110, 78, 0.8);
+  }
+  
+  /* Focus styles for accessibility */
+  a:focus, button:focus {
+    outline: 2px solid var(--color-secondary-500);
+    outline-offset: 2px;
+  }
+</style> 
