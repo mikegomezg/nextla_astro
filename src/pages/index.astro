@@ -1,7 +1,9 @@
 ---
-import LandingLayout from '../layouts/LandingLayout.astro';
-import CircuitFeather from '../components/CircuitFeather.astro';
-import MobileNav from '../components/MobileNav.astro';
+import MinimalLayout from '../layouts/MinimalLayout.astro';
+import Header from '../components/Header.astro';
+import Dashboard from '../components/Dashboard.astro';
+import ExploreButton from '../components/ExploreButton.astro';
+import FeatherBackground from '../components/FeatherBackground.astro';
 
 // Get variation from URL parameter (v=1, v=2, or v=3)
 const { url } = Astro;
@@ -24,215 +26,246 @@ const colors = {
 };
 ---
 
-<LandingLayout title="Mirador - Digital Attention Economy" description="In Mirador, attention is the new currency. Every glance has value.">
-  <MobileNav activePage="home" />
-  
-  <!-- Hero Section -->
-  <section class="relative min-h-screen flex flex-col justify-center items-center px-4 py-20">
-    <!-- Background elements -->
-    <div class="absolute inset-0 bg-gradient-to-b from-primary-800 to-primary-900 z-0"></div>
-    <div class="absolute inset-0 bg-[url('/static/patterns/grid-pattern.svg')] bg-repeat opacity-10 z-0"></div>
+<MinimalLayout 
+  title="Nextla - Attention as Currency" 
+  description="Managing AI capabilities in the attention economy"
+>
+  <div class="relative min-h-screen flex flex-col bg-slate-900">
+    <Header />
     
-    <!-- Decorative circuit feathers -->
-    <div class="absolute top-1/4 -left-10 sm:left-10 z-10 opacity-60 transform -rotate-12">
-      <CircuitFeather severity="moderate" size="lg" variant="technical" animated={true} />
-    </div>
-    <div class="absolute bottom-1/3 -right-10 sm:right-10 z-10 opacity-40 transform rotate-45">
-      <CircuitFeather severity="minor" size="md" variant="technical" animated={true} />
-    </div>
-    
-    <!-- Main content -->
-    <div class="container mx-auto relative z-20 text-center">
-      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight tracking-wider text-white">
-        ATTENTION <span class="text-secondary-500">IS</span> CURRENCY
-      </h1>
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden">
+      <!-- Animated feather background -->
+      <FeatherBackground />
       
-      <h2 class="text-xl sm:text-2xl mb-8 text-secondary-500/90 max-w-2xl mx-auto font-light">
-        In Mirador, every glance has value
-      </h2>
-      
-      <div class="relative my-8 mx-auto w-24 h-24 sm:w-32 sm:h-32">
-        <CircuitFeather severity="critical" size="lg" variant="technical" animated={true} />
+      <!-- Logo -->
+      <div class="z-10 mb-8">
+        <div class="flex items-center gap-2">
+          <div class="h-12 w-12 rounded-full bg-teal-500 flex items-center justify-center">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" strokeWidth="2" />
+              <path d="M2 17L12 22L22 17" stroke="white" strokeWidth="2" />
+              <path d="M2 12L12 17L22 12" stroke="white" strokeWidth="2" />
+            </svg>
+          </div>
+          <h1 class="text-2xl font-bold">NEXTLA</h1>
+        </div>
       </div>
       
-      <div class="mt-8 sm:mt-12">
-        <a href="#concept" class="px-6 py-3 sm:px-8 sm:py-4 bg-secondary-500 text-white rounded-md inline-block hover:bg-secondary-600 transition-colors shadow-lg text-lg">
-          Explore Mirador
-        </a>
+      <!-- Title -->
+      <h2 class="text-4xl md:text-5xl font-bold text-center z-10 mb-4">Attention as Currency</h2>
+      <p class="text-lg md:text-xl text-center text-slate-300 max-w-md z-10 mb-8">
+        Managing AI capabilities in the attention economy
+      </p>
+      
+      <!-- Dashboard -->
+      <div class="w-full max-w-md z-10 mb-8">
+        <Dashboard />
+      </div>
+      
+      <!-- CTA Button -->
+      <div class="z-10">
+        <ExploreButton />
       </div>
       
       <!-- Scroll indicator -->
-      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white/70">
-          <path d="M12 5v14M19 12l-7 7-7-7"/>
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 9l6 6 6-6"/>
         </svg>
       </div>
-    </div>
-  </section>
-  
-  <!-- Concept Section -->
-  <section id="concept" class="py-16 sm:py-20 bg-primary-800 relative">
-    <div class="container mx-auto px-4">
-      <div class="max-w-3xl mx-auto">
-        <h2 class="text-2xl sm:text-3xl font-bold mb-8 text-white text-center">The Attention Economy</h2>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 px-4">
+      <div class="max-w-md mx-auto">
+        <h2 class="text-2xl font-bold mb-12 text-center">The Attention Economy</h2>
         
-        <div class="bg-primary-900/70 p-6 sm:p-8 rounded-lg border border-secondary-500/20 shadow-xl">
-          <p class="text-base sm:text-lg mb-6 text-white/90">
-            In the world of Mirador, human attention has been quantified, measured, and transformed into the primary unit of value.
-          </p>
-          
-          <p class="text-base sm:text-lg mb-6 text-white/90">
-            The more attention a person, company, or city-state commands, the more power they wield. But when attention flows unregulated, 
-            strange manifestations appear - circuit-like feathers that signal imbalance in the system.
-          </p>
-          
-          <div class="flex items-center my-8 justify-center space-x-2 sm:space-x-4">
-            <CircuitFeather severity="minor" size="sm" variant="technical" />
-            <span class="text-secondary-500">→</span>
-            <CircuitFeather severity="moderate" size="sm" variant="technical" />
-            <span class="text-secondary-500">→</span>
-            <CircuitFeather severity="severe" size="sm" variant="technical" />
-            <span class="text-secondary-500">→</span>
-            <CircuitFeather severity="critical" size="sm" variant="technical" />
-          </div>
-          
-          <p class="text-center text-secondary-500 font-medium">
-            These manifestations intensify as the imbalance grows
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- City-States Section -->
-  <section class="py-16 sm:py-20 bg-primary-900 relative">
-    <div class="container mx-auto px-4">
-      <h2 class="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-white text-center">Competing City-States</h2>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
-        <div class="bg-primary-800/70 p-6 rounded-lg border border-secondary-500/20 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-          <div class="flex justify-between items-start mb-4">
-            <h3 class="text-xl font-bold text-secondary-500">Nexus</h3>
-            <CircuitFeather severity="minor" size="sm" variant="technical" />
-          </div>
-          
-          <p class="text-white/80 mb-4">
-            The technological hub that pioneered attention quantification, believing in the free flow of attention as a resource.
-          </p>
-          
-          <div class="mt-4 pt-4 border-t border-primary-700">
-            <span class="text-xs text-neutral-400">Founded: 2092</span>
-          </div>
-        </div>
-        
-        <div class="bg-primary-800/70 p-6 rounded-lg border border-accent-500/20 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-          <div class="flex justify-between items-start mb-4">
-            <h3 class="text-xl font-bold text-accent-500">Meridian</h3>
-            <CircuitFeather severity="moderate" size="sm" variant="technical" />
-          </div>
-          
-          <p class="text-white/80 mb-4">
-            A regulatory power that believes attention must be carefully controlled and allocated to prevent system collapse.
-          </p>
-          
-          <div class="mt-4 pt-4 border-t border-primary-700">
-            <span class="text-xs text-neutral-400">Founded: 2103</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Character Glimpse -->
-  <section class="py-16 sm:py-20 bg-primary-800 relative">
-    <div class="container mx-auto px-4">
-      <div class="max-w-3xl mx-auto">
-        <div class="bg-primary-900/70 p-6 sm:p-8 rounded-lg border border-secondary-500/20 shadow-xl">
-          <div class="flex flex-col sm:flex-row items-center">
-            <div class="mb-6 sm:mb-0 sm:mr-8 relative">
-              <div class="w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-primary-700 flex items-center justify-center overflow-hidden">
-                <CircuitFeather severity="severe" size="md" variant="technical" animated={true} />
-              </div>
-              <div class="absolute top-0 right-0 w-6 h-6 bg-accent-500 rounded-full border-2 border-primary-900"></div>
+        <div class="space-y-12">
+          <!-- Feature 1 -->
+          <div class="flex gap-4">
+            <div class="mt-1 bg-teal-500/20 p-2 rounded-lg h-min">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-teal-500">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
             </div>
-            
             <div>
-              <h3 class="text-xl sm:text-2xl font-bold mb-3 text-white">Silas Hale</h3>
-              <p class="text-lg text-white/80 italic mb-4">
-                "The manifestations don't lie. Something in the system is broken."
+              <h3 class="font-bold text-xl mb-2">AI Capabilities</h3>
+              <p class="text-slate-300">
+                Specialized AI entities with unique personalities licensed to creators to enhance content and capture attention.
               </p>
-              <p class="text-base text-white/70">
-                A reconciliation agent tasked with tracking down attention imbalances and restoring equilibrium before manifestations become critical.
+            </div>
+          </div>
+          
+          <!-- Feature 2 -->
+          <div class="flex gap-4">
+            <div class="mt-1 bg-amber-500/20 p-2 rounded-lg h-min">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-500">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-xl mb-2">Creator Economy</h3>
+              <p class="text-slate-300">
+                The marketplace where creators license AI capabilities to produce content that captures and monetizes viewer attention.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Feature 3 -->
+          <div class="flex gap-4">
+            <div class="mt-1 bg-rose-500/20 p-2 rounded-lg h-min">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-rose-500">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                <line x1="12" y1="9" x2="12" y2="13"></line>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-xl mb-2">Anomalies</h3>
+              <p class="text-slate-300">
+                System irregularities that manifest when AI capability usage exceeds licensed entitlements, disrupting the digital environment.
               </p>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  
-  <!-- Call To Action -->
-  <section class="py-16 sm:py-20 bg-primary-900 relative">
-    <div class="container mx-auto px-4">
-      <div class="max-w-2xl mx-auto text-center">
-        <h2 class="text-2xl sm:text-3xl font-bold mb-8 text-white">Begin Your Journey</h2>
+    </section>
+
+    <!-- Character Section -->
+    <section class="py-16 px-4 bg-slate-800">
+      <div class="max-w-md mx-auto">
+        <h2 class="text-2xl font-bold mb-12 text-center">Key Characters</h2>
         
-        <div class="bg-gradient-to-br from-primary-800 to-primary-700 p-8 rounded-lg border border-secondary-500 shadow-lg">
-          <p class="text-lg mb-8 text-white/90">
-            Choose your path through Mirador, where attention flows determine the fate of cities and people alike.
-          </p>
-          
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-            <a href="/technical" class="group bg-primary-800/80 hover:bg-secondary-900 p-4 rounded-md transition-colors border border-secondary-500/30 hover:border-secondary-500">
-              <h3 class="text-xl font-medium mb-2 text-secondary-500 group-hover:text-secondary-400">Technical Path</h3>
-              <p class="text-sm text-white/70">Explore the systems and technology behind attention quantification</p>
-            </a>
-            
-            <a href="/narrative" class="group bg-primary-800/80 hover:bg-accent-900 p-4 rounded-md transition-colors border border-accent-500/30 hover:border-accent-500">
-              <h3 class="text-xl font-medium mb-2 text-accent-500 group-hover:text-accent-400">Narrative Path</h3>
-              <p class="text-sm text-white/70">Follow the story of Silas Hale as he investigates the manifestations</p>
-            </a>
+        <div class="space-y-8">
+          <!-- Character 1 -->
+          <div class="bg-slate-700 rounded-lg overflow-hidden">
+            <div class="h-32 bg-gradient-to-r from-slate-600 to-slate-700 flex items-center justify-center">
+              <div class="h-16 w-16 rounded-full bg-slate-900 flex items-center justify-center">
+                <span class="text-2xl">S</span>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-xl mb-1">Silas Hale</h3>
+              <p class="text-sm text-slate-400 mb-3">Toltek Reconciliation Technician</p>
+              <p class="text-slate-300">
+                Investigates anomalies and ensures balance between AI capability usage and creator entitlements.
+              </p>
+            </div>
           </div>
           
-          <div class="flex justify-center space-x-6">
-            <CircuitFeather severity="moderate" size="sm" variant="technical" />
-            <CircuitFeather severity="severe" size="sm" variant="technical" />
+          <!-- Character 2 -->
+          <div class="bg-slate-700 rounded-lg overflow-hidden">
+            <div class="h-32 bg-gradient-to-r from-slate-600 to-slate-700 flex items-center justify-center">
+              <div class="h-16 w-16 rounded-full bg-slate-900 flex items-center justify-center">
+                <span class="text-2xl">V</span>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-xl mb-1">Victoria Ford</h3>
+              <p class="text-sm text-slate-400 mb-3">Toltek Account Executive</p>
+              <p class="text-slate-300">
+                Manages creator relationships and helps them optimize their licensed AI capabilities.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-</LandingLayout>
+    </section>
+
+    <!-- SAM Connection Section -->
+    <section class="py-16 px-4">
+      <div class="max-w-md mx-auto">
+        <h2 class="text-2xl font-bold mb-6 text-center">ServiceNow SAM Parallel</h2>
+        <p class="text-center text-slate-300 mb-12">
+          Exploring software asset management through the lens of attention economy
+        </p>
+        
+        <div class="space-y-4">
+          <div class="bg-slate-800 p-4 rounded-lg flex justify-between items-center">
+            <span>AI Entities</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+            <span>Software Assets</span>
+          </div>
+          <div class="bg-slate-800 p-4 rounded-lg flex justify-between items-center">
+            <span>Creator Licenses</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+            <span>Entitlements</span>
+          </div>
+          <div class="bg-slate-800 p-4 rounded-lg flex justify-between items-center">
+            <span>Attention Usage</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+            <span>Installation Data</span>
+          </div>
+          <div class="bg-slate-800 p-4 rounded-lg flex justify-between items-center">
+            <span>Balance Evaluation</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+            <span>Reconciliation</span>
+          </div>
+          <div class="bg-slate-800 p-4 rounded-lg flex justify-between items-center">
+            <span>Anomaly Detection</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+            <span>Compliance Position</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 py-8 px-4 border-t border-slate-800">
+      <div class="max-w-md mx-auto">
+        <div class="flex justify-between items-center mb-6">
+          <div class="flex items-center gap-2">
+            <div class="h-8 w-8 rounded-full bg-teal-500 flex items-center justify-center">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" strokeWidth="2" />
+                <path d="M2 17L12 22L22 17" stroke="white" strokeWidth="2" />
+                <path d="M2 12L12 17L22 12" stroke="white" strokeWidth="2" />
+              </svg>
+            </div>
+            <span class="font-bold">NEXTLA</span>
+          </div>
+        </div>
+        
+        <p class="text-sm text-slate-400 text-center">
+          A creative exploration of SAM principles through AI attention economy
+        </p>
+        
+        <div class="mt-6 text-center">
+          <button class="text-sm text-teal-400 hover:text-teal-300 transition-colors">
+            Visit Full Project
+          </button>
+        </div>
+      </div>
+    </footer>
+  </div>
+</MinimalLayout>
 
 <style>
-  @keyframes flow {
-    0% {
-      stroke-dashoffset: 24;
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
     }
-    100% {
-      stroke-dashoffset: 0;
+    50% {
+      transform: translateY(-5px);
     }
-  }
-  
-  .animate-flow {
-    animation: flow 1.5s linear infinite;
-  }
-  
-  /* Custom scrollbar for webkit browsers */
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background-color: rgba(46, 110, 78, 0.5);
-    border-radius: 20px;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(46, 110, 78, 0.8);
   }
 </style> 

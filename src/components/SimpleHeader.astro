@@ -1,0 +1,63 @@
+<header class="fixed top-0 left-0 w-full z-50 px-6 py-4">
+  <div class="flex justify-between items-center max-w-7xl mx-auto">
+    <a href="/" class="text-2xl font-bold flex items-center">
+      <span class="text-jade">M</span>
+      <span class="ml-1">irador</span>
+    </a>
+    <button id="menu-toggle" class="w-8 h-8 flex flex-col justify-center items-center" aria-label="Toggle menu">
+      <span class="block w-6 h-0.5 bg-white mb-1.5 transition-all"></span>
+      <span class="block w-6 h-0.5 bg-white mb-1.5 transition-all"></span>
+      <span class="block w-6 h-0.5 bg-white transition-all"></span>
+    </button>
+  </div>
+  
+  <!-- Mobile Menu Overlay -->
+  <div id="menu-overlay" class="fixed inset-0 bg-navy-darker/98 z-40 opacity-0 pointer-events-none transition-opacity duration-300 flex flex-col justify-center">
+    <div class="container mx-auto px-6 text-center">
+      <ul class="space-y-6">
+        <li>
+          <a href="/" class="block py-3 text-2xl font-medium transition-colors relative group">
+            <span class="relative z-10">Home</span>
+            <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-jade transition-all duration-300 group-hover:w-16"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#features" class="block py-3 text-2xl font-medium transition-colors relative group">
+            <span class="relative z-10">Features</span>
+            <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-jade transition-all duration-300 group-hover:w-16"></span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="block py-3 text-2xl font-medium transition-colors relative group">
+            <span class="relative z-10">Learn More</span>
+            <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-jade transition-all duration-300 group-hover:w-16"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Simple menu toggle functionality
+  const menuToggle = document.getElementById('menu-toggle');
+  const menuOverlay = document.getElementById('menu-overlay');
+  
+  if (menuToggle && menuOverlay) {
+    menuToggle.addEventListener('click', () => {
+      menuOverlay.classList.toggle('opacity-0');
+      menuOverlay.classList.toggle('pointer-events-none');
+      document.body.classList.toggle('overflow-hidden');
+      
+      // Transform the hamburger into an X
+      const spans = menuToggle.querySelectorAll('span');
+      if (spans.length === 3) {
+        spans[0].classList.toggle('rotate-45');
+        spans[0].classList.toggle('translate-y-2');
+        spans[1].classList.toggle('opacity-0');
+        spans[2].classList.toggle('-rotate-45');
+        spans[2].classList.toggle('-translate-y-2');
+      }
+    });
+  }
+</script> 
