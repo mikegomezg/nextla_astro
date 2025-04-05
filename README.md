@@ -19,7 +19,6 @@ The platform is built with:
 - ServiceNow data models and visualizations
 - Parallel content structures that connect technical concepts to narrative elements
 
-
 ## Design Philosophy
 
 The design language draws from Mesoamerican aesthetic principles while serving the dual technical/narrative purpose:
