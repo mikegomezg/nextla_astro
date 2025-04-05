@@ -1,0 +1,125 @@
+---
+const variants = [
+  { id: "default", name: "Default - Character Focus" },
+  { id: "motion", name: "Motion+ - Dynamic Experience" },
+  { id: "minimal", name: "Minimal - Clean & Simple" },
+  { id: "immersive", name: "Immersive - Full Experience" },
+  { id: "diagonal", name: "Diagonal - Split Layout" },
+  { id: "cards", name: "Cards - Interactive Grid" },
+  { id: "parallax", name: "Parallax - Depth Effect" },
+  { id: "dark-minimal", name: "Dark Minimal - Clean Dark Theme" },
+  { id: "dark-diagonal", name: "Dark Diagonal - Angular Dark Theme" },
+  { id: "dark-cards", name: "Dark Cards - Card-based Dark Layout" }
+];
+---
+
+<div class="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 bg-primary-900/90 backdrop-blur-md p-3 rounded-lg shadow-xl flex items-center gap-3 border border-primary-700">
+  <div class="flex items-center text-sm text-white">
+    <span class="hidden sm:inline mr-2">Preview Layout:</span>
+    <select id="variant-selector" class="bg-primary-800 text-white border border-primary-700 rounded px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-secondary-400">
+      {variants.map(variant => (
+        <option value={variant.id}>{variant.name}</option>
+      ))}
+    </select>
+  </div>
+  
+  <a href="#" id="variant-info" class="text-secondary-400 hover:text-secondary-300">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+    </svg>
+  </a>
+</div>
+
+<div id="variant-info-modal" class="fixed inset-0 z-[60] bg-black/50 backdrop-blur-sm hidden flex items-center justify-center p-4">
+  <div class="bg-primary-900 text-white rounded-lg shadow-xl max-w-md w-full p-6 relative">
+    <button id="close-modal" class="absolute top-2 right-2 text-neutral-400 hover:text-white">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    
+    <h3 class="text-xl font-bold mb-4">About Landing Page Variants</h3>
+    <p class="mb-4">This preview mode allows you to switch between different landing page design approaches for the Nextla project.</p>
+    
+    <ul class="space-y-2 mb-4">
+      {variants.map(variant => (
+        <li>
+          <strong class="text-secondary-400">{variant.name.split(' - ')[0]}:</strong> {variant.name.split(' - ')[1]}
+        </li>
+      ))}
+    </ul>
+    
+    <p>Your selection is saved in your browser and will persist between visits.</p>
+  </div>
+</div>
+
+<script>
+  const variantInfo = document.getElementById('variant-info');
+  const variantInfoModal = document.getElementById('variant-info-modal');
+  const closeModal = document.getElementById('close-modal');
+  const variantSelector = document.getElementById('variant-selector');
+
+  variantInfo?.addEventListener('click', (e) => {
+    e.preventDefault();
+    variantInfoModal?.classList.remove('hidden');
+    variantInfoModal?.classList.add('flex');
+  });
+
+  closeModal?.addEventListener('click', () => {
+    variantInfoModal?.classList.add('hidden');
+    variantInfoModal?.classList.remove('flex');
+  });
+
+  // Close modal when clicking outside
+  variantInfoModal?.addEventListener('click', (e) => {
+    if (e.target === variantInfoModal) {
+      variantInfoModal.classList.add('hidden');
+      variantInfoModal.classList.remove('flex');
+    }
+  });
+
+  // Handle variant selection
+  document.addEventListener('DOMContentLoaded', () => {
+    // Get the available variants
+    const availableVariants = ['default', 'motion', 'minimal', 'immersive', 'diagonal', 'cards', 'parallax', 'dark-minimal', 'dark-diagonal', 'dark-cards'];
+    
+    // Get the saved variant or default to 'default'
+    const savedVariant = localStorage.getItem('selectedVariant') || 'default';
+    
+    // Set the dropdown to the saved variant
+    if (variantSelector) {
+      variantSelector.value = savedVariant;
+    }
+    
+    // Show the saved variant
+    showVariant(savedVariant);
+    
+    // Add change event listener to the dropdown
+    variantSelector?.addEventListener('change', (e) => {
+      const selectedVariant = e.target.value;
+      
+      // Save the selection to localStorage
+      localStorage.setItem('selectedVariant', selectedVariant);
+      
+      // Show the selected variant
+      showVariant(selectedVariant);
+    });
+    
+    // Function to show the selected variant and hide others
+    function showVariant(variant) {
+      // Hide all variants
+      availableVariants.forEach(v => {
+        const variantElement = document.getElementById(`variant-${v}`);
+        if (variantElement) {
+          variantElement.classList.add('hidden');
+        }
+      });
+      
+      // Show the selected variant
+      const activeElement = document.getElementById(`variant-${variant}`);
+      if (activeElement) {
+        activeElement.classList.remove('hidden');
+      }
+    }
+  });
+</script> 

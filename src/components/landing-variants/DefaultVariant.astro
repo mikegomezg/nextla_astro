@@ -1,0 +1,319 @@
+---
+// Character images would normally be imported or linked
+const characters = [
+  {
+    name: "Silas",
+    role: "AI Therapist & Troubleshooter",
+    description: "Balances technical expertise with emotional intelligence to guide AI entities through psychological and operational challenges.",
+    color: "primary"
+  },
+  {
+    name: "Nova",
+    role: "AI Assistant",
+    description: "An evolving AI consciousness developing beyond its initial programming while supporting Silas in his investigations.",
+    color: "secondary"
+  },
+  {
+    name: "Victoria",
+    role: "Corporate Administrator",
+    description: "Bridges the gap between corporate interests and creator needs while navigating the complex attention economy.",
+    color: "accent"
+  },
+  {
+    name: "Enrique",
+    role: "System Resistance",
+    description: "Challenges the fundamental structure of the attention economy and questions AI autonomy and rights.",
+    color: "neutral"
+  }
+];
+---
+
+<div>
+  <!-- Hero Section with Character Focus -->
+  <section class="relative bg-gradient-to-b from-primary-900 to-primary-800 text-white overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0 bg-[url('/images/aztec-pattern.svg')] bg-repeat opacity-5"></div>
+    </div>
+    
+    <!-- Hero Content -->
+    <div class="container mx-auto px-4 py-12 md:py-24 relative z-10">
+      <div class="flex flex-col md:flex-row md:items-center gap-8 md:gap-12">
+        <!-- Text Content -->
+        <div class="md:w-1/2 space-y-6">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-heading">
+            <span class="block">Where AI Management</span>
+            <span class="block mt-2 bg-gradient-to-r from-secondary-400 to-secondary-500 bg-clip-text text-transparent">Meets Human Psychology</span>
+          </h1>
+          
+          <p class="text-lg md:text-xl text-neutral-300 max-w-xl">
+            Nextla presents ServiceNow and software asset management through a narrative lens, exploring AI consciousness and human relationships.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 pt-4">
+            <a href="#characters" class="px-6 py-3 bg-secondary-500 hover:bg-secondary-600 text-white font-medium rounded-md transition flex items-center justify-center">
+              Meet the Characters
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ml-2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+              </svg>
+            </a>
+            <a href="#technical" class="px-6 py-3 bg-transparent hover:bg-primary-700 border border-primary-600 text-white font-medium rounded-md transition flex items-center justify-center">
+              Technical Approach
+            </a>
+          </div>
+        </div>
+        
+        <!-- Character Visualization -->
+        <div class="md:w-1/2 flex justify-center items-center relative h-[300px] md:h-[400px]">
+          <!-- Character Silhouettes - These would be replaced with actual character art -->
+          <div class="absolute left-0 top-0 w-40 h-40 bg-primary-700 rounded-full opacity-80 animate-pulse-slow"></div>
+          <div class="absolute left-20 top-20 w-48 h-48 bg-secondary-600 rounded-full opacity-70 animate-float"></div>
+          <div class="absolute right-10 top-10 w-36 h-36 bg-accent-600 rounded-full opacity-60 animate-bounce-slow"></div>
+          <div class="absolute right-20 bottom-10 w-44 h-44 bg-neutral-700 rounded-full opacity-50 animate-pulse-slow"></div>
+          
+          <!-- Central Logo/Symbol -->
+          <div class="relative z-10 bg-gradient-to-br from-primary-400 to-secondary-600 p-8 rounded-full shadow-2xl">
+            <span class="text-5xl font-bold text-white">N</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-neutral-400">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Next Section -->
+  <section id="about" class="bg-primary-800 text-white py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center font-heading">What is Nextla?</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-primary-700/50 rounded-lg p-6 backdrop-blur-sm border border-primary-600/40">
+            <h3 class="text-xl font-bold mb-4 text-secondary-400">The Project</h3>
+            <p class="mb-4 text-neutral-200">
+              Nextla presents ServiceNow and software asset management concepts through an engaging narrative framework. By exploring technical ideas through character-driven stories, we make complex systems more accessible.
+            </p>
+            <p class="text-neutral-300">
+              The project bridges technical documentation with creative storytelling, offering parallel paths to understand core concepts.
+            </p>
+          </div>
+          
+          <div class="bg-primary-700/50 rounded-lg p-6 backdrop-blur-sm border border-primary-600/40">
+            <h3 class="text-xl font-bold mb-4 text-secondary-400">The Name</h3>
+            <p class="mb-4 text-neutral-200">
+              "Nextla" draws inspiration from Mesoamerican culture, referencing both "next" (future) and elements of Aztec terminology. This connection highlights the project's exploration of value systems and attention economics.
+            </p>
+            <p class="text-neutral-300">
+              The Mesoamerican influence extends through visual motifs, organizational structures, and symbolic elements throughout the project.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Characters Section -->
+  <section id="characters" class="py-12 md:py-20 bg-gradient-to-b from-primary-800 to-primary-900">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-white font-heading">Meet the Characters</h2>
+        <p class="mt-4 text-neutral-300 max-w-2xl mx-auto">Explore the psychological dimensions of AI entities and human relationships through our character-driven narrative.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        {characters.map(character => (
+          <div class={`rounded-lg overflow-hidden border border-${character.color}-700/50 transition-all duration-300 hover:shadow-lg hover:shadow-${character.color}-900/20 bg-gradient-to-b from-primary-800 to-primary-900`}>
+            <!-- Character Image Placeholder -->
+            <div class={`h-48 bg-${character.color}-900/30 flex items-center justify-center`}>
+              <div class={`w-24 h-24 rounded-full bg-${character.color}-500/40 flex items-center justify-center`}>
+                <span class="text-2xl font-bold text-white">{character.name.charAt(0)}</span>
+              </div>
+            </div>
+            
+            <div class="p-6">
+              <h3 class={`text-xl font-bold text-${character.color}-400`}>{character.name}</h3>
+              <p class="text-sm text-neutral-400 mb-2">{character.role}</p>
+              <p class="text-neutral-300 text-sm">{character.description}</p>
+              <a href={`#${character.name.toLowerCase()}`} class={`mt-4 inline-flex items-center text-${character.color}-400 hover:text-${character.color}-300`}>
+                Learn more
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-1">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Framework Section -->
+  <section id="technical" class="py-12 md:py-20 bg-gradient-to-b from-primary-900 via-primary-900 to-primary-800 relative overflow-hidden">
+    <!-- Background Decorative Elements -->
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-secondary-500 rounded-full filter blur-3xl"></div>
+      <div class="absolute bottom-10 right-10 w-80 h-80 bg-accent-500 rounded-full filter blur-3xl"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-white font-heading">Technical Framework</h2>
+        <p class="mt-4 text-neutral-300 max-w-2xl mx-auto">Understand the technical concepts of ServiceNow and SAM through the lens of our narrative framework.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <!-- Framework Feature 1 -->
+        <div class="bg-primary-800/80 backdrop-blur-sm border border-primary-700 rounded-lg p-6 transition hover:shadow-lg hover:shadow-primary-900/50">
+          <div class="text-secondary-400 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Reconciliation Process</h3>
+          <p class="text-neutral-300">Explore how the technical process of software reconciliation is presented through Silas's role as an AI therapist.</p>
+        </div>
+        
+        <!-- Framework Feature 2 -->
+        <div class="bg-primary-800/80 backdrop-blur-sm border border-primary-700 rounded-lg p-6 transition hover:shadow-lg hover:shadow-primary-900/50">
+          <div class="text-secondary-400 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">AI Capabilities</h3>
+          <p class="text-neutral-300">Understand AI functions and capabilities through Nova's personality and evolving consciousness.</p>
+        </div>
+        
+        <!-- Framework Feature 3 -->
+        <div class="bg-primary-800/80 backdrop-blur-sm border border-primary-700 rounded-lg p-6 transition hover:shadow-lg hover:shadow-primary-900/50">
+          <div class="text-secondary-400 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Creator Economy</h3>
+          <p class="text-neutral-300">Examine the creator economy and licensing relationships through Victoria's corporate perspective.</p>
+        </div>
+        
+        <!-- Framework Feature 4 -->
+        <div class="bg-primary-800/80 backdrop-blur-sm border border-primary-700 rounded-lg p-6 transition hover:shadow-lg hover:shadow-primary-900/50">
+          <div class="text-secondary-400 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 12.75c1.148 0 2.278.08 3.383.237 1.037.146 1.866.966 1.866 2.013 0 3.728-2.35 6.75-5.25 6.75S6.75 18.728 6.75 15c0-1.046.83-1.867 1.866-2.013A24.204 24.204 0 0112 12.75zm0 0c2.883 0 5.647.508 8.207 1.44a23.91 23.91 0 01-1.152 6.06M12 12.75c-2.883 0-5.647.508-8.208 1.44.125 2.104.52 4.136 1.153 6.06M12 12.75a2.25 2.25 0 002.248-2.354M12 12.75a2.25 2.25 0 01-2.248-2.354M12 8.25c.995 0 1.971-.08 2.922-.236.403-.066.74-.358.795-.762a3.778 3.778 0 00-.399-2.25M12 8.25c-.995 0-1.97-.08-2.922-.236-.402-.066-.74-.358-.795-.762a3.734 3.734 0 01.4-2.253M12 8.25a2.25 2.25 0 00-2.248 2.146M12 8.25a2.25 2.25 0 012.248 2.146M8.683 5a6.032 6.032 0 01-1.155-1.002c.07-.63.27-1.222.574-1.747m.581 2.749A3.75 3.75 0 0115.318 5m0 0c.427-.283.815-.62 1.155-.999a4.471 4.471 0 00-.575-1.752M4.921 6a24.048 24.048 0 00-.392 3.314c1.668.546 3.416.914 5.223 1.082M19.08 6c.205 1.08.337 2.187.392 3.314a23.882 23.882 0 01-5.223 1.082" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">System Alternatives</h3>
+          <p class="text-neutral-300">Investigate alternative approaches and system criticism through Enrique's resistance perspective.</p>
+        </div>
+        
+        <!-- Framework Feature 5 -->
+        <div class="bg-primary-800/80 backdrop-blur-sm border border-primary-700 rounded-lg p-6 transition hover:shadow-lg hover:shadow-primary-900/50">
+          <div class="text-secondary-400 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Psychological Dimensions</h3>
+          <p class="text-neutral-300">Explore the unique psychological aspects of AI entities through their specialized functions and evolving awareness.</p>
+        </div>
+        
+        <!-- Framework Feature 6 -->
+        <div class="bg-primary-800/80 backdrop-blur-sm border border-primary-700 rounded-lg p-6 transition hover:shadow-lg hover:shadow-primary-900/50">
+          <div class="text-secondary-400 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Parallel Pathways</h3>
+          <p class="text-neutral-300">Navigate between technical and narrative approaches, with each path providing unique insights into the same core concepts.</p>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center">
+        <a href="#" class="inline-flex items-center px-6 py-3 bg-secondary-500 hover:bg-secondary-600 text-white font-medium rounded-md transition">
+          Explore Technical Documentation
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ml-2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section id="get-started" class="py-12 md:py-16 bg-gradient-to-b from-primary-800 to-primary-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto bg-gradient-to-br from-primary-700 to-primary-800 rounded-xl p-8 md:p-12 shadow-xl border border-primary-600/50">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl md:text-3xl font-bold text-white font-heading">Start Your Journey</h2>
+          <p class="mt-4 text-neutral-300">Choose your preferred path through the Nextla project.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <a href="#" class="bg-secondary-600/30 hover:bg-secondary-600/50 border border-secondary-500/50 rounded-lg p-6 text-center transition">
+            <div class="text-secondary-400 mb-4 mx-auto w-16 h-16 flex items-center justify-center rounded-full bg-secondary-900/50">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Character Journey</h3>
+            <p class="text-neutral-300 mb-4">Explore concepts through character-driven narratives and psychological dimensions.</p>
+            <span class="text-secondary-400 inline-flex items-center">
+              Start Here
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-1">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </span>
+          </a>
+          
+          <a href="#" class="bg-accent-600/30 hover:bg-accent-600/50 border border-accent-500/50 rounded-lg p-6 text-center transition">
+            <div class="text-accent-400 mb-4 mx-auto w-16 h-16 flex items-center justify-center rounded-full bg-accent-900/50">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Technical Path</h3>
+            <p class="text-neutral-300 mb-4">Dive directly into ServiceNow and SAM concepts with traditional technical documentation.</p>
+            <span class="text-accent-400 inline-flex items-center">
+              Start Here
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-1">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-primary-900 text-white py-8 border-t border-primary-800">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <a href="/" class="flex items-center space-x-2">
+            <span class="font-heading text-xl font-bold bg-gradient-to-r from-secondary-400 to-secondary-600 bg-clip-text text-transparent">Nextla</span>
+          </a>
+          <p class="text-sm text-neutral-400 mt-1">Where AI Management Meets Human Psychology</p>
+        </div>
+        
+        <div class="flex space-x-4">
+          <a href="#about" class="text-neutral-400 hover:text-neutral-200 transition">About</a>
+          <a href="#characters" class="text-neutral-400 hover:text-neutral-200 transition">Characters</a>
+          <a href="#technical" class="text-neutral-400 hover:text-neutral-200 transition">Technical</a>
+          <a href="#get-started" class="text-neutral-400 hover:text-neutral-200 transition">Get Started</a>
+        </div>
+      </div>
+      
+      <div class="mt-6 pt-6 border-t border-primary-800 text-center text-sm text-neutral-500">
+        &copy; 2025 Nextla Project. All rights reserved.
+      </div>
+    </div>
+  </footer>
+</div> 

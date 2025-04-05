@@ -19,15 +19,6 @@ The platform is built with:
 - ServiceNow data models and visualizations
 - Parallel content structures that connect technical concepts to narrative elements
 
-## Conceptual Framework
-
-Nextla bridges the technical world of software asset management with the narrative world of Mirador through these core concepts:
-
-- **Capabilities**: Specialized technologies that power city infrastructure, mapped to software assets
-- **City-States**: Competing urban enclaves that license capabilities, mapped to organizational entities
-- **Entitlements**: Formal licensing arrangements between cities, mapped to software licenses
-- **Reconciliation**: The process of balancing capability usage with entitlements, mapped to compliance
-- **Manifestations**: Visual indicators of imbalance (feathers, glitches), mapped to compliance issues
 
 ## Design Philosophy
 

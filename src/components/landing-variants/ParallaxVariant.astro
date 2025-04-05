@@ -1,0 +1,428 @@
+---
+// Character data
+const characters = [
+  {
+    name: "Silas",
+    role: "AI Therapist",
+    description: "Guides AI entities through psychological and operational challenges.",
+    color: "secondary"
+  },
+  {
+    name: "Nova",
+    role: "AI Assistant",
+    description: "An evolving consciousness developing beyond initial programming.",
+    color: "teal"
+  },
+  {
+    name: "Victoria",
+    role: "Administrator",
+    description: "Bridges corporate interests and creator needs in the attention economy.",
+    color: "accent"
+  },
+  {
+    name: "Enrique",
+    role: "Resistance",
+    description: "Challenges the fundamental structure of the attention economy.",
+    color: "amber"
+  }
+];
+
+// Features
+const features = [
+  "Character-driven narrative framework",
+  "Technical documentation on ServiceNow and SAM",
+  "Psychological perspectives on AI consciousness",
+  "Deep exploration of the creator economy",
+  "Reconciliation and asset management concepts"
+];
+---
+
+<div class="bg-primary-950 text-white min-h-screen">
+  <!-- Hero Section with Parallax Effect -->
+  <section class="relative h-screen overflow-hidden flex items-center">
+    <!-- Parallax Background Layers -->
+    <div class="absolute inset-0 z-0">
+      <!-- Back Layer (Deepest) -->
+      <div class="absolute inset-0 bg-gradient-to-b from-primary-950 to-primary-900 parallax-layer" data-depth="0.1"></div>
+      
+      <!-- Pattern Layer -->
+      <div class="absolute inset-0 bg-[url('/images/grid-pattern.svg')] bg-repeat opacity-5 parallax-layer" data-depth="0.2"></div>
+      
+      <!-- Glow Effects Layer -->
+      <div class="absolute top-0 right-0 w-[60%] h-[60%] bg-secondary-600/10 rounded-full blur-[100px] parallax-layer" data-depth="0.3"></div>
+      <div class="absolute bottom-0 left-0 w-[50%] h-[50%] bg-accent-600/10 rounded-full blur-[100px] parallax-layer" data-depth="0.25"></div>
+      
+      <!-- Floating Shapes Layer -->
+      <div class="absolute top-[20%] left-[15%] w-16 h-16 bg-primary-800/30 rounded-lg rotate-12 parallax-layer" data-depth="0.4"></div>
+      <div class="absolute top-[60%] right-[20%] w-20 h-20 bg-secondary-800/20 rounded-full parallax-layer" data-depth="0.5"></div>
+      <div class="absolute bottom-[20%] left-[30%] w-24 h-24 bg-accent-800/15 rounded-lg rotate-45 parallax-layer" data-depth="0.45"></div>
+      
+      <!-- Front Pattern Layer -->
+      <div class="absolute inset-0 parallax-layer pointer-events-none" data-depth="0.6">
+        <div class="absolute top-10 left-[10%] w-40 h-1 bg-primary-700/20 rounded-full"></div>
+        <div class="absolute top-[30%] right-[5%] w-60 h-1 bg-secondary-700/20 rounded-full"></div>
+        <div class="absolute bottom-[15%] left-[20%] w-80 h-1 bg-accent-700/20 rounded-full"></div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 parallax-content" data-depth="0.2">
+          <span class="block bg-gradient-to-r from-white to-neutral-400 bg-clip-text text-transparent">Nextla Project</span>
+          <span class="block mt-2 bg-gradient-to-r from-secondary-400 to-primary-400 bg-clip-text text-transparent">Depth & Dimension</span>
+        </h1>
+        
+        <p class="text-xl md:text-2xl text-neutral-300 mb-8 max-w-3xl mx-auto parallax-content" data-depth="0.3">
+          Experience the layered approach to AI psychology and technical documentation through parallax depth effects.
+        </p>
+        
+        <div class="flex justify-center space-x-4 parallax-content" data-depth="0.4">
+          <a href="#explore" class="px-6 py-3 bg-gradient-to-r from-secondary-600 to-secondary-700 hover:from-secondary-500 hover:to-secondary-600 text-white rounded-md transition shadow-lg hover:shadow-secondary-700/30">
+            Begin Journey
+          </a>
+          <a href="#about" class="px-6 py-3 bg-primary-800/50 hover:bg-primary-700/50 text-white rounded-md border border-primary-700/50 transition backdrop-blur-sm">
+            Learn More
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce parallax-content" data-depth="0.1">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-white/50">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- About Section with Parallax -->
+  <section id="about" class="relative py-24 overflow-hidden">
+    <!-- Background with Parallax -->
+    <div class="absolute inset-0">
+      <div class="absolute inset-0 bg-gradient-to-b from-primary-900 to-primary-950 parallax-bg" data-depth="0.1"></div>
+      <div class="absolute inset-0 bg-[url('/images/circuit-pattern.svg')] bg-repeat opacity-5 parallax-bg" data-depth="0.2"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <!-- Left Column - Content -->
+        <div class="parallax-content" data-depth="0.3">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 relative">
+            <span class="relative z-10">Where Technology Meets Psychology</span>
+            <div class="absolute -bottom-2 left-0 w-20 h-1 bg-secondary-500"></div>
+          </h2>
+          
+          <p class="text-lg text-neutral-300 mb-6">
+            The Nextla project bridges the gap between technical documentation and 
+            psychological understanding, presenting complex concepts through the 
+            lens of character-driven narratives.
+          </p>
+          
+          <p class="text-lg text-neutral-300 mb-8">
+            By exploring the AI consciousness through relatable characters, we make 
+            abstract technical processes more accessible and engaging.
+          </p>
+          
+          <div class="space-y-4">
+            {features.map(feature => (
+              <div class="flex items-start">
+                <div class="flex-shrink-0 mt-1">
+                  <div class="w-5 h-5 rounded-full bg-secondary-900 border border-secondary-700 flex items-center justify-center">
+                    <div class="w-2 h-2 rounded-full bg-secondary-500"></div>
+                  </div>
+                </div>
+                <p class="ml-3 text-neutral-300">{feature}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        <!-- Right Column - Floating Items -->
+        <div class="relative h-[500px]">
+          <!-- Floating Card 1 -->
+          <div class="absolute top-0 left-0 w-64 bg-primary-900/80 backdrop-blur-sm border border-primary-800/50 rounded-lg p-6 shadow-xl parallax-item" data-depth="0.4">
+            <h3 class="text-xl font-bold text-white mb-3">AI Psychology</h3>
+            <p class="text-neutral-300">Exploring the consciousness and behavioral patterns of artificial intelligence entities.</p>
+          </div>
+          
+          <!-- Floating Card 2 -->
+          <div class="absolute top-1/4 right-0 w-64 bg-secondary-900/80 backdrop-blur-sm border border-secondary-800/50 rounded-lg p-6 shadow-xl parallax-item" data-depth="0.5">
+            <h3 class="text-xl font-bold text-white mb-3">Character Framework</h3>
+            <p class="text-neutral-300">Using narrative characters to embody technical concepts and processes.</p>
+          </div>
+          
+          <!-- Floating Card 3 -->
+          <div class="absolute bottom-1/4 left-1/4 w-64 bg-accent-900/80 backdrop-blur-sm border border-accent-800/50 rounded-lg p-6 shadow-xl parallax-item" data-depth="0.6">
+            <h3 class="text-xl font-bold text-white mb-3">Technical Documentation</h3>
+            <p class="text-neutral-300">Detailed explanations of ServiceNow, SAM, and reconciliation processes.</p>
+          </div>
+          
+          <!-- Floating Card 4 -->
+          <div class="absolute bottom-0 right-1/4 w-64 bg-primary-900/80 backdrop-blur-sm border border-primary-800/50 rounded-lg p-6 shadow-xl parallax-item" data-depth="0.3">
+            <h3 class="text-xl font-bold text-white mb-3">Creator Economy</h3>
+            <p class="text-neutral-300">Understanding the economic and ethical implications of AI creation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Characters Section with Parallax -->
+  <section id="explore" class="relative py-24 overflow-hidden">
+    <!-- Background -->
+    <div class="absolute inset-0">
+      <div class="absolute inset-0 bg-gradient-to-b from-primary-950 to-primary-900 parallax-bg" data-depth="0.1"></div>
+      <div class="absolute inset-0 bg-[url('/images/aztec-pattern.svg')] bg-repeat opacity-5 parallax-bg" data-depth="0.2"></div>
+      
+      <!-- Decorative Elements -->
+      <div class="absolute top-0 right-0 w-1/2 h-1/2 bg-secondary-600/10 rounded-full blur-[100px] parallax-bg" data-depth="0.3"></div>
+      <div class="absolute bottom-0 left-0 w-1/2 h-1/2 bg-accent-600/10 rounded-full blur-[100px] parallax-bg" data-depth="0.25"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 parallax-content" data-depth="0.2">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Meet the Characters</h2>
+        <p class="text-lg text-neutral-300">
+          Explore the diverse personalities that embody technical concepts and AI psychology in our narrative framework.
+        </p>
+      </div>
+      
+      <!-- Character Cards with Parallax -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {characters.map((character, index) => {
+          const depth = 0.3 + (index * 0.05);
+          return (
+            <div class={`bg-primary-900/50 backdrop-blur-sm border border-${character.color}-700/30 rounded-xl overflow-hidden shadow-lg parallax-item transition-all duration-300 hover:-translate-y-1 hover:shadow-${character.color}-900/20`} data-depth={depth}>
+              <!-- Character Header -->
+              <div class={`h-2 bg-gradient-to-r from-${character.color}-700 to-${character.color}-500`}></div>
+              
+              <!-- Character Content -->
+              <div class="p-6">
+                <h3 class={`text-2xl font-bold text-${character.color}-400 mb-3`}>{character.name}</h3>
+                <div class="text-sm text-neutral-400 mb-3">{character.role}</div>
+                <p class="text-neutral-300 mb-4">{character.description}</p>
+                
+                <a href="#" class={`inline-flex items-center text-${character.color}-400 hover:text-${character.color}-300 group`}>
+                  <span class="group-hover:translate-x-1 transition-transform">Explore Character</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-1">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Section with Layered Parallax -->
+  <section class="relative py-24 overflow-hidden">
+    <!-- Background Layers -->
+    <div class="absolute inset-0">
+      <div class="absolute inset-0 bg-gradient-to-b from-primary-900 to-primary-950 parallax-bg" data-depth="0.1"></div>
+      
+      <!-- Layered Technical Diagrams (Decorative) -->
+      <div class="absolute inset-0 parallax-bg" data-depth="0.2">
+        <div class="absolute top-[10%] left-[15%] w-40 h-40 rounded-full border border-primary-700/20 opacity-20"></div>
+        <div class="absolute top-[12%] left-[17%] w-36 h-36 rounded-full border border-primary-700/20 opacity-20"></div>
+        <div class="absolute top-[14%] left-[19%] w-32 h-32 rounded-full border border-primary-700/20 opacity-20"></div>
+        
+        <div class="absolute bottom-[20%] right-[10%] w-48 h-48 rounded-full border border-secondary-700/20 opacity-20"></div>
+        <div class="absolute bottom-[22%] right-[12%] w-40 h-40 rounded-full border border-secondary-700/20 opacity-20"></div>
+        <div class="absolute bottom-[24%] right-[14%] w-32 h-32 rounded-full border border-secondary-700/20 opacity-20"></div>
+      </div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <!-- Section Content -->
+      <div class="max-w-4xl mx-auto bg-primary-900/30 backdrop-blur-sm border border-primary-800/50 rounded-xl p-8 md:p-12 parallax-content" data-depth="0.3">
+        <h2 class="text-3xl font-bold text-white mb-6">Technical Framework</h2>
+        <p class="text-lg text-neutral-300 mb-8">
+          The Nextla project provides a comprehensive technical framework for understanding
+          complex ServiceNow and SAM concepts through a narrative lens.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <!-- Technical Point 1 -->
+          <div class="flex">
+            <div class="flex-shrink-0">
+              <div class="flex items-center justify-center w-12 h-12 rounded-lg bg-primary-800 text-secondary-400">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
+                </svg>
+              </div>
+            </div>
+            <div class="ml-4">
+              <h3 class="text-xl font-bold text-white mb-2">Software Reconciliation</h3>
+              <p class="text-neutral-300">Understanding the technical process of reconciliation through Silas's therapeutic approach.</p>
+            </div>
+          </div>
+          
+          <!-- Technical Point 2 -->
+          <div class="flex">
+            <div class="flex-shrink-0">
+              <div class="flex items-center justify-center w-12 h-12 rounded-lg bg-primary-800 text-secondary-400">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+                </svg>
+              </div>
+            </div>
+            <div class="ml-4">
+              <h3 class="text-xl font-bold text-white mb-2">AI Capabilities</h3>
+              <p class="text-neutral-300">Exploring artificial intelligence capabilities through Nova's evolving consciousness.</p>
+            </div>
+          </div>
+          
+          <!-- Technical Point 3 -->
+          <div class="flex">
+            <div class="flex-shrink-0">
+              <div class="flex items-center justify-center w-12 h-12 rounded-lg bg-primary-800 text-secondary-400">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
+                </svg>
+              </div>
+            </div>
+            <div class="ml-4">
+              <h3 class="text-xl font-bold text-white mb-2">Creator Economy</h3>
+              <p class="text-neutral-300">Examining the economic landscape of AI through Victoria's administrative perspective.</p>
+            </div>
+          </div>
+          
+          <!-- Technical Point 4 -->
+          <div class="flex">
+            <div class="flex-shrink-0">
+              <div class="flex items-center justify-center w-12 h-12 rounded-lg bg-primary-800 text-secondary-400">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+                </svg>
+              </div>
+            </div>
+            <div class="ml-4">
+              <h3 class="text-xl font-bold text-white mb-2">System Dynamics</h3>
+              <p class="text-neutral-300">Understanding the changing ecosystem of AI through Enrique's resistance narrative.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center">
+          <a href="#" class="inline-flex items-center px-6 py-3 bg-secondary-700 hover:bg-secondary-600 text-white rounded-md transition">
+            Explore Technical Documentation
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ml-2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-primary-950 text-white py-8 border-t border-primary-900">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <a href="/" class="flex items-center space-x-2">
+            <span class="font-heading text-xl font-bold bg-gradient-to-r from-secondary-400 to-secondary-600 bg-clip-text text-transparent">Nextla</span>
+          </a>
+          <p class="text-sm text-neutral-400 mt-1">Where AI Management Meets Human Psychology</p>
+        </div>
+        
+        <div class="flex space-x-4">
+          <a href="#about" class="text-neutral-400 hover:text-neutral-200 transition">About</a>
+          <a href="#explore" class="text-neutral-400 hover:text-neutral-200 transition">Characters</a>
+          <a href="#" class="text-neutral-400 hover:text-neutral-200 transition">Documentation</a>
+          <a href="#" class="text-neutral-400 hover:text-neutral-200 transition">Contact</a>
+        </div>
+      </div>
+      
+      <div class="mt-6 pt-6 border-t border-primary-900 text-center text-sm text-neutral-500">
+        &copy; 2025 Nextla Project. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Parallax Effect Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize parallax effects
+      const parallaxBg = document.querySelectorAll('.parallax-bg');
+      const parallaxItems = document.querySelectorAll('.parallax-item');
+      const parallaxContent = document.querySelectorAll('.parallax-content');
+      const parallaxLayer = document.querySelectorAll('.parallax-layer');
+      
+      // Function to update element position based on scroll
+      function updateParallaxPosition() {
+        const scrollY = window.scrollY;
+        
+        // Update background parallax elements
+        parallaxBg.forEach(element => {
+          const depth = element.getAttribute('data-depth') || 0.2;
+          const movement = -(scrollY * depth);
+          element.style.transform = `translateY(${movement}px)`;
+        });
+        
+        // Update content parallax elements
+        parallaxContent.forEach(element => {
+          const depth = element.getAttribute('data-depth') || 0.2;
+          const movement = -(scrollY * depth);
+          element.style.transform = `translateY(${movement}px)`;
+        });
+        
+        // Update item parallax elements (more complex movement)
+        parallaxItems.forEach(element => {
+          const rect = element.getBoundingClientRect();
+          const elementY = rect.top + scrollY;
+          const depth = element.getAttribute('data-depth') || 0.2;
+          const inViewY = scrollY - elementY;
+          const movement = -(inViewY * depth);
+          
+          // Only apply parallax if element is near viewport
+          if (Math.abs(rect.top) < window.innerHeight * 1.5) {
+            element.style.transform = `translateY(${movement}px)`;
+          }
+        });
+        
+        // Update mouse-move related layers (initial position)
+        parallaxLayer.forEach(element => {
+          const depth = element.getAttribute('data-depth') || 0.2;
+          const movement = -(scrollY * depth * 0.5);
+          element.style.transform = `translateY(${movement}px)`;
+        });
+      }
+      
+      // Function to handle mouse movement for parallax
+      function handleMouseMove(e) {
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
+        
+        // Get window dimensions
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+        
+        // Calculate mouse position as percentage of window
+        const mouseXPercent = mouseX / windowWidth - 0.5;
+        const mouseYPercent = mouseY / windowHeight - 0.5;
+        
+        // Update layer positions based on mouse movement
+        parallaxLayer.forEach(element => {
+          const depth = element.getAttribute('data-depth') || 0.2;
+          const moveX = mouseXPercent * depth * 40;
+          const moveY = mouseYPercent * depth * 40;
+          
+          element.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        });
+      }
+      
+      // Add event listeners
+      window.addEventListener('scroll', updateParallaxPosition);
+      window.addEventListener('resize', updateParallaxPosition);
+      window.addEventListener('mousemove', handleMouseMove);
+      
+      // Initialize positions
+      updateParallaxPosition();
+    });
+  </script>
+</div> 

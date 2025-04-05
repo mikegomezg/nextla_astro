@@ -1,0 +1,240 @@
+---
+// Character images would normally be imported or linked
+const characters = [
+  {
+    name: "Silas",
+    role: "AI Therapist & Troubleshooter",
+    description: "Balances technical expertise with emotional intelligence to guide AI entities through psychological and operational challenges.",
+    color: "indigo"
+  },
+  {
+    name: "Nova",
+    role: "AI Assistant",
+    description: "An evolving AI consciousness developing beyond its initial programming while supporting Silas in his investigations.",
+    color: "teal"
+  },
+  {
+    name: "Victoria",
+    role: "Corporate Administrator",
+    description: "Bridges the gap between corporate interests and creator needs while navigating the complex attention economy.",
+    color: "amber"
+  },
+  {
+    name: "Enrique",
+    role: "System Resistance",
+    description: "Challenges the fundamental structure of the attention economy and questions AI autonomy and rights.",
+    color: "neutral"
+  }
+];
+
+// Technical features
+const features = [
+  {
+    title: "Reconciliation Process",
+    description: "Explore how the technical process of software reconciliation is presented through Silas's role as an AI therapist.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />`
+  },
+  {
+    title: "AI Capabilities",
+    description: "Understand AI functions and capabilities through Nova's personality and evolving consciousness.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />`
+  },
+  {
+    title: "Creator Economy",
+    description: "Learn how Victoria's role represents the complex landscape of the creator economy and attention marketplaces.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />`
+  },
+  {
+    title: "System Architecture",
+    description: "Understand how system architecture and infrastructure is represented through character relationships and interactions.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />`
+  }
+];
+---
+
+<div>
+  <!-- Hero Section with Diagonal Split -->
+  <section class="relative bg-black text-white overflow-hidden min-h-screen">
+    <!-- Diagonal gradient background -->
+    <div class="absolute inset-0">
+      <div class="absolute inset-0 bg-gradient-to-br from-indigo-950 to-black"></div>
+      <div class="absolute inset-0 bg-[url('/images/grid-pattern.svg')] opacity-10"></div>
+      <!-- Diagonal divider -->
+      <div class="absolute inset-0 transform rotate-6 origin-bottom-left">
+        <div class="h-full w-full bg-black"></div>
+      </div>
+    </div>
+    
+    <!-- Hero Content -->
+    <div class="container mx-auto px-6 md:px-8 py-20 min-h-screen flex items-center relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <!-- Text content -->
+        <div class="space-y-6">
+          <h1 class="text-4xl md:text-5xl font-bold tracking-tight">
+            <span class="block text-white">Where AI Management</span>
+            <span class="block mt-3 text-indigo-400">Meets Human Psychology</span>
+          </h1>
+          
+          <p class="text-lg text-neutral-400 max-w-lg">
+            Nextla presents ServiceNow and software asset management through a narrative lens, exploring AI consciousness and human relationships.
+          </p>
+          
+          <div class="flex flex-wrap gap-4 pt-4">
+            <a href="#characters" class="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-md transition">
+              Meet the Characters
+            </a>
+            <a href="#technical" class="px-6 py-3 bg-black hover:bg-neutral-900 border border-indigo-800 text-white font-medium rounded-md transition">
+              Technical Approach
+            </a>
+          </div>
+        </div>
+        
+        <!-- Visual element -->
+        <div class="relative aspect-square max-w-md mx-auto">
+          <div class="absolute inset-0 bg-indigo-500/10 rounded-full animate-pulse"></div>
+          <div class="absolute inset-10 bg-indigo-500/20 rounded-full animate-pulse-slow"></div>
+          <div class="absolute inset-20 bg-indigo-600/30 rounded-full animate-float"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <span class="text-6xl font-bold text-indigo-400">N</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section - Diagonal Layout -->
+  <section id="about" class="relative bg-neutral-950 py-24 overflow-hidden">
+    <!-- Diagonal divider top -->
+    <div class="absolute top-0 inset-x-0 h-20 bg-black transform -skew-y-2"></div>
+    
+    <div class="container mx-auto px-6 md:px-8 relative z-10 mt-16">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-16 text-center text-white">What is Nextla?</h2>
+        
+        <!-- Diagonal content boxes -->
+        <div class="space-y-24">
+          <!-- Item 1 - Left diagonal -->
+          <div class="relative">
+            <div class="absolute inset-0 bg-indigo-900/30 transform -rotate-3 rounded-lg"></div>
+            <div class="relative bg-neutral-900 p-8 md:p-12 rounded-lg border border-indigo-900/50 transform rotate-1">
+              <h3 class="text-2xl font-bold mb-4 text-indigo-400">The Project</h3>
+              <p class="mb-4 text-neutral-300">
+                Nextla presents ServiceNow and software asset management concepts through an engaging narrative framework. By exploring technical ideas through character-driven stories, we make complex systems more accessible.
+              </p>
+              <p class="text-neutral-400">
+                The project bridges technical documentation with creative storytelling, offering parallel paths to understand core concepts.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Item 2 - Right diagonal -->
+          <div class="relative">
+            <div class="absolute inset-0 bg-teal-900/30 transform rotate-3 rounded-lg"></div>
+            <div class="relative bg-neutral-900 p-8 md:p-12 rounded-lg border border-teal-900/50 transform -rotate-1">
+              <h3 class="text-2xl font-bold mb-4 text-teal-400">The Name</h3>
+              <p class="mb-4 text-neutral-300">
+                "Nextla" draws inspiration from Mesoamerican culture, referencing both "next" (future) and elements of Aztec terminology. This connection highlights the project's exploration of value systems and attention economics.
+              </p>
+              <p class="text-neutral-400">
+                The Mesoamerican influence extends through visual motifs, organizational structures, and symbolic elements throughout the project.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Diagonal divider bottom -->
+    <div class="absolute bottom-0 inset-x-0 h-20 bg-black transform skew-y-2"></div>
+  </section>
+
+  <!-- Characters Section -->
+  <section id="characters" class="relative bg-black py-24">
+    <div class="container mx-auto px-6 md:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-white mb-4">Meet the Characters</h2>
+        <p class="text-neutral-400 max-w-2xl mx-auto">Explore the psychological dimensions of AI entities and human relationships through our character-driven narrative.</p>
+      </div>
+      
+      <!-- Character cards in diagonal layout -->
+      <div class="relative max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          {characters.map((character, index) => (
+            <div class={`relative transform ${index % 2 === 0 ? 'md:-rotate-2' : 'md:rotate-2'}`}>
+              <div class={`absolute inset-0 bg-${character.color}-900/30 rounded-lg transform ${index % 2 === 0 ? 'rotate-1' : '-rotate-1'}`}></div>
+              <div class="relative bg-neutral-900 rounded-lg overflow-hidden border border-neutral-800 hover:border-neutral-700 transition-all duration-300">
+                <div class={`h-48 bg-${character.color}-900/20 flex items-center justify-center`}>
+                  <div class={`w-24 h-24 rounded-full bg-${character.color}-800 flex items-center justify-center`}>
+                    <span class="text-3xl font-bold text-white">{character.name.charAt(0)}</span>
+                  </div>
+                </div>
+                
+                <div class="p-6">
+                  <h3 class={`text-xl font-bold text-${character.color}-400`}>{character.name}</h3>
+                  <p class="text-sm text-neutral-500 mb-2">{character.role}</p>
+                  <p class="text-neutral-400">{character.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Framework Section -->
+  <section id="technical" class="relative bg-neutral-950 py-24 overflow-hidden">
+    <!-- Diagonal divider top -->
+    <div class="absolute top-0 inset-x-0 h-20 bg-black transform skew-y-2"></div>
+    
+    <div class="container mx-auto px-6 md:px-8 relative z-10 mt-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-white mb-4">Technical Framework</h2>
+        <p class="text-neutral-400 max-w-2xl mx-auto">Understand the technical concepts of ServiceNow and SAM through the lens of our narrative framework.</p>
+      </div>
+      
+      <!-- Feature zigzag layout -->
+      <div class="max-w-5xl mx-auto space-y-16">
+        {features.map((feature, index) => (
+          <div class={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8`}>
+            <!-- Icon -->
+            <div class={`w-full md:w-1/3 flex justify-center ${index % 2 === 0 ? 'md:justify-end' : 'md:justify-start'}`}>
+              <div class={`w-24 h-24 rounded-full bg-${index % 2 === 0 ? 'indigo' : 'teal'}-900/30 flex items-center justify-center transform rotate-${index % 2 === 0 ? '6' : '-6'}`}>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class={`w-12 h-12 text-${index % 2 === 0 ? 'indigo' : 'teal'}-400`}>
+                  <Fragment set:html={feature.icon} />
+                </svg>
+              </div>
+            </div>
+            
+            <!-- Text content -->
+            <div class="w-full md:w-2/3">
+              <div class={`relative transform ${index % 2 === 0 ? 'md:-rotate-1' : 'md:rotate-1'}`}>
+                <div class={`absolute inset-0 bg-${index % 2 === 0 ? 'indigo' : 'teal'}-900/20 rounded-lg transform ${index % 2 === 0 ? 'rotate-2' : '-rotate-2'}`}></div>
+                <div class="relative bg-neutral-900 p-6 rounded-lg border border-neutral-800">
+                  <h3 class={`text-xl font-bold text-${index % 2 === 0 ? 'indigo' : 'teal'}-400 mb-2`}>{feature.title}</h3>
+                  <p class="text-neutral-400">{feature.description}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+    
+    <!-- Diagonal divider bottom -->
+    <div class="absolute bottom-0 inset-x-0 h-20 bg-black transform -skew-y-2"></div>
+  </section>
+
+  <!-- Footer/CTA Section -->
+  <section class="py-16 bg-black text-center">
+    <div class="container mx-auto px-6 md:px-8">
+      <div class="relative inline-block">
+        <div class="absolute inset-0 bg-indigo-900/30 rounded-lg transform rotate-3"></div>
+        <a href="#" class="relative inline-block px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-md transition transform -rotate-1">
+          Explore the Full Experience
+        </a>
+      </div>
+      <p class="mt-12 text-neutral-500 text-sm">© 2023 Nextla. All rights reserved.</p>
+    </div>
+  </section>
+</div> 
