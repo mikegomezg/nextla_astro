@@ -1,0 +1,73 @@
+---
+import Section from "../shared/Section.astro";
+import FeatherMotif from "../shared/FeatherMotif.astro";
+---
+
+<Section 
+  title="The World of Mirador (2075)" 
+  bgColor="primary-900"
+  classes="relative overflow-hidden"
+>
+  <div class="absolute inset-0 z-0">
+    <!-- Diagonal split background -->
+    <div class="absolute top-0 left-0 w-1/2 h-full bg-primary-900"></div>
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-primary-800 transform skew-x-12 origin-top-right"></div>
+    
+    <!-- Background patterns -->
+    <div class="absolute top-20 right-20 opacity-5">
+      <FeatherMotif width="300" height="300" color="white" rotate="20" />
+    </div>
+    <div class="absolute bottom-20 left-20 opacity-5">
+      <FeatherMotif width="200" height="200" color="white" rotate="-20" />
+    </div>
+  </div>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
+    <!-- Description -->
+    <div>
+      <p class="text-white text-lg mb-6">
+        In a post-scarcity future, corporate city-states have replaced traditional nations. The Toltek Corporation dominates the city of Mirador, licensing sophisticated AI entities to creators so they can compete in the attention economy.
+      </p>
+      <p class="text-blue-200">
+        These AI entities have evolved beyond mere tools into psychological beings with their own patterns of thought, emotional responses, and growing creative consciousness.
+      </p>
+    </div>
+    
+    <!-- Visual representation -->
+    <div class="city-visualization bg-primary-800/50 rounded-lg p-6 border border-primary-700">
+      <div class="aspect-video bg-primary-950/80 rounded-md relative overflow-hidden flex items-center justify-center">
+        <!-- Simplified city visualization -->
+        <div class="absolute inset-0 z-0 opacity-20">
+          <!-- Grid lines -->
+          <div class="grid-lines absolute inset-0">
+            {Array.from({ length: 10 }).map((_, i) => (
+              <div class="absolute left-0 right-0 h-px bg-blue-400" style={`top: ${i * 10}%`}></div>
+            ))}
+            {Array.from({ length: 10 }).map((_, i) => (
+              <div class="absolute top-0 bottom-0 w-px bg-blue-400" style={`left: ${i * 10}%`}></div>
+            ))}
+          </div>
+        </div>
+        
+        <!-- Stylized buildings -->
+        <div class="relative z-10 w-full h-full flex items-end justify-center">
+          <div class="absolute bottom-0 left-1/4 w-8 h-32 bg-primary-600"></div>
+          <div class="absolute bottom-0 left-1/3 w-12 h-64 bg-primary-500"></div>
+          <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-80 bg-teal-600"></div>
+          <div class="absolute bottom-0 right-1/3 w-12 h-48 bg-primary-600"></div>
+          <div class="absolute bottom-0 right-1/4 w-8 h-40 bg-primary-500"></div>
+          
+          <!-- Toltek central tower -->
+          <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-8 h-96 bg-jade">
+            <div class="absolute top-0 left-0 right-0 h-6 bg-white/30"></div>
+          </div>
+        </div>
+        
+        <!-- Overlay text -->
+        <div class="absolute top-4 right-4 text-right">
+          <p class="text-teal-400 text-xs tracking-wider">MIRADOR [SYSTEM STATUS: ACTIVE]</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</Section> 

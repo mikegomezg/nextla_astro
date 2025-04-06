@@ -1,0 +1,73 @@
+---
+import Navigation from "./Navigation.astro";
+---
+
+<header class="fixed w-full z-50 transition-all duration-300 bg-neutral-900/90 backdrop-blur-sm">
+  <div class="container mx-auto px-4 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="text-jade font-bold text-2xl">Nextla</a>
+      
+      <!-- Navigation -->
+      <Navigation />
+      
+      <!-- CTA Button (visible on desktop) -->
+      <a href="/contact" class="hidden md:inline-block px-6 py-2 bg-accent-600 hover:bg-accent-700 text-white rounded-md transition-colors">
+        Get Started
+      </a>
+      
+      <!-- Mobile Menu Button -->
+      <button 
+        id="mobile-menu-button" 
+        class="inline-block md:hidden text-white p-2"
+        aria-label="Toggle mobile menu"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Mobile Navigation Menu (hidden by default) -->
+  <div id="mobile-menu" class="hidden md:hidden bg-neutral-800 border-t border-neutral-700">
+    <div class="container mx-auto px-4 py-4">
+      <nav class="flex flex-col space-y-3">
+        <a href="/" class="py-2 text-white hover:text-jade transition-colors">Home</a>
+        <a href="/about" class="py-2 text-white hover:text-jade transition-colors">About</a>
+        <a href="/characters" class="py-2 text-white hover:text-jade transition-colors">Characters</a>
+        <a href="/technical" class="py-2 text-white hover:text-jade transition-colors">Technical</a>
+        <a href="/contact" class="py-2 text-white hover:text-jade transition-colors">Contact</a>
+        
+        <!-- Mobile CTA Button -->
+        <a href="/contact" class="mt-2 px-6 py-2 bg-accent-600 hover:bg-accent-700 text-white rounded-md transition-colors text-center">
+          Get Started
+        </a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuButton?.addEventListener('click', () => {
+      mobileMenu?.classList.toggle('hidden');
+    });
+  });
+  
+  // Header scroll behavior
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+      header?.classList.add('py-2', 'shadow-md');
+      header?.classList.remove('py-4');
+    } else {
+      header?.classList.add('py-4');
+      header?.classList.remove('py-2', 'shadow-md');
+    }
+  });
+</script> 

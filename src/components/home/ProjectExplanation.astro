@@ -1,0 +1,30 @@
+---
+import Section from "../shared/Section.astro";
+import Card from "../shared/Card.astro";
+---
+
+<Section title="What is Nextla?">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="card-container transform md:-rotate-2">
+      <Card title="The Project" borderColor="primary-500" classes="h-full">
+        <p class="text-white mb-4">
+          Nextla presents ServiceNow and software asset management concepts through an engaging narrative framework. By exploring technical ideas through character-driven stories, we make complex systems more accessible.
+        </p>
+        <p class="text-neutral-400">
+          The project bridges technical documentation with creative storytelling, offering parallel paths to understanding the same core concepts.
+        </p>
+      </Card>
+    </div>
+    
+    <div class="card-container transform md:rotate-2 md:mt-12">
+      <Card title="The Name" borderColor="jade" classes="h-full">
+        <p class="text-white mb-4">
+          "Nextla" draws inspiration from the Aztec word "nextlahualli" for tribute. In ancient Mesoamerica, conquered territories offered goods, labor, and even blood sacrifices to ensure that the sun continued to rise.
+        </p>
+        <p class="text-neutral-400">
+          In this future world, attention has become the new form of tribute - the precious resource that creators must cultivate and spend to survive in the media-dominated landscape.
+        </p>
+      </Card>
+    </div>
+  </div>
+</Section> 
