@@ -5,6 +5,7 @@ const {
     description = "",
     color = "jade",
     accentColor = "teal-400",
+    bgColor = "neutral-800",
 } = Astro.props;
 
 // Generate slug from name
@@ -13,7 +14,7 @@ const svgPath = `/assets/characters/${slug}.svg`;
 ---
 
 <div
-    class={`character-card bg-neutral-800 rounded-lg p-6 border-l-4 border-${color} transition-all hover:shadow-${color}/30 hover:shadow-lg h-full`}
+    class={`character-card bg-${bgColor} rounded-lg p-6 border-l-4 border-${color} transition-all hover:shadow-${color}/30 hover:shadow-lg h-full`}
 >
     <div class="character-visual mb-4 relative">
         <slot name="character-svg" />

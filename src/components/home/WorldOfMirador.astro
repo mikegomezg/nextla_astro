@@ -1,73 +1,123 @@
 ---
-import Section from "../shared/Section.astro";
 import FeatherMotif from "../shared/FeatherMotif.astro";
 ---
 
-<Section 
-  title="The World of Mirador (2075)" 
-  bgColor="primary-900"
-  classes="relative overflow-hidden"
->
-  <div class="absolute inset-0 z-0">
-    <!-- Diagonal split background -->
-    <div class="absolute top-0 left-0 w-1/2 h-full bg-primary-900"></div>
-    <div class="absolute top-0 right-0 w-1/2 h-full bg-primary-800 transform skew-x-12 origin-top-right"></div>
-    
-    <!-- Background patterns -->
-    <div class="absolute top-20 right-20 opacity-5">
-      <FeatherMotif width="300" height="300" color="white" rotate="20" />
-    </div>
-    <div class="absolute bottom-20 left-20 opacity-5">
-      <FeatherMotif width="200" height="200" color="white" rotate="-20" />
-    </div>
-  </div>
-  
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
-    <!-- Description -->
-    <div>
-      <p class="text-white text-lg mb-6">
-        In a post-scarcity future, corporate city-states have replaced traditional nations. The Toltek Corporation dominates the city of Mirador, licensing sophisticated AI entities to creators so they can compete in the attention economy.
-      </p>
-      <p class="text-blue-200">
-        These AI entities have evolved beyond mere tools into psychological beings with their own patterns of thought, emotional responses, and growing creative consciousness.
-      </p>
-    </div>
-    
-    <!-- Visual representation -->
-    <div class="city-visualization bg-primary-800/50 rounded-lg p-6 border border-primary-700">
-      <div class="aspect-video bg-primary-950/80 rounded-md relative overflow-hidden flex items-center justify-center">
-        <!-- Simplified city visualization -->
-        <div class="absolute inset-0 z-0 opacity-20">
-          <!-- Grid lines -->
-          <div class="grid-lines absolute inset-0">
-            {Array.from({ length: 10 }).map((_, i) => (
-              <div class="absolute left-0 right-0 h-px bg-blue-400" style={`top: ${i * 10}%`}></div>
-            ))}
-            {Array.from({ length: 10 }).map((_, i) => (
-              <div class="absolute top-0 bottom-0 w-px bg-blue-400" style={`left: ${i * 10}%`}></div>
-            ))}
-          </div>
+<section class="world-of-mirador py-24 bg-black relative overflow-hidden">
+    <div class="container mx-auto px-4 relative z-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
+            The World of Mirador
+        </h2>
+        <p class="text-gray-300 text-center mb-16 max-w-2xl mx-auto">
+            In 2075, the corporate city-state of Mirador stands as a testament to the
+            fusion of technology and human ambition.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <!-- Left side: Description -->
+            <div class="order-2 md:order-1">
+                <h3 class="text-2xl font-bold text-jade mb-4">A City of Attention</h3>
+                <p class="text-white mb-4">
+                    Mirador operates on an attention-based economy where everyone has the
+                    tools to broadcast their ideas, but the real challenge is finding
+                    anyone who cares to listen.
+                </p>
+                <p class="text-gray-300 mb-6">
+                    The city houses various factions with competing visions for the
+                    future, from corporate powers like Toltek Industries to the resistance
+                    movements challenging the status quo.
+                </p>
+
+                <div class="grid grid-cols-2 gap-4 mt-8">
+                    <div class="bg-black p-4 border border-white/10 rounded-lg">
+                        <h4 class="text-teal-400 text-lg font-medium mb-2">
+                            Corporate District
+                        </h4>
+                        <p class="text-gray-300 text-sm">
+                            Home to Toltek's headquarters and the beating heart of the
+                            attention economy.
+                        </p>
+                    </div>
+                    <div class="bg-black p-4 border border-white/10 rounded-lg">
+                        <h4 class="text-amber-400 text-lg font-medium mb-2">
+                            The Commons
+                        </h4>
+                        <p class="text-gray-300 text-sm">
+                            Public spaces where citizens fight for visibility in an
+                            overcrowded attention marketplace.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right side: Visual representation -->
+            <div class="order-1 md:order-2 flex justify-center">
+                <div class="relative w-full max-w-md aspect-square">
+                    <!-- Abstract city visualization -->
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div
+                            class="w-4/5 h-4/5 border-2 border-jade/40 rounded-full flex items-center justify-center animate-slow-spin"
+                        >
+                            <div
+                                class="w-3/4 h-3/4 border border-jade/30 rounded-full flex items-center justify-center"
+                            >
+                                <div
+                                    class="w-2/3 h-2/3 border border-jade/20 rounded-full"
+                                >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Center Element -->
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div
+                            class="bg-black/80 p-6 rounded-lg border border-white/10 shadow-lg shadow-jade/10"
+                        >
+                            <FeatherMotif
+                                width="100"
+                                height="100"
+                                color="jade"
+                                opacity="0.8"
+                                rotate="0"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- Orbital elements -->
+                    <div class="absolute top-1/4 right-0 transform translate-x-4">
+                        <div
+                            class="w-12 h-12 bg-primary-800/30 rounded-full border border-primary-800/50"
+                        >
+                        </div>
+                    </div>
+                    <div class="absolute bottom-1/4 left-0 transform -translate-x-4">
+                        <div
+                            class="w-8 h-8 bg-accent/20 rounded-full border border-accent/40"
+                        >
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <!-- Stylized buildings -->
-        <div class="relative z-10 w-full h-full flex items-end justify-center">
-          <div class="absolute bottom-0 left-1/4 w-8 h-32 bg-primary-600"></div>
-          <div class="absolute bottom-0 left-1/3 w-12 h-64 bg-primary-500"></div>
-          <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-80 bg-teal-600"></div>
-          <div class="absolute bottom-0 right-1/3 w-12 h-48 bg-primary-600"></div>
-          <div class="absolute bottom-0 right-1/4 w-8 h-40 bg-primary-500"></div>
-          
-          <!-- Toltek central tower -->
-          <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-8 h-96 bg-jade">
-            <div class="absolute top-0 left-0 right-0 h-6 bg-white/30"></div>
-          </div>
-        </div>
-        
-        <!-- Overlay text -->
-        <div class="absolute top-4 right-4 text-right">
-          <p class="text-teal-400 text-xs tracking-wider">MIRADOR [SYSTEM STATUS: ACTIVE]</p>
-        </div>
-      </div>
     </div>
-  </div>
-</Section> 
+
+    <!-- Background elements -->
+    <div class="absolute bottom-0 right-0 opacity-10">
+        <FeatherMotif width="300" height="300" color="white" rotate="180" />
+    </div>
+</section>
+
+<style>
+    @keyframes slow-spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .animate-slow-spin {
+        animation: slow-spin 60s linear infinite;
+    }
+</style>

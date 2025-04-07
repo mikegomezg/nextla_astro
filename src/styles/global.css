@@ -9,7 +9,7 @@
   }
   
   body {
-    @apply font-body text-white bg-neutral-900;
+    @apply font-body text-white bg-black;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -22,7 +22,7 @@
   }
   
   ::-webkit-scrollbar-track {
-    @apply bg-neutral-800;
+    @apply bg-black;
   }
   
   ::-webkit-scrollbar-thumb {
@@ -47,6 +47,35 @@
   .focus-ring {
     @apply focus:outline-none focus:ring-2 focus:ring-jade focus:ring-opacity-50;
   }
+}
+
+/* Parallax effect */
+.parallax-container {
+  perspective: 1px;
+}
+
+.parallax-item {
+  will-change: transform, opacity;
+}
+
+/* Ensure black background consistency */
+body {
+  background-color: #000000;
+}
+
+/* Ensure all main sections have proper black backgrounds */
+section {
+  background-color: #000000;
+}
+
+/* Force any light backgrounds to be dark */
+.bg-white, .bg-light, .bg-gray-100, .bg-gray-200, .bg-neutral-900, .bg-neutral-800 {
+  background-color: #000000 !important;
+}
+
+/* Make sure text colors are visible against black */
+.text-gray-700, .text-gray-800, .text-gray-900, .text-black {
+  color: #FFFFFF !important;
 }
 
 /* Custom animations */

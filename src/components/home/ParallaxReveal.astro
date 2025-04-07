@@ -2,84 +2,98 @@
 import FeatherMotif from "../shared/FeatherMotif.astro";
 ---
 
-<section class="parallax-container relative h-screen overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-b from-neutral-900 to-primary-800 z-0">
-    </div>
-
-    <!-- Circuit pattern background -->
-    <div class="absolute inset-0 opacity-5 z-10">
-        <div class="absolute top-1/4 left-1/4">
-            <FeatherMotif
-                width="300"
-                height="300"
-                color="white"
-                opacity="0.5"
-                rotate="15"
-            />
+<section class="imagine-section relative py-24 overflow-hidden bg-black">
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="text-center mb-24">
+            <h2 class="text-5xl md:text-7xl font-bold text-white mb-4">
+                Imagine a future...
+            </h2>
         </div>
-        <div class="absolute bottom-1/4 right-1/4">
-            <FeatherMotif
-                width="240"
-                height="240"
-                color="white"
-                opacity="0.5"
-                rotate="-15"
-            />
+
+        <!-- Single column layout with one concept per line -->
+        <div class="flex flex-col space-y-20 max-w-4xl mx-auto">
+            <div class="imagine-item flex items-center">
+                <div class="mr-10 hidden md:block">
+                    <FeatherMotif
+                        width="120"
+                        height="120"
+                        color="white"
+                        opacity="0.2"
+                        rotate="0"
+                    />
+                </div>
+                <div>
+                    <h3 class="text-3xl md:text-5xl text-white mb-2">
+                        when everyone has an audience
+                    </h3>
+                    <p class="text-xl text-gray-300">
+                        In a world where all voices can be heard, the value of connection
+                        transcends traditional metrics.
+                    </p>
+                </div>
+            </div>
+
+            <div class="imagine-item flex items-center">
+                <div class="mr-10 hidden md:block">
+                    <FeatherMotif
+                        width="120"
+                        height="120"
+                        color="jade"
+                        opacity="0.3"
+                        rotate="15"
+                    />
+                </div>
+                <div>
+                    <h3 class="text-3xl md:text-5xl text-white mb-2">
+                        when connection replaces consumption
+                    </h3>
+                    <p class="text-xl text-gray-300">
+                        Moving beyond passive experiences to create meaningful exchanges
+                        that enrich both humans and AI.
+                    </p>
+                </div>
+            </div>
+
+            <div class="imagine-item flex items-center">
+                <div class="mr-10 hidden md:block">
+                    <FeatherMotif
+                        width="120"
+                        height="120"
+                        color="teal"
+                        opacity="0.3"
+                        rotate="-15"
+                    />
+                </div>
+                <div>
+                    <h3 class="text-3xl md:text-5xl text-jade font-medium mb-2">
+                        when the only limit is attention
+                    </h3>
+                    <p class="text-xl text-gray-300">
+                        Attention becomes the most valuable resource in an economy where
+                        infinite possibilities compete for finite focus.
+                    </p>
+                </div>
+            </div>
         </div>
-    </div>
-
-    <!-- Parallax text elements -->
-    <div
-        class="relative z-20 h-full flex flex-col justify-center items-center text-center px-4"
-    >
-        <h2
-            class="text-4xl md:text-6xl font-bold text-white mb-24 parallax-item"
-            data-depth="0.1"
-        >
-            Imagine a future...
-        </h2>
-
-        <p class="text-2xl md:text-4xl text-white mb-24 parallax-item" data-depth="0.2">
-            when everyone has an audience
-        </p>
-
-        <p class="text-2xl md:text-4xl text-white mb-24 parallax-item" data-depth="0.3">
-            when connection replaces consumption
-        </p>
-
-        <p
-            class="text-2xl md:text-4xl text-jade font-medium parallax-item"
-            data-depth="0.4"
-        >
-            when the only limit is attention
-        </p>
     </div>
 </section>
 
-<script>
-    // JavaScript for parallax effect
-    document.addEventListener("DOMContentLoaded", () => {
-        const parallaxItems = document.querySelectorAll<HTMLElement>(".parallax-item");
+<style>
+    .imagine-item {
+        animation: fade-in-up 0.8s ease-out forwards;
+        animation-delay: calc(var(--index, 0) * 200ms);
+        opacity: 0;
+    }
 
-        function handleScroll() {
-            const scrollY = window.scrollY;
+    .imagine-item:nth-child(1) {
+        --index: 1;
+    }
 
-            parallaxItems.forEach((item, index) => {
-                const depth = parseFloat(item.getAttribute("data-depth") || "0");
-                const translateY = scrollY * depth;
-                const opacity = Math.max(
-                    0,
-                    Math.min(1, 1 - scrollY * 0.001 * (index + 1))
-                );
+    .imagine-item:nth-child(2) {
+        --index: 2;
+    }
 
-                item.style.transform = `translateY(${translateY}px)`;
-                item.style.opacity = opacity.toString();
-            });
-        }
-
-        window.addEventListener("scroll", handleScroll);
-
-        // Initialize to handle initial state
-        handleScroll();
-    });
-</script>
+    .imagine-item:nth-child(3) {
+        --index: 3;
+    }
+</style>
