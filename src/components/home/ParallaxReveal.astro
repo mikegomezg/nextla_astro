@@ -39,10 +39,12 @@ import FeatherMotif from "../shared/FeatherMotif.astro";
                 <p class="text-3xl md:text-4xl font-semibold gradient-text-blue mb-16">
                     Everyone has an audience
                 </p>
-                <p class="text-3xl md:text-4xl font-semibold gradient-text-blue mb-16">
+                <p class="text-3xl md:text-4xl font-semibold gradient-text-copper mb-16">
                     Connection replaces consumption
                 </p>
-                <p class="text-3xl md:text-4xl font-semibold gradient-text-jade mb-16">
+                <p
+                    class="text-3xl md:text-4xl font-semibold gradient-text-subtle-green mb-16"
+                >
                     Attention is the only limit left
                 </p>
             </div>
@@ -52,7 +54,7 @@ import FeatherMotif from "../shared/FeatherMotif.astro";
                     class="bg-[#0e1f29] rounded-lg overflow-hidden shadow-xl p-8 flex justify-center items-center border-2 border-[#74542b]"
                 >
                     <img
-                        src="/assets/feather.svg"
+                        src="/assets/feather.png"
                         alt="Feather"
                         class="w-full max-w-md h-auto"
                     />
@@ -63,12 +65,12 @@ import FeatherMotif from "../shared/FeatherMotif.astro";
 </section>
 
 <style>
-    .gradient-text-jade {
-        background: linear-gradient(45deg, #3ebfa5 0%, #2a9e87 50%, #5dd0bc 100%);
+    .gradient-text-subtle-green {
+        background: linear-gradient(45deg, #7a9a8f 0%, #5d7d73 50%, #3c5a50 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        text-shadow: 0 0 20px rgba(62, 191, 165, 0.15);
+        text-shadow: 0 0 20px rgba(93, 125, 115, 0.15);
     }
 
     .gradient-text-blue {
@@ -77,5 +79,13 @@ import FeatherMotif from "../shared/FeatherMotif.astro";
         -webkit-text-fill-color: transparent;
         background-clip: text;
         text-shadow: 0 0 20px rgba(164, 194, 210, 0.15);
+    }
+
+    .gradient-text-copper {
+        background: linear-gradient(45deg, #b17a5c 0%, #8e5e46 50%, #6d4020 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 0 20px rgba(109, 64, 32, 0.15);
     }
 </style>

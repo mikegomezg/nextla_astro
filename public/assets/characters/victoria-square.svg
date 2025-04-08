@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
-  <rect width="400" height="400" fill="#1A1A1A"/>
-  <rect width="400" height="400" fill="#2b200f" opacity="0.6"/>
-  <circle cx="200" cy="160" r="70" fill="#4a3c2a"/>
-  <path d="M140 290 C 140 240, 260 240, 260 290" stroke="#4a3c2a" stroke-width="10" fill="none"/>
-  <text x="200" y="170" font-family="Arial, sans-serif" font-size="100" font-weight="bold" fill="#f59e0b" text-anchor="middle" dominant-baseline="middle">V</text>
-  <text x="200" y="350" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Victoria Ford</text>
-  <text x="200" y="380" font-family="Arial, sans-serif" font-size="18" fill="#fbbf24" text-anchor="middle">Account Executive</text>
-</svg> 
