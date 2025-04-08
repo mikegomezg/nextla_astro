@@ -47,6 +47,55 @@
   .focus-ring {
     @apply focus:outline-none focus:ring-2 focus:ring-jade focus:ring-opacity-50;
   }
+
+  /* Enhanced typography for display text */
+  .display-text {
+    @apply font-heading tracking-tight;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .display-text-large {
+    @apply text-5xl md:text-7xl font-bold display-text;
+    letter-spacing: -0.02em;
+  }
+
+  .display-text-medium {
+    @apply text-3xl md:text-5xl font-bold display-text;
+    letter-spacing: -0.01em;
+  }
+
+  .display-text-gradient {
+    @apply bg-gradient-to-r from-jade to-teal-400 text-transparent bg-clip-text;
+  }
+
+  /* Diagonal section styling */
+  .diagonal-section {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .diagonal-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 66.67%;
+    background-color: theme('colors.primary.800');
+    transform: skewX(-12deg);
+    transform-origin: top right;
+    z-index: 0;
+  }
+
+  /* Character card styles for horizontal scroll */
+  .character-grid {
+    scroll-snap-type: x mandatory;
+  }
+
+  .character-card {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
 }
 
 /* Parallax effect */

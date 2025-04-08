@@ -1,123 +1,54 @@
 ---
+import Button from "../global/Button.astro";
 import FeatherMotif from "../shared/FeatherMotif.astro";
 ---
 
 <section class="hero relative min-h-screen flex items-center overflow-hidden">
-    <!-- Diagonal Split Background -->
-    <div class="absolute inset-0 bg-primary-900"></div>
-    <!-- Diagonal Overlay -->
-    <div class="absolute inset-0 clip-diagonal bg-secondary-800 opacity-90"></div>
-
-    <!-- Subtle Pattern Overlay -->
-    <div class="absolute inset-0 opacity-5"></div>
-
-    <!-- Animated Particles for Visual Interest -->
+    <!-- Diagonal background -->
+    <div class="absolute inset-0 bg-neutral-900 z-0"></div>
     <div
-        class="absolute w-8 h-8 rounded-full bg-jade/20 animate-float"
-        style="top: 15%; left: 10%;"
-    >
-    </div>
-    <div
-        class="absolute w-6 h-6 rounded-full bg-jade/20 animate-float"
-        style="top: 25%; left: 85%; animation-delay: 2s;"
-    >
-    </div>
-    <div
-        class="absolute w-10 h-10 rounded-full bg-accent/20 animate-float"
-        style="top: 75%; left: 35%; animation-delay: 1s;"
+        class="absolute top-0 right-0 bottom-0 w-2/3 bg-primary-800 transform -skew-x-12 origin-top-right z-0"
     >
     </div>
 
-    <!-- Hamburger Menu -->
-    <div class="absolute top-6 right-6 z-20">
-        <button
-            id="hamburger-menu"
-            class="text-white p-2 rounded-full bg-black/30 backdrop-blur-sm"
-        >
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-8 h-8"
-            >
-                <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-            </svg>
-        </button>
-    </div>
-
-    <!-- Content -->
+    <!-- Content container -->
     <div class="container mx-auto px-4 relative z-10 py-20">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center min-h-[70vh]">
-            <!-- Main Content -->
-            <div class="space-y-8">
-                <h1 class="text-6xl md:text-8xl font-bold leading-tight tracking-tight">
-                    <span
-                        class="block bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent text-7xl md:text-9xl"
-                        >Free</span
-                    >
-                    <span
-                        class="block mt-2 text-7xl md:text-9xl bg-gradient-to-r from-jade to-teal-300 bg-clip-text text-transparent drop-shadow-glow"
-                        >to be found</span
-                    >
+        <div class="flex flex-col md:flex-row items-center justify-between">
+            <!-- Left content - Just the heading -->
+            <div class="w-full md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-6xl md:text-8xl font-bold text-white mb-2">
+                    Free to be found
                 </h1>
-
-                <p class="text-2xl md:text-3xl text-white/90 max-w-xl font-light">
-                    Imagining a future where humans and AI collaborate to create more
-                    meaningful lives.
-                </p>
             </div>
 
-            <!-- Visual Element -->
-            <div class="hidden md:block">
-                <div class="relative aspect-square">
-                    <!-- Center Emblem -->
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div
-                            class="bg-black/30 backdrop-blur-sm p-8 rounded-full border border-jade/30 shadow-lg shadow-jade/10"
-                        >
-                            <FeatherMotif
-                                width="180"
-                                height="180"
-                                color="jade"
-                                opacity="0.8"
-                                rotate="0"
-                            />
-                        </div>
-                    </div>
-
-                    <!-- Orbital Rings -->
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div
-                            class="w-4/5 h-4/5 border border-white/10 rounded-full animate-slow-spin"
-                        >
-                        </div>
-                        <div
-                            class="w-3/5 h-3/5 border border-white/5 rounded-full animate-reverse-spin"
-                        >
-                        </div>
-                    </div>
+            <!-- Right content - Just the image -->
+            <div class="w-full md:w-2/5">
+                <div
+                    class="dashboard-placeholder bg-neutral-800/80 rounded-lg overflow-hidden shadow-xl"
+                >
+                    <img
+                        src="/assets/characters/group-photo.jpg"
+                        alt="Nextla characters"
+                        class="w-full h-auto"
+                    />
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Background Feather Motif -->
-    <div class="absolute bottom-10 left-10 opacity-10">
-        <FeatherMotif width="200" height="200" color="white" opacity="0.1" rotate="-15" />
+    <!-- Decorative elements -->
+    <div class="absolute bottom-10 left-10">
+        <FeatherMotif
+            width="120"
+            height="120"
+            color="accent"
+            opacity="0.1"
+            rotate="-15"
+        />
     </div>
 </section>
 
 <style>
-    /* Diagonal clip path - modified for left and top diagonal */
-    .clip-diagonal {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 30%);
-    }
-
     /* Animation for floating elements */
     @keyframes float {
         0%,
@@ -131,32 +62,6 @@ import FeatherMotif from "../shared/FeatherMotif.astro";
 
     .animate-float {
         animation: float 6s ease-in-out infinite;
-    }
-
-    @keyframes slow-spin {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
-
-    .animate-slow-spin {
-        animation: slow-spin 60s linear infinite;
-    }
-
-    @keyframes reverse-spin {
-        from {
-            transform: rotate(360deg);
-        }
-        to {
-            transform: rotate(0deg);
-        }
-    }
-
-    .animate-reverse-spin {
-        animation: reverse-spin 45s linear infinite;
     }
 
     .drop-shadow-glow {

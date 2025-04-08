@@ -2,10 +2,9 @@
     "folders": [
         {
             "path": "."
-        },
-        {
-            "path": "G:/My Drive/vault/_CRE Nextla/cursor_docs"
         }
     ],
-    "settings": {}
+    "settings": {
+        "powershell.cwd": "nextla_astro"
+    }
 }

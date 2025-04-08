@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#1A1A1A"/>
+  <rect width="400" height="400" fill="#0f1e1c" opacity="0.6"/>
+  <circle cx="200" cy="160" r="70" fill="#374745"/>
+  <path d="M140 290 C 140 240, 260 240, 260 290" stroke="#374745" stroke-width="10" fill="none"/>
+  <text x="200" y="170" font-family="Arial, sans-serif" font-size="100" font-weight="bold" fill="#3EBFA5" text-anchor="middle" dominant-baseline="middle">S</text>
+  <text x="200" y="350" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Silas Hale</text>
+  <text x="200" y="380" font-family="Arial, sans-serif" font-size="18" fill="#3EBFA5" text-anchor="middle">Toltek Technician</text>
+</svg> 
