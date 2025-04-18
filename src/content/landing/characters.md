@@ -20,8 +20,8 @@ characters:
     role: Entitlement Broker
     bio: Plans to disrupt the attention economy.
     image: /assets/characters/enrique.png
-  - name: Kate
+  - name: Cors
     role: Creative AI
     bio: The key asset at the center of the crisis.
-    image: /assets/characters/kate.png
+    image: /assets/characters/cors.png
 --- 
