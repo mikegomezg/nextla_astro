@@ -4,6 +4,12 @@ import { getEntry } from "astro:content";
 const projectContent = await getEntry("landing", "project");
 const meaningContent = await getEntry("landing", "meaning");
 
+if (!projectContent || !meaningContent) {
+    throw new Error(
+        "Required content not found: project or meaning entries missing from landing collection",
+    );
+}
+
 // Render markdown to HTML
 const { Content: ProjectContent } = await projectContent.render();
 const { Content: MeaningContent } = await meaningContent.render();

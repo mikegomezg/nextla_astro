@@ -13,7 +13,13 @@
         "heading": {
           "type": "string"
         },
+        "description": {
+          "type": "string"
+        },
         "cta": {
+          "type": "string"
+        },
+        "image": {
           "type": "string"
         },
         "characters": {
@@ -28,6 +34,9 @@
                 "type": "string"
               },
               "bio": {
+                "type": "string"
+              },
+              "image": {
                 "type": "string"
               }
             },

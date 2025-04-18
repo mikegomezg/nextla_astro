@@ -21,4 +21,7 @@ export default defineConfig({
       theme: 'dracula',
     },
   },
+  image: {
+    service: { entrypoint: 'astro/assets/services/sharp' },
+  },
 });

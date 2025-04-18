@@ -4,12 +4,12 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				background: 'var(--color-background)',
-				foreground: 'var(--color-foreground)',
-				accent: 'var(--color-accent)',
-				primary: 'var(--color-primary)',
-				secondary: 'var(--color-secondary)',
-				highlight: 'var(--color-highlight)',
+				background: '#0e0e0e',       // deep charcoal
+				foreground: '#e0f2f1',       // light jade mint
+				primary: '#6ee7b7',          // jade green
+				secondary: '#94a3b8',        // slate gray
+				accent: '#f9a8d4',           // soft pink
+				highlight: '#fef08a',        // pale gold
 			},
 			typography: {
 				DEFAULT: {

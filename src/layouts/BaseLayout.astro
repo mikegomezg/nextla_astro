@@ -1,15 +1,39 @@
 ---
-import "../styles/main.css";
+import Header from "../components/Header.astro";
+import "../styles/global.css";
+
+interface Props {
+    title?: string;
+    description?: string;
+}
+
+const {
+    title = "Nexla — Manage Creative Attention",
+    description = "A speculative platform for managing creative attention in the future.",
+} = Astro.props;
+
+// Use a relative path for the OG image
+const ogImageUrl = "/assets/visuals/cosmic-preview.png";
 ---
 
+<!doctype html>
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
-        <link rel="icon" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <title>Nexla</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={ogImageUrl} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <link rel="icon" href="/assets/logos/nexla-favicon.png" />
     </head>
-    <body class="bg-background text-foreground font-sans">
-        <slot />
+    <body>
+        <Header />
+        <main>
+            <slot />
+        </main>
     </body>
 </html>

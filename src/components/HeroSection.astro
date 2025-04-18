@@ -1,0 +1,66 @@
+---
+import { getEntry } from "astro:content";
+
+const heroContent = await getEntry("landing", "hero");
+const { title, subtitle, image } = heroContent?.data || {};
+---
+
+<section
+    id="hero"
+    aria-labelledby="hero-heading"
+    class="min-h-[80vh] flex items-center py-8 md:py-16 px-4 bg-gradient-to-b from-background to-background"
+>
+    <div class="max-w-6xl mx-auto w-full">
+        <div
+            class="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12"
+        >
+            <div class="w-full md:w-1/2 text-center md:text-left">
+                <h1
+                    id="hero-heading"
+                    class="text-3xl md:text-4xl lg:text-5xl font-bold text-highlight mb-4"
+                >
+                    {title || "Manage Creative Attention"}
+                </h1>
+                <p class="text-base md:text-lg mb-6 text-foreground">
+                    {subtitle || "Take control of your creative process in the AI era."}
+                </p>
+                <div
+                    class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+                >
+                    <a
+                        href="#characters"
+                        class="bg-primary hover:bg-opacity-80 text-background font-bold py-3 px-6 rounded-lg transition-colors text-center"
+                    >
+                        Meet Characters
+                    </a>
+                    <a
+                        href="#attention"
+                        class="border border-secondary hover:bg-secondary hover:text-background text-foreground font-bold py-3 px-6 rounded-lg transition-colors text-center"
+                    >
+                        Learn More
+                    </a>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 mt-8 md:mt-0">
+                {
+                    image ? (
+                        <img
+                            src={image.src}
+                            alt="Nexla hero illustration"
+                            class="w-full h-auto rounded-lg shadow-lg object-cover"
+                            width={image.width}
+                            height={image.height}
+                            loading="eager"
+                        />
+                    ) : (
+                        <div class="w-full aspect-[4/3] rounded-lg shadow-lg bg-gradient-to-br from-primary/20 to-highlight/20 flex items-center justify-center">
+                            <p class="text-foreground text-lg">
+                                Nexla: Managing Creative Attention
+                            </p>
+                        </div>
+                    )
+                }
+            </div>
+        </div>
+    </div>
+</section>
