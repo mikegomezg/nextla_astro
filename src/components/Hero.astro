@@ -2,8 +2,8 @@
 import { getEntry } from "astro:content";
 import { Image } from "astro:assets";
 
-// Use the existing attention-flow image since cosmic.jpg doesn't exist
-import cosmicImg from "../assets/visuals/attention-flow.png";
+// Import landing image
+import landingImg from "../assets/visuals/attention-flow.png";
 
 const heroContent = await getEntry("landing", "hero");
 
@@ -14,42 +14,30 @@ if (!heroContent) {
 const { title, subtitle } = heroContent.data;
 ---
 
-<section
-    id="hero"
-    aria-labelledby="hero-heading"
-    class="min-h-[90vh] flex flex-col items-center justify-center py-8 md:py-16 px-4 bg-gradient-to-b from-background to-background relative overflow-hidden"
->
-    <div class="absolute inset-0 z-0">
-        <div
-            class="w-full h-full bg-gradient-to-br from-primary/20 to-highlight/30 flex items-center justify-center"
-        >
-            <Image
-                src={cosmicImg}
-                alt="Cosmic background"
-                class="w-full h-full object-contain opacity-70"
-                width={800}
-                height={600}
-                loading="eager"
-                quality={90}
-            />
-        </div>
-        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+<section class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center px-6 py-20">
+    <div class="md:col-span-2 order-2 md:order-1">
+        <Image
+            src={landingImg}
+            alt="Cosmic Background"
+            loading="eager"
+            class="w-full max-h-[600px] object-contain mx-auto"
+            width={800}
+            height={600}
+        />
     </div>
-
-    <div class="max-w-4xl mx-auto w-full relative z-10 text-center">
-        <h1
-            id="hero-heading"
-            class="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
-        >
+    <div
+        class="text-right md:col-span-1 order-1 md:order-2 flex flex-col justify-center gap-4"
+    >
+        <h1 class="text-4xl md:text-6xl font-bold text-primary">
             {title || "Do what you love."}
         </h1>
-        <p class="text-xl md:text-2xl text-white font-light mb-8 max-w-2xl mx-auto">
+        <p class="text-xl text-foreground">
             {subtitle || "Imagine when everybody has their audience."}
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <div class="mt-6">
             <a
                 href="#feather"
-                class="bg-primary hover:bg-opacity-90 text-background font-bold py-3 px-8 rounded-lg transition-colors text-center"
+                class="inline-block bg-primary hover:bg-opacity-90 text-background font-bold py-3 px-8 rounded-lg transition-colors text-center"
             >
                 Learn More
             </a>
