@@ -1,22 +1,12 @@
 ---
-import PageLayout from "../layouts/PageLayout.astro";
-import HeroSection from "../components/home/HeroSection.astro";
-import ParallaxReveal from "../components/home/ParallaxReveal.astro";
-import CharacterShowcase from "../components/home/CharacterShowcase.astro";
-import WorldOfMirador from "../components/home/WorldOfMirador.astro";
-import AttentionEconomy from "../components/home/AttentionEconomy.astro";
-import CallToAction from "../components/home/CallToAction.astro";
+import Layout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import AttentionGraph from "../components/AttentionGraph.astro";
+import About from "../components/About.astro";
 ---
 
-<PageLayout
-    title="Nextla - Free to Be Found"
-    description="Explore Nextla - a narrative world where AI management meets human psychology, set in the corporate city-state of Mirador in 2075."
->
-    <HeroSection />
-    <ParallaxReveal />
-    <CharacterShowcase />
-    <WorldOfMirador />
-    <AttentionEconomy />
-    <CallToAction />
-</PageLayout>
-
+<Layout>
+	<Hero />
+	<AttentionGraph />
+	<About />
+</Layout>

@@ -1,72 +1,63 @@
-# Nextla - Free to be Found
+# Nexla: A System for Managing Creative Attention
 
-Nextla is a narrative world where AI management meets human psychology, set in the corporate city-state of Mirador in 2075.
+This site presents the landing page for **Nexla**, a fictional platform designed to manage creative attention in the future. Built as part of a speculative design and narrative project, it introduces a near-future vision where human and AI creativity is measured, valued, and defended.
 
-## Implementation Changes
+The story behind Nexla explores systems of tribute, scarcity, and balance—drawing parallels between ancient power structures and modern digital labor. The landing page provides a conceptual entry point into that world.
 
-The site has been updated with the following changes:
+> © All rights reserved. This project is not open source or for reuse.
 
-1. **Diagonal Design Style**:
-   - Hero section now features a diagonal split background
-   - Improved typography for better readability and visual interest
+---
 
-2. **Navigation**:
-   - Replaced static navbar with a hamburger menu
-   - Full-screen overlay navigation for a more modern look
+## 🛠️ Built With
 
-3. **Character Showcase**:
-   - Horizontally scrollable display with square images
-   - Scroll indicators and arrow controls
-   - Feather motif integration for brand consistency
+- [**Astro**](https://astro.build) — static site generator for fast, content-driven sites
+- [**Tailwind CSS**](https://tailwindcss.com) — utility-first styling with a custom palette
+- [**TypeScript**](https://www.typescriptlang.org/)
+- [**MDX / Markdown**](https://docs.astro.build/en/guides/markdown-content/) — for modular, editable content sections
+- Optional: [**React**](https://reactjs.org) — used for interactive/animated components as needed
 
-4. **Typography System**:
-   - Enhanced display text classes
-   - Gradient text options
-   - Responsive font sizing
+---
 
-## Setup Instructions
+## 📁 Project Structure
 
-1. Install dependencies:
-   ```
-   npm install
-   ```
+```plaintext
+.
+├── content/landing/         # Markdown content for each section
+├── public/assets/          # Images (e.g., cosmic, feather, characters)
+├── src/
+│   ├── components/         # Astro and optional React components per section
+│   ├── layouts/            # Page layout with global nav/footer
+│   ├── pages/index.astro   # Renders modular sections in order
+│   └── styles/             # Tailwind and color token CSS
+├── tailwind.config.mjs     # Custom color palette based on visual assets
+├── astro.config.mjs
+└── tsconfig.json
+```
 
-2. Run the development server:
-   ```
-   npm run dev
-   ```
+This setup allows the site to scale organically—sections are easy to replace, extend, or restyle using semantic tokens and Markdown-defined content.
 
-## Character Images Setup
+---
 
-For the character showcase to display images properly, you need to:
+## 🧪 Development Workflow
 
-1. Create the character images directory:
-   ```
-   mkdir -p public/assets/characters
-   ```
+```bash
+pnpm install       # Install dependencies
+pnpm dev           # Start local dev server at http://localhost:4321
+pnpm build         # Build site for production
+pnpm preview       # Preview built site locally
+```
 
-2. Add square character images to this directory with the following filenames:
-   - `silas-square.jpg`
-   - `nova-square.jpg`
-   - `victoria-square.jpg`
-   - `enrique-square.jpg`
+---
 
-3. If images are not available, the system will display the first letter of each character's name as a fallback.
+## ℹ️ About This Project
 
-## File Structure
+Nexla is a worldbuilding and interface-design exercise. It imagines what it would mean to manage creativity as an asset, with systems that resemble software asset management and digital labor compliance tools.
 
-The main components modified:
+If you'd like to follow the development of Nexla or the underlying story world, stay tuned for future narrative updates and visual experiments.
 
-- `src/components/global/Header.astro` - New hamburger menu implementation
-- `src/components/home/HeroSection.astro` - Diagonal style with "Free to be found" tagline
-- `src/components/home/ParallaxReveal.astro` - Improved parallax effect
-- `src/components/home/CharacterShowcase.astro` - Horizontal scrolling character cards
-- `src/styles/typography.css` - New typography system
-- `src/styles/global.css` - Added diagonal section styling and other enhancements
+---
 
-## Browser Compatibility
+## 🔒 License
 
-The implementation works across modern browsers:
-- Chrome, Firefox, Safari, Edge (latest versions)
-- Mobile-responsive design
-- Performance optimizations for animations
+This project is **not open source** and is released under **All Rights Reserved**. Please contact the creator for collaboration or use inquiries.
+```
