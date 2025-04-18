@@ -1,0 +1,50 @@
+{
+  "$ref": "#/definitions/landing",
+  "definitions": {
+    "landing": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "subtitle": {
+          "type": "string"
+        },
+        "heading": {
+          "type": "string"
+        },
+        "cta": {
+          "type": "string"
+        },
+        "characters": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "role": {
+                "type": "string"
+              },
+              "bio": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "role",
+              "bio"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

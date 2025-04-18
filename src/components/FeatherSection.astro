@@ -1,0 +1,32 @@
+---
+import { getEntry } from "astro:content";
+
+const projectContent = await getEntry("landing", "project");
+const meaningContent = await getEntry("landing", "meaning");
+
+// Render markdown to HTML
+const { Content: ProjectContent } = await projectContent.render();
+const { Content: MeaningContent } = await meaningContent.render();
+---
+
+<section class="py-16 bg-primary bg-opacity-10 px-4">
+    <div class="max-w-4xl mx-auto">
+        <div class="mb-16">
+            <h2 class="text-3xl font-bold mb-4 text-primary">
+                {projectContent.data.heading}
+            </h2>
+            <div class="prose prose-lg text-foreground">
+                <ProjectContent />
+            </div>
+        </div>
+
+        <div>
+            <h2 class="text-3xl font-bold mb-4 text-primary">
+                {meaningContent.data.heading}
+            </h2>
+            <div class="prose prose-lg text-foreground">
+                <MeaningContent />
+            </div>
+        </div>
+    </div>
+</section>

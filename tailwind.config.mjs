@@ -11,7 +11,28 @@ export default {
 				secondary: 'var(--color-secondary)',
 				highlight: 'var(--color-highlight)',
 			},
+			typography: {
+				DEFAULT: {
+					css: {
+						color: 'var(--color-foreground)',
+						a: {
+							color: 'var(--color-accent)',
+						},
+						h1: {
+							color: 'var(--color-primary)',
+						},
+						h2: {
+							color: 'var(--color-primary)',
+						},
+						h3: {
+							color: 'var(--color-primary)',
+						},
+					},
+				},
+			},
 		},
 	},
-	plugins: [],
+	plugins: [
+		require('@tailwindcss/typography'),
+	],
 }

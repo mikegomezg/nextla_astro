@@ -1,5 +1,10 @@
-<section>
-    <h1>Do what you love</h1>
-    <p>Imagine when everybody has an audience.</p>
-</section>
+---
+import { getEntry } from "astro:content";
+const heroContent = await getEntry("landing", "hero");
+const { title, subtitle } = heroContent.data;
+---
 
+<section class="py-24 text-center">
+    <h1 class="text-4xl font-bold text-accent mb-4">{title}</h1>
+    <p class="text-xl text-foreground">{subtitle}</p>
+</section>

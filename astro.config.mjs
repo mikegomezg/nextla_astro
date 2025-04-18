@@ -9,7 +9,16 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind({
-    config: { applyBaseStyles: false },
-  }), mdx(), react()]
+  integrations: [
+    tailwind({
+      config: { applyBaseStyles: false },
+    }), 
+    mdx(),
+    react()
+  ],
+  markdown: {
+    shikiConfig: {
+      theme: 'dracula',
+    },
+  },
 });

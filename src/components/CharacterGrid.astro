@@ -1,0 +1,32 @@
+---
+import { getEntry } from "astro:content";
+
+interface Character {
+    name: string;
+    role: string;
+    bio: string;
+}
+
+const charactersContent = await getEntry("landing", "characters");
+const { characters = [] } = charactersContent?.data || {};
+---
+
+<section class="py-16 px-4">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center text-secondary">Characters</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {
+                characters.map((character: Character) => (
+                    <div class="bg-background border border-secondary p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-highlight mb-1">
+                            {character.name}
+                        </h3>
+                        <p class="text-accent mb-3 text-sm">{character.role}</p>
+                        <p class="text-foreground">{character.bio}</p>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
