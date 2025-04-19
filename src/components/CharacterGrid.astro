@@ -54,7 +54,11 @@ const getCharacterImage = (name: string): ImageMetadata | undefined => {
 };
 ---
 
-<section id="characters" aria-labelledby="characters-heading" class="py-16 px-6">
+<section
+    id="characters"
+    aria-labelledby="characters-heading"
+    class="py-16 px-6 bg-featherbg"
+>
     <div class="max-w-6xl mx-auto">
         <h2
             id="characters-heading"
@@ -67,7 +71,7 @@ const getCharacterImage = (name: string): ImageMetadata | undefined => {
         <div class="hidden md:grid grid-cols-3 gap-6">
             {
                 characters.slice(0, 6).map((character: Character, index: number) => (
-                    <div class="bg-background border border-secondary/20 p-5 rounded-lg flex flex-col items-center text-center shadow-md hover:shadow-lg transition-shadow">
+                    <div class="bg-surface border border-secondary/20 p-5 rounded-lg flex flex-col items-center text-center shadow-md hover:shadow-lg transition-shadow">
                         <div class="w-40 h-40 mb-4 overflow-hidden rounded-full">
                             {getCharacterImage(character.name) ? (
                                 <Image
@@ -82,7 +86,7 @@ const getCharacterImage = (name: string): ImageMetadata | undefined => {
                                 <div
                                     class={`w-full h-full rounded-full bg-gradient-to-br ${bgColors[index % bgColors.length]} flex items-center justify-center`}
                                 >
-                                    <span class="text-3xl font-bold text-foreground">
+                                    <span class="text-3xl font-bold text-textDefault">
                                         {character.name.charAt(0)}
                                     </span>
                                 </div>
@@ -92,7 +96,7 @@ const getCharacterImage = (name: string): ImageMetadata | undefined => {
                             {character.name}
                         </h3>
                         <p class="text-accent mb-3 text-sm">{character.role}</p>
-                        <p class="text-foreground text-sm">{character.bio}</p>
+                        <p class="text-textDefault text-sm">{character.bio}</p>
                     </div>
                 ))
             }
@@ -104,7 +108,7 @@ const getCharacterImage = (name: string): ImageMetadata | undefined => {
                 {
                     characters.slice(0, 6).map((character: Character, index: number) => (
                         <div
-                            class="bg-background border border-secondary/20 p-4 rounded-lg flex flex-col items-center text-center shadow-md"
+                            class="bg-surface border border-secondary/20 p-4 rounded-lg flex flex-col items-center text-center shadow-md"
                             style="min-width: 220px; max-width: 280px;"
                         >
                             <div class="w-28 h-28 mb-3 overflow-hidden rounded-full">
@@ -121,7 +125,7 @@ const getCharacterImage = (name: string): ImageMetadata | undefined => {
                                     <div
                                         class={`w-full h-full rounded-full bg-gradient-to-br ${bgColors[index % bgColors.length]} flex items-center justify-center`}
                                     >
-                                        <span class="text-2xl font-bold text-foreground">
+                                        <span class="text-2xl font-bold text-textDefault">
                                             {character.name.charAt(0)}
                                         </span>
                                     </div>
@@ -131,7 +135,7 @@ const getCharacterImage = (name: string): ImageMetadata | undefined => {
                                 {character.name}
                             </h3>
                             <p class="text-accent mb-2 text-xs">{character.role}</p>
-                            <p class="text-foreground text-xs line-clamp-3">
+                            <p class="text-textDefault text-xs line-clamp-3">
                                 {character.bio}
                             </p>
                         </div>
@@ -150,7 +154,7 @@ const getCharacterImage = (name: string): ImageMetadata | undefined => {
         <!-- See all characters button -->
         <div class="text-center mt-8">
             <button
-                class="bg-secondary text-background px-6 py-2 rounded-lg font-medium hover:bg-opacity-90 transition-colors"
+                class="bg-secondary text-textDefault px-6 py-2 rounded-lg font-medium hover:bg-opacity-90 transition-colors"
             >
                 See All Characters
             </button>

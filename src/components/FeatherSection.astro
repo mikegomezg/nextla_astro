@@ -1,61 +1,46 @@
 ---
-import { getEntry } from "astro:content";
 import { Image } from "astro:assets";
 import featherImg from "../assets/visuals/feather.png";
-
-const projectContent = await getEntry("landing", "project");
-const meaningContent = await getEntry("landing", "meaning");
-
-if (!projectContent || !meaningContent) {
-    throw new Error(
-        "Required content not found: project or meaning entries missing from landing collection",
-    );
-}
-
-// Render markdown to HTML
-const { Content: ProjectContent } = await projectContent.render();
-const { Content: MeaningContent } = await meaningContent.render();
 ---
 
 <section
-    id="feather"
-    class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center px-6 py-20 relative"
+    class="relative bg-featherbg py-24 px-6 flex flex-col items-center justify-center"
 >
-    <!-- Left card -->
-    <div
-        class="bg-primary/10 p-6 rounded-xl shadow-lg md:col-span-1 order-2 md:order-1 z-10 md:-mr-6"
-    >
-        <h2 class="text-2xl md:text-3xl font-bold mb-4 text-primary">
-            {projectContent.data.heading}
-        </h2>
-        <div class="prose prose-lg text-foreground">
-            <ProjectContent />
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="relative flex justify-center items-center h-full">
+            <Image
+                src={featherImg}
+                alt="Feather"
+                width={500}
+                height={500}
+                class="relative z-10 mx-auto max-w-[300px] sm:max-w-[400px] md:max-w-[500px]"
+                loading="eager"
+            />
+            <div
+                class="absolute inset-0 bg-gradient-radial from-featherbg via-featherbg/60 to-transparent blur-2xl z-0"
+            >
+            </div>
         </div>
     </div>
 
-    <!-- Center feather image -->
     <div
-        class="md:col-span-1 flex justify-center items-center order-1 md:order-2 mb-8 md:mb-0"
+        class="relative z-20 mt-8 grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl text-textDefault"
     >
-        <Image
-            src={featherImg}
-            alt="Feather"
-            width={240}
-            height={240}
-            class="w-auto max-h-[300px] drop-shadow-xl"
-            loading="eager"
-        />
-    </div>
-
-    <!-- Right card -->
-    <div
-        class="bg-primary/10 p-6 rounded-xl shadow-lg md:col-span-1 order-3 z-10 md:-ml-6"
-    >
-        <h2 class="text-2xl md:text-3xl font-bold mb-4 text-primary">
-            {meaningContent.data.heading}
-        </h2>
-        <div class="prose prose-lg text-foreground">
-            <MeaningContent />
+        <div class="bg-surface/70 backdrop-blur-md p-6 rounded-xl shadow-lg">
+            <h3 class="text-highlight text-lg font-bold mb-2">What is Nexla?</h3>
+            <p>
+                Nexla is a platform for managing creative attention— the one thing that
+                can't be automated.
+            </p>
+        </div>
+        <div class="bg-surface/70 backdrop-blur-md p-6 rounded-xl shadow-lg">
+            <h3 class="text-highlight text-lg font-bold mb-2">
+                What does the name mean?
+            </h3>
+            <p>
+                Nexla comes from the Aztec word for "tribute." It represents the power and
+                scarcity of creative insight.
+            </p>
         </div>
     </div>
 </section>

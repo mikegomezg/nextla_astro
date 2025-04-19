@@ -3,7 +3,7 @@ import { getEntry } from "astro:content";
 import { Image } from "astro:assets";
 
 // Import landing image
-import landingImg from "../assets/visuals/attention-flow.png";
+import heroImg from "../assets/hero/hero.png";
 
 const heroContent = await getEntry("landing", "hero");
 
@@ -14,33 +14,30 @@ if (!heroContent) {
 const { title, subtitle } = heroContent.data;
 ---
 
-<section class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center px-6 py-20">
-    <div class="md:col-span-2 order-2 md:order-1">
+<div
+    class="w-full max-w-screen-xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-5 gap-12 items-center"
+>
+    <!-- Text on the Left -->
+    <div class="text-left max-w-m md:col-span-2">
+        <h1 class="text-8xl md:text-6xl font-bold text-textDefault leading-tight">
+            Do what you love
+        </h1>
+        <p class="text-4xl mt-6 text-textMuted">
+            Imagine when everyone has their own audience
+        </p>
+    </div>
+
+    <!-- Responsive Image on the Right -->
+    <div class="relative w-full rounded-[5px] overflow-hidden shadow-xl md:col-span-3">
         <Image
-            src={landingImg}
+            src={heroImg}
             alt="Cosmic Background"
+            width={1200}
+            height={900}
+            format="webp"
+            sizes="(max-width: 1024px) 100vw, 60vw"
             loading="eager"
-            class="w-full max-h-[600px] object-contain mx-auto"
-            width={800}
-            height={600}
+            class="w-full h-auto object-cover"
         />
     </div>
-    <div
-        class="text-right md:col-span-1 order-1 md:order-2 flex flex-col justify-center gap-4"
-    >
-        <h1 class="text-4xl md:text-6xl font-bold text-primary">
-            {title || "Do what you love."}
-        </h1>
-        <p class="text-xl text-foreground">
-            {subtitle || "Imagine when everybody has their audience."}
-        </p>
-        <div class="mt-6">
-            <a
-                href="#feather"
-                class="inline-block bg-primary hover:bg-opacity-90 text-background font-bold py-3 px-8 rounded-lg transition-colors text-center"
-            >
-                Learn More
-            </a>
-        </div>
-    </div>
-</section>
+</div>

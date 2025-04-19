@@ -1,14 +1,31 @@
 /* Base styles and CSS variables */
 :root {
-    --palette-bg-default: #111827;
-    --palette-bg-alt: #1f2937;
-    --palette-text-default: #f9fafb;
-    --palette-text-muted: #9ca3af;
-    --palette-primary: #6366f1;
-    --palette-primary-dark: #4f46e5;
-    --palette-secondary: #8b5cf6;
-    --palette-highlight: #ec4899;
-    --palette-accent: #10b981;
+    --palette-bg-default: #010b17;
+    /* Deep Space Black */
+    --palette-bg-alt: #101114;
+    /* Rich Dark */
+    --palette-surface: #2A3035;
+    /* Gunmetal */
+    --palette-text-default: #F2F2F2;
+    /* Off-White */
+    --palette-text-muted: #AAAAAA;
+    /* Neutral Gray */
+    --palette-primary: #00694A;
+    /* Deep Jade */
+    --palette-primary-dark: #004D36;
+    /* Darker Jade */
+    --palette-secondary: #1E90FF;
+    /* Electric Blue */
+    --palette-highlight: #FFD700;
+    /* Vibrant Gold */
+    --palette-accent: #CFB53B;
+    /* Antique Gold */
+    --palette-accent-dark: #8B0000;
+    /* Blood Red */
+    --palette-featherbg: #010b17;
+
+    --gradient-feather: linear-gradient(135deg, #CFB53B, #00694A);
+    --gradient-cosmic: radial-gradient(circle at 50% 50%, #FFD700 0%, #0A0E17 100%);
 }
 
 /* Global reset and base styles */
@@ -71,7 +88,7 @@ img {
     background-color: var(--palette-bg-alt);
 }
 
-.text-foreground {
+.text-default {
     color: var(--palette-text-default);
 }
 
@@ -105,6 +122,26 @@ img {
 
 .bg-secondary {
     background-color: var(--palette-secondary);
+}
+
+.bg-accent {
+    background-color: var(--palette-accent);
+}
+
+.bg-accent-dark {
+    background-color: var(--palette-accent-dark);
+}
+
+.bg-surface {
+    background-color: var(--palette-surface);
+}
+
+.bg-feather-gradient {
+    background-image: var(--gradient-feather);
+}
+
+.bg-cosmic-gradient {
+    background-image: var(--gradient-cosmic);
 }
 
 /* Responsive spacing helpers */

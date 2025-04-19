@@ -4,17 +4,28 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				background: '#0e0e0e',       // deep charcoal
-				foreground: '#e0f2f1',       // light jade mint
-				primary: '#6ee7b7',          // jade green
-				secondary: '#94a3b8',        // slate gray
-				accent: '#f9a8d4',           // soft pink
-				highlight: '#fef08a',        // pale gold
+				background: '#0A0E17',           // Deep Space Black
+				backgroundAlt: '#101114',        // Rich Dark
+				surface: '#2A3035',              // Gunmetal
+				textDefault: '#F2F2F2',          // Off-White
+				textMuted: '#AAAAAA',            // Neutral Gray
+				primary: '#00694A',              // Deep Jade
+				primaryDark: '#004D36',          // Darker Jade
+				secondary: '#1E90FF',            // Electric Blue
+				highlight: '#1E90FF',            // Electric Blue (was Vibrant Gold)
+				accent: '#CFB53B',               // Antique Gold
+				accentDark: '#8B0000',           // Blood Red
+				featherbg: '#010b17',            // Feather Background
+			},
+			backgroundImage: {
+				'feather-gradient': 'linear-gradient(135deg, #CFB53B, #00694A)',
+				'cosmic-gradient': 'radial-gradient(circle at 50% 50%, #FFD700 0%, #0A0E17 100%)',
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 			},
 			typography: {
 				DEFAULT: {
 					css: {
-						color: 'var(--color-foreground)',
+						color: 'var(--color-text-default)',
 						a: {
 							color: 'var(--color-accent)',
 						},
