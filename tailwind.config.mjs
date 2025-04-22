@@ -1,25 +1,26 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+	darkMode: ['class', '[data-theme="dark"]'],
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {
 			colors: {
-				background: '#0A0E17',           // Deep Space Black
-				backgroundAlt: '#101114',        // Rich Dark
-				surface: '#2A3035',              // Gunmetal
-				textDefault: '#F2F2F2',          // Off-White
-				textMuted: '#AAAAAA',            // Neutral Gray
-				primary: '#00694A',              // Deep Jade
-				primaryDark: '#004D36',          // Darker Jade
-				secondary: '#1E90FF',            // Electric Blue
-				highlight: '#1E90FF',            // Electric Blue (was Vibrant Gold)
-				accent: '#CFB53B',               // Antique Gold
-				accentDark: '#8B0000',           // Blood Red
-				featherbg: '#010b17',            // Feather Background
+				background: 'var(--color-background)',           // Deep Space Black
+				backgroundAlt: 'var(--color-background-alt)',        // Rich Dark
+				surface: 'var(--color-surface)',              // Gunmetal
+				textDefault: 'var(--color-text-default)',          // Off-White
+				textMuted: 'var(--color-text-muted)',            // Neutral Gray
+				primary: 'var(--color-primary)',              // Deep Jade
+				primaryDark: 'var(--color-primary-dark)',          // Darker Jade
+				secondary: 'var(--color-secondary)',            // Electric Blue
+				highlight: 'var(--color-highlight)',            // Electric Blue (was Vibrant Gold)
+				accent: 'var(--color-accent)',               // Antique Gold
+				accentDark: 'var(--color-accent-dark)',           // Blood Red
+				featherbg: 'var(--color-featherbg)',            // Feather Background
 			},
 			backgroundImage: {
-				'feather-gradient': 'linear-gradient(135deg, #CFB53B, #00694A)',
-				'cosmic-gradient': 'radial-gradient(circle at 50% 50%, #FFD700 0%, #0A0E17 100%)',
+				'feather-gradient': 'var(--gradient-feather)',
+				'cosmic-gradient': 'var(--gradient-cosmic)',
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 			},
 			typography: {

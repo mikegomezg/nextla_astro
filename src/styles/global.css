@@ -1,31 +1,28 @@
 /* Base styles and CSS variables */
 :root {
-    --palette-bg-default: #010b17;
+    --palette-bg-default: var(--color-background);
     /* Deep Space Black */
-    --palette-bg-alt: #101114;
+    --palette-bg-alt: var(--color-background-alt);
     /* Rich Dark */
-    --palette-surface: #2A3035;
+    --palette-surface: var(--color-surface);
     /* Gunmetal */
-    --palette-text-default: #F2F2F2;
+    --palette-text-default: var(--color-text-default);
     /* Off-White */
-    --palette-text-muted: #AAAAAA;
+    --palette-text-muted: var(--color-text-muted);
     /* Neutral Gray */
-    --palette-primary: #00694A;
+    --palette-primary: var(--color-primary);
     /* Deep Jade */
-    --palette-primary-dark: #004D36;
+    --palette-primary-dark: var(--color-primary-dark);
     /* Darker Jade */
-    --palette-secondary: #1E90FF;
+    --palette-secondary: var(--color-secondary);
     /* Electric Blue */
-    --palette-highlight: #FFD700;
+    --palette-highlight: var(--color-highlight);
     /* Vibrant Gold */
-    --palette-accent: #CFB53B;
+    --palette-accent: var(--color-accent);
     /* Antique Gold */
-    --palette-accent-dark: #8B0000;
+    --palette-accent-dark: var(--color-accent-dark);
     /* Blood Red */
-    --palette-featherbg: #010b17;
-
-    --gradient-feather: linear-gradient(135deg, #CFB53B, #00694A);
-    --gradient-cosmic: radial-gradient(circle at 50% 50%, #FFD700 0%, #0A0E17 100%);
+    --palette-featherbg: var(--color-featherbg);
 }
 
 /* Global reset and base styles */
@@ -180,4 +177,11 @@ img {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border-width: 0;
+}
+
+/* Tailwind utility override for header navigation */
+header>nav {
+    flex: 1 1 auto;
+    /* let nav grow */
+    justify-content: center;
 }

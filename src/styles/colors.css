@@ -1,4 +1,5 @@
-:root {
+:root,
+[data-theme="dark"] {
     --color-background: #010b17;
     /* Deep Space Black */
     --color-background-alt: #101114;
@@ -25,4 +26,39 @@
 
     --gradient-feather: linear-gradient(135deg, #CFB53B, #00694A);
     --gradient-cosmic: radial-gradient(circle at 50% 50%, #FFD700 0%, #0A0E17 100%);
+}
+
+/* light palette */
+[data-theme="light"] {
+    --color-background: #fffdfc;
+    /* soft white */
+    --color-background-alt: #f8f9fa;
+    /* light alt background */
+    --color-surface: #f2f4f7;
+    /* light card */
+    --color-text-default: #1a1a1a;
+    /* near black */
+    --color-text-muted: #555555;
+    /* medium gray */
+    --color-primary: #008261;
+    /* bright jade */
+    --color-primary-dark: #00694A;
+    /* deep jade from dark theme */
+    --color-secondary: #1E90FF;
+    /* same electric blue */
+    --color-highlight: #ff9500;
+    /* orange highlight */
+    --color-accent: #eac040;
+    /* lighter gold */
+    --color-accent-dark: #a30000;
+    /* lighter red */
+    --color-featherbg: #f8f9fa;
+
+    --gradient-feather: linear-gradient(135deg, #1E90FF, #00a37a);
+    --gradient-cosmic: radial-gradient(circle at 50% 50%, #ffb700 0%, #f8f9fa 100%);
+}
+
+/* Add transition for smoother theme switching */
+html {
+    transition: background-color .25s ease, color .25s ease;
 }
