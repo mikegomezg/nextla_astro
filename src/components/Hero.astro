@@ -6,40 +6,21 @@ import cosmicBg from "../assets/visuals/cosmic_vector.svg?url";
   id="hero"
   class="overflow-hidden
       w-full
-      bg-center bg-cover
+      bg-cover bg-no-repeat
       shadow-lg
       relative"
-  style={`background-image: url('${cosmicBg}'); min-height:75vh; max-height:85vh;`}
+  style={`background-image: url('${cosmicBg}'); 
+          background-position: 45% center; 
+          min-height:75vh; 
+          max-height:90vh;`}
 >
   <!-- Brightness overlay -->
   <div
-    class="bg-black/20
+    class="bg-black/10
       pointer-events-none
-      absolute inset-0 backdrop-brightness-150"
+      absolute inset-0 backdrop-brightness-125"
   >
   </div>
-
-  <!-- Horizontal fade (left/right) -->
-  <!-- <div
-    class="
-      bg-gradient-to-r from-black via-transparent to-black
-      opacity-30 pointer-events-none
-      absolute inset-0
-    "
-  
-  >
-  </div> -->
-
-  <!-- Vertical fade (bottom) -->
-  <!-- <div
-    class="
-      bg-gradient-to-b from-transparent to-black
-      opacity-50 pointer-events-none
-      absolute inset-0
-    "
-  
-  >
-  </div> -->
 
   <!-- Headline overlaying the hero -->
   <div class="flex
@@ -51,11 +32,13 @@ import cosmicBg from "../assets/visuals/cosmic_vector.svg?url";
       <h1
         class="z-10
             text-white text-4xl font-extrabold text-center
+            tracking-wide
             select-none
+            drop-shadow-[0_3px_18px_rgba(0,0,0,0.8)]
             sm:text-5xl
             md:text-6xl"
       >
-        <div class="mt-16">Imagine</div>
+        <div class="mt-4">Imagine</div>
         <div class="mt-4">a balanced</div>
         <div class="mt-4">world</div>
       </h1>
@@ -63,12 +46,12 @@ import cosmicBg from "../assets/visuals/cosmic_vector.svg?url";
   </div>
 </section>
 
-<!-- Bottom accent border (same as header underline) -->
+<!-- Bottom accent border -->
 <div
   class="h-[4px]
       bg-highlight bg-repeat-x bg-center bg-[length:100px_4px]"
 >
 </div>
 
-<!-- Spacer section to transition cleanly -->
+<!-- Spacer section -->
 <section class="py-16"></section>
