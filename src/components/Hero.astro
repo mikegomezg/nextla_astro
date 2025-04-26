@@ -13,7 +13,6 @@ import cosmicBg from "../assets/visuals/cosmic_vector.svg?url";
           min-height:90vh;
           max-height:110vh;`}
 >
-  <!-- full-area grid makes centering fool-proof -->
   <div class="grid
       px-6
       absolute inset-0 place-items-center">
@@ -22,23 +21,22 @@ import cosmicBg from "../assets/visuals/cosmic_vector.svg?url";
       <!-- headline -->
       <h1
         class="z-10
-          text-white text-5xl font-extrabold text-center leading-tight
+          text-white text-1xl font-extrabold text-center leading-tight
+          select-none
           relative
-          sm:text-7xl
-          md:text-8xl
-          lg:text-9xl"
+          sm:text-1xl
+          md:text-2xl
+          lg:text-3xl"
       >
-        <!-- Imagine&nbsp;a<br />balanced<br />world
-          -->
-        Imagine <br/>a balanced world
+        Imagine a<br />balanced world
       </h1>
 
-      <!-- subtle blur behind just the headline -->
+      <!-- very faint blur behind just the text -->
       <span
         aria-hidden="true"
-        class="bg-background/4
+        class="bg-background/3
             pointer-events-none
-            absolute inset-0 rounded /* 4 % opacity */ backdrop-blur-[2px] -z-0"
+            absolute inset-0 rounded backdrop-blur-[1px] -z-0"
       ></span>
     </div>
   </div>

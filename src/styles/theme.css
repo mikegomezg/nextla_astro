@@ -31,24 +31,27 @@
 
 /* Dark Theme Overrides */
 [data-theme="dark"] {
-    --color-background: 7 13 24;
-    /* #070D18 */
-    --color-surface: 26 36 50;
-    /* #1A2432 */
+    --color-background: 0 0 0;
+    /* #000000 pure black */
+    --color-surface: 20 20 20;
+    /* Very dark surface, for contrast */
     --color-text: 240 244 248;
-    /* #F0F4F8 */
+    /* Light text, keep existing */
     --color-muted: 148 163 184;
-    /* #94A3B8 */
+    /* Keep muted text */
     --color-secondary: 58 107 199;
-    /* #3A6BC7 */
+    /* Keep existing blue secondary */
+    --color-highlight: 0 255 180;
+    /* Neon green accent */
+    --color-accent: 0 255 180;
+    /* Also neon green for accent */
     --color-featherbg: 36 47 64;
-    /* #242F40 */
+    /* Dark feather background */
     --color-outline: 58 69 86;
-    /* #3A4556 */
+    /* Keep existing outline */
 }
 
 /* Base Styles */
 body {
-    @apply bg-background text-text;
     font-family: var(--font-sans);
 }
