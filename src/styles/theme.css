@@ -16,10 +16,10 @@
     /* #008773 */
     --color-secondary: 93 138 198;
     /* #5D8AC6 */
-    --color-highlight: 230 179 90;
-    /* #E6B35A */
-    --color-accent: 166 90 73;
-    /* #A65A49 */
+    --color-highlight: 10 160 122;
+    /* #0aa07a */
+    --color-accent: 10 160 122;
+    /* #0aa07a */
     --color-accentDark: 139 69 19;
     /* #8B4513 */
     --color-featherbg: 224 229 236;
@@ -41,10 +41,10 @@
     /* Keep muted text */
     --color-secondary: 58 107 199;
     /* Keep existing blue secondary */
-    --color-highlight: 0 255 180;
-    /* Neon green accent */
-    --color-accent: 0 255 180;
-    /* Also neon green for accent */
+    --color-highlight: 10 160 122;
+    /* #0aa07a */
+    --color-accent: 10 160 122;
+    /* #0aa07a */
     --color-featherbg: 36 47 64;
     /* Dark feather background */
     --color-outline: 58 69 86;
