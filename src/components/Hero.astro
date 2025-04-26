@@ -3,32 +3,43 @@ import cosmicBg from "../assets/visuals/cosmic_vector.svg?url";
 ---
 
 <section
-    id="hero"
-    class="relative mx-auto max-w-screen-xl overflow-hidden
-         bg-center bg-cover border-4 border-outline
-         rounded-lg shadow-lg"
-    style={`background-image:url('${cosmicBg}');
+  id="hero"
+  class="overflow-hidden
+      w-full
+      bg-center bg-cover
+      shadow-lg
+      relative"
+  style={`background-image:url('${cosmicBg}');
           min-height:90vh;
-          max-height:110vh;
-          background-position:center -60px;`}
+          max-height:110vh;`}
 >
-    <div class="flex items-center justify-center h-full px-6">
-        <div class="relative inline-block">
-            <!-- headline -->
-            <h1
-                class="relative z-10 text-white text-5xl sm:text-7xl
-               md:text-8xl lg:text-9xl font-extrabold text-center
-               leading-tight"
-            >
-                Imagine a balanced<br />world
-            </h1>
+  <!-- full-area grid makes centering fool-proof -->
+  <div class="grid
+      px-6
+      absolute inset-0 place-items-center">
+    <div class="inline-block
+        relative">
+      <!-- headline -->
+      <h1
+        class="z-10
+          text-white text-5xl font-extrabold text-center leading-tight
+          relative
+          sm:text-7xl
+          md:text-8xl
+          lg:text-9xl"
+      >
+        <!-- Imagine&nbsp;a<br />balanced<br />world
+          -->
+        Imagine <br/>a balanced world
+      </h1>
 
-            <!-- faint local overlay behind the text only -->
-            <span
-                aria-hidden="true"
-                class="absolute inset-0 rounded-md bg-background/5
-               backdrop-blur-sm -z-0 pointer-events-none"
-            ></span>
-        </div>
+      <!-- subtle blur behind just the headline -->
+      <span
+        aria-hidden="true"
+        class="bg-background/4
+            pointer-events-none
+            absolute inset-0 rounded /* 4 % opacity */ backdrop-blur-[2px] -z-0"
+      ></span>
     </div>
+  </div>
 </section>
