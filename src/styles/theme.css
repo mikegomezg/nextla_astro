@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+/* CSS Variables - Light Theme (Default) */
+:root {
+    --color-background: 240 244 248;
+    /* #F0F4F8 */
+    --color-surface: 255 255 255;
+    /* #FFFFFF */
+    --color-text: 7 13 24;
+    /* #070D18 */
+    --color-muted: 100 116 139;
+    /* #64748B */
+    --color-primary: 0 184 158;
+    /* #00B89E */
+    --color-primaryDark: 0 135 115;
+    /* #008773 */
+    --color-secondary: 93 138 198;
+    /* #5D8AC6 */
+    --color-highlight: 230 179 90;
+    /* #E6B35A */
+    --color-accent: 166 90 73;
+    /* #A65A49 */
+    --color-accentDark: 139 69 19;
+    /* #8B4513 */
+    --color-featherbg: 224 229 236;
+    /* #E0E5EC */
+    --color-outline: 203 213 225;
+    /* #CBD5E1 */
+    --font-sans: 'Inter', ui-sans-serif, system-ui;
+}
+
+/* Dark Theme Overrides */
+[data-theme="dark"] {
+    --color-background: 7 13 24;
+    /* #070D18 */
+    --color-surface: 26 36 50;
+    /* #1A2432 */
+    --color-text: 240 244 248;
+    /* #F0F4F8 */
+    --color-muted: 148 163 184;
+    /* #94A3B8 */
+    --color-secondary: 58 107 199;
+    /* #3A6BC7 */
+    --color-featherbg: 36 47 64;
+    /* #242F40 */
+    --color-outline: 58 69 86;
+    /* #3A4556 */
+}
+
+/* Base Styles */
+body {
+    @apply bg-background text-text;
+    font-family: var(--font-sans);
+}

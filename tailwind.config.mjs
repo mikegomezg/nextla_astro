@@ -1,23 +1,27 @@
 /** @type {import('tailwindcss').Config} */
+import { withOpacity } from './tailwind.utils.js';
+
 export default {
 	darkMode: ['class', '[data-theme="dark"]'],
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {
 			colors: {
-				background: 'var(--color-background)',           // Deep Space Black
-				backgroundAlt: 'var(--color-background-alt)',        // Rich Dark
-				surface: 'var(--color-surface)',              // Gunmetal
-				textDefault: 'var(--color-text-default)',          // Off-White
-				textMuted: 'var(--color-text-muted)',            // Neutral Gray
-				primary: 'var(--color-primary)',              // Deep Jade
-				primaryDark: 'var(--color-primary-dark)',          // Darker Jade
-				secondary: 'var(--color-secondary)',            // Electric Blue
-				highlight: 'var(--color-highlight)',            // Electric Blue (was Vibrant Gold)
-				accent: 'var(--color-accent)',               // Antique Gold
-				accentDark: 'var(--color-accent-dark)',           // Blood Red
+				background: withOpacity('--color-background'),           // Deep Space Black
+				// backgroundAlt: 'var(--color-background-alt)', // This token wasn't in the provided theme.css
+				surface: withOpacity('--color-surface'),              // Gunmetal
+				text: withOpacity('--color-text'),              // Renamed from textDefault (conceptually)
+				muted: withOpacity('--color-muted'),             // Renamed from textMuted
+				primary: withOpacity('--color-primary'),              // Deep Jade
+				primaryDark: 'var(--color-primaryDark)',          // Darker Jade
+				secondary: withOpacity('--color-secondary'),            // Electric Blue
+				highlight: withOpacity('--color-highlight'),            // Electric Blue (was Vibrant Gold)
+				accent: withOpacity('--color-accent'),               // Antique Gold
+				accentDark: 'var(--color-accentDark)',           // Blood Red
 				featherbg: 'var(--color-featherbg)',            // Feather Background
+				outline: withOpacity('--color-outline'),
 			},
+			fontFamily: { sans: 'var(--font-sans)' },
 			backgroundImage: {
 				'feather-gradient': 'var(--gradient-feather)',
 				'cosmic-gradient': 'var(--gradient-cosmic)',
@@ -26,7 +30,7 @@ export default {
 			typography: {
 				DEFAULT: {
 					css: {
-						color: 'var(--color-text-default)',
+						color: 'var(--color-text)',
 						a: {
 							color: 'var(--color-accent)',
 						},

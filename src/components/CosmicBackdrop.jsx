@@ -134,7 +134,8 @@ export default function CosmicBackdrop({
     seed = 42,
     theme: initialTheme = 'dark',
     onThemeToggle = null,
-    fixed = true
+    fixed = true,
+    className = ''
 }) {
     // Initialize theme state based on document theme if available
     const getInitialTheme = () => {
@@ -149,7 +150,6 @@ export default function CosmicBackdrop({
 
     const [currentTheme, setCurrentTheme] = useState(getInitialTheme);
     const dark = currentTheme === 'dark';
-    const theme = dark ? THEMES.dark : THEMES.light;
 
     // Generate stars based on the current theme
     const stars = useMemo(() => makeStars(250, seed), [seed]);
@@ -204,24 +204,14 @@ export default function CosmicBackdrop({
     /* ---------- markup ---------- */
     return (
         <div
-            className={`cosmic-bg ${fixed ? 'fixed inset-0 -z-10 pointer-events-none' : ''}`}
+            className={`cosmic-bg ${fixed ? 'fixed inset-0 -z-10 pointer-events-none' : ''} ${className}`.trim()}
             style={{ width, maxWidth: '100%', margin: '0 auto' }}
         >
             {/* theme toggle */}
             <button
                 aria-label="Toggle theme"
                 onClick={toggleTheme}
-                style={{
-                    width: 44, height: 44, borderRadius: '50%',
-                    border: `2px solid ${theme.highlight}`,
-                    background: 'transparent', color: theme.highlight,
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    marginBottom: 16, cursor: 'pointer',
-                    position: 'absolute',
-                    top: '1rem',
-                    right: '1rem',
-                    zIndex: 100,
-                }}
+                className="absolute top-4 right-4 z-100 flex items-center justify-center border-2 border-highlight text-highlight bg-transparent rounded-full w-11 h-11 mb-4 cursor-pointer"
             >
                 {dark ? <Sun size={22} /> : <Moon size={22} />}
             </button>
@@ -232,27 +222,28 @@ export default function CosmicBackdrop({
                 height={height}
                 viewBox="0 0 1536 1024"
                 preserveAspectRatio="xMidYMid slice"
-                style={{ background: theme.background, borderRadius: fixed ? 0 : 12, transition: 'all 0.5s ease' }}
+                className="bg-background transition-all duration-500"
+                style={{ borderRadius: fixed ? 0 : 12 }}
             >
                 <defs>
                     <filter id="glow"><feGaussianBlur stdDeviation="6" /></filter>
                     <filter id="glow-small"><feGaussianBlur stdDeviation="1.5" /></filter>
                     <linearGradient id="wave-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor={theme.primary} stopOpacity="0.2" />
-                        <stop offset="50%" stopColor={theme.secondary} stopOpacity="0.7" />
-                        <stop offset="100%" stopColor={theme.accent} stopOpacity="0.2" />
+                        <stop offset="0%" className="text-primary" stopOpacity="0.2" />
+                        <stop offset="50%" className="text-secondary" stopOpacity="0.7" />
+                        <stop offset="100%" className="text-accent" stopOpacity="0.2" />
                     </linearGradient>
                 </defs>
 
                 {/* Rect background */}
-                <rect width="1536" height="1024" fill={theme.background} />
+                <rect width="1536" height="1024" className="fill-background" />
 
                 {/* Deep space paths */}
                 {SVG_PATHS.DEEP_SPACE_PATHS.map((item, i) => (
                     <path
                         key={`deepspace-${i}`}
                         d={item.path}
-                        fill={theme[item.key]}
+                        className={`fill-${item.key}`}
                         opacity={item.opacity || 0.4}
                     />
                 ))}
@@ -262,7 +253,7 @@ export default function CosmicBackdrop({
                     <path
                         key={`planet-${i}`}
                         d={planet.path}
-                        fill={theme[planet.key]}
+                        className={`fill-${planet.key}`}
                     />
                 ))}
 
@@ -271,7 +262,7 @@ export default function CosmicBackdrop({
                     <path
                         key={`nebula-${i}`}
                         d={item.path}
-                        stroke={theme[item.key]}
+                        className={`stroke-${item.key}`}
                         strokeWidth={item.width || 2}
                         strokeLinecap={item.linecap || "round"}
                         fill="none"
@@ -282,7 +273,8 @@ export default function CosmicBackdrop({
                 {/* Orbital elements */}
                 <ellipse
                     cx="300" cy="250" rx="200" ry="130"
-                    fill="none" stroke={theme.primary} strokeWidth="1"
+                    fill="none" className="stroke-primary"
+                    strokeWidth="1"
                     strokeDasharray="3 3" opacity="0.35"
                     transform="rotate(-15 300 250)"
                 />
@@ -292,19 +284,19 @@ export default function CosmicBackdrop({
                     <path
                         key={`constellation-${i}`}
                         d={item.path}
-                        fill={theme[item.key]}
+                        className={`fill-${item.key}`}
                         opacity={item.opacity || 1}
                     />
                 ))}
 
                 {/* Central blue planet */}
-                <ellipse cx="484.67" cy="353.23" rx="75" ry="75" fill={theme.secondary} fillOpacity="0.2" filter="url(#glow)" />
-                <circle cx="484.67" cy="353.23" r="65" fill={theme.primary} fillOpacity="0.2" filter="url(#glow-small)" />
+                <ellipse cx="484.67" cy="353.23" rx="75" ry="75" className="fill-secondary" fillOpacity="0.2" filter="url(#glow)" />
+                <circle cx="484.67" cy="353.23" r="65" className="fill-primary" fillOpacity="0.2" filter="url(#glow-small)" />
                 {SVG_PATHS.BLUE_PLANET.map((item, i) => (
                     <path
                         key={`blue-planet-${i}`}
                         d={item.path}
-                        fill={theme[item.key]}
+                        className={`fill-${item.key}`}
                         opacity={0.8}
                     />
                 ))}
@@ -318,7 +310,7 @@ export default function CosmicBackdrop({
                             cx={star.cx}
                             cy={star.cy}
                             r={star.r}
-                            fill={theme[star.key]}
+                            className={`fill-${star.key}`}
                             opacity={star.opacity || twinkleOpacity}
                             filter="url(#glow-small)"
                         />
@@ -331,10 +323,10 @@ export default function CosmicBackdrop({
                     const y = Math.cos(i * 123.4) * 500 + 500;
                     const size = Math.abs(Math.sin(i * 45.67) * 3 + 1);
                     const starColor = i % 3 === 0
-                        ? theme.accent
+                        ? 'accent'
                         : i % 4 === 0
-                            ? theme.highlight
-                            : theme.text;
+                            ? 'highlight'
+                            : 'text';
                     const twinkleOffset = i * 0.5;
                     const twinkleOpacity = 0.3 + Math.sin((t / 1000) * 0.5 + twinkleOffset) * 0.2;
 
@@ -344,16 +336,15 @@ export default function CosmicBackdrop({
                             cx={x}
                             cy={y}
                             r={size}
-                            fill={starColor}
+                            className={`fill-${starColor} twinkle`}
                             opacity={twinkleOpacity}
                             filter="url(#glow-small)"
-                            className="twinkle"
                         />
                     );
                 })}
             </svg>
 
-            <style jsx>{`
+            <style jsx="true">{`
                 .twinkle {
                     animation: twinkle 3s infinite ease-in-out alternate;
                 }

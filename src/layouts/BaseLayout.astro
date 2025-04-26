@@ -1,7 +1,6 @@
 ---
 import Header from "../components/Header.astro";
-import "../styles/colors.css";
-import "../styles/global.css";
+import "../styles/theme.css";
 
 interface Props {
     title?: string;
@@ -58,7 +57,7 @@ declare global {
             })();
         </script>
     </head>
-    <body class="bg-featherbg">
+    <body class="bg-background">
         <Header />
         <main>
             <slot />

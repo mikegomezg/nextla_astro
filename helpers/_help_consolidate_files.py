@@ -32,7 +32,7 @@ OUTPUT_DIR = r"C:\Users\mikeg\projects\nextla_astro\_consolidated"
 INCLUDED_EXTENSIONS = ["py", "md", "sql", "json", "toml", "pgsql", "js", "sh", "astro", "mjs",
                        "jsx", "ts", "tsx", "css", "html", "xml", "yaml", "yml", "ini"]
 # Directories and files to exclude (exact name matches)
-EXCLUDED_ITEMS = ["node_modules", ".git", "__pycache__", ".venv", "data", "tests", "pnpm-lock.yaml"]
+EXCLUDED_ITEMS = ["node_modules", ".git", "__pycache__", ".venv", "data", "tests", "pnpm-lock.yaml", "package-lock.json"]
 # File size constraints
 MAX_FILE_SIZE = 50000      # Target max file size in characters
 MIN_SECTION_SIZE = 10000   # Min size before starting new section
