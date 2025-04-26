@@ -17,12 +17,22 @@ console.info("Hero background URL:", cosmicBg);
     id="hero"
     class="relative flex items-center justify-center overflow-hidden
          bg-center bg-cover"
-    style={`background-image:url('${cosmicBg}');min-height:90vh;`}
+    style={`background-image:url('${cosmicBg}');min-height:90vh;max-height:110vh;`}
 >
-    <!-- single headline -->
-    <h1
-        class="relative z-10 text-4xl sm:text-6xl md:text-7xl font-extrabold text-highlight text-center px-6"
-    >
-        Imagine a balanced world
-    </h1>
+    <!-- headline with its own overlay -->
+    <div class="relative px-6">
+        <h1
+            class="relative z-10 text-12xl sm:text-6xl md:text-7xl font-extrabold
+                    text-white text-center"
+        >
+            Imagine a balanced world
+        </h1>
+
+        <!-- overlay only the width of the text block -->
+        <span
+            aria-hidden="true"
+            class="absolute inset-0 rounded-md bg-background/10
+                     backdrop-blur-sm -z-0 pointer-events-none"
+        ></span>
+    </div>
 </section>
