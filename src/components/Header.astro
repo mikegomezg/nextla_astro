@@ -3,15 +3,16 @@ import logo from "../assets/logos/logo.svg";
 ---
 
 <header class="flex z-50 h-20 w-full px-6 bg-black items-center justify-between fixed top-0 md:h-24">
-  <div class="flex items-center">
+  <!-- Left side: Logo -->
+  <div class="flex items-center flex-shrink-0">
     <img src={logo.src} alt="Nextla Logo" class="h-12 md:h-16" />
     <span class="ml-2 text-2xl font-black text-highlight tracking-[.04em] md:text-3xl">
       Nextla
     </span>
   </div>
 
-  <!-- Desktop Navigation -->
-  <nav class="hidden md:flex space-x-8 mx-auto">
+  <!-- Center: Navigation -->
+  <nav class="hidden md:flex space-x-8 absolute left-1/2 transform -translate-x-1/2">
     <a href="#" class="text-base font-semibold text-white hover:text-highlight tracking-wide md:text-lg">Home</a>
     <a href="#feather" class="text-base font-semibold text-white hover:text-highlight tracking-wide md:text-lg">About</a>
     <a href="#characters" class="text-base font-semibold text-white hover:text-highlight tracking-wide md:text-lg">Characters</a>
@@ -19,15 +20,16 @@ import logo from "../assets/logos/logo.svg";
     <a href="#cta" class="text-base font-semibold text-white hover:text-highlight tracking-wide md:text-lg">Contact</a>
   </nav>
 
+  <!-- Right side: Theme Toggle + Mobile Menu -->
   <div class="flex items-center">
     <!-- Theme Toggle Button -->
     <button
       id="theme-toggle"
       aria-label="Toggle color theme"
-      class="flex p-2 bg-surface rounded-md hover:bg-surface/70 items-center justify-center border-2 border-highlight dark:border-0"
+      class="flex p-2 bg-black rounded-md hover:bg-surface/70 items-center justify-center border-2 border-white dark:border-white"
       onclick="window.toggleTheme()"
     >
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-highlight dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
           d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
           class="dark:hidden"></path>
@@ -65,10 +67,10 @@ import logo from "../assets/logos/logo.svg";
     <button
       id="mobile-theme-toggle"
       aria-label="Toggle color theme"
-      class="flex mt-4 p-2 bg-surface rounded-md hover:bg-surface/70 items-center justify-center border-2 border-highlight dark:border-0"
+      class="flex mt-4 p-2 bg-black rounded-md hover:bg-surface/70 items-center justify-center border-2 border-white dark:border-white"
       onclick="window.toggleTheme()"
     >
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-highlight dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
           d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
           class="dark:hidden"></path>
@@ -79,16 +81,15 @@ import logo from "../assets/logos/logo.svg";
       <span class="ml-2 text-white">Toggle Theme</span>
     </button>
 
-    <!-- Close Menu Button -->
+    <!-- Close Mobile Menu -->
     <button 
       aria-label="Close menu"
-      class="flex p-2 rounded-md items-center justify-center border-2 border-highlight dark:border-0 bg-surface hover:bg-surface/70 mt-4"
+      class="flex p-2 rounded-md items-center justify-center border-2 border-white dark:border-white bg-black hover:bg-surface/70 mt-4"
     >
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-highlight dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </button>
-  
   </nav>
 </header>
 
