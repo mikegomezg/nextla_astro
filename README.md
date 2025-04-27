@@ -1,8 +1,8 @@
-# Nexla: A System for Managing Creative Attention
+# Nextla: A System for Managing Creative Attention
 
-This site presents the landing page for **Nexla**, a fictional platform designed to manage creative attention in the future. Built as part of a speculative design and narrative project, it introduces a near-future vision where human and AI creativity is measured, valued, and defended.
+This site presents the landing page for **Nextla**, a fictional platform designed to manage creative attention in the future. Built as part of a speculative design and narrative project, it introduces a near-future vision where human and AI creativity is measured, valued, and defended.
 
-The story behind Nexla explores systems of tribute, scarcity, and balance—drawing parallels between ancient power structures and modern digital labor. The landing page provides a conceptual entry point into that world.
+The story behind Nextla explores systems of tribute, scarcity, and balance—drawing parallels between ancient power structures and modern digital labor. The landing page provides a conceptual entry point into that world.
 
 > © All rights reserved. This project is not open source or for reuse.
 
@@ -51,9 +51,9 @@ pnpm preview       # Preview built site locally
 
 ## ℹ️ About This Project
 
-Nexla is a worldbuilding and interface-design exercise. It imagines what it would mean to manage creativity as an asset, with systems that resemble software asset management and digital labor compliance tools.
+Nextla is a worldbuilding and interface-design exercise. It imagines what it would mean to manage creativity as an asset, with systems that resemble software asset management and digital labor compliance tools.
 
-If you'd like to follow the development of Nexla or the underlying story world, stay tuned for future narrative updates and visual experiments.
+If you'd like to follow the development of Nextla or the underlying story world, stay tuned for future narrative updates and visual experiments.
 
 ---
 

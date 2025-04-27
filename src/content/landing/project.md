@@ -1,4 +1,4 @@
 ---
-heading: What is Nexla?
+heading: What is Nextla?
 ---
-- Nexla is a system for managing creative attention—the one thing that can't be automated.
+- Nextla is a system for managing creative attention—the one thing that can't be automated.
