@@ -4,16 +4,16 @@ import featherImg from "../assets/visuals/feather-crop.png";
 
 <!-- Top Title -->
 <section class="flex flex-col text-center bg-background items-center">
-  <h2 class="mt-8 text-highlight text-4xl font-bold md:text-5xl">
+  <h2 class="mt-8 mb-8 md:mb-12 text-highlight text-4xl font-bold md:text-5xl">
     What is Nexla?
   </h2>
 </section>
 
 <!-- Cards + Feather Section -->
-<section class="flex flex-col items-center justify-center md:grid md:grid-cols-[1fr_auto_1fr] gap-8 md:gap-4 md:mt-12 px-4 bg-background relative">
+<section class="flex flex-col items-center justify-center md:grid md:grid-cols-[auto_auto_auto] sm:grid-cols-1 gap-8 md:gap-4 lg:gap-8 px-4 bg-background relative">
   
   <!-- Left Card -->
-  <div class="card-style md:self-start md:justify-self-end mb-8 md:mb-0">
+  <div class="card-style flex-shrink-0 min-w-[280px] max-w-[350px] md:self-start md:justify-self-end mb-8 md:mb-0">
     <h3 class="card-title">About the Project</h3>
     <p class="card-text">
       Nexla is a platform for managing creative attention — the one thing that can't be automated.
@@ -21,20 +21,20 @@ import featherImg from "../assets/visuals/feather-crop.png";
   </div>
 
   <!-- Feather Image (centered, clean border) -->
-  <div class="flex items-center justify-center min-w-[250px] md:min-w-[300px] bg-black dark:bg-transparent p-0 m-0">
+  <div class="flex items-center justify-center min-w-[250px] md:min-w-[300px] bg-black dark:bg-transparent p-0 m-0 mb-8 overflow-hidden">
     <img
       src={featherImg.src}
       alt="Feather"
       width="400"
       height="900"
-      class="object-contain w-full h-full max-h-[95vh] border-4 border-highlight dark:border-0"
+      class="object-contain w-full max-w-[400px] max-h-[95vh] border-4 border-highlight dark:border-0"
       loading="eager"
       decoding="async"
     />
   </div>
 
   <!-- Right Card -->
-  <div class="card-style md:self-center md:justify-self-start mt-8 md:mt-0">
+  <div class="card-style flex-shrink-0 min-w-[280px] max-w-[350px] md:self-center md:justify-self-start mt-8 md:mt-0">
     <h3 class="card-title">About the Name</h3>
     <p class="card-text">
       "Nexla" derives from the Aztec word for tribute — symbolizing the value and scarcity of true creative insight.
@@ -44,7 +44,7 @@ import featherImg from "../assets/visuals/feather-crop.png";
 </section>
 
 <!-- Divider Section (with padding above it) -->
-<section class="w-full px-0 pt-8">
+<section class="w-full px-0 pt-12">
   <div class="h-[4px] w-full bg-highlight bg-repeat-x bg-center bg-[length:100px_4px]"></div>
 </section>
 
@@ -52,8 +52,8 @@ import featherImg from "../assets/visuals/feather-crop.png";
 <style>
   .card-style {
     @apply z-20 flex flex-col items-center justify-center text-center
-           w-full max-w-[400px] min-h-[200px] p-6
-           bg-surface/70 rounded-xl shadow-lg backdrop-blur-md;
+           w-full min-h-[200px] p-6
+           bg-surface/70 dark:bg-surface/80 rounded-xl shadow-lg backdrop-blur-md;
   }
 
   .card-title {

@@ -18,31 +18,29 @@ const { cta } = ctaContent.data;
         text-center
         bg-gradient-to-br from-featherbg via-primaryDark/40 to-accent/20"
 >
-  <div class="max-w-4xl
-        mx-auto">
+  <div class="max-w-4xl mx-auto">
     <h2
-      class="mb-6
-            text-2xl font-bold text-highlight
-            md:text-3xl"
+      class="mb-6 text-2xl font-bold text-highlight md:text-3xl"
     >
       Ready to Begin?
     </h2>
-    <p class="max-w-2xl
-            mb-8 mx-auto
-            text-text text-lg">
+    <p class="max-w-2xl mb-8 mx-auto text-text text-lg">
       Explore the detailed story of Nextla and meet all the characters.
     </p>
-    <a
-      href="#"
-      class="inline-block
-                px-8 py-3
-                text-text text-lg font-semibold
-                bg-accent
-                rounded-lg
-                transition-colors shadow-md
-                hover:bg-accentDark hover:shadow-lg"
-    >
-      {cta || "Read the Full Excerpt"}
-    </a>
+    
+    <div class="flex flex-col md:flex-row md:flex-wrap items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+      <a 
+        href="/excerpt" 
+        class="bg-secondary text-text px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-colors flex-shrink-0 w-full max-w-[250px]"
+      >
+        Read the Full Excerpt
+      </a>
+      <a 
+        href="https://twitter.com/yourprofile" 
+        class="border-2 border-secondary text-secondary px-6 py-3 rounded-lg font-medium hover:bg-secondary hover:text-text transition-colors flex-shrink-0 w-full max-w-[250px]"
+      >
+        Join the Conversation
+      </a>
+    </div>
   </div>
 </section>

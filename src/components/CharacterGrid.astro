@@ -59,10 +59,10 @@ const bgColors = [
     </h2>
 
     <!-- Desktop grid view -->
-    <div class="hidden md:grid grid-cols-3 gap-6">
+    <div class="hidden lg:grid grid-cols-3 gap-6">
       {orderedCharacterImages.map((image, index) => (
-        <div class="flex flex-col items-center text-center p-5 bg-surface border border-secondary/20 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-          <div class="w-40 h-40 mb-4 overflow-hidden rounded-full">
+        <div class="flex flex-col items-center text-center p-4 bg-surface/70 dark:bg-surface/80 backdrop-blur-md rounded-xl shadow-lg flex-shrink-0 min-w-[280px] max-w-[340px]">
+          <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-highlight">
             {image ? (
               <Image
                 src={image}
@@ -93,11 +93,11 @@ const bgColors = [
     </div>
 
     <!-- Mobile scroll view -->
-    <div class="md:hidden overflow-x-auto pb-4 -mx-4 px-4">
+    <div class="lg:hidden overflow-x-auto pb-4 -mx-4 px-4">
       <div class="flex space-x-4" style="min-width: min-content;">
         {orderedCharacterImages.map((image, index) => (
-          <div class="flex flex-col items-center text-center p-4 bg-surface border border-secondary/20 rounded-lg shadow-md" style="min-width: 220px; max-width: 280px;">
-            <div class="w-28 h-28 mb-3 overflow-hidden rounded-full">
+          <div class="flex flex-col items-center text-center p-4 bg-surface/70 dark:bg-surface/80 backdrop-blur-md rounded-xl shadow-lg flex-shrink-0 min-w-[250px] max-w-[280px]">
+            <div class="w-28 h-28 mb-3 overflow-hidden rounded-full border-2 border-highlight">
               {image ? (
                 <Image
                   src={image}
@@ -129,17 +129,10 @@ const bgColors = [
     </div>
 
     <!-- Mobile navigation indicators -->
-    <div class="flex justify-center space-x-2 mt-4 md:hidden">
+    <div class="flex justify-center space-x-2 mt-4 lg:hidden">
       <span class="w-2 h-2 rounded-full bg-primary"></span>
       <span class="w-2 h-2 rounded-full bg-muted/20"></span>
       <span class="w-2 h-2 rounded-full bg-muted/20"></span>
-    </div>
-
-    <!-- See all characters button -->
-    <div class="text-center mt-8">
-      <button class="px-6 py-2 bg-secondary text-text font-medium rounded-lg hover:bg-opacity-90 transition-colors">
-        See All Characters
-      </button>
     </div>
   </div>
 </section>
