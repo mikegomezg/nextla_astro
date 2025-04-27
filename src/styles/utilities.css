@@ -14,7 +14,7 @@
 
     /* Container class to prevent edge-to-edge stretching on wide screens */
     .container-xl {
-        @apply max-w-7xl mx-auto w-full px-4;
+        @apply max-w-7xl mx-auto;
     }
 
     /* Card base styling */
@@ -36,7 +36,7 @@
 
     /* Responsive text utilities */
     .text-responsive {
-        @apply text-base md:text-lg lg:text-xl;
+        @apply text-sm md:text-base;
     }
 
     .heading-responsive {
@@ -45,11 +45,11 @@
 
     /* Button styles */
     .btn-primary {
-        @apply bg-highlight text-white py-2 px-4 rounded-md hover:bg-primaryDark transition-colors duration-200;
+        @apply px-6 py-3 bg-highlight text-white font-bold rounded-lg hover:bg-highlight/90 transition-colors duration-300 inline-block shadow-md hover:shadow-lg;
     }
 
     .btn-secondary {
-        @apply bg-black text-white py-2 px-4 rounded-md border-2 border-white hover:bg-surface/30 transition-colors duration-200;
+        @apply px-6 py-3 bg-background/90 text-highlight border-2 border-highlight/60 font-bold rounded-lg hover:bg-highlight/10 transition-colors duration-300 inline-block shadow-md hover:shadow-lg;
     }
 
     /* Layout utility classes */
@@ -71,5 +71,17 @@
 
     .vertical-bar-light {
         @apply hidden lg:block w-[4px] h-full bg-highlight dark:hidden;
+    }
+
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+        /* Chrome, Safari, Opera */
     }
 }
