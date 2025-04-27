@@ -4,6 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+    .text-shadow-light {
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    }
+}
+
 @layer components {
 
     /* Container class to prevent edge-to-edge stretching on wide screens */

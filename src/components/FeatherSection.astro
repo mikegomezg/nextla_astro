@@ -3,8 +3,15 @@ import featherImg from "../assets/visuals/feather-crop.png";
 ---
 
 <!-- Top Title -->
-<section class="flex flex-col text-center bg-background items-center container-xl">
-    <h2 class="mt-8 mb-8 md:mb-12 text-highlight heading-responsive">What is Nexla?</h2>
+<section
+    class="flex flex-col text-center bg-background items-center container-xl"
+    id="feather"
+>
+    <h2
+        class="mt-8 mb-6 text-highlight text-shadow-light dark:text-highlight heading-responsive"
+    >
+        What is Nexla?
+    </h2>
 </section>
 
 <!-- Cards + Feather Section -->
@@ -25,13 +32,13 @@ import featherImg from "../assets/visuals/feather-crop.png";
     </div>
 
     <!-- Feather Image (centered) -->
-    <div class="flex items-center justify-center mb-8 lg:mb-0">
+    <div class="flex items-center justify-center mb-8 lg:mb-0 rounded-xl">
         <img
             src={featherImg.src}
             alt="Feather"
             width="400"
             height="900"
-            class="object-contain max-w-[400px] max-h-[95vh] border-4 border-highlight dark:border-0"
+            class="object-contain max-w-[400px] w-[400px] max-h-[95vh] drop-shadow-lg"
             loading="eager"
             decoding="async"
         />
@@ -47,11 +54,6 @@ import featherImg from "../assets/visuals/feather-crop.png";
             scarcity of true creative insight.
         </p>
     </div>
-</section>
-
-<!-- Divider Section (with padding above it) -->
-<section class="w-full px-0 pt-12">
-    <div class="divider"></div>
 </section>
 
 <!-- Tailwind Styles -->
