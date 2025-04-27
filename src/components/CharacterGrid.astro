@@ -3,9 +3,8 @@ import { getEntry } from "astro:content";
 import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
 
-// Import character images in correct order
 import silas from "../assets/characters/1-silas.png";
-import kate from "../assets/characters/2-cors.png"; // Cors
+import kate from "../assets/characters/2-cors.png";
 import victoria from "../assets/characters/3-victoria.png";
 import mercedes from "../assets/characters/4-mercedes.png";
 import john from "../assets/characters/5-john.png";
@@ -28,17 +27,15 @@ if (!charactersContent) {
 
 const { characters = [] } = charactersContent.data;
 
-// Manually reorder characters to match image order
 const orderedCharacters: Character[] = [
     characters.find((c) => c.name.startsWith("Silas"))!,
-    characters.find((c) => c.name.startsWith("Cors"))!, // Cors is Kate
+    characters.find((c) => c.name.startsWith("Cors"))!,
     characters.find((c) => c.name.startsWith("Victoria"))!,
     characters.find((c) => c.name.startsWith("Mercedes"))!,
     characters.find((c) => c.name.startsWith("John"))!,
     characters.find((c) => c.name.startsWith("Enrique"))!,
 ];
 
-// Ordered character images
 const orderedCharacterImages: ImageMetadata[] = [
     silas,
     kate,
@@ -48,7 +45,6 @@ const orderedCharacterImages: ImageMetadata[] = [
     enrique,
 ];
 
-// Gradient fallback colors
 const bgColors = [
     "from-primary/30 to-secondary/30",
     "from-secondary/30 to-highlight/30",
@@ -62,22 +58,22 @@ const bgColors = [
 <section
     id="characters"
     aria-labelledby="characters-heading"
-    class="py-8 px-4 bg-background container-xl"
+    class="py-12 px-4 bg-background container-xl"
 >
     <div>
         <h2
             id="characters-heading"
-            class="mb-8 heading-responsive text-center text-secondary text-shadow-light dark:text-secondary select-none"
+            class="mb-10 heading-responsive text-center text-secondary text-shadow-light dark:text-secondary select-none"
         >
             Characters
         </h2>
 
-        <!-- Desktop grid view -->
-        <div class="hidden lg:grid grid-cols-3 gap-6">
+        <!-- Grid for md and up (desktop) -->
+        <div class="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
             {
                 orderedCharacterImages.map((image, index) => (
-                    <div class="card-base min-w-[280px] max-w-[350px] w-full flex flex-col items-center text-center p-6">
-                        <div class="w-40 h-40 mb-4 overflow-hidden rounded-full">
+                    <div class="card-base min-w-[320px] max-w-[380px] w-full flex flex-col items-center text-center p-8 mx-auto">
+                        <div class="w-40 h-40 mb-6 overflow-hidden rounded-full">
                             {image ? (
                                 <Image
                                     src={image}
@@ -96,13 +92,13 @@ const bgColors = [
                                 </div>
                             )}
                         </div>
-                        <h3 class="text-xl font-semibold text-highlight mb-1">
+                        <h3 class="text-2xl font-semibold text-highlight mb-2">
                             {orderedCharacters[index]?.name}
                         </h3>
-                        <p class="text-accent text-sm mb-3">
+                        <p class="text-accent text-base mb-3">
                             {orderedCharacters[index]?.role}
                         </p>
-                        <p class="text-text text-responsive">
+                        <p class="text-text text-sm text-center">
                             {orderedCharacters[index]?.bio}
                         </p>
                     </div>
@@ -110,51 +106,53 @@ const bgColors = [
             }
         </div>
 
-        <!-- Mobile scroll view -->
+        <!-- Scroll for mobile screens -->
         <div
             id="character-scroll"
-            class="lg:hidden overflow-x-scroll scrollbar-hide pb-4 -mx-4 px-4 scroll-snap-x"
+            class="flex md:hidden overflow-x-auto scrollbar-hide scroll-snap-x -mx-4 px-4"
         >
-            <div class="flex space-x-4" style="min-width: min-content;">
+            <div class="flex space-x-4 w-full">
                 {
                     orderedCharacterImages.map((image, index) => (
-                        <div class="card-base min-w-[280px] max-w-[320px] flex flex-col items-center text-center p-6 scroll-snap-start">
-                            <div class="w-28 h-28 mb-3 overflow-hidden rounded-full">
-                                {image ? (
-                                    <Image
-                                        src={image}
-                                        alt={`${orderedCharacters[index]?.name} - ${orderedCharacters[index]?.role}`}
-                                        class="object-cover w-full h-full rounded-full drop-shadow-md"
-                                        loading="eager"
-                                        decoding="async"
-                                    />
-                                ) : (
-                                    <div
-                                        class={`w-full h-full rounded-full bg-gradient-to-br ${bgColors[index % bgColors.length]} flex items-center justify-center drop-shadow-md`}
-                                    >
-                                        <span class="text-2xl font-bold text-text">
-                                            {orderedCharacters[index]?.name.charAt(0)}
-                                        </span>
-                                    </div>
-                                )}
+                        <div class="flex-shrink-0 w-[300px] flex flex-col items-center text-center scroll-snap-start mx-auto">
+                            <div class="card-base flex flex-col items-center justify-center w-full p-6">
+                                <div class="w-28 h-28 mb-4 overflow-hidden rounded-full">
+                                    {image ? (
+                                        <Image
+                                            src={image}
+                                            alt={`${orderedCharacters[index]?.name} - ${orderedCharacters[index]?.role}`}
+                                            class="object-cover w-full h-full rounded-full drop-shadow-md"
+                                            loading="eager"
+                                            decoding="async"
+                                        />
+                                    ) : (
+                                        <div
+                                            class={`w-full h-full rounded-full bg-gradient-to-br ${bgColors[index % bgColors.length]} flex items-center justify-center drop-shadow-md`}
+                                        >
+                                            <span class="text-2xl font-bold text-text">
+                                                {orderedCharacters[index]?.name.charAt(0)}
+                                            </span>
+                                        </div>
+                                    )}
+                                </div>
+                                <h3 class="text-lg font-semibold text-highlight mb-1">
+                                    {orderedCharacters[index]?.name}
+                                </h3>
+                                <p class="text-accent text-xs mb-2">
+                                    {orderedCharacters[index]?.role}
+                                </p>
+                                <p class="text-text text-xs text-center">
+                                    {orderedCharacters[index]?.bio}
+                                </p>
                             </div>
-                            <h3 class="text-lg font-semibold text-highlight mb-1">
-                                {orderedCharacters[index]?.name}
-                            </h3>
-                            <p class="text-accent text-xs mb-2">
-                                {orderedCharacters[index]?.role}
-                            </p>
-                            <p class="text-text text-xs line-clamp-3">
-                                {orderedCharacters[index]?.bio}
-                            </p>
                         </div>
                     ))
                 }
             </div>
         </div>
 
-        <!-- Mobile navigation indicators -->
-        <div class="flex justify-center space-x-2 mt-4 lg:hidden select-none">
+        <!-- Pager dots for mobile -->
+        <div class="flex justify-center space-x-2 mt-4 md:hidden select-none">
             {
                 orderedCharacterImages.map((_, index) => (
                     <button
@@ -172,29 +170,27 @@ const bgColors = [
 
 <script>
     let activeIndex = 0;
-    const scrollContainer = document.getElementById("character-scroll") as HTMLElement;
+    const scrollContainer = document.getElementById("character-scroll");
 
     if (scrollContainer) {
-        const characterCards = scrollContainer.querySelectorAll(".card-base");
+        const characterCards = scrollContainer.querySelectorAll(".flex-shrink-0");
         const pagerButtons = document.querySelectorAll(
             "#characters .flex.justify-center button",
         );
 
-        // Function to scroll to a specific character
-        function scrollToCharacter(index: number): void {
-            const card = characterCards[index] as HTMLElement;
+        function scrollToCharacter(index: number) {
+            const card = characterCards[index];
             if (card) {
-                scrollContainer.scrollTo({
-                    left: card.offsetLeft - 16, // adjust for padding
-                    behavior: "smooth" as ScrollBehavior,
+                scrollContainer!.scrollTo({
+                    left: (card as HTMLElement).offsetLeft - 16,
+                    behavior: "smooth",
                 });
                 activeIndex = index;
                 updateActiveDot();
             }
         }
 
-        // Update the active dot indicator
-        function updateActiveDot(): void {
+        function updateActiveDot() {
             pagerButtons.forEach((button, idx) => {
                 if (idx === activeIndex) {
                     button.classList.add("bg-primary", "scale-125");
@@ -206,20 +202,17 @@ const bgColors = [
             });
         }
 
-        // Add click event listeners to pager buttons
         pagerButtons.forEach((button, index) => {
             button.addEventListener("click", () => {
                 scrollToCharacter(index);
             });
         });
 
-        // Track scroll position to update active dot
         scrollContainer.addEventListener("scroll", () => {
             const scrollLeft = scrollContainer.scrollLeft;
-            const firstCard = characterCards[0] as HTMLElement;
-            const cardWidth = firstCard.offsetWidth + 16; // card width + gap
+            const firstCard = characterCards[0];
+            const cardWidth = (firstCard as HTMLElement).offsetWidth + 16;
             const newIndex = Math.round(scrollLeft / cardWidth);
-
             if (
                 newIndex !== activeIndex &&
                 newIndex >= 0 &&
@@ -236,8 +229,10 @@ const bgColors = [
     .scroll-snap-x {
         scroll-snap-type: x mandatory;
     }
-
     .scroll-snap-start {
         scroll-snap-align: start;
+    }
+    #character-scroll {
+        scroll-padding-left: 1rem;
     }
 </style>

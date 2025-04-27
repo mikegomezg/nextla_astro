@@ -7,7 +7,7 @@ import logo from "../assets/logos/logo.svg";
 >
     <!-- Left side: Logo -->
     <div class="flex items-center flex-shrink-0">
-        <img src={logo.src} alt="Nextla Logo" class="h-12 md:h-16" />
+        <img src={logo.src} alt="Nextla Logo" class="h-12 w-auto md:h-16" />
         <span
             class="ml-2 text-2xl font-black text-highlight tracking-[.04em] md:text-3xl"
         >
@@ -26,7 +26,7 @@ import logo from "../assets/logos/logo.svg";
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-white"
+                class="h-5 w-5 currentColor"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -47,7 +47,7 @@ import logo from "../assets/logos/logo.svg";
         </button>
 
         <!-- Mobile Menu Toggle -->
-        <button
+        <!-- <button
             id="menu-toggle"
             aria-label="Toggle navigation menu"
             class="p-2 ml-2 text-white focus:outline-none md:hidden"
@@ -65,14 +65,14 @@ import logo from "../assets/logos/logo.svg";
                     stroke-width="2"
                     d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
-        </button>
+        </button> -->
     </div>
 
     <!-- Mobile Navigation -->
     <!-- Center: Navigation -->
     <nav
-        class="hidden md:flex absolute left-1/2 transform -translate-x-1/2
-            space-x-2 md:space-x-4 lg:space-x-6 xl:space-x-8"
+        class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 select-none
+            space-x-2 md:space-x-3 lg:space-x-6 xl:space-x-8"
     >
         <a
             href="#"
@@ -90,7 +90,6 @@ import logo from "../assets/logos/logo.svg";
             >Characters</a
         >
         <a
-            href="/excerpt"
             class="text-base font-semibold text-white hover:text-highlight tracking-wide md:text-lg"
             >Read</a
         >
