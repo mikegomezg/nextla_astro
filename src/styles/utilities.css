@@ -1,6 +1,8 @@
 /* Utility Classes for Nextla */
 
+@tailwind base;
 @tailwind components;
+@tailwind utilities;
 
 @layer components {
 
@@ -42,5 +44,26 @@
 
     .btn-secondary {
         @apply bg-black text-white py-2 px-4 rounded-md border-2 border-white hover:bg-surface/30 transition-colors duration-200;
+    }
+
+    /* Layout utility classes */
+    .layout-grid-lg {
+        @apply flex flex-col lg:grid lg:grid-cols-[auto_auto_auto] gap-6;
+    }
+
+    .feather-image {
+        @apply object-contain max-h-[95vh] w-[400px];
+    }
+
+    .hero-image-background {
+        @apply absolute inset-0 bg-no-repeat bg-cover bg-center;
+    }
+
+    .hero-heading {
+        @apply text-highlight text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight;
+    }
+
+    .vertical-bar-light {
+        @apply hidden lg:block w-[4px] h-full bg-highlight dark:hidden;
     }
 }

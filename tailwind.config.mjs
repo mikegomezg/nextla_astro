@@ -8,6 +8,13 @@ export default {
 		'./src/styles/utilities.css'
 	],
 	theme: {
+		screens: {
+			sm: '640px',   // Small screens (phones)
+			md: '768px',   // Medium screens (tablets)
+			lg: '1024px',  // Large screens (small laptops)
+			xl: '1280px',  // Extra large (desktops)
+			'2xl': '1536px', // Very large screens
+		},
 		extend: {
 			colors: {
 				background: withOpacity('--color-background'),           // Deep Space Black
