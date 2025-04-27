@@ -3,64 +3,70 @@ import featherImg from "../assets/visuals/feather-crop.png";
 ---
 
 <!-- Top Title -->
-<section class="flex flex-col text-center bg-background items-center">
-  <h2 class="mt-8 mb-8 md:mb-12 text-highlight text-4xl font-bold md:text-5xl">
-    What is Nexla?
-  </h2>
+<section class="flex flex-col text-center bg-background items-center container-xl">
+    <h2 class="mt-8 mb-8 md:mb-12 text-highlight heading-responsive">What is Nexla?</h2>
 </section>
 
 <!-- Cards + Feather Section -->
-<section class="flex flex-col items-center justify-center md:grid md:grid-cols-[auto_auto_auto] sm:grid-cols-1 gap-8 md:gap-4 lg:gap-8 px-4 bg-background relative">
-  
-  <!-- Left Card -->
-  <div class="card-style flex-shrink-0 min-w-[280px] max-w-[350px] md:self-start md:justify-self-end mb-8 md:mb-0">
-    <h3 class="card-title">About the Project</h3>
-    <p class="card-text">
-      Nexla is a platform for managing creative attention — the one thing that can't be automated.
-    </p>
-  </div>
+<section
+    class="flex flex-col items-center justify-center bg-background container-xl
+                lg:grid lg:grid-cols-[auto_auto_auto] grid-cols-1
+                gap-4 lg:gap-8"
+>
+    <!-- Left Card -->
+    <div
+        class="card-base min-w-[280px] max-w-[350px] w-full mb-8 lg:mb-0 lg:-mr-8 md:mt-6 lg:justify-self-end"
+    >
+        <h3 class="card-title">About the Project</h3>
+        <p class="card-text text-responsive">
+            Nexla is a platform for managing creative attention — the one thing that can't
+            be automated.
+        </p>
+    </div>
 
-  <!-- Feather Image (centered, clean border) -->
-  <div class="flex items-center justify-center min-w-[250px] md:min-w-[300px] bg-black dark:bg-transparent p-0 m-0 mb-8 overflow-hidden">
-    <img
-      src={featherImg.src}
-      alt="Feather"
-      width="400"
-      height="900"
-      class="object-contain w-full max-w-[400px] max-h-[95vh] border-4 border-highlight dark:border-0"
-      loading="eager"
-      decoding="async"
-    />
-  </div>
+    <!-- Feather Image (centered) -->
+    <div class="flex items-center justify-center mb-8 lg:mb-0">
+        <img
+            src={featherImg.src}
+            alt="Feather"
+            width="400"
+            height="900"
+            class="object-contain max-w-[400px] max-h-[95vh] border-4 border-highlight dark:border-0"
+            loading="eager"
+            decoding="async"
+        />
+    </div>
 
-  <!-- Right Card -->
-  <div class="card-style flex-shrink-0 min-w-[280px] max-w-[350px] md:self-center md:justify-self-start mt-8 md:mt-0">
-    <h3 class="card-title">About the Name</h3>
-    <p class="card-text">
-      "Nexla" derives from the Aztec word for tribute — symbolizing the value and scarcity of true creative insight.
-    </p>
-  </div>
-
+    <!-- Right Card -->
+    <div
+        class="card-base min-w-[280px] max-w-[350px] w-full lg:-ml-8 lg:justify-self-start"
+    >
+        <h3 class="card-title">About the Name</h3>
+        <p class="card-text text-responsive">
+            "Nexla" derives from the Aztec word for tribute — symbolizing the value and
+            scarcity of true creative insight.
+        </p>
+    </div>
 </section>
 
 <!-- Divider Section (with padding above it) -->
 <section class="w-full px-0 pt-12">
-  <div class="h-[4px] w-full bg-highlight bg-repeat-x bg-center bg-[length:100px_4px]"></div>
+    <div class="divider"></div>
 </section>
 
 <!-- Tailwind Styles -->
 <style>
-  .card-style {
-    @apply z-20 flex flex-col items-center justify-center text-center
-           w-full min-h-[200px] p-6
+    .card-base {
+        @apply z-20 flex flex-col items-center justify-center text-center
+           min-h-[200px] p-6
            bg-surface/70 dark:bg-surface/80 rounded-xl shadow-lg backdrop-blur-md;
-  }
+    }
 
-  .card-title {
-    @apply mb-4 text-highlight text-2xl font-extrabold;
-  }
+    .card-title {
+        @apply mb-4 text-highlight text-2xl font-extrabold;
+    }
 
-  .card-text {
-    @apply text-text text-base leading-relaxed text-left;
-  }
+    .card-text {
+        @apply text-text leading-relaxed text-left;
+    }
 </style>

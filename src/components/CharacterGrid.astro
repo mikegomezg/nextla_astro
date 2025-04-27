@@ -12,127 +12,149 @@ import john from "../assets/characters/5-john.png";
 import enrique from "../assets/characters/6-enrique.png";
 
 interface Character {
-  name: string;
-  role: string;
-  bio: string;
-  image?: string;
+    name: string;
+    role: string;
+    bio: string;
+    image?: string;
 }
 
 const charactersContent = await getEntry("landing", "characters");
 
 if (!charactersContent) {
-  throw new Error("Characters content not found: characters entry missing from landing collection");
+    throw new Error(
+        "Characters content not found: characters entry missing from landing collection",
+    );
 }
 
 const { characters = [] } = charactersContent.data;
 
 // Manually reorder characters to match image order
 const orderedCharacters: Character[] = [
-  characters.find((c) => c.name.startsWith("Silas"))!,
-  characters.find((c) => c.name.startsWith("Cors"))!,      // Cors is Kate
-  characters.find((c) => c.name.startsWith("Victoria"))!,
-  characters.find((c) => c.name.startsWith("Mercedes"))!,
-  characters.find((c) => c.name.startsWith("John"))!,
-  characters.find((c) => c.name.startsWith("Enrique"))!,
+    characters.find((c) => c.name.startsWith("Silas"))!,
+    characters.find((c) => c.name.startsWith("Cors"))!, // Cors is Kate
+    characters.find((c) => c.name.startsWith("Victoria"))!,
+    characters.find((c) => c.name.startsWith("Mercedes"))!,
+    characters.find((c) => c.name.startsWith("John"))!,
+    characters.find((c) => c.name.startsWith("Enrique"))!,
 ];
 
 // Ordered character images
 const orderedCharacterImages: ImageMetadata[] = [
-  silas, kate, victoria, mercedes, john, enrique,
+    silas,
+    kate,
+    victoria,
+    mercedes,
+    john,
+    enrique,
 ];
 
 // Gradient fallback colors
 const bgColors = [
-  "from-primary/30 to-secondary/30",
-  "from-secondary/30 to-highlight/30",
-  "from-highlight/30 to-accent/30",
-  "from-accent/30 to-primary/30",
-  "from-primary/30 to-highlight/30",
-  "from-secondary/30 to-accent/30",
+    "from-primary/30 to-secondary/30",
+    "from-secondary/30 to-highlight/30",
+    "from-highlight/30 to-accent/30",
+    "from-accent/30 to-primary/30",
+    "from-primary/30 to-highlight/30",
+    "from-secondary/30 to-accent/30",
 ];
 ---
 
-<section id="characters" aria-labelledby="characters-heading" class="py-16 px-6 bg-background">
-  <div class="max-w-6xl mx-auto">
-    <h2 id="characters-heading" class="mb-8 text-2xl md:text-3xl font-bold text-center text-secondary">
-      Characters
-    </h2>
+<section
+    id="characters"
+    aria-labelledby="characters-heading"
+    class="py-16 px-4 bg-background container-xl"
+>
+    <div>
+        <h2
+            id="characters-heading"
+            class="mb-8 heading-responsive text-center text-secondary"
+        >
+            Characters
+        </h2>
 
-    <!-- Desktop grid view -->
-    <div class="hidden lg:grid grid-cols-3 gap-6">
-      {orderedCharacterImages.map((image, index) => (
-        <div class="flex flex-col items-center text-center p-4 bg-surface/70 dark:bg-surface/80 backdrop-blur-md rounded-xl shadow-lg flex-shrink-0 min-w-[280px] max-w-[340px]">
-          <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-highlight">
-            {image ? (
-              <Image
-                src={image}
-                alt={`${orderedCharacters[index]?.name} - ${orderedCharacters[index]?.role}`}
-                class="object-cover w-full h-full"
-                loading="eager"
-                decoding="async"
-              />
-            ) : (
-              <div class={`w-full h-full rounded-full bg-gradient-to-br ${bgColors[index % bgColors.length]} flex items-center justify-center`}>
-                <span class="text-3xl font-bold text-text">
-                  {orderedCharacters[index]?.name.charAt(0)}
-                </span>
-              </div>
-            )}
-          </div>
-          <h3 class="text-xl font-semibold text-highlight mb-1">
-            {orderedCharacters[index]?.name}
-          </h3>
-          <p class="text-accent text-sm mb-3">
-            {orderedCharacters[index]?.role}
-          </p>
-          <p class="text-text text-sm">
-            {orderedCharacters[index]?.bio}
-          </p>
+        <!-- Desktop grid view -->
+        <div class="hidden lg:grid grid-cols-3 gap-6">
+            {
+                orderedCharacterImages.map((image, index) => (
+                    <div class="card-base min-w-[280px] max-w-[350px] w-full flex flex-col items-center text-center p-6">
+                        <div class="w-40 h-40 mb-4 overflow-hidden rounded-full border-2 border-highlight">
+                            {image ? (
+                                <Image
+                                    src={image}
+                                    alt={`${orderedCharacters[index]?.name} - ${orderedCharacters[index]?.role}`}
+                                    class="object-cover w-full h-full"
+                                    loading="eager"
+                                    decoding="async"
+                                />
+                            ) : (
+                                <div
+                                    class={`w-full h-full rounded-full bg-gradient-to-br ${bgColors[index % bgColors.length]} flex items-center justify-center`}
+                                >
+                                    <span class="text-3xl font-bold text-text">
+                                        {orderedCharacters[index]?.name.charAt(0)}
+                                    </span>
+                                </div>
+                            )}
+                        </div>
+                        <h3 class="text-xl font-semibold text-highlight mb-1">
+                            {orderedCharacters[index]?.name}
+                        </h3>
+                        <p class="text-accent text-sm mb-3">
+                            {orderedCharacters[index]?.role}
+                        </p>
+                        <p class="text-text text-responsive">
+                            {orderedCharacters[index]?.bio}
+                        </p>
+                    </div>
+                ))
+            }
         </div>
-      ))}
-    </div>
 
-    <!-- Mobile scroll view -->
-    <div class="lg:hidden overflow-x-auto pb-4 -mx-4 px-4">
-      <div class="flex space-x-4" style="min-width: min-content;">
-        {orderedCharacterImages.map((image, index) => (
-          <div class="flex flex-col items-center text-center p-4 bg-surface/70 dark:bg-surface/80 backdrop-blur-md rounded-xl shadow-lg flex-shrink-0 min-w-[250px] max-w-[280px]">
-            <div class="w-28 h-28 mb-3 overflow-hidden rounded-full border-2 border-highlight">
-              {image ? (
-                <Image
-                  src={image}
-                  alt={`${orderedCharacters[index]?.name} - ${orderedCharacters[index]?.role}`}
-                  class="object-cover w-full h-full"
-                  loading="eager"
-                  decoding="async"
-                />
-              ) : (
-                <div class={`w-full h-full rounded-full bg-gradient-to-br ${bgColors[index % bgColors.length]} flex items-center justify-center`}>
-                  <span class="text-2xl font-bold text-text">
-                    {orderedCharacters[index]?.name.charAt(0)}
-                  </span>
-                </div>
-              )}
+        <!-- Mobile scroll view -->
+        <div class="lg:hidden overflow-x-auto pb-4 -mx-4 px-4">
+            <div class="flex space-x-4" style="min-width: min-content;">
+                {
+                    orderedCharacterImages.map((image, index) => (
+                        <div class="card-base min-w-[280px] max-w-[320px] flex flex-col items-center text-center p-6">
+                            <div class="w-28 h-28 mb-3 overflow-hidden rounded-full border-2 border-highlight">
+                                {image ? (
+                                    <Image
+                                        src={image}
+                                        alt={`${orderedCharacters[index]?.name} - ${orderedCharacters[index]?.role}`}
+                                        class="object-cover w-full h-full"
+                                        loading="eager"
+                                        decoding="async"
+                                    />
+                                ) : (
+                                    <div
+                                        class={`w-full h-full rounded-full bg-gradient-to-br ${bgColors[index % bgColors.length]} flex items-center justify-center`}
+                                    >
+                                        <span class="text-2xl font-bold text-text">
+                                            {orderedCharacters[index]?.name.charAt(0)}
+                                        </span>
+                                    </div>
+                                )}
+                            </div>
+                            <h3 class="text-lg font-semibold text-highlight mb-1">
+                                {orderedCharacters[index]?.name}
+                            </h3>
+                            <p class="text-accent text-xs mb-2">
+                                {orderedCharacters[index]?.role}
+                            </p>
+                            <p class="text-text text-xs line-clamp-3">
+                                {orderedCharacters[index]?.bio}
+                            </p>
+                        </div>
+                    ))
+                }
             </div>
-            <h3 class="text-lg font-semibold text-highlight mb-1">
-              {orderedCharacters[index]?.name}
-            </h3>
-            <p class="text-accent text-xs mb-2">
-              {orderedCharacters[index]?.role}
-            </p>
-            <p class="text-text text-xs line-clamp-3">
-              {orderedCharacters[index]?.bio}
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
+        </div>
 
-    <!-- Mobile navigation indicators -->
-    <div class="flex justify-center space-x-2 mt-4 lg:hidden">
-      <span class="w-2 h-2 rounded-full bg-primary"></span>
-      <span class="w-2 h-2 rounded-full bg-muted/20"></span>
-      <span class="w-2 h-2 rounded-full bg-muted/20"></span>
+        <!-- Mobile navigation indicators -->
+        <div class="flex justify-center space-x-2 mt-4 lg:hidden">
+            <span class="w-2 h-2 rounded-full bg-primary"></span>
+            <span class="w-2 h-2 rounded-full bg-muted/20"></span>
+            <span class="w-2 h-2 rounded-full bg-muted/20"></span>
+        </div>
     </div>
-  </div>
 </section>

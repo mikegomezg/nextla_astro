@@ -1,0 +1,46 @@
+/* Utility Classes for Nextla */
+
+@tailwind components;
+
+@layer components {
+
+    /* Container class to prevent edge-to-edge stretching on wide screens */
+    .container-xl {
+        @apply max-w-7xl mx-auto w-full px-4;
+    }
+
+    /* Card base styling */
+    .card-base {
+        @apply z-20 flex flex-col items-center justify-center text-center min-h-[200px] p-6 bg-surface/70 dark:bg-surface/80 rounded-xl shadow-lg backdrop-blur-md;
+    }
+
+    /* Background image utility */
+    .bg-cover-center {
+        @apply bg-no-repeat bg-cover;
+        background-size: 110% 110%;
+        background-position: center;
+    }
+
+    /* Section dividers */
+    .divider {
+        @apply h-[4px] w-full bg-highlight bg-repeat-x bg-center bg-[length:100px_4px];
+    }
+
+    /* Responsive text utilities */
+    .text-responsive {
+        @apply text-base md:text-lg lg:text-xl;
+    }
+
+    .heading-responsive {
+        @apply text-3xl md:text-4xl lg:text-5xl font-bold;
+    }
+
+    /* Button styles */
+    .btn-primary {
+        @apply bg-highlight text-white py-2 px-4 rounded-md hover:bg-primaryDark transition-colors duration-200;
+    }
+
+    .btn-secondary {
+        @apply bg-black text-white py-2 px-4 rounded-md border-2 border-white hover:bg-surface/30 transition-colors duration-200;
+    }
+}

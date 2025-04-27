@@ -3,7 +3,10 @@ import { withOpacity } from './tailwind.utils.js';
 
 export default {
 	darkMode: ['class', '[data-theme="dark"]'],
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+	content: [
+		'./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
+		'./src/styles/utilities.css'
+	],
 	theme: {
 		extend: {
 			colors: {

@@ -4,43 +4,36 @@ import { getEntry } from "astro:content";
 const ctaContent = await getEntry("landing", "cta");
 
 if (!ctaContent) {
-  throw new Error(
-    "CTA content not found: cta entry missing from landing collection",
-  );
+    throw new Error("CTA content not found: cta entry missing from landing collection");
 }
 
 const { cta } = ctaContent.data;
 ---
 
 <section
-  id="cta"
-  class="py-16 px-6
-        text-center
+    id="cta"
+    class="py-16 px-4
+        text-center container-xl
         bg-gradient-to-br from-featherbg via-primaryDark/40 to-accent/20"
 >
-  <div class="max-w-4xl mx-auto">
-    <h2
-      class="mb-6 text-2xl font-bold text-highlight md:text-3xl"
-    >
-      Ready to Begin?
-    </h2>
-    <p class="max-w-2xl mb-8 mx-auto text-text text-lg">
-      Explore the detailed story of Nextla and meet all the characters.
-    </p>
-    
-    <div class="flex flex-col md:flex-row md:flex-wrap items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
-      <a 
-        href="/excerpt" 
-        class="bg-secondary text-text px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-colors flex-shrink-0 w-full max-w-[250px]"
-      >
-        Read the Full Excerpt
-      </a>
-      <a 
-        href="https://twitter.com/yourprofile" 
-        class="border-2 border-secondary text-secondary px-6 py-3 rounded-lg font-medium hover:bg-secondary hover:text-text transition-colors flex-shrink-0 w-full max-w-[250px]"
-      >
-        Join the Conversation
-      </a>
+    <div>
+        <h2 class="mb-6 heading-responsive text-highlight">Ready to Begin?</h2>
+        <p class="max-w-2xl mb-8 mx-auto text-text text-responsive">
+            Explore the detailed story of Nextla and meet all the characters.
+        </p>
+
+        <div
+            class="flex flex-col md:flex-row md:flex-wrap items-center justify-center space-y-4 md:space-y-0 md:space-x-4"
+        >
+            <a href="/excerpt" class="btn-primary w-full max-w-[250px]">
+                Read the Full Excerpt
+            </a>
+            <a
+                href="https://twitter.com/yourprofile"
+                class="btn-secondary w-full max-w-[250px]"
+            >
+                Join the Conversation
+            </a>
+        </div>
     </div>
-  </div>
 </section>
