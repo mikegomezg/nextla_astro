@@ -113,12 +113,12 @@ const bgColors = [
         <!-- Mobile scroll view -->
         <div
             id="character-scroll"
-            class="lg:hidden overflow-x-scroll scrollbar-hide pb-4 -mx-4 px-4"
+            class="lg:hidden overflow-x-scroll scrollbar-hide pb-4 -mx-4 px-4 scroll-snap-x"
         >
             <div class="flex space-x-4" style="min-width: min-content;">
                 {
                     orderedCharacterImages.map((image, index) => (
-                        <div class="card-base min-w-[280px] max-w-[320px] flex flex-col items-center text-center p-6">
+                        <div class="card-base min-w-[280px] max-w-[320px] flex flex-col items-center text-center p-6 scroll-snap-start">
                             <div class="w-28 h-28 mb-3 overflow-hidden rounded-full">
                                 {image ? (
                                     <Image
@@ -231,3 +231,13 @@ const bgColors = [
         });
     }
 </script>
+
+<style>
+    .scroll-snap-x {
+        scroll-snap-type: x mandatory;
+    }
+
+    .scroll-snap-start {
+        scroll-snap-align: start;
+    }
+</style>
