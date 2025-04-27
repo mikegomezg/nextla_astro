@@ -2,53 +2,38 @@
 import cosmicBg from "../assets/visuals/cosmic_vector.svg?url";
 ---
 
-<section
-  id="hero"
-  class="overflow-hidden
-      w-full
-      bg-cover bg-no-repeat
-      shadow-lg
-      relative"
-  style={`background-image: url('${cosmicBg}'); 
-          background-position: 45% center; 
-          min-height:75vh; 
-          max-height:90vh;`}
->
-  <!-- Brightness overlay -->
-  <div
-    class="bg-black/10
-      pointer-events-none
-      absolute inset-0 backdrop-brightness-125"
-  >
-  </div>
-
-  <!-- Headline overlaying the hero -->
-  <div class="flex
-      px-6
-      absolute inset-0 items-center justify-center">
-    <div class="inline-block
-        text-center
-        relative">
-      <h1
-        class="z-10
-            text-white text-4xl font-extrabold text-center
-            tracking-wider
-            select-none
-            drop-shadow-[0_3px_18px_rgba(0,0,0,0.8)]
-            sm:text-5xl
-            md:text-6xl"
-      >
-        <div class="mt-4">Imagine</div>
-        <div class="mt-4">a balanced</div>
-        <div class="mt-3">world</div>
+<section id="hero" class="relative w-full h-[70vh] flex flex-col md:flex-row overflow-hidden bg-background">
+  <!-- Left Side -->
+  <div class="flex flex-col justify-center items-center md:items-end w-full md:w-1/3 h-full px-4 md:px-8 py-8 md:py-0">
+    <div class="card-style-hero md:ml-8">
+      <h1 class="text-highlight text-5xl font-extrabold tracking-wide select-none text-left leading-tight sm:text-5xl md:text-6xl">
+        <div>Imagine</div>
+        <div class="mt-2">a balanced</div>
+        <div class="mt-2">world</div>
       </h1>
     </div>
+  </div>
+
+  <!-- Vertical Green Bar (only light mode) -->
+  <div class="hidden md:block w-[4px] h-full bg-highlight dark:hidden"></div>
+
+  <!-- Right Side -->
+  <div class="relative w-full md:w-2/3 h-full bg-black overflow-hidden flex items-center justify-center">
+    <div class="absolute inset-0 bg-no-repeat bg-cover bg-center"
+         style={`background-image: url('${cosmicBg}'); background-size: 110% 140%; background-position: center;`}>
+    </div>
+    <div class="absolute inset-0 bg-black/10 backdrop-brightness-125"></div>
   </div>
 </section>
 
 <!-- Bottom accent border -->
-<div
-  class="h-[4px]
-      bg-highlight bg-repeat-x bg-center bg-[length:100px_4px]"
->
-</div>
+<div class="h-[4px] bg-highlight bg-repeat-x bg-center bg-[length:100px_4px]"></div>
+
+<style>
+  .card-style-hero {
+    @apply z-20 flex flex-col items-start justify-center
+           text-left p-6
+           bg-surface/70 rounded-xl shadow-lg backdrop-blur-md
+           max-w-[400px] w-full;
+  }
+</style>
