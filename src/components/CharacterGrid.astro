@@ -62,7 +62,7 @@ const bgColors = [
 <section
     id="characters"
     aria-labelledby="characters-heading"
-    class="py-16 px-4 bg-background container-xl"
+    class="py-8 px-4 bg-background container-xl"
 >
     <div>
         <h2
@@ -111,7 +111,10 @@ const bgColors = [
         </div>
 
         <!-- Mobile scroll view -->
-        <div class="lg:hidden overflow-x-scroll scrollbar-hide pb-4 -mx-4 px-4">
+        <div
+            id="character-scroll"
+            class="lg:hidden overflow-x-scroll scrollbar-hide pb-4 -mx-4 px-4"
+        >
             <div class="flex space-x-4" style="min-width: min-content;">
                 {
                     orderedCharacterImages.map((image, index) => (
@@ -151,14 +154,80 @@ const bgColors = [
         </div>
 
         <!-- Mobile navigation indicators -->
-        <div class="flex justify-center space-x-2 mt-4 lg:hidden">
+        <div class="flex justify-center space-x-2 mt-4 lg:hidden select-none">
             {
                 orderedCharacterImages.map((_, index) => (
-                    <span
-                        class={`w-2 h-2 rounded-full ${index === 0 ? "bg-primary" : "bg-muted/20"}`}
+                    <button
+                        type="button"
+                        class={`w-2 h-2 rounded-full transition-all duration-300 ${
+                            index === 0 ? "bg-primary scale-125" : "bg-muted/20"
+                        }`}
+                        aria-label={`Go to character ${index + 1}`}
                     />
                 ))
             }
         </div>
     </div>
 </section>
+
+<script>
+    let activeIndex = 0;
+    const scrollContainer = document.getElementById("character-scroll") as HTMLElement;
+
+    if (scrollContainer) {
+        const characterCards = scrollContainer.querySelectorAll(".card-base");
+        const pagerButtons = document.querySelectorAll(
+            "#characters .flex.justify-center button",
+        );
+
+        // Function to scroll to a specific character
+        function scrollToCharacter(index: number): void {
+            const card = characterCards[index] as HTMLElement;
+            if (card) {
+                scrollContainer.scrollTo({
+                    left: card.offsetLeft - 16, // adjust for padding
+                    behavior: "smooth" as ScrollBehavior,
+                });
+                activeIndex = index;
+                updateActiveDot();
+            }
+        }
+
+        // Update the active dot indicator
+        function updateActiveDot(): void {
+            pagerButtons.forEach((button, idx) => {
+                if (idx === activeIndex) {
+                    button.classList.add("bg-primary", "scale-125");
+                    button.classList.remove("bg-muted/20");
+                } else {
+                    button.classList.remove("bg-primary", "scale-125");
+                    button.classList.add("bg-muted/20");
+                }
+            });
+        }
+
+        // Add click event listeners to pager buttons
+        pagerButtons.forEach((button, index) => {
+            button.addEventListener("click", () => {
+                scrollToCharacter(index);
+            });
+        });
+
+        // Track scroll position to update active dot
+        scrollContainer.addEventListener("scroll", () => {
+            const scrollLeft = scrollContainer.scrollLeft;
+            const firstCard = characterCards[0] as HTMLElement;
+            const cardWidth = firstCard.offsetWidth + 16; // card width + gap
+            const newIndex = Math.round(scrollLeft / cardWidth);
+
+            if (
+                newIndex !== activeIndex &&
+                newIndex >= 0 &&
+                newIndex < characterCards.length
+            ) {
+                activeIndex = newIndex;
+                updateActiveDot();
+            }
+        });
+    }
+</script>
