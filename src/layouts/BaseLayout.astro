@@ -8,10 +8,8 @@ interface Props {
     description?: string;
 }
 
-const {
-    title = "Nextla — Manage Creative Attention",
-    description = "A speculative platform for managing creative attention in the future.",
-} = Astro.props;
+const { title = "Nextla", description = "A sci-fi story about AI and creativity." } =
+    Astro.props;
 
 // Use a relative path for the OG image
 const ogImageUrl = "/assets/visuals/cosmic-preview.png";
@@ -36,17 +34,16 @@ declare global {
         <meta property="og:image" content={ogImageUrl} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="icon" href="/assets/logos/Nextla-favicon.png" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={ogImageUrl} />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 
         <script>
             (function () {
                 const root = document.documentElement;
                 const key = "theme";
-                const preferred =
-                    localStorage.getItem(key) ||
-                    (window.matchMedia("(prefers-color-scheme: dark)").matches
-                        ? "dark"
-                        : "light");
+                const preferred = localStorage.getItem(key) || "dark";
                 root.setAttribute("data-theme", preferred);
 
                 window.toggleTheme = () => {
