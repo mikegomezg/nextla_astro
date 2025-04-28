@@ -34,11 +34,6 @@
         @apply h-[4px] w-full bg-highlight bg-repeat-x bg-center bg-[length:100px_4px];
     }
 
-    /* Responsive text utilities */
-    .text-responsive {
-        @apply text-sm md:text-base;
-    }
-
     .heading-responsive {
         @apply text-3xl md:text-4xl lg:text-5xl font-bold;
     }
