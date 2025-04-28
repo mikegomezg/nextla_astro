@@ -1,67 +1,82 @@
 ---
+import { getEntry } from "astro:content";
 import featherImg from "../assets/visuals/feather-crop.png";
+
+// Load external content
+const projectContent = await getEntry("landing", "project");
+const meaningContent = await getEntry("landing", "meaning");
+
+// Helper function to truncate markdown body to just the first paragraph
+function truncateMarkdown(body: string) {
+    if (!body) return "";
+    const firstParagraph = body.split("\n\n")[0];
+    return firstParagraph.trim();
+}
 ---
 
 <!-- Top Title -->
 <section
-    class="flex flex-col text-center bg-background items-center container-xl"
     id="feather"
+    class="flex flex-col text-center bg-background items-center container-xl"
 >
     <h2
         class="mt-8 mb-8 text-highlight text-shadow-light dark:text-highlight heading-responsive"
     >
-        What is Nexla?
+        {projectContent?.data?.heading ?? "What is Nexla?"}
     </h2>
 </section>
 
 <!-- Cards + Feather Section -->
 <section
     class="flex flex-col items-center justify-center bg-background container-xl
-                lg:grid lg:grid-cols-[auto_auto_auto] grid-cols-1
-                gap-4 lg:gap-8"
+         lg:grid lg:grid-cols-[auto_auto_auto] grid-cols-1
+         gap-4 lg:gap-8"
 >
     <!-- Left Card -->
-    <div
-        class="card-base min-w-[280px] max-w-[350px] w-full mb-8 lg:mb-0 lg:-mr-8 md:mt-6 lg:justify-self-end"
-    >
+    <div class="card-base lg:justify-self-end">
         <h3 class="card-title">About the Story</h3>
-        <p class="card-text text-responsive">
-            Nexla is a platform for managing creative attention — the one thing that can't
-            be automated.
-        </p>
+        {projectContent && (
+            <div class="markdown-preview">
+                <p>{truncateMarkdown(projectContent.body)}</p>
+            </div>
+        )}
     </div>
 
-    <!-- Feather Image (centered) -->
-    <div class="flex items-center justify-center mb-8 lg:mb-0 rounded-xl overflow-hidden">
+    <!-- Feather Image -->
+    <div
+        class="flex items-center justify-center mb-8 lg:mb-0 rounded-xl overflow-hidden
+           w-[250px] sm:w-[300px] md:w-[320px] lg:w-[400px]
+           max-h-[80vh] lg:max-h-none"
+    >
         <img
             src={featherImg.src}
             alt="Feather"
-            width="400"
-            height="900"
-            class="object-cover max-w-[400px] w-[400px] max-h-[100vh] drop-shadow-lg"
+            class="w-full h-full object-contain drop-shadow-lg"
             loading="eager"
             decoding="async"
         />
     </div>
 
     <!-- Right Card -->
-    <div
-        class="card-base min-w-[280px] max-w-[350px] w-full lg:-ml-8 lg:justify-self-start"
-    >
+    <div class="card-base lg:justify-self-start">
         <h3 class="card-title">About the Name</h3>
-        <p class="card-text text-responsive">
-            "Nexla" derives from the Aztec word for tribute — symbolizing the value and
-            scarcity of true creative insight.
-        </p>
+        {meaningContent && (
+            <div class="markdown-preview">
+                <p>{truncateMarkdown(meaningContent.body)}</p>
+            </div>
+        )}
     </div>
 </section>
 
 <!-- Tailwind Styles -->
 <style>
     .card-base {
-        @apply z-20 flex flex-col items-center justify-center text-center
-           min-h-[200px] p-6 m-1
-           bg-surface/70 dark:bg-surface/80 rounded-xl shadow-lg backdrop-blur-md;
+        @apply flex flex-col items-center justify-center text-center
+            w-full min-w-[280px] md:max-w-none
+            mb-8 lg:mb-0
+            p-4 md:p-6
+            bg-surface/70 dark:bg-surface/80 rounded-xl shadow-lg backdrop-blur-md
+            min-h-[200px] lg:min-h-[300px]; /* taller cards only at lg */
     }
 
     .card-title {
@@ -70,5 +85,9 @@ import featherImg from "../assets/visuals/feather-crop.png";
 
     .card-text {
         @apply text-text leading-relaxed text-left;
+    }
+
+    .markdown-preview p {
+        @apply text-text leading-relaxed text-left text-responsive;
     }
 </style>
