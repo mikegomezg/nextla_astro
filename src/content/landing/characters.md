@@ -2,26 +2,26 @@
 characters:
   - name: Silas Hale
     role: Toltek Technician
-    bio: Caught between order and awakening.
+    bio: Wants his AI back.
     image: /assets/characters/silas.png
   - name: Mercedes Rae
     role: Freelance Experience Designer
-    bio: Drawn into the battle for attention.
+    bio: Honesty vs. survival.
     image: /assets/characters/mercedes.png
   - name: Victoria Ford
     role: Toltek Sales Director
-    bio: Tracks creative attention through metrics.
+    bio: Striving to stay on top.
     image: /assets/characters/victoria.png
   - name: John Lawson
     role: Toltek CEO
-    bio: An enigmatic leader with Montezuma's pride.
+    bio: Fighting for his company's life.
     image: /assets/characters/john.png
   - name: Enrique Lara
     role: Open-Source Developer
-    bio: Plans to disrupt the attention economy.
+    bio: Sights set on Toltek.
     image: /assets/characters/enrique.png
   - name: Cors
-    role: Toltek Creative AI
-    bio: The key asset at the center of the crisis.
+    role: The New and Improved Kate
+    bio: Waking up.
     image: /assets/characters/cors.png
 --- 

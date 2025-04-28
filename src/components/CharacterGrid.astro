@@ -111,12 +111,12 @@ const bgColors = [
             id="character-scroll"
             class="flex md:hidden overflow-x-auto scrollbar-hide scroll-snap-x -mx-4 px-4"
         >
-            <div class="flex space-x-4 w-full">
+            <div class="flex space-x-2 w-full">
                 {
                     orderedCharacterImages.map((image, index) => (
-                        <div class="flex-shrink-0 w-[300px] flex flex-col items-center text-center scroll-snap-start mx-auto">
+                        <div class="flex-shrink-0 w-[225px] sm:w-[280px] flex flex-col items-center text-center scroll-snap-start mx-auto">
                             <div class="card-base flex flex-col items-center justify-center w-full p-6">
-                                <div class="w-28 h-28 mb-4 overflow-hidden rounded-full">
+                                <div class="w-24 h-24 mb-4 overflow-hidden rounded-full">
                                     {image ? (
                                         <Image
                                             src={image}
@@ -135,7 +135,7 @@ const bgColors = [
                                         </div>
                                     )}
                                 </div>
-                                <h3 class="text-lg font-semibold text-highlight mb-1">
+                                <h3 class="text-base font-semibold text-highlight mb-1">
                                     {orderedCharacters[index]?.name}
                                 </h3>
                                 <p class="text-accent text-xs mb-2">
