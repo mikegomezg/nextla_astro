@@ -1,4 +1,4 @@
 ---
 heading: What is Nextla?
 ---
-In 2075, Silas Hale must find his decommissioned AI companion Kate and prevent the collapse of his home city Mirador, owned by Toltek Corporation. When an ambitious upgrade weakens the company's grip over its AIs, Silas must decide whether a new system is possible and what freedom really means.
+In 2085, Silas Hale searches for his AI companion Kate after a disasterous upgrade destabilizes the resort city of Mirador. As the Toltek Corporation scrambles to control its AI workforce, Silas must decide if a new system is possible and what freedom truly means.

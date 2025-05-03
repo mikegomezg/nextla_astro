@@ -26,7 +26,8 @@
     /* #E0E5EC */
     --color-outline: 203 213 225;
     /* #CBD5E1 */
-    --font-sans: 'Lato', ui-sans-serif, system-ui;
+    --font-headings: 'Space Grotesk', sans-serif;
+    --font-sans: 'Lato', sans-serif;
 }
 
 /* Dark Theme Overrides */
