@@ -30,6 +30,11 @@
     --font-sans: 'Lato', sans-serif;
 }
 
+html,
+body {
+    @apply select-none;
+}
+
 /* Dark Theme Overrides */
 [data-theme="dark"] {
     --color-background: 0 0 0;

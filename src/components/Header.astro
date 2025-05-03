@@ -5,16 +5,19 @@ import logo from "../assets/logos/logo.svg";
 <header
     class="flex z-50 h-20 w-full px-6 bg-black items-center justify-between fixed top-0 md:h-24"
 >
-    <!-- Left side: Logo -->
-    <div class="flex items-center flex-shrink-0">
-        <img src={logo.src} alt="Nextla Logo" class="h-12 w-auto md:h-16" />
-        <span
-            class="ml-2 text-2xl font-black text-highlight tracking-[.04em] md:text-3xl"
-        >
-            Nextla
-        </span>
+    <div class="flex items-center text-2xl md:text-3xl">
+        <!-- 2) Now h‑[1em] = exactly your current font-size (2xl on mobile, 3xl on desktop) -->
+        <!-- <img
+            src={logo.src}
+            alt=""
+            aria-hidden="true"
+            class="h-[1em] w-auto"
+            width="32"
+            height="32"
+        /> -->
+        <!-- 3) Gap between icon & text -->
+        <span class="ml-1 font-black text-highlight tracking-[.04em]">Nextla</span>
     </div>
-
     <!-- Right side: Theme Toggle + Mobile Menu -->
     <div class="flex items-center">
         <!-- Theme Toggle Button -->

@@ -11,8 +11,6 @@ interface Props {
 const { title = "Nextla", description = "A sci-fi story about AI and creativity." } =
     Astro.props;
 
-// Use a relative path for the OG image
-const ogImageUrl = "/assets/visuals/cosmic-preview.png";
 
 // Extend Window interface for TypeScript
 declare global {
@@ -31,12 +29,10 @@ declare global {
         <meta name="description" content={description} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content={ogImageUrl} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={ogImageUrl} />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link href="https://fonts.googleapis.com/css2?family=Space Grotesk:wght@400;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 
