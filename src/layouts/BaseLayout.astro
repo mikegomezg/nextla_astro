@@ -1,6 +1,6 @@
 ---
 import Header from "../components/Header.astro";
-import { ClientRouter } from 'astro:transitions';
+import { ClientRouter } from "astro:transitions";
 import "../styles/theme.css";
 import "../styles/utilities.css";
 
@@ -23,6 +23,12 @@ declare global {
 <!doctype html>
 <html lang="en">
     <head>
+        <script is:inline>
+            (function () {
+              const t = localStorage.getItem('theme');
+              if (t) document.documentElement.setAttribute('data-theme', t);
+            })();
+          </script>
         <ClientRouter />
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -42,22 +48,6 @@ declare global {
             href="https://fonts.googleapis.com/css2?family=Space Grotesk:wght@400;700;800&family=Lato:wght@400;700&display=swap"
             rel="stylesheet"
         />
-
-        <script>
-            (function () {
-                const root = document.documentElement;
-                const key = "theme";
-                const preferred = localStorage.getItem(key) || "dark";
-                root.setAttribute("data-theme", preferred);
-
-                window.toggleTheme = () => {
-                    const next =
-                        root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-                    root.setAttribute("data-theme", next);
-                    localStorage.setItem(key, next);
-                };
-            })();
-        </script>
     </head>
     <body class="bg-background overflow-x-hidden">
         <Header />
