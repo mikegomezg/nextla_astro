@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import storyPDF from "../assets/story/nextla-scene.pdf";
+import storyPDF from "/scene.pdf";
 import { getEntry, render } from "astro:content";
 
 // Load scene entry
@@ -15,25 +15,30 @@ if (sceneEntry) {
 ---
 
 <BaseLayout>
-  <section class="container-xl pt-24 px-4 text-left">
+  <section class="container-xl pt-28 px-4 text-left">
     <!-- Heading row -->
-    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
-      <h1 class="text-3xl md:text-4xl font-bold text-highlight text-center md:text-left flex-1">
+    <div class="relative mb-8 text-center">
+      <h1 class="text-3xl md:text-4xl font-bold text-highlight dark:text-highlight-light">
         {sceneEntry?.data?.heading ?? "Read a Scene"}
       </h1>
-      <a
-        href={storyPDF}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn-secondary shrink-0"
-      >
-        Download PDF
-      </a>
+      <div class="absolute right-0 top-1/2 -translate-y-1/2">
+        <a
+          href={storyPDF}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-secondary max-w-[200px] text-sm md:text-base px-4 py-2"
+        >
+          Download PDF
+        </a>
+      </div>
     </div>
 
     <!-- Markdown content -->
-    <article class="prose prose-invert max-w-none">
+    <article class="prose prose-invert max-w-none text-text lg:px-48">
       {SceneContent && <SceneContent />}
     </article>
+        <div class="my-8 text-center text-s text-text/60 select-none">
+        © 2025 Michael Gomez
+    </div>
   </section>
 </BaseLayout>
