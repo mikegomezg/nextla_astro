@@ -17,11 +17,11 @@ if (sceneEntry) {
 <BaseLayout>
   <section class="container-xl pt-28 px-4 text-left">
     <!-- Heading row -->
-    <div class="relative mb-8 text-center">
+    <div class="relative mb-8 text-left md:text-center lg:text-center">
       <h1 class="text-3xl md:text-4xl font-bold text-highlight dark:text-highlight-light">
         {sceneEntry?.data?.heading ?? "Read a Scene"}
       </h1>
-      <div class="absolute right-0 top-1/2 -translate-y-1/2">
+      <div class="absolute right-0 top-1/2 -translate-y-1/2 px-2">
         <a
           href={storyPDF}
           target="_blank"
@@ -34,7 +34,7 @@ if (sceneEntry) {
     </div>
 
     <!-- Markdown content -->
-    <article class="prose prose-invert max-w-none text-text lg:px-48">
+    <article class="prose prose-invert max-w-none text-text lg:px-48 select-text">
       {SceneContent && <SceneContent />}
     </article>
         <div class="my-8 text-center text-s text-text/60 select-none">

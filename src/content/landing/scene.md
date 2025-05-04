@@ -1,5 +1,5 @@
 ---
-heading: Pattern Recognition
+heading: The Feathers Appear
 ---
 Silas Hale sits in his holographic cocoon on the forty-third floor of Toltek headquarters, watching high school boys fire imaginary M-16s at each other in an abandoned warehouse across town. The recording wraps around him, projected seamlessly onto his contacts as he leans back in his plasma chair rubbing his eyes. Muzzle flashes staccato across his dim office walls and shell casings pile up on his hardwood floor as Kate scrubs through the footage, a small green sun hovering beside him.
 
