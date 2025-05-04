@@ -1,0 +1,33 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import storyPDF from "../assets/story/nextla-scene.pdf";
+import { getEntry, render } from "astro:content";
+
+// Load scene entry
+const sceneEntry = await getEntry("landing", "scene");
+
+let SceneContent;
+
+if (sceneEntry) {
+    const rendered = await render(sceneEntry);
+    SceneContent = rendered.Content;
+}
+---
+
+<BaseLayout>
+    <section class="container-xl py-16 px-4 text-left">
+        <div class="flex justify-between items-center mb-8">
+            <a
+                href={storyPDF}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-secondary"
+            >
+                Download PDF
+            </a>
+        </div>
+        <article class="prose prose-invert max-w-none">
+            {SceneContent && <SceneContent />}
+        </article>
+    </section>
+</BaseLayout>
