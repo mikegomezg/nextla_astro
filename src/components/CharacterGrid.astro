@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
 
 import silas from "../assets/characters/1-silas.png";
-import kate from "../assets/characters/2-cors.png";
+import kate from "../assets/characters/2-kate.png";
 import victoria from "../assets/characters/3-victoria.png";
 import mercedes from "../assets/characters/4-mercedes.png";
 import john from "../assets/characters/5-john.png";
@@ -29,7 +29,7 @@ const { characters = [] } = charactersContent.data;
 
 const orderedCharacters: Character[] = [
     characters.find((c) => c.name.startsWith("Silas"))!,
-    characters.find((c) => c.name.startsWith("Cors"))!,
+    characters.find((c) => c.name.startsWith("Kate"))!,
     characters.find((c) => c.name.startsWith("Victoria"))!,
     characters.find((c) => c.name.startsWith("Mercedes"))!,
     characters.find((c) => c.name.startsWith("John"))!,

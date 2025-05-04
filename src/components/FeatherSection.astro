@@ -1,17 +1,22 @@
 ---
 import "../styles/utilities.css";
-import { getEntry } from "astro:content";
+import { getEntry, render } from "astro:content";
 import featherImg from "../assets/visuals/feather-crop.png";
 
-// Load external content
+// Load content entries
 const projectContent = await getEntry("landing", "project");
 const meaningContent = await getEntry("landing", "meaning");
 
-// Helper function to truncate markdown body to just the first paragraph
-function truncateMarkdown(body: string) {
-    if (!body) return "";
-    const firstParagraph = body.split("\n\n")[0];
-    return firstParagraph.trim();
+let ProjectContent, MeaningContent;
+
+if (projectContent) {
+    const rendered = await render(projectContent);
+    ProjectContent = rendered.Content;
+}
+
+if (meaningContent) {
+    const rendered = await render(meaningContent);
+    MeaningContent = rendered.Content;
 }
 ---
 
@@ -21,7 +26,7 @@ function truncateMarkdown(body: string) {
     class="flex flex-col text-center bg-background items-center container-xl"
 >
     <h2
-        class="mt-8 mb-8 text-highlight text-shadow-light dark:text-highlight heading-responsive"
+        class="mt-12 mb-4 text-highlight text-shadow-light dark:text-highlight heading-responsive"
     >
         {projectContent?.data?.heading ?? "What is Nexla?"}
     </h2>
@@ -36,11 +41,13 @@ function truncateMarkdown(body: string) {
     <!-- Left Card -->
     <div class="card-base lg:justify-self-end">
         <h3 class="card-title">About the Story</h3>
-        {projectContent && (
-            <div class="markdown-preview">
-                <p>{truncateMarkdown(projectContent.body)}</p>
-            </div>
-        )}
+        {
+            ProjectContent && (
+                <div class="markdown-preview">
+                    <ProjectContent />
+                </div>
+            )
+        }
     </div>
 
     <!-- Feather Image -->
@@ -61,34 +68,31 @@ function truncateMarkdown(body: string) {
     <!-- Right Card -->
     <div class="card-base lg:justify-self-start">
         <h3 class="card-title">About the Name</h3>
-        {meaningContent && (
-            <div class="markdown-preview">
-                <p>{truncateMarkdown(meaningContent.body)}</p>
-            </div>
-        )}
+        {
+            MeaningContent && (
+                <div class="markdown-preview">
+                    <MeaningContent />
+                </div>
+            )
+        }
     </div>
 </section>
 
-<!-- Tailwind Styles -->
 <style>
     .card-base {
         @apply flex flex-col items-center justify-center text-center
-            w-full min-w-[280px] md:max-w-none
-            mb-8 lg:mb-0
-            p-4 md:p-6
-            bg-surface/70 dark:bg-surface/80 rounded-xl shadow-lg backdrop-blur-md
-            min-h-[200px] lg:min-h-[400px]; /* taller cards only at lg */
+      w-full min-w-[280px] md:max-w-none
+      mb-8 lg:mb-0
+      p-4 md:p-6
+      bg-surface/70 dark:bg-surface/80 rounded-xl shadow-lg backdrop-blur-md
+      min-h-[200px] lg:min-h-[400px];
     }
 
     .card-title {
         @apply mb-4 text-highlight text-2xl font-extrabold;
     }
 
-    .card-text {
-        @apply text-text leading-relaxed text-left;
-    }
-
-    .markdown-preview p {
-        @apply text-text leading-relaxed text-left;
+    .markdown-preview {
+        @apply w-full text-text leading-relaxed text-left;
     }
 </style>

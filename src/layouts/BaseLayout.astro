@@ -11,7 +11,6 @@ interface Props {
 const { title = "Nextla", description = "A sci-fi story about AI and creativity." } =
     Astro.props;
 
-
 // Extend Window interface for TypeScript
 declare global {
     interface Window {
@@ -33,8 +32,14 @@ declare global {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link href="https://fonts.googleapis.com/css2?family=Space Grotesk:wght@400;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-96x96.png" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Space Grotesk:wght@400;700;800&family=Lato:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
 
         <script>
             (function () {
