@@ -22,41 +22,39 @@
     </svg>
 </button>
 <script is:inline>
-    const KEY = 'theme';
-    const DARK = 'dark';
-    const LIGHT = 'light';
-    const root = document.documentElement;
-  
-    function applyTheme() {
-      const saved = localStorage.getItem(KEY);
-      const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
-      const theme = saved || (prefersDark ? DARK : LIGHT);
-      root.setAttribute('data-theme', theme);
+  const KEY = 'theme';
+  const DARK = 'dark';
+  const LIGHT = 'light';
+  const root = document.documentElement;
+
+  /** Always start in dark mode unless the user has saved a preference */
+  function applyTheme() {
+    const saved = localStorage.getItem(KEY);      // "dark" | "light" | null
+    const theme = saved ?? DARK;                  // default → dark
+    root.setAttribute('data-theme', theme);
+  }
+
+  function toggleTheme() {
+    const next = root.getAttribute('data-theme') === DARK ? LIGHT : DARK;
+    root.setAttribute('data-theme', next);
+    localStorage.setItem(KEY, next);
+  }
+
+  function attachListener() {
+    const btn = document.getElementById('theme-toggle');
+    if (btn) {
+      btn.removeEventListener('click', toggleTheme);
+      btn.addEventListener('click', toggleTheme);
     }
-  
-    function toggleTheme() {
-      const next = root.getAttribute('data-theme') === DARK ? LIGHT : DARK;
-      root.setAttribute('data-theme', next);
-      localStorage.setItem(KEY, next);
-    }
-  
-    function attachListener() {
-      // Remove any previous listener to avoid duplicates
-      const btn = document.getElementById('theme-toggle');
-      if (btn) {
-        btn.removeEventListener('click', toggleTheme);
-        btn.addEventListener('click', toggleTheme);
-      }
-    }
-  
-    // Initial run
+  }
+
+  /* first run */
+  applyTheme();
+  attachListener();
+
+  /* re‑run after every Astro view‑transition swap */
+  document.addEventListener('astro:after-swap', () => {
     applyTheme();
     attachListener();
-  
-    // Re‑apply theme *and* re‑attach click handler after every Astro swap
-    document.addEventListener('astro:after-swap', () => {
-      applyTheme();
-      attachListener();
-    });
-  </script>
-  
+  });
+</script>
