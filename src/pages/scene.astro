@@ -9,25 +9,31 @@ const sceneEntry = await getEntry("landing", "scene");
 let SceneContent;
 
 if (sceneEntry) {
-    const rendered = await render(sceneEntry);
-    SceneContent = rendered.Content;
+  const rendered = await render(sceneEntry);
+  SceneContent = rendered.Content;
 }
 ---
 
 <BaseLayout>
-    <section class="container-xl py-16 px-4 text-left">
-        <div class="flex justify-between items-center mb-8">
-            <a
-                href={storyPDF}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn-secondary"
-            >
-                Download PDF
-            </a>
-        </div>
-        <article class="prose prose-invert max-w-none">
-            {SceneContent && <SceneContent />}
-        </article>
-    </section>
+  <section class="container-xl pt-24 px-4 text-left">
+    <!-- Heading row -->
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
+      <h1 class="text-3xl md:text-4xl font-bold text-highlight text-center md:text-left flex-1">
+        {sceneEntry?.data?.heading ?? "Read a Scene"}
+      </h1>
+      <a
+        href={storyPDF}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-secondary shrink-0"
+      >
+        Download PDF
+      </a>
+    </div>
+
+    <!-- Markdown content -->
+    <article class="prose prose-invert max-w-none">
+      {SceneContent && <SceneContent />}
+    </article>
+  </section>
 </BaseLayout>
